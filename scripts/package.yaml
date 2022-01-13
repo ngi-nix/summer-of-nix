@@ -1,0 +1,21 @@
+name: plotter
+version: 0.1.0.0
+data-files:
+  - github-schema.gql
+dependencies:
+  - base == 4.*
+  - time
+  - aeson
+  - hvega
+  - yaml
+  - bytestring
+  - text
+  - process
+  - process-extras
+executables:
+  plotter:
+    main: Main.hs
+    source-dirs:  app
+    dependencies: plotter
+library:
+  source-dirs:   src
