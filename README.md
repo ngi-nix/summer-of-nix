@@ -9,6 +9,7 @@ sansfont: DejaVu Sans
 documentclass: scrartcl
 author: Matthias Meschede
 linestretch: 1.05
+numbersections: true
 geometry: "left=4cm, right=3cm, top=2.5cm, bottom=2.5cm"
 
 ---
