@@ -52,33 +52,39 @@ The final actor, **Tweag**[@tweag], is a software consultancy and one of the pri
 
 ## The idea emerges
 
+<!-- What is it -->
+
 <!-- idea came from developer feedback: -->
 
-The initial idea for a larger summer program came up as a reaction on feedback from the community about the initial plan to run a packaging program with contracting developers working independently on their projects.
+The initial idea, to run a large, concentrated community program in the summer, came up as a reaction on feedback from the Nix community about the already existing packaging effort with individual developers working independently through the large number of NLNet projects. The existing effort was not advancing as well as it should have, and it appeared not appealing enough to attract enough applications:
 
 <!-- unqualified with no time to learn -->
 
-Many felt either unqualified to work professionally with an emerging technology that thus far had been mostly a hobby. They felt that there might not be enough support and time to learn the required skills during the program. The entry barrier to applying was therefore quite high. This is a particular problem of the Nix community because it is emerging and not yet as professionalized as other fields.
+Many community members felt unqualified to work professionally with an emerging technology that thus far had been mostly their hobby, or they felt that there might not be enough support and time to learn the required skills during the program. The entry barrier to applying for a packaging job was therefore quite high.
 
 <!-- packaging research tools is unattractive -->
 
-Another aspect was that delivering packages is rarely an attractive goal in itself for independent developers (although this program showed that it actually is a very interesting and worthwhile task). This feeling was even stronger since this program was not about packaging many experimental tools, sometimes still in prototype stage or alpha stage, without gigantic user base and sometimes no regular maintenance.
+Another aspect was that packaging, although it can actually be a very interesting and worthwhile task, is not an attractive goal _in itself_ for independent developers. This was reinforced by the fact that many of the NLNet tools to package are still experimental, in prototype stage or alpha stage, without gigantic user base and sometimes no regular maintenance. Finally, although the program was decently funded, it was also not the place to get rich over night.
 
 <!-- Real challenge: What excites developers? -->
 
-Although the program was decently funded, it was out of the question to simply crank up the rates to overcome those challenges with money—a strategy that is improbable to succeed in any case. And, although fair pay _is_ an important factor for us, it was unlikely to be the principal driver for anyone participating in such a short program. The main challenge therefore was to design a program that is fulfilling and that takes into account the _non-monetarian_ interests of the participating developers as much as those of the funding organizations, to find the famous win-win situation.
+The main challenge therefore was to design a program that is more attractive, and fulfilling, taking into account the non-monetarian interests _of the participating developers_ as much as those of the funding organizations to find the famous win-win situation.
 
 <!-- What excites developers? -->
 
-A few of the principles of the program therefore emerged quite naturally from the above mentioned comments. Participants should explicitly have time to **work, learn and meet**. Coding should not happen in isolation but in groups with discussions, feedback about the work. Participants should not only learn but also teach their peers. The character of the program thus became much more than simply a paid coding project and we hoped that it would be a lot more attractive for participants.
+A few of the principles of the program emerged quite naturally from these thoughts. Participants should explicitly have time to **work, learn and meet**. Coding should not happen in isolation but in groups with discussions, feedback about the work. Participants should not only learn but also teach their peers. The program thus became much more than a simple coding gig, and we hoped that it would be a lot more attractive for participants.
 
 <!--The money question -->
 
-A side effect that we had to accept to realize a project in the above outlined spirit was that we took Google Summer of Code's rates as baseline instead of a professional software engineer's salary. This gave us the liberty to open up the program beginners and a lot more freedom to each participant to learn, teach, experiment and meet while at the same time applying their creativity, ideas and newly generated knowledge to useful work that was ultimately paid for by the funding entities.
+One direct consequence of realizing a project in the above spirit, open for beginners, with a lot more freedom for each participant to learn, teach, experiment and meet while applying their creativity, ideas and newly generated knowledge to useful work, was that we needed to go away from a professional software engineer's salary to stay within our given budget. We decided to align it roughly to Google's Summer of Code rates instead.
 
 <!-- the manpower question -->
 
-Another challenge was that we had only very limited organizational resources available to organize the program. I was the principal organizer but, although my employer greatly supported me and made time, I was busy with other tasks as well. We put together a small group of largely volunteer organizers that were a bit on-and-off depending on their time. But it was clear from the beginning that, if we wanted to run a program which an emphasises community and team work, we needed further organizational help, maybe in the form of a few selected people who would be experienced with Nix and willing to actually coordinate this. Thus idea of “mentors” was born.
+Another challenge was that we had only very limited organizers available to work on the program: Even I, as the principal organizer, was by far not able to work full time on this project, although my employer Tweag generously supported me as they could. In addition to me, we had a small group of largely volunteer organizers that were a bit on-and-off depending on their time. It was thus clear from the beginning that, if we wanted to run a program with an emphasis on community and team work, we needed further organizational help, maybe in the form of a few selected people who would be experienced with Nix and willing to coordinate teams. The idea of “mentors” was born.
+
+<!-- designing under constraint -->
+
+The limited amount of dedicated time on the organizational side was probably the most constraining factor throughout the program, exacerbated by the fact that we were running it without experience and no prior infrastructure from scratch. This was clear to everyone from the beginning, but no situation is ever perfect, and we saw a good chance to deliver something decent within the constraints.
 
 ## Fixing the basics: compensation and time frame
 
