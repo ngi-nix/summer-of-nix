@@ -40,13 +40,13 @@ The package manager Nix[@doolstra2004nix; @nixosHow] is an emerging technical so
 
 Four institutions with different interests teamed up to realize the _Summer of Nix_:
 
-The **European Commission** (EC) is the initial source of the funding via their Next Generation Internet (NGI) initiative. The goal of this initiative is to “shape the development and evolution of the Internet into an Internet of Humans. An Internet that responds to people’s fundamental needs, including trust, security, and inclusion, while reflecting the values and the norms all citizens enjoy in Europe” [@NGI]. NGI is a huge program funding projects with 312 million Euros from 2018-2022 in a variety of subprograms.
+The **European Commission**[@ec] (EC) is the initial _source of funding_ for Summer of Nix via their Next Generation Internet (NGI) initiative. The goal of this initiative is to “shape the development and evolution of the Internet into an Internet of Humans. An Internet that responds to people’s fundamental needs, including trust, security, and inclusion, while reflecting the values and the norms all citizens enjoy in Europe” [@NGI]. NGI is a huge program funding a large variety of projects and subprograms with 312 million Euro between 2018 and 2022.
 
-The **NLNet Foundation** (NLNet) is largely aligned with the above stated mission of the EC's NGI initiative and has been charged (cascading grant mechanism) to distribute parts of the associated funds. Specifically this concerns a subprogram called NGI Zero [@NGI0] that “provides grants to individual researchers and developers as well as small teams to work on important new ideas and technologies that contribute to the establishment of the Next Generation Internet.”, and within this grant an initiative called PET [@PET] that focuses on privacy and trust enhancing technology. Within this framework, NLNet has funded plenty of open source solutions with the outlined challenges to reliably build and deploy them. Looking for a solution, they have chosen Nix as their preferred packaging strategy because of its unique properties. Parts of the funds became thus available to package NGIs software for Nix. NLNet has approached the NixOS Foundation to help them with this packaging effort.
+The **NLNet Foundation**[@nlnet] (NLNet) is an independent foundation, largely aligned with the above stated mission of the EC's NGI initiative, and funding independent software for a long time. NLNet has been charged, via the ECs cascading grant mechanism, to _distribute_ parts of the NGI funds, specifically from a subprogram called NGI Zero [@NGI0] that “provides grants to individual researchers and developers as well as small teams to work on important new ideas and technologies that contribute to the establishment of the Next Generation Internet.”, and within this grant from an initiative called PET [@PET] that focuses on privacy and trust enhancing technology. With this framework, NLNet has funded plenty of FOSS solutions that all have to deal with the above outlined challenge to reliably build and deploy them in a diverse FOSS ecosystem. Looking for a technical solution, NLNet has chosen Nix as their preferred packaging strategy because of its unique reproducibility guarantees and features such as composability that allow to realize their, and NGIs wider vision. This is how parts of the funds became available to package NGIs software with Nix. NLNet has approached the NixOS Foundation to help them with this packaging effort.
 
-The **NixOS Foundation** current mission is “to support the infrastructure and development of the NixOS project as a whole”. It's scope of action is limited, because of its limited resources, but also deliberately avoid top-down influencing a vibrant and self-organizing community. But being approach with funding for Nix packaging was of course a welcome opportunity bringing value to the Nix ecosystem as much as to the software that is packaged. Before the idea of a large, concentrated community program was born, the NixOS Foundation worked with individual contractors on Nix packaging of NLNet's projects. Infrastructure such as continuous integration server, and a basic task lists had therefore been set up already when the program started. But the NixOS Foundation lacked the manpower to drive the program more actively forward. This is why the idea of a collaboration with Tweag came up. The NixOS Foundation was then the executing organization of the _Summer of Nix_, handling administrative tasks such as contracts, payments, including IT infrastructure but could stay largely away from daily management.
+The **NixOS Foundation**'s [@nixosfoundation] mission is “to support the infrastructure and development of the NixOS project as a whole”. It's scope of action is limited to essential tasks in the Nix ecosystem—because of limited resources, but also because Nix is managed to a large extent by a vibrant and self-organizing community. Being approach with funding for Nix packaging by NLNet was of course a welcome opportunity for them to enlarge and improve the Nix ecosystem. Before the idea of Summer of Nix was born, the NixOS Foundation worked with individual contractors on this packaging work. They had therefore already set up infrastructure such as a continuous integration server, and a basic task lists before Summer of Nix. But the NixOS Foundation lacked the manpower to drive the program forward more actively. This is why the idea of a collaboration with Tweag came up. The NixOS Foundation was the _administrating organization_ of the Summer of Nix, handling contracts, payments, IT infrastructure and more, but could stay largely out of program design and daily management.
 
-**Tweag** is a software consultancy and one of the principal enterprise user and contributor to Nix. Tweag sponsored project management, free of charge, to actually design, organize and run the program. Tweag's interest in this was to improve and give visibility to an emerging technology that it believes in and that it uses to realize client projects.
+The final actor, **Tweag**[@tweag], is a software consultancy and one of the principal enterprise user and contributor to Nix. Tweag sponsored project management, free of charge, to actually _design, organize and run_ the Summer of Nix. Tweag's interest are to improve and give visibility to Nix, and to foster and participate in a lively community around it.
 
 # Designing and running Summer of Nix
 
@@ -386,6 +386,12 @@ references:
   url: https://www.ngi.eu/ngi-projects/ngi-zero/
   type: online
 
+- id: nlnet
+  author: NLNet
+  title: Foundation Website
+  url: https://nlnet.nl/
+  type: online
+
 - id: PET
   author: The NLNet website
   title: About PET
@@ -423,6 +429,24 @@ references:
   author: Nixos Community
   title: NixOS Website
   url: https://nixos.org/guides/how-nix-works.html
+  type: online
+
+- id: tweag
+  author: Tweag
+  title: Company Website
+  url: https://tweag.io
+  type: online
+
+- id: nixosfoundation
+  author: NixOS Foundation
+  title: Mission statement
+  url: https://github.com/NixOS/nixos-foundation
+  type: online
+
+- id: ec
+  author: European Commission
+  title: What the European Commission does
+  url: https://ec.europa.eu/info/about-european-commission/what-european-commission-does_en
   type: online
 ---
 
