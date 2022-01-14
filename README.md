@@ -191,22 +191,22 @@ Another aspect that I didn't mention so far was our plan to organize a presentat
 
 ## Tooling
 
-During the preparation phase, we also had to take decisions about the tools that we used to organize this event. **Simplicity** over fanciness was probably our major guideline here. In addition, we tried to use **FOSS tools** because it corresponded to the overall spirit of the program and because they were often quicker and easier to use because no further budget and sign-ups were required. But we also decided to be **pragmatic** and use commercial tools whenever they were providing us with a clearly simpler and more robust solution.
+During the preparation phase, we also had to make decisions which tools we should use to organize this event. **Simplicity** over fanciness was probably our major guideline here. In addition, we tried to use **FOSS tools** because it corresponded to the overall spirit of the program and because they were often quicker and easier to use because no further budget and sign-ups were required. But we also decided to be **pragmatic** and use commercial tools whenever they were providing us with a clearly simpler and more robust solution.
 
 Some of the FOSS tools we used (none of them self-hosted) were:
 
-- Cryptpad for collaborative text documents and sheets
-- BigBlueButton for webinar-style presentations
-- Jitsi for face-to-face video conferencing
-- Matrix for synchronous chat
+- Cryptpad for collaborative text documents and sheets. Cryptpad was quite feature complete and a good choice for collaborative writing and sheet calculations for organization. In our case, it competed with Google Docs which was probably better known by many and directly integrated with Google Drive. The latter was definitely an advantage for us, which is why we didn't fully move to Cryptpad.
+- BigBlueButton for webinar-style presentations. BigBlueButton was great, we used an instance hosted by the TU Delft for this event. Other hosted instances seemed to be difficult to find. Especially the shared-notes and recording features of BigBlueButton were nice to make the presentations somewhat interactive.
+- Jitsi for face-to-face video conferencing worked very well. No complaints. The fact that no-one had to sign up anywhere was a big plus, especially to later on organize the hiring event.
+- Matrix for synchronous chat worked well also. The user experience of its main client Element (formerly Riot) is sometimes not as polished as in commercial tools like discord or slack but in general it did what it was supposed to do. The “Space” feature of Matrix, basically just a set of channels, was very nice to integrate open community channels with our private event channels. We had a very simple set up with few general chat rooms and then a single private one for each team.
 
-Some of the commercial tools we used were:
+Coincidentally, all of these project had received NLNet funding, and we worked on improving packaging for all of them during the program. Some of the commercial tools we used were:
 
 - Hellosign for signatures
 - GitHub for the issue list, program documentation, discussion board and the actual source code
-- Google drive/docs to store administrative documents
+- Google Drive and Google Docs to store administrative documents
 
-In addition we used simple Email with a private contact list for administrative purposes and to send out .ics calendar invitations.
+During the project, we also worked on FOSS alternatives to these, so that in principle we could have run the full program FOSS-style. However, as I mentioned earlier, we had limited resources to set this up and needed to budget well what to spend our energy for. In addition to these tools, we used _a lot_ of simple Email for administrative purposes, to send out .ics calendar invitations and more, in cases where we could have used an external tool. This was nice in some way because everyone knows email and because it was possible to automate it to some degree—but for the size of the project it was probably a stretch and some more structured approaches could have helped.
 
 ## The program runs
 
