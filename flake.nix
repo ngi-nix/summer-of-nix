@@ -30,8 +30,8 @@
               buildPhase = ''
               export FONTCONFIG_FILE=${fonts}
               mkdir -p $out
-              sed -i -e '/{{contributions}}/{r contributions.md' -e 'd}' report.md
-              pandoc report.md --filter pandoc-crossref --csl ${styles}/chicago-fullnote-bibliography.csl --citeproc --pdf-engine=xelatex -o $out/report.pdf
+              sed -i -e '/{{contributions}}/{r contributions.md' -e 'd}' README.md
+              pandoc README.md --filter pandoc-crossref --csl ${styles}/chicago-fullnote-bibliography.csl --citeproc --pdf-engine=xelatex -o $out/README.pdf
               '';
           }
         );
