@@ -11,30 +11,30 @@ author: Matthias Meschede
 linestretch: 1.05
 geometry: "left=4cm, right=3cm, top=2.5cm, bottom=2.5cm"
 abstract: |
-  _The Summer of Nix 2021_ was a large coordinated effort to simplify access to Open Source Software. The program brought together independent developers and community enthusiasts for two months to write fully reproducible build-configure-run instructions for many Open Source tools using the next-gen reproducibility-first package manager Nix, to make them readily available and usable by anyone.
+  _The Summer of Nix 2021_ was a large coordinated effort to reproducibly package Open Source software to make it readily available and usable by anyone. The program brought together independent developers and community enthusiasts for two months to write build-configure-run instructions for many Open Source tools with the next-gen reproducibility-first package manager Nix. This report outlines the wider context, the development of the idea, organizational details and design, as well as concrete outcome and feedback of the participants. It is thought to be an interesting read for the funding organizations, future organizers and participants alike.
 ---
 
 # Context
 
-## Free and Open Source Software in reproducibility crisis
+## Free and Open Source Software in a complexity crisis
 
 <!--
 Decentralized Internet Vision because of resilience, control over data, making the infrastructure available to everyone
 -->
 
-The Internet should be open, decentralized, and privacy-respecting, built on top of a tissue of Free and Open Source Software (FOSS) that allows anyone to build new and innovative applications in this decentralized network of equally important nodes uncontroledl by few giants. This vision, propagated by many community and political actors[@ecstrategy] but definitely not current reality, ultimately derives from the fundamental idea of a participative society of sovereign citizens.
+The Internet should be open, decentralized, and privacy-respecting, built on top of a tissue of Free and Open Source Software (FOSS) that allows anyone to build new and innovative applications in a decentralized network of equally important nodes uncontrolled by few giants. This vision, pursued by many community and political actors[@ecstrategy], but at best partial reality right now, ultimately derives from the fundamental idea of a participative society of sovereign citizens.
 
 <!-- open and diverse ecosystems vs controlled standardized -->
 
-But, Free, and Open Software struggles where some tightly controlled ecosystems do fairly well: it is often notoriously difficult to install, configure and run—a natural consequence of the enormous diversity of approaches that thousands of self-thinking developers without centralized organization come up with[@linus].
+But, a tissue of Free and Open Software comes with complexity that tightly controlled ecosystems can often avoid. FOSS is thus often notoriously difficult to install, configure and run—a natural consequence of the enormous diversity of approaches that thousands of self-thinking developers without centralized organization come up with.
 
 <!-- illustrate the former -->
 
-These developers use their favorite programming languages, dependencies, operating systems, distribution formats and platforms, and their software often needs to be compiled from source because of this diversity. This diversity is a _feature_ of an open ecosystem which greatly fosters innovation and resilience. But it comes at the price that freely and openly available software is often difficult to actually run. The cost of setting up open source software, is thus sometimes higher than paying for an out-of-the box, fully integrated but opaque solution.
+These developers use their favorite programming languages, dependencies, operating systems, distribution formats and platforms, and their software often needs to be compiled from source because of this diversity. This diversity is a _feature_ of an open ecosystem which greatly fosters innovation and resilience. But it comes at the price that freely and openly available software is often difficult to actually set up and run. The cost of setting up a FOSS ecosystem, is thus often higher than paying for an out-of-the box, fully integrated but opaque solution. This problem has been recognized for a long time in computer science circles[@linus; @mancoosi].
 
 <!-- Nix as a solution to reproducibility -->
 
-The package manager Nix, designed to precisely reproduce the most diverse software ecosystems and thus manage this complexity, is an emerging technical solution for this problem. It is a central, required ingredient to make Open Source strategies a success, and this is the “raison d'être” of the _Summer of Nix_ program that his report is about. 
+The package manager Nix[@doolstra2004nix; @nixosHow] is an emerging technical solution to manage FOSS complexity, and as such, a central component to make any Open Source strategy a success. Making FOSS easily available via Nix is thus the “raison d'être” of the _Summer of Nix_ program that this report is about.
 
 ## Organizations and their interest behind the Summer of Nix
 
@@ -404,5 +404,25 @@ references:
   url: https://discourse.nixos.org/t/the-summer-of-nix-learn-nix-while-doing-useful-paid-work/12225
   type: online
 
+- id: mancoosi
+  author: Roberto Di Cosmo et al.
+  title: The Mancoosi project
+  url: https://www.mancoosi.org/
+  type: online
+
+- id: doolstra2004nix
+  type: inproceedings
+  title: "Nix: A Safe and Policy-Free System for Software Deployment."
+  author: {Dolstra, Eelco and De Jonge, Merijn and Visser, Eelco and others}
+  booktitle: {LISA}
+  volume: {4}
+  pages: {79--92}
+  year: {2004}
+
+- id: nixosHow
+  author: Nixos Community
+  title: NixOS Website
+  url: https://nixos.org/guides/how-nix-works.html
+  type: online
 ---
 
