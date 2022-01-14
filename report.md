@@ -242,7 +242,7 @@ During the program I knew that everyone was doing _something_, but it was unclea
 
 <!-- activity on the issue list -->
 
-![Number of newly created and closed issues in our central issue list as a function of time.](issues.png){#fig:issues}
+![Number of newly created and closed issues in our central issue list as a function of time.](./figures/issues.png){#fig:issues}
 
 A first entry point into the work we have done is the GitHub issue list that we worked on. The issue list activity is shown in @fig:issues. Most issues were created (orange line) automatically in two big chunks prior to starting Summer of Nix, from an internal project database that NLNet maintains. The number of issues grew further during the program, because some of the auto-generated issues were broken up into sub-issues and a few new projects were added by NLNet. Issues were closed (blue line) for a variety of reasons, primarily because the work had been done but also for a number of other reasons. For example, some issues have referred to hardware-only projects without anything to package, others were intractable for other reasons. A few issues remained in “ready for review” state at the end of the program since we were bottlenecked on capacity for more reviews. In absolute numbers, we have started with about 230 open issues at the start of the program of which a bit over 10 were already closed by prior packaging efforts. We ended up with a total number of 276 issues of which 101 were closed and 27 flagged as “ready for review”.
 
@@ -250,13 +250,13 @@ The sheer number of issues doesn't really give an idea of the work involved thou
 
 <!-- number of repositories -->
 
-![Number of repositories in the ngi-nix GitHub organization as a function of time.](repositories.png){#fig:repositories}
+![Number of repositories in the ngi-nix GitHub organization as a function of time.](./figures/repositories.png){#fig:repositories}
 
 Another, similarly limited but still interesting, perspective of the work done during Summer of Nix is the number of repositories under the `ngi-nix` GitHub organization. Every tool to be reproducibly packaged went under its own repository although there were exceptions such as upstream nixpkgs contributions. @fig:repositories shows that the number of repositories went up drastically once the program started, and a lot of new ones were created over the course of the program. All in all there are now about 180 repositories, many public but also some private, in the organization holding NLNet projects reproducibly packaged to varying degree (not all of the work was finished).
 
 <!-- add numbers about contributions channels from time sheets -->
 
-![Number of contributions for different upstream channels.](channels.png){#fig:channels width=50%}
+![Number of contributions for different upstream channels.](./figures/channels.png){#fig:channels width=50%}
 
 <!-- add numbers about additional team contributions from time sheets -->
 

@@ -20,24 +20,13 @@
         in
           pkgs.stdenv.mkDerivation {
               name = "SoNReport";
-              src = [
-                  ./report.md
-                  ./figures/repositories.png
-                  ./figures/issues.png
-                  ./figures/channels.png
-                  ./contributions.md
-                  ];
+              src = ./.;
               buildInputs = with pkgs; [
                 pandoc
                 texlive.combined.scheme-small
                 haskellPackages.pandoc-crossref
                 ];
               phases = ["unpackPhase" "buildPhase"];
-              unpackPhase = ''
-              for srcFile in $src; do
-                cp $srcFile $(stripHash $srcFile)
-              done
-              '';
               buildPhase = ''
               export FONTCONFIG_FILE=${fonts}
               mkdir -p $out
