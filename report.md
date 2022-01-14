@@ -108,7 +108,7 @@ The mentor arrangement was a bit different. For the mentors, we kept the origina
 
 <!-- announcement -->
 
-These basic decisions were enough to announce the program on the NixOS discourse [@sonannouncement] and see who would apply. We didn't want to design the program before knowing who would actually participate. The response to this announcement was overwhelming and much more than the 10-15 applications we expected. In total, we received 94 participant applications and in addition about 10 for mentoring. Applications were handled over email only because we tried to avoid sign-ups and reduce the barrier to participation as much as possible. Also email seemed more personal, especially when expecting only 20 applications anyway. But, although half automated, given the high number of applications, it also became an overhead, and getting applications in a more structured form might have simplified things.
+These basic decisions were enough to announce the program on the NixOS discourse [@sonannouncement] and see who would apply. We didn't want to design the program before knowing who would actually participate. The response to this announcement was overwhelming and much more than the 10-15 applications we expected. In total, we received **94 participant applications and in addition about 10 for mentoring**. Applications were handled over email only because we tried to avoid sign-ups and reduce the barrier to participation as much as possible. Also email seemed more personal, especially when expecting maximum 15 applications anyway. But, given the high number of applications email became an overhead, although we half automated it, and getting applications in a more structured form might have simplified things.
 
 <!-- interviews -->
 
