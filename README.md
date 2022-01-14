@@ -43,7 +43,7 @@ These developers use their favorite programming languages, dependencies, operati
 
 The package manager Nix[@doolstra2004nix; @nixosHow] is an emerging technical solution to manage FOSS complexity, and as such, a central component to make any Open Source strategy a success. Making FOSS easily available via Nix is thus the “raison d'être” of the _Summer of Nix_ program that this report is about.
 
-## Organizations and their interest behind the Summer of Nix
+## Organizations and their interest in the Summer of Nix
 
 Four institutions with different interests teamed up to realize the _Summer of Nix_:
 
