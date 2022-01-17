@@ -248,25 +248,31 @@ The event itself was quite a success, and seems to have run relatively smoothly 
 
 # Contributions
 
-## The Birds eye perspective
+_During the program I and others knew that everyone was doing _something_. We got a glimpse of each others work through daily meetings, chats and other means of communication. However, a larger perspective of what we have achieved as a group was very difficult to get until after the event. This section tries to provide some insight into this._
 
-<!-- gathering data -->
+## Code contributions — summary statistics
 
-During the program I knew that everyone was doing _something_, but it was unclear what we actually accomplished as a group. There also was no time to gather during the program and it was only after it finished mid-October that I started doing this, getting a better perspective.
+It would be so comfortable to simply go through our issue list and check what had been closed. For several reasons this wasn't as easy. So before actually looking at the Figure, let's consider that:
+
+The close state of an issue is often difficult to define. There are lots of 90%–done cases that aren't captured by closed issues. We tried to avoid this as much as possible but obviously couldn't do it entirely, and a lot of valuable work, such as packaged dependencies or working component packages, is within this group. We also had a “ready-for-review” label as additional issue state, but since our review team was probably under-staffed, we didn't manage to bring all of them all the way to closed. Also, issue granularity isn't fixed and issues are broken into smaller sub-issues that are then more easily closed. Still, considering these limitations, the issue list activity _is_ an important indicator and @fig:issues shows the number of created and closed issues as a function of time, as well as the number of issues flagged as “ready to review” that we ended up with.
 
 <!-- activity on the issue list -->
 
 ![Number of newly created and closed issues in our central issue list as a function of time.](./figures/issues.png){#fig:issues}
 
-A first entry point into the work we have done is the GitHub issue list that we worked on. The issue list activity is shown in @fig:issues. Most issues were created (orange line) automatically in two big chunks prior to starting Summer of Nix, from an internal project database that NLNet maintains. The number of issues grew further during the program, because some of the auto-generated issues were broken up into sub-issues and a few new projects were added by NLNet. Issues were closed (blue line) for a variety of reasons, primarily because the work had been done but also for a number of other reasons. For example, some issues have referred to hardware-only projects without anything to package, others were intractable for other reasons. A few issues remained in “ready for review” state at the end of the program since we were bottlenecked on capacity for more reviews. In absolute numbers, we have started with about 230 open issues at the start of the program of which a bit over 10 were already closed by prior packaging efforts. We ended up with a total number of 276 issues of which 101 were closed and 27 flagged as “ready for review”.
+The figure shows that most issues were created (orange line) automatically in two big chunks, mid-2020 a year before starting Summer of Nix when the original packaging project with independent developers working as contractors started. The issues were created from an internal project database that NLNet maintains of each of the projects they support with grants. The number of issues grew further during the program, because some of these auto-generated issues were broken up into sub-issues and a few new projects were added directly by NLNet.
 
-The sheer number of issues doesn't really give an idea of the work involved though, because their size and difficulty varied drastically. Some issues involved simply bumping a version on nixpkgs because the associated project had already been packaged there, others involved profound work on bootstrapping infrastructure or mobile NixOS that could easily have taken the time of a single packager over the whole program's time frame and more. Another number is the number of issues closed or flagged as “ready to review” _on average per participant_, which was about 3.4, slightly above our expected rate of 3. However, this number is not great and really only a gross approximation because in addition to issue diversity we also had drastic developer diversity so that a simple mean doesn't give a good idea of the actual accomplished work distribution. Finally, and most importantly, the number of closed NGI packages only captures a small part of the actual code contributions of this program plenty of upstream contributions, bug fixes, improved documentation came out of it, and it doesn't capture the quality of it.
+Issues were closed (blue line) for a variety of reasons, primarily because the work had been done but also for a number of other reasons. For example, some issues were duplicates, others referred to hardware-only projects without anything to package, others were intractable for other reasons. Issues that remained in “ready for review” state (green marker) at the end of the program are also shown. In absolute numbers, we have started with about 230 open issues at the start of the program of which a bit over 10 were already closed by prior packaging efforts. We ended up with a total number of 276 issues of which 101 were closed and 27 flagged as “ready for review”.
+
+As discussed above, the number of issues alone doesn't give a good idea of the work involved because their size and difficulty varied drastically, even if they were valid packaging requests. Some involved simply bumping a version on nixpkgs because the associated project had already been packaged there, others involved profound work, for example bootstrapping, mobile NixOS, work on tooling to tackle badly supported language ecosystems, but also simply small but difficult-to-package programs and others with many unpackaged dependencies that also had to be delivered. Work on such issues could easily have taken the time of a single packager over the whole program's time frame and more.
+
+An interesting number, although equally treacherous, is the number of issues closed or flagged as “ready to review” _on average per participant_. It was about 3.4, above our expected rate of 3. Again, this number is really only a gross approximation of work, and it doesn't capture any of the additional non-NGI packages, bug fixes, improved documentation and tooling and other contributions that came out of it. It also doesn't capture the quality of the contributions.
 
 <!-- number of repositories -->
 
 ![Number of repositories in the ngi-nix GitHub organization as a function of time.](./figures/repositories.png){#fig:repositories}
 
-Another, similarly limited but still interesting, perspective of the work done during Summer of Nix is the number of repositories under the `ngi-nix` GitHub organization. Every tool to be reproducibly packaged went under its own repository although there were exceptions such as upstream nixpkgs contributions. @fig:repositories shows that the number of repositories went up drastically once the program started, and a lot of new ones were created over the course of the program. All in all there are now about 180 repositories, many public but also some private, in the organization holding NLNet projects reproducibly packaged to varying degree (not all of the work was finished).
+Another, similarly limited but still interesting, perspective of the code-contributions done during Summer of Nix is the number of repositories under the `ngi-nix` GitHub organization. Every tool to be reproducibly packaged went under its own repository, although there were exceptions such as upstream nixpkgs contributions. @fig:repositories shows that the number of repositories went up drastically once the program started, and a lot of new ones were created over the course of the program. All in all there are now about 180 repositories, many public but also some private, in the organization holding NLNet projects reproducibly packaged to varying degree. Not all of this work had been finished, and some was adjacent work and not directly an NGI package, which is why this number is higher than the number of issues closed or flagged for review.
 
 <!-- add numbers about contributions channels from time sheets -->
 
@@ -274,21 +280,28 @@ Another, similarly limited but still interesting, perspective of the work done d
 
 <!-- add numbers about additional team contributions from time sheets -->
 
-Besides GitHub, another source of information are the time sheets that program participants have filled out with their contributions. Although it is a tedious job, we have gathered every reported contribution, a whopping number of 199 repositories, upstream PRs or relevant issues to various channels in structured form (The full list is in the end of this report). @fig:channels summarizes where those contributions went: most are repositories on NGI, filled with Nix package descriptions for the respective tools, then a lot of contributions went directly to nixpkgs, Nix' official software library, with NGI packages or dependencies of them, and others to the wider Nix ecosystem or to upstream repositories with bug fixes or other enhancements that came up in the packaging effort.
+Besides GitHub, another source of information are the time sheets that program participants had filled out during the program. We asked participants to list their contributions in there. Although it was a tedious job, we gathered every reported contribution, a whopping number of 199 repositories, upstream PRs or relevant issues to various channels in structured form from these time sheets (The full list is in the next subsection). @fig:channels summarizes _where_ those contributions went: most are repositories on NGI, filled with Nix package descriptions for the respective tools, then a lot of contributions, NGI packages, dependencies of them, bug fixes or improvements to documentation, went directly to nixpkgs, Nix' official software library. And finally others to the wider Nix ecosystem or to upstream repositories.
 
 <!-- other Nix contributions -->
 
-The wider contributions for the Nix community were bug fixes on the so-called 2nix helper tools to reproducibly package various programming language ecosystems. But also new and very interesting tools were initiated like dream2nix, static analyzer, and contributions to documentation that hopefully simplify future packaging efforts.
+Most contributions to the Nix community, outside of nixpkgs, were bug fixes on the so-called 2nix helper tools to reproducibly package various programming language ecosystems. But also new and very interesting tools were initiated like dream2nix, static analyzer, contributions to documentation that hopefully simplify future packaging efforts, and two RFCs were written with suggestions to evolve the Nix ecosystem.
 
-<!-- outcome for participants -->
+## Contribution list
 
-It's hard to say what concrete outcomes the program had for individual participants. Some became first-time maintainers on nixpkgs, others got hired either by the project teams they worked on, or through the hiring event—but I don't have exact numbers and not even a vague idea here how many in total.
+<!-- this is replaced at build time with the list of contributions -->
+{{contributions}}
 
-We had in total four participant drop outs—two of those before the program started. Not everyone finished the program fully. The participant contract was designed to deliver 320 hours in two chunks of 160 hours. Basically everyone delivered the full chunk on the first half, but 5 participants finished the second part only partially for various reasons. This means that we initially had 31 participants working and a few less at the end of the program.
+## No-code contributions
 
 In addition to just participating, one participant ran a Nix camp where one could hack on-site together. Another wrote a blog post for the Summer of Nix website. Yet another participant helped to record all video sessions (which turned out to be great learning material but unfortunately not produced to become public).
 
-# Participant feedback
+## Outcome _for_ the participants
+
+If it's hard to evaluate the code-contributions of the program, it is even more difficult to say what the outcome was for individual participants. Some greatly enjoyed the program, became first-time maintainers on nixpkgs. Others got hired either by the project teams they worked on, or through the hiring event. Some didn't enjoy it as much and probably didn't take out a lot. I don't have exact numbers and had not even a vague idea here.
+
+Directly from the time sheets, we could see that in total four participant dropped out—two of those before the program started. Not everyone finished the program fully either. The participant contract was designed to deliver 320 hours in two chunks of 160 hours. Basically everyone delivered the full chunk on the first half, but 5 participants finished the second part only partially for various reasons. This means that we initially had 31 participants working and a fewer at the end of the program.
+
+# Feedback
 
 We organized four open feedback sessions after Summer of Nix to gather thoughts about the program from the perspective of participants and mentors—ultimately the core groups of the program.
 
@@ -371,11 +384,6 @@ A future edition should therefore focus on improving the implementation and orga
 All in all, I am really grateful to have been given the chance to organize this program by my direct employer Tweag, the NixOS and NLNet Foundations and ultimately the European Commission, but then especially all the participants, mentors and volunteered who actually ran this program in the end and who achieved an amazing amount of contributions.
 
 I hope that together we were able to make a small contribution to the FOSS universe and that we can continue to doing so in a variety of forms.
-
-# Contribution List
-
-<!-- this is replaced at build time with the list of contributions -->
-{{contributions}}
 
 # References
 
