@@ -57,6 +57,8 @@ The final actor, **Tweag**[@tweag], is a software consultancy and one of the pri
 
 # Designing and running Summer of Nix
 
+_This section is written for those interested in the organization behind Summer of Nix, the program constraints, the reasons why made certain choices, and also what organization means concretely. If you are interested in the outcome only, you might want to skip ahead._
+
 ## The idea emerges
 
 <!-- What is it -->
@@ -247,7 +249,6 @@ The event itself was quite a success, and seems to have run relatively smoothly 
 # Contributions
 
 ## The Birds eye perspective
-
 
 <!-- gathering data -->
 
