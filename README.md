@@ -371,17 +371,15 @@ We delivered Summer of Nix slightly under budget because of a few dropouts and s
 
 # Conclusions
 
-Overall, I am quite happy with how the overall program turned out. We knew that we had quite tight time constraints but we had probably a unique opportunity this year with pre-existing budget to realize an event like this. Under these constraints, now after gathering the data I am amazed about what we have accomplished:
+Overall, I am quite happy with how the overall program turned out. We knew that we had quite tight time budget for organization and also limited experience, but we also knew that it was a unique opportunity to have a pre-existing budget and a group of people interested in doing an event. Under these constraints—and I hope this report makes it clear that organization is “the art of the possible” _within constraints_—after gathering the data, I am quite amazed about what we have accomplished:
 
-We delivered more than expected although not everyone finished the program.
+First of all, despite ups and downs, it seemed to have been an overall fun event for the participants. And much of the feedback about things to improve can be traced back to a lack of time on the organizational side, the fact that we were designing this program from scratch, and that everyone was new in their respective roles—we knew that this would be the case the first time. There was little concern about the general idea and set up of the program, the principal goals of the program, **learn, meet, deliver** seemed to be appreciated as well as working with FOSS software, and also the implementation wherever it worked well.
 
-It seemed to have been a fun event for the participants. Much of the feedback can be traced back to a lack of time on the organizational side, and the fact that we were designing this program from scratch, and that everyone was new in their respective roles. There was little concern about the general idea and set up of the program. The principal goals of the program, **learn, meet, deliver** seem to be appreciated as well as working with FOSS software.
+Then, independent of the work output, a measure of success for the Summer of Nix for us was whether we can bring new long term members to the community—maybe even professionally, and certainly we succeeded with some in this regard.
 
-Independent of the work output, a measure of success for the Summer of Nix is whether we can bring new long term members to the community—maybe even professionally, and certainly we succeeded with some in this regard as well.
+In my view, a future edition should therefore focus on improving the implementation and organization of the program to make most out of everyone's valuable time. I think, judging from the feedback sessions and personal conversations, there is good general alignment on what could be improved. The main bottleneck to actually do so are the organizational capacities that we have to actually realize these ideas under budget and other constraints. Distributed decision making will be central to achieve this. However, one central constraint that we were all newcomers, designing a program from scratch is now gone and should immediately improve the situation—although the second round of something can sometimes also mean a dip in motivation.
 
-A future edition should therefore focus on improving the implementation and organization of the program and focus to make most out of everyone's time. I think there is good general alignment on what could be improved. The main bottleneck here are the organizational capacities that we have to actually realize these ideas under budget and other constraints. Distributed decision making will be central to achieve this.
-
-All in all, I am really grateful to have been given the chance to organize this program by my direct employer Tweag, the NixOS and NLNet Foundations and ultimately the European Commission, but then especially all the participants, mentors and volunteered who actually ran this program in the end and who achieved an amazing amount of contributions.
+Personally, I am really grateful to have been given the chance and trust to organize this program by my direct employer Tweag, the NixOS and NLNet Foundations and ultimately the European Commission, but especially also by the participants, mentors and volunteers who actually ran this program in the end achieving an amazing amount of contributions.
 
 I hope that together we were able to make a small contribution to the FOSS universe and that we can continue to doing so in a variety of forms.
 
