@@ -295,7 +295,7 @@ Most contributions to the Nix community, outside of nixpkgs, were bug fixes on t
 
 In addition to just participating, one participant ran a Nix camp where one could hack on-site together. Another wrote a blog post for the Summer of Nix website. Yet another participant helped to record all video sessions (which turned out to be great learning material but unfortunately not produced to become public).
 
-## Outcome _for_ the participants
+## Outcome for the participants
 
 If it's hard to evaluate the code-contributions of the program, it is even more difficult to say what the outcome was for individual participants. Some greatly enjoyed the program, became first-time maintainers on nixpkgs. Others got hired either by the project teams they worked on, or through the hiring event. Some didn't enjoy it as much and probably didn't take out a lot. I don't have exact numbers and had not even a vague idea here.
 
