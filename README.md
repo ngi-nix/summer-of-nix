@@ -17,7 +17,7 @@ geometry: "left=4cm, right=3cm, top=2.5cm, bottom=2.5cm"
 ---
 abstract: |
 
-  _The Summer of Nix 2021_ was a large coordinated effort to reproducibly package Open Source software, making it readily available and usable by anyone. The program brought together independent developers and community enthusiasts for two months to write build-configure-run instructions with the next-gen reproducibility-first package manager Nix. This report retells the story of how and why the project came into existence, what constraints and design choices shaped it, how we organized it, what problems we encountered while it was running, and finally what its outcome was including feedback from the participants. I hope it is an interesting read for the funding organizations, future organizers and participants alike.
+  _The Summer of Nix 2021_ was a large coordinated effort to reproducibly package Open Source software, making it readily available and usable by anyone. The program brought together independent developers and community enthusiasts for two months to write build-configure-run instructions with the next-gen reproducibility-first package manager Nix. This report retells the story of how and why the project came into existence, how it got shaped by constraints and design choices, how it was organized, what problems it encountered, and finally what its measurable outcome was as well as feedback from the participants. I hope it is an interesting read for the funding organizations, future organizers and participants alike.
 
 ---
 
