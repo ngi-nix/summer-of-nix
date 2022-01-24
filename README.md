@@ -121,15 +121,21 @@ The response to this announcement was overwhelming and much more than the 10-15 
 
 In the application email, we asked a few simple questions to the applicants: Who are you? Why are you interested in this program? What are you able to do with in Nix? What would you like to learn? When are you available? What time zone? Specific requirements? Optional CV. These questions turned out to be good and very useful to quickly assess the goals of the applicants. Because of our decision for interviews, we did over 100 interviews in about one month with a little team of four volunteers who were doing this besides their work. Again, in hindsight this was maybe not worth it and quite exhausting, but it also gave the program a very personal, respectful and warm touch. As interviewers we got a much better feeling for the Nix community, the wishes and goals of the applying participants, and therefore ultimately the program that we were going to run. During these interviews it became clear that we had a lot of enthusiastic, extremely nice and very knowledgeable people applying.
 
-## Selection process and team building
+## Total number of seats, selection process and team building
 
 <!-- why we needed to select -->
 
 The sheer amount and the high quality of the applications was extremely motivating and made us want to turn forward time to get started, but it also brought us in the unpleasant situation of having to select and pick one good person over another—something we had hoped wouldn't happen anyway.
 
-<!-- selection through team building -->
+<!-- How many -->
 
-Once we saw the number of applications, we realized that we needed several teams to provide for the support structure that we wanted to achieve with this program. Ultimately we had a limited number seats in the program because of our budget but the upper limit was quite generous and what was really the decisive question was whether we could make effective use of the money. This was the moment where we had the choice to run a small, well-controlled program, or to try running one with an autonomous team structure that would scale. We decided to go with the latter for various reasons: we thought the latter was necessary anyway because we didn't have the resources to top-down direct much, it also seemed more fun and in the spirit of the program to setup something somewhat decentralized with lots of opportunities to network and connect. Finally, another important reason was that we wanted and needed to move much faster than with the previous packaging effort. Investing budget well means, for funding organizations, not only to invest optimally in a static world but also to do so rapidly. This time factor is often neglected. Out of these and other reflections we decided to go with **five developers plus one mentor as basic team structure**.
+Ultimately we had a limited number seats in the program because of our budget but the upper limit of the packaging budget was quite generous, more than what we could and wanted to spend in a single untested program. What was really the decisive question was whether we could make effective use of the money. This was the moment where we had the choice to run a small directed program, or to try running one with an autonomous team structure that could scale. We decided to go with the latter for various reasons: 
+
+We thought a program that scales with autonomous teams was necessary anyway because we didn't have the resources to top-down direct much. It also seemed more fun and in the spirit of the program as a community event to set up something somewhat decentralized with opportunities to participate, network and connect.
+
+But this still left the total size open. The final number that we came up with balanced out a variety of considerations: We wanted and needed to move faster than with the previous packaging effort. Investing budget means, for funding organizations, not only to invest optimally in the static sense of an idealized world with unlimited time, but to do so timely because reality is dynamic and funding is available when it is available. This time factor is often neglected. We weren't under immediate budget pressure of having to spend it all, but we needed to speed up investing the money quite a bit to stay on track with the goals of the funding organizations (ultimately the EC's NGI program). But why not spend it all if the opportunity is good? Would there be a better one later? We went for a compromise and decided to invest a bit more than half of what the budget allowed, retaining a good bit to buffer the risk of failure, and also to have money for potential follow up work.
+
+With all of these reflections and more, and given the number of applicants we had, we decided to try building **seven teams that each had five developers plus one mentor as basic team structure**. This meant a total of **35 participants and 7 mentors**. Based on the applications, we decided to add one extra mentor who would work on cross-team tasks that I'll describe later.
 
 <!-- diversity -->
 
@@ -150,10 +156,6 @@ All this meant that we were left with building teams that were diverse along the
 <!-- other possibilities -->
 
 We maybe could have considered additional axes to build the teams. For example, grouping people who were interested in similar technology, but this seemed to become too complicated under the other constraints and also a bit premature because we didn't go through the actual work yet in detail and hadn't thought about how to actually distribute it among the teams. Perhaps, rather than searching for ways to optimize teams further upfront, an additional mechanism to adapt and improve them during the program would have been something useful—but also potentially dangerous if done maladroit.
-
-<!-- result -->
-
-In any case, we have built seven teams of five with this process, meaning that we would have **35 participants and 7 (+1) mentors**. The additional mentor was reserved for additional tasks, and it would become clear later what those were. The total number of participants and mentors also determined the overall budget that we would need, which was higher than originally anticipated and meant that we were eating into money reserved for later, but it felt like a good investment since the application quality was so high.
 
 ## Timeline, issue organization, events and start
 
