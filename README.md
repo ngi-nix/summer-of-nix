@@ -47,11 +47,11 @@ Four institutions with different interests teamed up to realize the _Summer of N
 
 The **European Commission**[@ec] (EC) was the initial _source of funding_ for Summer of Nix via their Next Generation Internet (NGI) initiative. The goal of NGI is to “shape the development and evolution of the Internet into an Internet of Humans. An Internet that responds to people’s fundamental needs, including trust, security, and inclusion, while reflecting the values and the norms all citizens enjoy in Europe” [@NGI]. NGI is funds a large variety of projects and subprograms with 312 million Euro between 2018 and 2022.
 
-The **NLNet Foundation**[@nlnet] (NLNet) is an independent foundation, largely aligned with the above stated mission of the EC's NGI initiative, funding independent developers to work on FOSS for a long time. NLNet had been charged by the EC, via their cascading grant mechanism, to _distribute_ parts of the NGI funds. This specifically concerns funds from a subprogram called NGI Zero [@NGI0] that “provides grants to individual researchers and developers as well as small teams to work on important new ideas and technologies that contribute to the establishment of the Next Generation Internet”. Within NGI Zero another sub-initiative called PET [@PET] focuses on privacy and trust enhancing technology, which ultimately became the principal source of funding of Summer of Nix. Plenty of FOSS solutions, which NLNet funded within this setting, faced the outlined FOSS complexity challenge to reliably build and deploy. Looking out for a technical solution, NLNet chose Nix as preferred packaging strategy because of its unique reproducibility guarantees and other features such as composability that allow to realize their and NGI's wider vision. This is how parts of the funds became available to package NGI-funded software with Nix. NLNet has approached the NixOS Foundation to help them with this packaging effort.
+The **NLnet Foundation**[@nlnet] (NLnet) is an independent foundation, largely aligned with the above stated mission of the EC's NGI initiative, funding independent developers to work on FOSS for a long time. NLnet had been charged by the EC, via their cascading grant mechanism, to _distribute_ parts of the NGI funds. This specifically concerns funds from a subprogram called NGI Zero [@NGI0] that “provides grants to individual researchers and developers as well as small teams to work on important new ideas and technologies that contribute to the establishment of the Next Generation Internet”. Within NGI Zero another sub-initiative called PET [@PET] focuses on privacy and trust enhancing technology, which ultimately became the principal source of funding of Summer of Nix. Plenty of FOSS solutions, which NLnet funded within this setting, faced the outlined FOSS complexity challenge to reliably build and deploy. Looking out for a technical solution, NLnet chose Nix as preferred packaging strategy because of its unique reproducibility guarantees and other features such as composability that allow to realize their and NGI's wider vision. This is how parts of the funds became available to package NGI-funded software with Nix. NLnet has approached the NixOS Foundation to help them with this packaging effort.
 
-The **NixOS Foundation**'s [@nixosfoundation] mission is “to support the infrastructure and development of the NixOS project as a whole”. It's scope of action is limited to essential tasks in the Nix ecosystem due to limited resources, but also because Nix is managed to a large extent by a vibrant and self-organizing community. The availability of funding for Nix packaging from NLNet was a welcome opportunity for them to grow and improve the Nix ecosystem. The NixOS Foundation thus started to work on packaging with individual contractors. They set up infrastructure such as a continuous integration server, and a task list, before the idea of Summer of Nix even came up. But the NixOS Foundation lacked the manpower to drive this program forward more actively. That is how the idea of a collaboration with Tweag emerged. In this collaboration, the NixOS Foundation was the _administrating organization_ of the Summer of Nix, handling contracts, payments, IT infrastructure and more, but could largely stay out of program design and daily management.
+The **NixOS Foundation**'s [@nixosfoundation] mission is “to support the infrastructure and development of the NixOS project as a whole”. Its scope of action is limited to essential tasks in the Nix ecosystem due to limited resources, but also because Nix is managed to a large extent by a vibrant and self-organizing community. The availability of funding for Nix packaging from NLnet was a welcome opportunity for them to grow and improve the Nix ecosystem. The NixOS Foundation thus started to work on packaging with individual contractors. They set up infrastructure such as a continuous integration server, and a task list, before the idea of Summer of Nix even came up. But the NixOS Foundation lacked the manpower to drive this program forward more actively. That is how the idea of a collaboration with Tweag emerged. In this collaboration, the NixOS Foundation was the _administrating organization_ of the Summer of Nix, handling contracts, payments, IT infrastructure and more, but could largely stay out of program design and daily management.
 
-The final actor, **Tweag**[@tweag], is a software consultancy and one of the principal enterprise user and contributor to Nix. Tweag sponsored developer time for project management, to actually _design, organize and run_ the Summer of Nix. Tweag's interests are to improve and give visibility to Nix, and to foster and participate in the lively community around it.
+The final actor, **Tweag**[@tweag], is a software consultancy and one of the principal enterprise users and contributors to Nix. Tweag sponsored developer time for project management, to actually _design, organize and run_ the Summer of Nix. Tweag's interests are to improve and give visibility to Nix, and to foster and participate in the lively community around it.
 
 # Designing and running Summer of Nix
 
@@ -63,7 +63,7 @@ _This section is written for those interested in the organization behind Summer 
 
 <!-- idea came from developer feedback: -->
 
-The initial idea to run a large, concentrated community program in the summer, developed as a reaction to feedback from the Nix community about the already existing packaging effort with individual developers working independently through the numerous NLNet projects. The existing effort was not advancing as quickly as intended, and did not appear appealing enough to attract enough applications.
+The initial idea to run a large, concentrated community program in the summer, developed as a reaction to feedback from the Nix community about the already existing packaging effort with individual developers working independently through the numerous NLnet projects. The existing effort was not advancing as quickly as intended, and did not appear appealing enough to attract enough applications.
 
 <!-- unqualified with no time to learn -->
 
@@ -71,7 +71,7 @@ Many community members felt unqualified to work professionally with Nix, because
 
 <!-- packaging research tools is unattractive -->
 
-Another aspect was that independently working on packaging was in itself not regarded attractive work, where besides delivering one could have learned new things and made interesting connections. This was reinforced by the fact that many of the NLNet tools to package were still experimental, in prototype or alpha stage, without significant user base, and some having no regular maintenance. Finally, although the program was appropriately funded, it was not as financially attractive as some software industry jobs.
+Another aspect was that independently working on packaging was in itself not regarded attractive work, where besides delivering one could have learned new things and made interesting connections. This was reinforced by the fact that many of the NLnet tools to package were still experimental, in prototype or alpha stage, without a significant user base, and some without regular maintenance. Finally, although the program was appropriately funded, it was not as financially attractive as some software industry jobs.
 
 <!-- Real challenge: What excites developers? -->
 
@@ -101,7 +101,7 @@ The general idea “try running a condensed community program to make NGI packag
 
 <!-- compensation -->
 
-Compensation was set to a flat base rate of 2750 Euro per participant for 8 weeks of full time work anywhere within the EU — a gesture to the entity who ultimately funded this project — and for other locations adjusted to purchasing power, based on a list from Google's Summer of Code in lack of a better resource. We considered worldwide equal pay as well. Arguments for and against were discussed, but ultimately we decided for adjustment, mainly because this was recommended by the European Commission and others who had more experience than us with the implications of one over the other. It meant that participants from EU countries with lower purchasing power received the most attractive offering due of the flat rate, which corresponded to the conditions at NLNet Foundation's seat in the Netherlands. Worldwide payments were handled by the NixOS Foundation and NLNet, experienced with this type of situation. One additional thought about compensation was that we did not determine it by simply dividing the total available budget to spend it all, but based on a pre-existing expectation of what should be delivered for the money. With the above compensation, a participant, on average would have to deliver roughly three packages over the eight-week period — a number that we expected to vary significantly, as the software to be packaged was so diverse. Still this number remained our guideline to see how this most freely organized community event faired economically in direct comparison with independently working developers, not taking into account the additional benefits of a community event for the developers and the community besides packaging.
+Compensation was set to a flat base rate of 2750 Euro per participant for 8 weeks of full time work anywhere within the EU — a gesture to the entity who ultimately funded this project — and for other locations adjusted to purchasing power, based on a list from Google's Summer of Code for lack of a better resource. We considered worldwide equal pay as well. Arguments for and against were discussed, but ultimately we decided for adjustment, mainly because this was recommended by the European Commission and others who had more experience than us with the implications of one over the other. It meant that participants from EU countries with lower purchasing power received the most attractive offering due to the flat rate, which corresponded to the conditions at the NLnet Foundation's seat in the Netherlands. Worldwide payments were handled by the NixOS Foundation and NLnet, who are experienced with this type of situation. One additional thought about compensation was that we did not determine it by simply dividing the total available budget to spend it all, but based it on a pre-existing expectation of what should be delivered for the money. With the above compensation, a participant on average would have to deliver roughly three packages over the eight-week period — a number that we expected to vary significantly, as the software to be packaged was so diverse. Still this number remained our guideline to see how this most freely organized community event faired economically in direct comparison with independently working developers, not taking into account the additional benefits of a community event for the developers and the community besides packaging.
 
 <!-- time frame -->
 
@@ -109,7 +109,7 @@ Finding a time frame turned out difficult. Choosing August 2nd to October 15th 2
 
 <!-- mentor arrangement -->
 
-The mentor arrangement was different. For the mentors, we kept the original rate received by independent NLNet packagers, about 50 Euro/hour — significantly higher, and with corresponding expectations and responsibility. This meant that we could not possibly employ mentors full time. We thought mentors could be present for about 8 hours per week to coordinate and answer questions, and deliver a total of 100 hours over the 10-11 week program.
+The mentor arrangement was different. For the mentors, we kept the original rate received by independent NLnet packagers, about 50 Euro/hour — significantly higher, and with corresponding expectations and responsibility. This meant that we could not possibly employ mentors full time. We thought mentors could be present for about 8 hours per week to coordinate and answer questions, and deliver a total of 100 hours over the 10-11 week program.
 
 ## Announcement and interviews
 
@@ -142,7 +142,7 @@ The sheer amount and the high quality of the applications was extremely motivati
 
 <!-- How many -->
 
-Ultimately we had a limited number seats in the program because of our budget but its upper limit was quite generous, more than what we could and wanted to spend in a single untested program.
+Ultimately we had a limited number of seats in the program because of our budget but its upper limit was quite generous, more than what we could and wanted to spend in a single untested program.
 The decisive question was therefore whether we could make effective use of the money that we planned to spend and how much we needed to retain to cover the risk of falling behind the expected work.
 We had the choice to run a small directed program, or try running a slightly bigger one with an autonomous team structure that could scale. We decided to go with the latter for various reasons: 
 
@@ -181,7 +181,7 @@ Therefore, although a range of continents and cultures were represented, partici
 <!-- gender -->
 
 Another shortcoming, as unfortunately so often in the tech world, was in failing to achieve gender diversity.
-The only two (very strong) female applications were not enough to even consider forming somewhat gender diverse teams.
+The only two (very strong) female applicants were not enough to even consider forming somewhat gender-diverse teams.
 
 <!--how we built the teams in the end -->
 
@@ -217,7 +217,7 @@ The first question to answer for all of us was what we would be working on exact
 
 <!-- the issue list -->
 
-Thanks to prior work from the NLNet and NixOS Foundations, we already had a written list of relatively independent work items, which essentially amounted to the more than 200 NLNet projects to package, prepared as a long list of GitHub issues.
+Thanks to prior work from the NLnet and NixOS Foundations, we already had a written list of relatively independent work items, which essentially amounted to the more than 200 NLnet projects to package, prepared as a long list of GitHub issues.
 Certainly, some information was missing in those issues, there were duplicates, and some of them were simply not tractable, but overall this list was a treasure trove, and we would have had trouble to get ready in time without it.
 
 <!-- assign and trade -->
@@ -233,11 +233,11 @@ This is why we introduced a trading mechanism, such that teams could report inte
 
 <!-- packaging workflow -->
 
-As further preparation, we also wrote a step-by-step packaging work flow to set some standards to get everyone started quickly:
+As further preparation, we also wrote a step-by-step packaging workflow to set some standards to get everyone started quickly:
 
 As developer you look through the issues assigned to your team via filtering by GitHub label.
 Once you find an interesting one, you assign yourself to it.
-An issue corresponds roughly to an independent NLNet project.
+An issue corresponds roughly to an independent NLnet project.
 The first step after assignment is to find out what it is about exactly, and what could actually be packaged.
 Once this is done, you start packaging by forking the original repository to the [NGI-Nix](https://github.com/ngi-nix) GitHub organization, adding the Nix build instructions directly to it.
 Once ready, there are several paths to continue:
@@ -256,14 +256,14 @@ We hoped that this would allow the other mentors to concentrate on working with 
 
 <!-- getting started with a test run -->
 
-With the issue assignment strategy and the basic work flow, we felt ready to get started, but we were also scared to actually do so.
+With the issue assignment strategy and the basic workflow, we felt ready to get started, but we were also scared to actually do so.
 Having 43 participants and mentors all starting out at once without any test seemed audacious.
 The fear was not that our upfront preparation and game plan wouldn't work out perfectly.
 It was always thought more as a guideline for self-thinking individuals.
 With the little time that we had to organize the program we did not hope to get anywhere close to perfection.
 But we feared to have missed something major that would block and demotivate the brightest participants right from the beginning.
 Fortunately, two participants and their team mentor were willing to get started already in July 2021, one month before the actual start date on August 2nd, to try what we had prepared.
-They began to package the first repositories, started to flag up problems, and got used to the program.
+They began to package the first repositories, started to flag problems, and got used to the program.
 
 <!-- events -->
 
@@ -295,7 +295,7 @@ The user experience of its main client Element (formerly Riot) was sometimes not
 The “Space” feature of Matrix, basically a set of channels, was very convenient to integrate open community channels with our private event channels.
 We had a very simple setup with two general chat rooms, a single private one for each team, and in addition an admin and mentor channel.
 
-Coincidentally, all of these open source tools had received NLNet funding, and we worked on improving packaging for them during the program.
+Coincidentally, all of these open source tools had received NLnet funding, and we worked on improving packaging for them during the program.
 Some of the commercial tools we used in addition were:
 
 - **Hellosign** for signatures
@@ -312,18 +312,18 @@ This was advantageous in a way, as everyone knows email, and because it was poss
 <!-- project start, handover to the mentors -->
 
 The strange thing about bigger projects from the perspective of the organizer is that the start does not really feel like the start, because so much of the work has already happened.
-And as soon as the project starts, it feels, like a boulder rolling down the hill, hard to influence where it will end up.
+And as soon as the project starts, it feels like a boulder rolling down the hill, hard to influence where it will end up.
 It paid out to have clear, built-in and scalable day-to-day mechanisms for feedback, guidance, and decision-making, via the mentors who were admittedly dropped into a situation with significant responsibility, little time for preparation, and tight time budget, officially being only available one day per week for coordination.
 The mentors handled the major part of the organizational work load from day to day; guiding, organizing and resolving as much as possible directly with their teams.
 The bottlenecks that we did encounter were the decisions that could not be made by the mentors, or where it was not clear if they had the authority to make them.
-In this case, questions were handed upwards, mostly to NLNet for whom this was a significant amount of work to stay on track.
+In this case, questions were handed upwards, mostly to NLnet for whom this was a significant amount of work to stay on track.
 During the program we had little problems with bad decisions, but with bottlenecks and a lack of responsiveness when decisions went upwards, which was sometimes frustrating and a sign that local decision making could have been even better, and surely something to improve on.
 
 <!-- little vision about what actually happened -->
 
 In this decentralized situation no one had an oversight of the whole program.
 Work was distributed and trust-based, and everyone only had their own limited perspective.
-Participants knew most about the packages they were working on, mentors had a larger vision of their team activities and also the issue list, organizers were busy organizing, and NLNet and others busy resolving questions.
+Participants knew most about the packages they were working on, mentors had a larger vision of their team activities and also the issue list, organizers were busy organizing, and NLnet and others busy resolving questions.
 We did not have effective and fast reporting mechanisms in place.
 Our global issue list captured only a small part of what was going on.
 In addition, participants filled out time sheets with weekly granularity but we did not have the time to read those until after the event.
@@ -348,7 +348,7 @@ The program ran in this manner more or less autonomously.
 I, as main project organizer, was even able to hand over coordination for two weeks to go on a vacation after a very intense half-year.
 The program went on without notable accidents, although of course smaller problems came up.
 As was to be expected, many things could be improved _even under the same program constraints_ if we were to repeat this program.
-But some of what exactly could be improved only became clear _after_ the event, when we asked for detailed feedback, which is covered in a [Feedback](#feedback) section of this report.
+But some of what exactly could be improved only became clear _after_ the event, when we asked for detailed feedback. This is covered in the [Feedback](#feedback) section of this report.
 
 ## The hiring event
 
@@ -408,7 +408,7 @@ However, a larger perspective of what we have achieved as a group was very diffi
 It would be convenient to simply go through our issue list and check what had been closed, and take that as the program output.
 For several reasons it was not that easy:
 
-Although the granularity of our issue list was quite homogeneous, one issue corresponded roughly to one NLNet package, there were exceptions such as issues for larger subcomponents or dependencies, and also different interpretations of what “closed” meant.
+Although the granularity of our issue list was quite homogeneous, one issue corresponded roughly to one NLnet package, there were exceptions such as issues for larger subcomponents or dependencies, and also different interpretations of what “closed” meant.
 A "90% done" open issue might represent more meaningful work than another closed one, and a finished package with dependencies might stand for one big or multiple smaller closed issues.
 We also had a “ready-for-review” label as an additional issue state, but since our review team was probably under-staffed, we did not manage to bring all of them all the way to "closed".
 Still, considering these limitations, the issue list activity _is_ an important indicator for Summer of Nix work.
@@ -419,11 +419,11 @@ Still, considering these limitations, the issue list activity _is_ an important 
 ![Number of newly created and closed issues in our central issue list as a function of time.](./figures/issues.png){#fig:issues}
 
 Most issues were created (orange line) automatically in two big chunks, mid-2020, a year before starting Summer of Nix, when the original packaging project with independent developers working as contractors started.
-The issues were created from an internal project database that NLNet maintains of each of the projects they support with grants.
-The number of issues grew further during the program, because some of these auto-generated issues were broken up into sub-issues, and some projects were added directly by NLNet.
+The issues were created from an internal project database that NLnet maintains of each of the projects they support with grants.
+The number of issues grew further during the program, because some of these auto-generated issues were broken up into sub-issues, and some projects were added directly by NLnet.
 
 Issues were closed (blue line) for a variety of reasons, primarily because the work had been done, but also for a number of other reasons.
-For example, some issues were duplicates, others referred to hardware-only projects without anything to package, others were intractable.
+For example, some issues were duplicates, others referred to hardware-only projects without anything to package, and others were intractable.
 Issues that remained in “ready-for-review” state (green marker) at the end of the program are also shown.
 In absolute numbers, we have started with about 230 open issues, of which ca. 10 were already closed by prior packaging efforts.
 We ended up with a total number of 276 issues, of which 101 were closed, and 27 flagged as “ready-for-review”.
@@ -655,7 +655,7 @@ The main bottleneck to actually do so are the organizational capacities that we 
 Distributed decision making will be central to achieve this.
 However, one central constraint that we were all newcomers to designing a program is now overcome, and should immediately improve the situation — although a second round may incur a drop in motivation.
 
-_Personally, I am really grateful to have been given the chance and trust to organize this program by my employer Tweag, the NixOS and NLNet Foundations, and ultimately the European Commission, but especially by the participants, mentors, and volunteers, who actually ran this program and in the end achieved an amazing amount of contributions._
+_Personally, I am really grateful to have been given the chance and trust to organize this program by my employer Tweag, the NixOS and NLnet Foundations, and ultimately the European Commission, but especially by the participants, mentors, and volunteers, who actually ran this program and in the end achieved an amazing amount of contributions._
 
 We hope that together we were able to make a substantial and lasting contribution to the Free and Open Source Software ecosystem, and that we can continue to doing so in a variety of forms.
 
@@ -693,13 +693,13 @@ references:
   type: online
 
 - id: nlnet
-  author: NLNet
+  author: NLnet
   title: Foundation Website
   url: https://nlnet.nl/
   type: online
 
 - id: PET
-  author: The NLNet website
+  author: The NLnet website
   title: About PET
   url: https://nlnet.nl/PET/
   type: online
