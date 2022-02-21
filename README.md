@@ -637,25 +637,25 @@ The final expenses amounted to 107,700€, including mentor and participant stip
 
 # Conclusions
 
-Overall, we are quite happy with how the program turned out.
-We knew that we had a tight time budget for organization and also limited experience, but we also knew that it was a unique opportunity to have a pre-existing budget and a group of people interested in doing an event.
-Under these constraints — and we hope this report makes it clear that organization is “the art of the possible” _within constraints_ — after gathering the data, we are amazed about what we have accomplished:
+Overall, I am quite happy with how the program turned out.
+We knew that we had a tight time budget for organization and also limited experience, but we also knew that we had a unique opportunity with pre-existing budget and a group of people interested in doing an event.
+Under these constraints — and we hope this report makes it clear that organization is “the art of the possible” _within constraints_ — after gathering the data, we are amazed about what we have accomplished.
 
-First of all, despite highs and lows, it appears to have been an overall fun and enriching event for participants.
+Despite highs and lows, it appears to have been an overall fun and enriching event for participants.
 Much of the feedback on possible improvements can be traced back to a lack of time on the organizational side, the fact that we were designing this program from scratch, and that everyone was new in their respective roles.
 We expected that this would be the case the first time.
 There was little concern about the general idea and set up of the program, and the principal goals of the program.
-**Learn, meet, deliver** seemed to be appreciated, as well as working with FOSS software, and also the implementation wherever it worked well.
+**Learn, meet, deliver** seemed to be appreciated, as well as working with FOSS software, and also the implementation of these principles wherever it worked well.
 
-Then, independent of the work output, a measure of success for the Summer of Nix for us was whether we can bring new long term members to the community — maybe even professionally, and certainly we succeeded with some in this regard.
+Independent of the work output, a measure of success for the Summer of Nix for us was whether we can bring new long term members to the community — maybe even professionally, and certainly we succeeded with some in this regard.
 
 In our view, a future edition should therefore focus on improving the implementation and organization of the program to make most out of everyone's valuable time.
 Judging from the feedback sessions and personal conversations, there is good consensus on what could be improved.
 The main bottleneck to actually do so are the organizational capacities that we have to realize these ideas under budget and other constraints.
 Distributed decision making will be central to achieve this.
-However, one central constraint that we were all newcomers to designing a program is now overcome, and should immediately improve the situation — although a second round may incur a drop in motivation.
+However, _one_ central constraint, that we were all newcomers to designing such a program, is now overcome, and should immediately improve the situation.
 
-_Personally, I am really grateful to have been given the chance and trust to organize this program by my employer Tweag, the NixOS and NLnet Foundations, and ultimately the European Commission, but especially by the participants, mentors, and volunteers, who actually ran this program and in the end achieved an amazing amount of contributions._
+_I am really grateful to have been given the chance and trust to organize this program by my employer Tweag, the NixOS and NLnet Foundations, the European Commission, and especially by the participants, mentors, and volunteers who actually ran this program and in the end achieved an amazing amount of contributions._
 
 We hope that together we were able to make a substantial and lasting contribution to the Free and Open Source Software ecosystem, and that we can continue to doing so in a variety of forms.
 
