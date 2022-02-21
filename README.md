@@ -45,7 +45,7 @@ The package manager Nix[@doolstra2004nix; @nixosHow] is an emerging technical so
 
 Four institutions with different interests teamed up to realize the _Summer of Nix_:
 
-The **European Commission**[@ec] (EC) was the initial _source of funding_ for Summer of Nix via their Next Generation Internet (NGI) initiative. The goal of NGI is to “shape the development and evolution of the Internet into an Internet of Humans. An Internet that responds to people’s fundamental needs, including trust, security, and inclusion, while reflecting the values and the norms all citizens enjoy in Europe” [@NGI]. NGI is funds a large variety of projects and subprograms with 312 million Euro between 2018 and 2022.
+The **European Commission**[@ec] (EC) was the initial _source of funding_ for Summer of Nix via their Next Generation Internet (NGI) initiative. The goal of NGI is to “shape the development and evolution of the Internet into an Internet of Humans. An Internet that responds to people’s fundamental needs, including trust, security, and inclusion, while reflecting the values and the norms all citizens enjoy in Europe” [@NGI]. NGI funds a large variety of projects and subprograms with 312 million Euro between 2018 and 2022.
 
 The **NLnet Foundation**[@nlnet] (NLnet) is an independent foundation, largely aligned with the above stated mission of the EC's NGI initiative, funding independent developers to work on FOSS for a long time. NLnet had been charged by the EC, via their cascading grant mechanism, to _distribute_ parts of the NGI funds. This specifically concerns funds from a subprogram called NGI Zero [@NGI0] that “provides grants to individual researchers and developers as well as small teams to work on important new ideas and technologies that contribute to the establishment of the Next Generation Internet”. Within NGI Zero another sub-initiative called PET [@PET] focuses on privacy and trust enhancing technology, which ultimately became the principal source of funding of Summer of Nix. Plenty of FOSS solutions, which NLnet funded within this setting, faced the outlined FOSS complexity challenge to reliably build and deploy. Looking out for a technical solution, NLnet chose Nix as preferred packaging strategy because of its unique reproducibility guarantees and other features such as composability that allow to realize their and NGI's wider vision. This is how parts of the funds became available to package NGI-funded software with Nix. NLnet has approached the NixOS Foundation to help them with this packaging effort.
 
@@ -71,15 +71,15 @@ Many community members felt unqualified to work professionally with Nix, because
 
 <!-- packaging research tools is unattractive -->
 
-Another aspect was that independently working on packaging was in itself not regarded attractive work, where besides delivering one could have learned new things and made interesting connections. This was reinforced by the fact that many of the NLnet tools to package were still experimental, in prototype or alpha stage, without a significant user base, and some without regular maintenance. Finally, although the program was appropriately funded, it was not as financially attractive as some software industry jobs.
+Another aspect was that independently working on packaging was in itself not regarded attractive work, where one could have learned new things and made interesting connections besides delivering. This was reinforced by the fact that many of the NLnet tools to package were still experimental, in prototype or alpha stage, without a significant user base, and some without regular maintenance.
 
 <!-- Real challenge: What excites developers? -->
 
-The main challenge therefore was to design a program that was more attractive and fulfilling, taking into account the _non-monetary_ interests of potential participants as much as those of the funding organizations.
+This made us believe that an attractive program should be more exciting and fulfilling, taking into account the non-monetary interests of the participants.
 
 <!-- What excites developers? -->
 
-Some of the program's principles emerged naturally from these considerations. Participants should explicitly have time to **work, learn, and meet**. Coding should not happen in isolation but in groups, with regular discussions and feedback about the work. Participants should not only learn but also teach their peers to make use of their skills as far as possible. The program thus became much more than a simple programming task, and we hoped that it would be much more attractive for participants.
+Some of the program's principles emerged naturally from this conclusion. Participants should explicitly have time to **work, learn, and meet**. Coding should not happen in isolation but in groups, with regular discussions and feedback about the work. Participants should not only learn but also teach their peers to make use of their skills as far as possible. The program thus became much more than a simple programming task, and we hoped that it would be much more attractive for participants.
 
 <!--The money question -->
 
