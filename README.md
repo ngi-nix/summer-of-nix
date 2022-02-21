@@ -387,10 +387,11 @@ We therefore considered optimal between 2 and 5 participants per booth per slot.
 It turned out that with this setup, the total number of participants in the hiring event, and its total duration, slots needed to be about 15 minutes long, which appeared quick but sufficient to make a first connection.
 
 To build the schedule, we first asked participants and companies for their preferences.
-The rest then meant filling up a matrix of meeting slots × participants × companies, considering time zones, participant and company preferences at the same time.[^2]
+The rest then meant filling up a matrix of meeting slots × participants × companies, considering time zones, participant and company preferences at the same time.
+[^2]
 With helper scripts and much manual arrangement, we came up with schedules.
 
-[^2] It would be absolutely great to write an online or command line tool for this.
+[^2]: It would be absolutely great to write an online or command line tool for this.
 
 In terms of tooling, after some consideration, we decided against any commercial solution and ran it entirely with the open video conferencing solutions BigBlueButton for the lightning presentations, and Jitsi for the booth breakout rooms.
 
