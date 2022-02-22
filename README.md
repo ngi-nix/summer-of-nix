@@ -31,11 +31,11 @@ Decentralized Internet Vision because of resilience, control over data, making t
 
 <!-- adding comments in this pull request, as GitHub does not allow commenting on files directly, only on commits. feel free to remove them when done. -->
 
-The Internet should be an open, decentralized, and privacy-respecting network of peer nodes, built on top of an ecosystem of Free and Open Source Software (FOSS), allowing anyone to build new and innovative applications, oriented towards human needs and respecting individuals' privacy. This vision is pursued by many software community and political actors[@ecstrategy], and ultimately derives from the fundamental idea of a participative society of sovereign citizens. It contrasts with present day reality, where operation and development of technologies and standards related to computer networks are dominated by a few global actors, each with incentives and history of pushing adoption of their own, closed products, services, or software ecosystems.
+Open, decentralized, and privacy-respecting, a network of peer nodes built on top of an ecosystem of Free and Open Source Software (FOSS) allowing anyone to build new and innovative applications, a network oriented towards human needs and respecting individuals' privacy, this vision for the internet is pursued by many software community and political actors[@ecstrategy], and ultimately derives from the fundamental idea of a participative society of sovereign citizens. It contrasts with present day reality, where operation and development of technologies and standards related to computer networks are dominated by a few global actors, each with incentives and history of pushing adoption of their own, closed products, services, or software ecosystems.
 
 <!-- open and diverse ecosystems vs controlled standardized -->
 
-Unfortunately, an ecosystem of Free and Open Software comes with complexity that tightly controlled proprietary environments can often avoid. In practise this means that FOSS applications are often more difficult to install, configure, and run than proprietary alternatives — a natural consequence of the enormous diversity of approaches that thousands of individual developers without centralized organization come up with. These developers use their favorite programming languages, software libraries, operating systems, distribution formats and platforms. Their software most of the time needs to be compiled from source, a custom originally intended to facilitate portability, as opposed to distributing binaries which are tied to a specific operating system or processor architecture. Although this diversity is a _feature_ of an open ecosystem, greatly fostering innovation and resilience, it comes at the price that its software is often more difficult to actually set up and run. The cost of adopting a set of FOSS applications, is thus often higher than paying for an out-of-the box proprietary, fully integrated, but opaque solution. This problem has been recognized for a long time in computer science circles[@linus; @mancoosi].
+Unfortunately, an ecosystem of Free and Open Software, conceived by thousands of independent minds without central organization, comes with complexity that tightly controlled proprietary environments can often avoid. FOSS comes in a huge variety of programming languages, software libraries, operating systems, distribution formats and platforms, and often needs to be compiled from source, a custom originally intended to facilitate portability as opposed to distributing binaries which are tied to a specific operating system or processor architecture. This variety means that, in practise, FOSS applications are often more difficult to install, configure, and run than proprietary alternatives. Although this variety is also a _feature_ of an open ecosystem, greatly fostering innovation and resilience, it comes at a price, and the cost of adopting is often higher than paying for an out-of-the box proprietary, fully integrated, but opaque solution. This problem has been recognized for a long time in computer science circles[@linus; @mancoosi].
 
 <!-- Nix as a solution to reproducibility -->
 
@@ -707,7 +707,7 @@ references:
 
 - id: linus
   author: YouTube
-  title: Linus Torvalds on why desktop Linux sucks
+  title: Cynical remarks by Linus Torvalds
   url: https://youtu.be/Pzl1B7nB9Kc
   type: online
 
@@ -719,7 +719,7 @@ references:
 
 - id: mancoosi
   author: Roberto Di Cosmo et al.
-  title: The Mancoosi project
+  title: The European Mancoosi research project tried to address the FOSS complexity problem
   url: https://www.mancoosi.org/
   type: online
 
