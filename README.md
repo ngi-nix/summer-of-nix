@@ -719,7 +719,7 @@ references:
 
 - id: mancoosi
   author: Roberto Di Cosmo et al.
-  title: The European Mancoosi research project tried to address the FOSS complexity problem
+  title: The European Mancoosi research project on managing software complexity
   url: https://www.mancoosi.org/
   type: online
 
