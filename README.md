@@ -31,7 +31,7 @@ Decentralized Internet Vision because of resilience, control over data, making t
 
 <!-- adding comments in this pull request, as GitHub does not allow commenting on files directly, only on commits. feel free to remove them when done. -->
 
-The internet — open, decentralized, and privacy-respecting, oriented towards human needs, a network of peer nodes built on top of an ecosystem of Free and Open Source Software (FOSS) allowing anyone to build new and innovative applications. This vision is pursued by many software community and political actors[@ecstrategy], and ultimately derives from the fundamental idea of a participative society of sovereign citizens. It contrasts with present day reality, where user flows, operation and development of technologies and standards related to computer networks are dominated by a few global actors, each with incentives and history of pushing adoption of their own, closed products, services, or software ecosystems.
+The internet — a network of peer nodes, open, decentralized, and privacy-respecting, oriented towards human needs, built on top of an ecosystem of Free and Open Source Software (FOSS) allowing anyone to build new and innovative applications. This vision is pursued by many software community and political actors[@ecstrategy], and ultimately derives from the fundamental idea of a participative society of sovereign citizens. It contrasts with present day reality, where user flows, operation and development of technologies and standards related to computer networks are dominated by a few global actors, each with incentives and history of pushing adoption of their own, closed products, services, or software ecosystems.
 
 <!-- open and diverse ecosystems vs controlled standardized -->
 
