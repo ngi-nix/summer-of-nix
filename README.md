@@ -656,9 +656,13 @@ The main bottleneck to actually do so are the organizational capacities that we 
 Distributed decision making will be central to achieve this.
 However, _one_ central constraint, that we were all newcomers to designing such a program, is now overcome, and should immediately improve the situation.
 
-_I am really grateful to have been given the chance and trust to organize this program by my employer Tweag, the NixOS and NLnet Foundations, the European Commission, and especially by the participants, mentors, and volunteers who actually ran this program and in the end achieved an amazing amount of contributions._
+All in all, we hope that together we were able to make a substantial and lasting contribution to the Free and Open Source Software ecosystem, and that we can continue to doing so in a variety of forms.
 
-We hope that together we were able to make a substantial and lasting contribution to the Free and Open Source Software ecosystem, and that we can continue to doing so in a variety of forms.
+# Acknowledgements
+
+I am really grateful to have been given the chance and trust to organize this program by my employer Tweag, the NixOS and NLnet Foundations, the European Commission, and especially by the participants, mentors, and volunteers who actually ran this program and in the end achieved an amazing amount of contributions.
+
+A lot of people, colleagues, participants, mentors and co-organizers, gave comments on this report which was very helpful. I hope it can form a basis of discussion for future events and also help make transparent how the funding behind this project was invested.
 
 # References
 
