@@ -10,8 +10,9 @@ As participant you join a remote team and get paid a nice stipend.
 
 The overarching goals of this program are to:
 
-- use Nix to improve the usability of NGI related projects
-- provide opportunities for 
+- use Nix to improve the usability of NGI related projects;
+- create opportunities for less experienced Nixers to learn how to effectively use and contribute to Nix;
+- facilitate networking to build and foster a vibrant community.
 
 ## Strategies
 
