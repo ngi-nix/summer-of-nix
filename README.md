@@ -17,8 +17,10 @@ As participant you join a remote team and get paid a nice stipend.
 ## Strategies
 
 - as much mob programming as possible
-- organize a public lecture series with a selected theme and invities.
-- provide an environment that is welcoming and  contributors of all levels could feel welcome, safe and comfortable.
+- organize a public lecture series with a selected theme and invities
+- attract participation of Nix users of all levels
+- influence toward a safe and welcoming environment
+that is welcoming and  contributors of all levels could feel welcome, safe and comfortable.
 - provide support to the participants in the areas of software development, collaboration and Nix
 
 - **give time and support to learn** how to effectively use and contribute to Nix;
