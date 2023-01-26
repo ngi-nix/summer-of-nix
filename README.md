@@ -12,7 +12,18 @@ As participant you join a remote team and get paid a nice stipend.
 
 - improve the deployment story of NGI-funded projects using Nix
 - facilitate knowledge sharing around the effective use and contribution to Nix
-- expand and nurture the nix community to some extent
+- expand the nix community
+
+
+Activities: work / learn / meet
+Timesheets: 30% active coding / 30% active learning / 30% active meeting
+
+I spent Monday, Tuesday working on issue X, on Wednesday I read about flakes, on Thursday I participated in a discussion in the Nix discourse and on Friday I learned about NixOps. => acceptable
+
+I spent weeks 1-4 reading about flakes and in the Nix manual. => tell the person to contribute something in the form of code and maybe participate in community discussions.
+
+I worked weeks 1-4 alone on packaging A,B,C,D,E,F,G. => the goal of summer of nix is to share knowledge ....
+
 
 ## Strategies
 
