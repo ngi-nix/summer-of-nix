@@ -10,9 +10,9 @@ As participant you join a remote team and get paid a nice stipend.
 
 ## Goals
 
-- use Nix to improve the usability of NGI related projects
+- improve the deployment story of NGI-funded projects using Nix
 - be an opportunity for less experienced Nixers to learn how to effectively use and contribute to Nix
-- exand and nurture the nix community to some extent
+- expand and nurture the nix community to some extent
 
 ## Strategies
 
