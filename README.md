@@ -2,17 +2,17 @@
 
 ## Definition
 
+<!-- Summer of Nix is an annual -->
+
 Summer of Nix is a three month train & work program that roughly takes place in the (northern hemisphere) summer months.
 It is made for anyone who wants to rapidly increase their Nix skills while doing useful work for the Nix and the wider FOSS community.
 As participant you join a remote team and get paid a nice stipend.
 
 ## Goals
 
-The overarching goals of this program are to:
-
-- use Nix to improve the usability of NGI related projects;
-- create opportunities for less experienced Nixers to learn how to effectively use and contribute to Nix;
-- facilitate networking to build and foster a vibrant community.
+- use Nix to improve the usability of NGI related projects
+- be an opportunity for less experienced Nixers to learn how to effectively use and contribute to Nix
+- exand and nurture the nix community to some extent
 
 ## Strategies
 
