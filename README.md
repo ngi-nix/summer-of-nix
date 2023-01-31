@@ -16,21 +16,23 @@ As participant you join a remote team and get paid a nice stipend.
 
 ## Strategies
 
+- a safe and welcoming environment
+- participation of Nix users of all levels
 - mob programming
 - public lectures
-- participation of Nix users of all levels
-- a safe and welcoming environment
+- hiring event
 
 ## Timeline
 
-2023-04-01: open for applications
-2023-04-30: closing applications
-2023-05-15: 
+2023-04-01: open application window
+2023-04-30: close application window
+2023-05-15: answer applications
+2023-07-15: start of the program
+2023-10-15: end of the program
 
+maybe 2023-10-31: hiring event
 
-## Schedule
-
-
+## Format
 
 - payment
 - remote
