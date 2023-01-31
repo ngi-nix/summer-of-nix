@@ -4,6 +4,8 @@
 
 <!-- Summer of Nix is an annual -->
 
+- program
+
 Summer of Nix is a three month train & work program that roughly takes place in the (northern hemisphere) summer months.
 It is made for anyone who wants to rapidly increase their Nix skills while doing useful work for the Nix and the wider FOSS community.
 As participant you join a remote team and get paid a nice stipend.
@@ -32,7 +34,18 @@ As participant you join a remote team and get paid a nice stipend.
 
 maybe 2023-10-31: hiring event
 
-## Format
+## Activities
+
+- mob programming sessions
+- 4 hours of mob programming per day
+- 2 hours of lectures per week
+- 3-4 hours of learning, meeting or open contribution
+
+### Roles
+
+## Payment
+
+
 
 - payment
 - remote
