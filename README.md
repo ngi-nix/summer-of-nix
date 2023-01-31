@@ -17,14 +17,27 @@ As participant you join a remote team and get paid a nice stipend.
 ## Strategies
 
 - mob programming
-- organize a public lecture series with a selected theme and invitees
-- attract participation of Nix users of all levels
-- influence toward a safe and welcoming environment
-- provide support to the participants in the areas of software development, collaboration and Nix
+- public lectures
+- participation of Nix users of all levels
+- a safe and welcoming environment
 
-- **give time and support to learn** how to effectively use and contribute to Nix;
-- **stimulate exchange** to build and foster a vibrant community;
-- **grow awareness for Nix**.
+## Timeline
+
+2023-04-01: open for applications
+2023-04-30: closing applications
+2023-05-15: 
+
+
+## Schedule
+
+
+
+- payment
+- remote
+- eligibility
+- 
+
+
 
 <!--
 Activities: work / learn / meet
