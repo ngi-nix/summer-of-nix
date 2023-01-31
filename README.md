@@ -41,6 +41,13 @@ maybe 2023-10-31: hiring event
 - global liquid mob.
   - At any time you want 3-6 participants.
 
+### Idea 3 - mobs
+
+25 / 5 = 5
+5 mobs = 5 facilitators
+
+
+
 ### Idea 1
 
 - 4 hours of mob programming per day
