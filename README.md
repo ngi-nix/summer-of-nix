@@ -36,7 +36,13 @@ maybe 2023-10-31: hiring event
 
 ## Activities
 
-- mob programming sessions
+### Idea 2
+
+- global liquid mob.
+  - At any time you want 3-6 participants.
+
+### Idea 1
+
 - 4 hours of mob programming per day
 - 2 hours of lectures per week
 - 3-4 hours of learning, meeting or open contribution
@@ -46,13 +52,18 @@ maybe 2023-10-31: hiring event
 ## Payment
 
 
-
 - payment
 - remote
 - eligibility
 - 
 
+## Budget
 
+- 75 000 Euros
+
+## Expectations
+
+~ 20-25
 
 <!--
 Activities: work / learn / meet
