@@ -30,14 +30,20 @@ As participant you join a remote team and get paid a nice stipend.
 2023-04-30: close application window
 2023-05-15: answer applications
 2023-07-17: start of the program
-2023-10-13: end of the program
-<!-- 13 weeks -->
+2023-10-13: end of the program (13 weeks after start)
+2023-10-31: (maybe) hiring event
 
-maybe 2023-10-31: hiring event
+## Format
 
-## Activities
+The program is entirely remote.
 
-- 5 hours of mob programming every day (probably in one of 5 mobs).
+Contribution toward improvement of deployment stories ("the work") occurs in the context of mob programming groups ("mobs").
+
+Each mob:
+
+- consist of four participants and a mob programming facilitator
+- has a regular weekly schedule
+- determines its own agenda and objectives within the scope of the program
 
 ### Roles, rates and budget
 
@@ -48,19 +54,25 @@ participant     |     20 |           15 |   200 |           3000 |       60000
 organizer       |      3 |           20 |   100 |           2000 |        6000
 grand total     |        |              |       |                |   **91000**
 
-Contribution toward improvement of deployment stories ("the work") occurs in the context of mob programming groups ("mobs").
+## How to prepare for the mob programming sessions
 
-Each mob:
+If you need help with preparation, ask for help [here](TODO)  anything, feel free to message me. Please arrive prepared at your first session.
 
-- consist of four participants and a mob programming facilitator
-- has a regular weekly schedule
-- determines its own agenda and objectives within the scope of the program
+# General
 
+1. Read http://remotemobprogramming.org/.
+1. Make a test [Jitsi Meet](https://meet.jit.si/) call with a friend and use it to test video, audio and screen sharing, entire screen.
+1. Install the [mob command line utility](https://mob.sh/).
+1. Test that [`git` is set up to authenticate with GitHub](https://docs.github.com/en/get-started/quickstart/set-up-git).
+1. Have [direnv](https://direnv.net/) or equivalent both;
+   1. [installed](https://direnv.net/docs/installation.html)
+   1. and [set up in your shell](https://direnv.net/docs/hook.html).
+1. Configure [two-factor authentication for your GitHub account](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/about-two-factor-authentication).
 
-## Format
+# Rust
 
-
-The program will be remote. We will be using:
+1. Test that you have [a recent version of Rust installed](https://www.rust-lang.org/tools/install) and you are able to [compile a dummy project](https://doc.rust-lang.org/book/ch01-02-hello-world.html). Tip: installing Rust on Windows takes considerably more time than on other operating systems.
+1. Set up [support for Rust in your editor](https://code.visualstudio.com/docs/languages/rust).
 
  - GitHub for code and documentation
  - Matrix for chat
