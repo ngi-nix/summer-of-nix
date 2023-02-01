@@ -38,28 +38,29 @@ maybe 2023-10-31: hiring event
 
 - 5 hours of mob programming every day (probably in one of 5 mobs).
 
-### Roles
+### Roles and Budget
 
-Role            | Number | Rate | Hours | Per role | Total
-----------------|--------|------|-------| ---------|------
-mob facilitator |      5 |   25 |   200 |     5000 | 25000
-participant     |     20 |   15 |   200 |     3000 | 60000
-organizer       |      3 |   20 |   100 |     2000 |  6000
-grand total     |        |      |       |          | 91000
+Role            | Number | Rate (EUR/h) | Hours | Per role (EUR) | Total (EUR)
+----------------|--------|--------------|-------|----------------|------------
+mob facilitator |      5 |           25 |   200 |           5000 |       25000
+participant     |     20 |           15 |   200 |           3000 |       60000
+organizer       |      3 |           20 |   100 |           2000 |        6000
+grand total     |        |              |       |                |   **91000**
 
-## Payment
+## Work style
 
-- payment
-- remote
-- eligibility
+The program will be remote. We will be using:
 
-## Budget
+ - GitHub for code and documentation
+ - Matrix for chat
+ - Jitsi for video conferencing and screen share
+
+Be ready for entire screen sharing so that you could quickly show terminal,
+browser. A second screen is handy for privacy purposes but not required.
 
 ## Duration
 
 - 8 weeks per participant within a 3 month window (25h / week * 8 weeks = 200 hours)
-
-## Expectations
 
 <!--
 Activities: work / learn / meet
