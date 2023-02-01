@@ -4,8 +4,6 @@
 
 <!-- Summer of Nix is an annual -->
 
-- program
-
 Summer of Nix is a three month train & work program that roughly takes place in the (northern hemisphere) summer months.
 It is made for anyone who wants to rapidly increase their Nix skills while doing useful work for the Nix and the wider FOSS community.
 As participant you join a remote team and get paid a nice stipend.
@@ -54,6 +52,11 @@ participant     |     20 |           15 |   200 |           3000 |       60000
 organizer       |      3 |           20 |   100 |           2000 |        6000
 grand total     |        |              |       |                |   **91000**
 
+## How to apply
+
+We will open an application form on March 1st and you can apply until March 31th (Anywhere on Earth).
+Decisions will be taken in the following 2 weeks.
+
 ## How to prepare for the mob programming sessions
 
 If you need help with preparation, ask for help [here](TODO)  anything, feel free to message me. Please arrive prepared at your first session.
@@ -69,21 +72,9 @@ If you need help with preparation, ask for help [here](TODO)  anything, feel fre
    1. and [set up in your shell](https://direnv.net/docs/hook.html).
 1. Configure [two-factor authentication for your GitHub account](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/about-two-factor-authentication).
 
-# Rust
+## Specific Project ideas for Summer of Nix 2023
 
-1. Test that you have [a recent version of Rust installed](https://www.rust-lang.org/tools/install) and you are able to [compile a dummy project](https://doc.rust-lang.org/book/ch01-02-hello-world.html). Tip: installing Rust on Windows takes considerably more time than on other operating systems.
-1. Set up [support for Rust in your editor](https://code.visualstudio.com/docs/languages/rust).
-
- - GitHub for code and documentation
- - Matrix for chat
- - Jitsi for video conferencing and screen share
-
-Be ready for entire screen sharing so that you could quickly show terminal,
-browser. A second screen is handy for privacy purposes but not required.
-
-
-## Project ideas for Summer of Nix 2023
-
+- write a deployment story for one package in the NLNet list. 
 - reunite all independent repositories in the ngi-nix GitHub org into a monorepo “ngipkgs”, similar to https://github.com/nix-community/NUR .
 
 
