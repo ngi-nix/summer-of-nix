@@ -52,6 +52,12 @@ participant     |     20 |           15 |   200 |           3000 |       60000
 organizer       |      3 |           20 |   100 |           2000 |        6000
 grand total     |        |              |       |                |   **91000**
 
+## Eligibility
+
+- Past the age of majority
+- Basic familiarity with Nix
+- 
+
 ## How to apply
 
 We will open an application form on March 1st and you can apply until March 31th (Anywhere on Earth).
@@ -72,19 +78,12 @@ If you need help with preparation, ask for help [here](TODO)  anything, feel fre
    1. and [set up in your shell](https://direnv.net/docs/hook.html).
 1. Configure [two-factor authentication for your GitHub account](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/about-two-factor-authentication).
 
-## Specific Project ideas for Summer of Nix 2023
+## Specific project ideas for Summer of Nix 2023
 
 - write a deployment story for one package in the NLNet list. 
 - reunite all independent repositories in the ngi-nix GitHub org into a monorepo “ngipkgs”, similar to https://github.com/nix-community/NUR .
 
+## Questions and answers
 
-<!--
-Activities: work / learn / meet
-Timesheets: 30% active coding / 30% active learning / 30% active meeting
-
-I spent Monday, Tuesday working on issue X, on Wednesday I read about flakes, on Thursday I participated in a discussion in the Nix discourse and on Friday I learned about NixOps. => acceptable
-
-I spent weeks 1-4 reading about flakes and in the Nix manual. => tell the person to contribute something in the form of code and maybe participate in community discussions.
-
-I worked weeks 1-4 alone on packaging A,B,C,D,E,F,G. => the goal of summer of nix is to share knowledge ....
--->
+- How familiar must I be with Nix in order to participate?
+- I'm an expert Nixer ‒ will nm
