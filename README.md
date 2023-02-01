@@ -58,7 +58,8 @@ grand total     |        |              |       |                |   **91000**
 - Basic familiarity with Nix
 - Fluent in English
 - Equipment and means to participate in mob programming sessions
-- 
+  - internet connection that is reliable and fast enough for long video sessions
+  - 
 
 ## How to apply
 
