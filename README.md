@@ -40,27 +40,20 @@ maybe 2023-10-31: hiring event
 
 ### Roles
 
-- 5x mob facilitator
-- 20x participants
-- 3x organizers
+Role            | Number | Rate | Hours | Per role | Total
+----------------|--------|------|-------| ---------|------
+mob facilitator |      5 |   25 |   200 |     5000 | 25000
+participant     |     20 |   15 |   200 |     3000 | 60000
+organizer       |      3 |   20 |   100 |     2000 |  6000
+grand total     |        |      |       |          | 91000
 
 ## Payment
-
-- participants 2750EUR * PPP
-- mob facilitator
 
 - payment
 - remote
 - eligibility
 
 ## Budget
-
-Role            | Number | Rate | Hours | Total
-----------------|--------|------|-------|------
-mob facilitator | 5      | 25   |   200 | 25000
-participant     | 20     | 15   | 200   | 60000
-organizer       | 3      | 20   | 100   | 6000
-grand total     |        |      |       | 91000
 
 ## Duration
 
