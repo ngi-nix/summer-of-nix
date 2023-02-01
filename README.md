@@ -59,7 +59,7 @@ grand total     |        |              |       |                |   **91000**
 - Fluent in English
 - Equipment and means to participate in mob programming sessions
   - internet connection that is reliable and fast enough for long video sessions
-  - 
+  - ability to use all tools mentioned in the How to prepare for mob programming section
 
 ## How to apply
 
