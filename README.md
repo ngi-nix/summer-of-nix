@@ -56,6 +56,8 @@ grand total     |        |              |       |                |   **91000**
 
 - Past the age of majority
 - Basic familiarity with Nix
+- Fluent in English
+- Equipment and means to participate in mob programming sessions
 - 
 
 ## How to apply
@@ -85,5 +87,9 @@ If you need help with preparation, ask for help [here](TODO)  anything, feel fre
 
 ## Questions and answers
 
+- Is this program specifically for experts? – No 
+- Is this program specifically for beginners? – No
 - How familiar must I be with Nix in order to participate?
-- I'm an expert Nixer ‒ will nm
+- Why are you using GitHub and other proprietary, unfree and closed-source programs? – Because ...
+- Why mob programming?
+- I am in timezone X. Can I participate?
