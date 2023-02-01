@@ -36,41 +36,37 @@ maybe 2023-10-31: hiring event
 
 ## Activities
 
-### Idea 2
-
-- global liquid mob.
-  - At any time you want 3-6 participants.
-
-### Idea 3 - mobs
-
-25 / 5 = 5
-5 mobs = 5 facilitators
-
-
-
-### Idea 1
-
-- 4 hours of mob programming per day
-- 2 hours of lectures per week
-- 3-4 hours of learning, meeting or open contribution
+- 5 hours of mob programming every day (probably in one of 5 mobs).
 
 ### Roles
 
+- 5x mob facilitator
+- 20x participants
+- 3x organizers
+
 ## Payment
 
+- participants 2750EUR * PPP
+- mob facilitator
 
 - payment
 - remote
 - eligibility
-- 
 
 ## Budget
 
-- 75 000 Euros
+Role            | Number | Rate | Hours | Total
+----------------|--------|------|-------|------
+mob facilitator | 5      | 25   |   200 | 25000
+participant     | 20     | 15   | 200   | 60000
+organizer       | 3      | 20   | 100   | 6000
+grand total     |        |      |       | 91000
+
+## Duration
+
+- 8 weeks per participant within a 3 month window (25h / week * 8 weeks = 200 hours)
 
 ## Expectations
-
-~ 20-25
 
 <!--
 Activities: work / learn / meet
