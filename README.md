@@ -29,8 +29,9 @@ As participant you join a remote team and get paid a nice stipend.
 2023-04-01: open application window
 2023-04-30: close application window
 2023-05-15: answer applications
-2023-07-15: start of the program
-2023-10-15: end of the program
+2023-07-17: start of the program
+2023-10-13: end of the program
+<!-- 13 weeks -->
 
 maybe 2023-10-31: hiring event
 
@@ -47,14 +48,13 @@ participant     |     20 |           15 |   200 |           3000 |       60000
 organizer       |      3 |           20 |   100 |           2000 |        6000
 grand total     |        |              |       |                |   **91000**
 
-Contribution toward improvment of deployment stories ("the work") occurs in the context of mob programming groups ("mobs").
+Contribution toward improvement of deployment stories ("the work") occurs in the context of mob programming groups ("mobs").
 
 Each mob:
 
-- consist of four participants and a mob programming facilitator.
+- consist of four participants and a mob programming facilitator
 - has a regular weekly schedule
-- de
-
+- determines its own agenda and objectives within the scope of the program
 
 
 ## Format
@@ -69,9 +69,11 @@ The program will be remote. We will be using:
 Be ready for entire screen sharing so that you could quickly show terminal,
 browser. A second screen is handy for privacy purposes but not required.
 
-## Duration
 
-- 8 weeks per participant within a 3 month window (25h / week * 8 weeks = 200 hours)
+## Project ideas for Summer of Nix 2023
+
+- reunite all independent repositories in the ngi-nix GitHub org into a monorepo “ngipkgs”, similar to https://github.com/nix-community/NUR .
+
 
 <!--
 Activities: work / learn / meet
