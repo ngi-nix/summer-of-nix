@@ -38,7 +38,7 @@ maybe 2023-10-31: hiring event
 
 - 5 hours of mob programming every day (probably in one of 5 mobs).
 
-### Roles and Budget
+### Roles, rates and budget
 
 Role            | Number | Rate (EUR/h) | Hours | Per role (EUR) | Total (EUR)
 ----------------|--------|--------------|-------|----------------|------------
@@ -47,7 +47,18 @@ participant     |     20 |           15 |   200 |           3000 |       60000
 organizer       |      3 |           20 |   100 |           2000 |        6000
 grand total     |        |              |       |                |   **91000**
 
-## Work style
+Contribution toward improvment of deployment stories ("the work") occurs in the context of mob programming groups ("mobs").
+
+Each mob:
+
+- consist of four participants and a mob programming facilitator.
+- has a regular weekly schedule
+- de
+
+
+
+## Format
+
 
 The program will be remote. We will be using:
 
