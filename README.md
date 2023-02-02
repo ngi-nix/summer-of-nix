@@ -43,14 +43,18 @@ Each mob:
 - has a regular weekly schedule
 - determines its own agenda and objectives within the scope of the program
 
-### Roles, rates and budget
+## Rates and budget
 
-Role            | Number | Rate (EUR/h) | Hours | Per role (EUR) | Total (EUR)
-----------------|--------|--------------|-------|----------------|------------
-mob facilitator |      5 |           25 |   200 |           5000 |       25000
-participant     |     20 |           15 |   200 |           3000 |       60000
-organizer       |      3 |           20 |   100 |           2000 |        6000
-grand total     |        |              |       |                |   **91000**
+Role            | Number | Base Rate (EUR/h) | Hours | Per role (EUR) | Total (EUR)
+----------------|--------|-------------------|-------|----------------|------------
+mob facilitator |      5 |                25 |   200 |           5000 |       25000
+participant     |     20 |                15 |   200 |           3000 |       60000
+organizer       |      3 |                20 |   100 |           2000 |        6000
+grand total     |        |                   |       |                |   **91000**
+
+The actual rate is calculated based on Purchasing Power Parity with respect to the Netherlands, as stated by [Google's Summer of Code](https://developers.google.com/open-source/gsoc/help/student-stipends). The exception are EU member states that all have the base rate.
+
+
 
 ## Eligibility
 
@@ -69,8 +73,6 @@ Decisions will be taken in the following 2 weeks.
 ## How to prepare for the mob programming sessions
 
 If you need help with preparation, ask for help [here](TODO)  anything, feel free to message me. Please arrive prepared at your first session.
-
-# General
 
 1. Read http://remotemobprogramming.org/.
 1. Make a test [Jitsi Meet](https://meet.jit.si/) call with a friend and use it to test video, audio and screen sharing, entire screen.
