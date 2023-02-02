@@ -43,24 +43,20 @@ Each mob:
 - has a regular weekly schedule
 - determines its own agenda and objectives within the scope of the program
 
-## Rates and budget
+## Stipends
 
-Role            | Number | Hours | Per role (EUR) | Total (EUR)
-----------------|--------|-------|----------------|------------
-mob facilitator |      5 |   200 |           5000 |       25000
-participant     |     20 |   200 |           3000 |       60000
-organizer       |      3 |   100 |           2000 |        6000
-grand total     |        |       |                |   **91000**
+Role            | Per role (EUR) 
+----------------|----------------
+mob facilitator |           5000 
+participant     |           3000 
+organizer       |           2000 
+grand total     |
 
-The stipend for any role is adjusted according to [Purchasing Power Parity](https://en.wikipedia.org/wiki/Purchasing_power_parity).
-[Google Summer of Code]()'s stipend system is adopted for this purpose.
+EU member states all receive the base rate without modification.
+Stipend for non-EU countries for any role are adjusted according to [Purchasing Power Parity](https://en.wikipedia.org/wiki/Purchasing_power_parity).
+[Google Summer of Code](https://developers.google.com/open-source/gsoc/help/student-stipends)'s stipend system is adopted for this purpose, as shown in this example:
 
-As an example, let's compute the stipend for a Nepalese participant.
-
-In GSoC 2023, the stipend amount for a Dutch (Netherlands) on a medium project is 2 700 USD.
-The equivalent for a Nepalese is 1 500 USD.
-Amounts sourced [here](https://developers.google.com/open-source/gsoc/help/student-stipends#total_stipend_amount).
-
+The stipend for a Nepalese participant is the base Summer of Nix stipend multiplied by the ratio of GSoC's Nepalese and Netherlands stipends (amounts sourced [here](https://developers.google.com/open-source/gsoc/help/student-stipends#total_stipend_amount)).
 The formula is
 
 ```
@@ -69,13 +65,22 @@ SoN_Nepal = base_stipend × GSoC_medium_project_Nepal ÷ GSoC_medium_project_Net
           ≅ 1666.67 EUR
 ```
 
-The exception are EU member states that all have the base rate.
+## Budget
 
 
-## Eligibility
+ Total (EUR)
+------------
+       25000
+       60000
+        6000
+   **91000**Number | 
+-------|-
+     5 | ## Eligibility
+    20 | 
+     3 | - Past the age of majority
+       | - Basic familiarity with Nix
 
-- Past the age of majority
-- Basic familiarity with Nix
+
 - Fluent in English
 - Equipment and means to participate in mob programming sessions
   - internet connection that is reliable and fast enough for long video sessions
