@@ -54,6 +54,11 @@ grand total     |        |                   |       |                |   **9100
 
 The actual rate is calculated based on Purchasing Power Parity with respect to the Netherlands, as stated by [Google's Summer of Code](https://developers.google.com/open-source/gsoc/help/student-stipends). The exception are EU member states that all have the base rate.
 
+As example, let's compute the stipend:
+
+The 2023 GSoC medium project stipend for a Nepalese participant is 1500 USD ([Google's Summer of Code](https://developers.google.com/open-source/gsoc/help/student-stipends#total_stipend_amount)).
+This is 55% (1500/2700) of the equivalent Netherland stipend.
+
 
 
 ## Eligibility
