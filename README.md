@@ -52,8 +52,8 @@ participant     |     20 |   200 |           3000 |       60000
 organizer       |      3 |   100 |           2000 |        6000
 grand total     |        |       |                |   **91000**
 
-The actual rate is calculated based on Purchasing Power Parity with respect to the Netherlands, as stated by [Google's Summer of Code](https://developers.google.com/open-source/gsoc/help/student-stipends) ("GSoC").
-The exception are EU member states that all have the base rate.
+The stipend for any role is adjusted according to [Purchasing Power Parity](https://en.wikipedia.org/wiki/Purchasing_power_parity).
+[Google Summer of Code]()'s stipend system is adopted for this purpose.
 
 As an example, let's compute the stipend for a Nepalese participant.
 
@@ -68,6 +68,8 @@ SoN_Nepal = base_stipend × GSoC_medium_project_Nepal ÷ GSoC_medium_project_Net
           = 3000 EUR × 1500 USD ÷ 2700 USD
           ≅ 1666.67 EUR
 ```
+
+The exception are EU member states that all have the base rate.
 
 
 ## Eligibility
