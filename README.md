@@ -61,10 +61,13 @@ In GSoC 2023, the stipend amount for a Dutch (Netherlands) on a medium project i
 The equivalent for a Nepalese is 1 500 USD.
 Amounts sourced [here](https://developers.google.com/open-source/gsoc/help/student-stipends#total_stipend_amount).
 
-The formula is stipend = (base stipend) * (GSoC medium project) / (GSoC medium project Netherlands).
+The formula is
 
-This is 55% (1500/2700) of the equivalent Netherland stipend.
-
+```
+SoN_Nepal = base_stipend × GSoC_medium_project_Nepal ÷ GSoC_medium_project_Netherlands
+          = 3000 EUR × 1500 USD ÷ 2700 USD
+          ≅ 1666.67 EUR
+```
 
 
 ## Eligibility
