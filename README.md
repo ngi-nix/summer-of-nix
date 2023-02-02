@@ -52,11 +52,17 @@ participant     |     20 |                15 |   200 |           3000 |       60
 organizer       |      3 |                20 |   100 |           2000 |        6000
 grand total     |        |                   |       |                |   **91000**
 
-The actual rate is calculated based on Purchasing Power Parity with respect to the Netherlands, as stated by [Google's Summer of Code](https://developers.google.com/open-source/gsoc/help/student-stipends). The exception are EU member states that all have the base rate.
+The actual rate is calculated based on Purchasing Power Parity with respect to the Netherlands, as stated by [Google's Summer of Code](https://developers.google.com/open-source/gsoc/help/student-stipends) ("GSoC").
+The exception are EU member states that all have the base rate.
 
-As example, let's compute the stipend:
+As an example, let's compute the stipend for a Nepalese participant.
 
-The 2023 GSoC medium project stipend for a Nepalese participant is 1500 USD ([Google's Summer of Code](https://developers.google.com/open-source/gsoc/help/student-stipends#total_stipend_amount)).
+In GSoC 2023, the stipend amount for a Dutch (Netherlands) on a medium project is 2 700 USD.
+The equivalent for a Nepalese is 1 500 USD.
+Amounts sourced [here](https://developers.google.com/open-source/gsoc/help/student-stipends#total_stipend_amount).
+
+The formula is stipend = (base stipend) * (GSoC medium project) / (GSoC medium project Netherlands).
+
 This is 55% (1500/2700) of the equivalent Netherland stipend.
 
 
