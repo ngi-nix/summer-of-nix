@@ -23,7 +23,14 @@ As participant you join a remote team and get paid a nice stipend.
 - hiring event
 - shift from a many-repo strategy to a monorepo "ngipkgs"
   - Primary produce of the Summer of Nix are open-source Nix packages (code, documentation, and deployment stories)
-  - Options,
+  - Where can these packages currently go?
+    - An upstream repository
+    - [nixpkgs]() or a fork of it,
+    - package-specific repositories under the ngi-nix GitHub organization
+    - a yet non-existent monorepo ngi-nix/ngipkgs
+  - We feel that a monorepo would serve the best balance between the needs of the users, the developers (participants) and the funding organizations.
+    A monorepo 
+  - 
 
 ## Timeline
 
