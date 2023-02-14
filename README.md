@@ -22,6 +22,8 @@ As participant you join a remote team and get paid a nice stipend.
 - public lectures
 - hiring event
 - shift from a many-repo strategy to a monorepo "ngipkgs"
+  - Primary produce of the Summer of Nix are open-source Nix packages (code, documentation, and deployment stories)
+  - Options,
 
 ## Timeline
 
