@@ -28,9 +28,7 @@ As participant you join a remote team and get paid a nice stipend.
     - [nixpkgs]() or a fork of it,
     - package-specific repositories under the ngi-nix GitHub organization
     - a yet non-existent monorepo ngi-nix/ngipkgs
-  - We feel that a monorepo would serve the best balance between the needs of the users, the developers (participants) and the funding organizations.
-    A monorepo 
-  - 
+  - We feel that a monorepo would serve the best balance between the needs of the users, the developers (participants) and the funding organizations. 
 
 ## Timeline
 
