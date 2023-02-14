@@ -21,6 +21,7 @@ As participant you join a remote team and get paid a nice stipend.
 - mob programming
 - public lectures
 - hiring event
+- shift from a many-repo strategy to a monorepo "ngipkgs"
 
 ## Timeline
 
@@ -107,7 +108,6 @@ If you need help with preparation, ask for help [here](TODO)  anything, feel fre
 ## Specific project ideas for Summer of Nix 2023
 
 - write a deployment story for one package in the NLNet list. 
-- reunite all independent repositories in the ngi-nix GitHub org into a monorepo “ngipkgs”, similar to https://github.com/nix-community/NUR .
 
 ## Questions and answers
 
