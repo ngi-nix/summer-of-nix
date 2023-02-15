@@ -16,7 +16,9 @@ As a participant, you join a team and work together remotely within July to Octo
 
 ## This year's plan
 
-In the last two years we've learned that the most significant challenge is the organizational one.
+The predominant challenge that became apparent in the two years of Summer of Nix, is providing the participants with the guidance, mentoring and decision making
+
+orchestrating a large-scale collaborative development program such that the participants needs are met.
 Following the success of last year's mob programming experiment in solving a significant portion of the organ   , this year the 
 
 - public lectures
