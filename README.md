@@ -1,38 +1,25 @@
-# Summer of Nix
+# Summer of Nix 2023
 
-## Definition
+## What is Summer of Nix
 
 Summer of Nix is a rare opportunity to collaborate on Nix packaging of open-source software in a supportive environment while being paid.
 
-It's for anyone who'd like to develop and share their Nix and software development skills while working together.
+It's for anyone who desires to develop and share their Nix and software development skills while working together.
 
-As a participant, you'd join a team doing useful work together.
+As a participant, you join a team and work together remotely within July to October.
 
-It takes place within July to October.
-
-As participant you join a remote team and get paid a nice stipend.
-
-## Goals
+## Goals this year
 
 - improve the deployment story of NGI-funded projects using Nix
 - skill-sharing among the participants and beyond
 - expand the nix community
 
-## Strategies
+## This year's plan
 
-- a safe and welcoming environment
-- participation of Nix users of all levels
-- mob programming
+mob programming
 - public lectures
 - hiring event
 - shift from a many-repo strategy to a monorepo "ngipkgs"
-  - Primary produce of the Summer of Nix are open-source Nix packages (code, documentation, and deployment stories)
-  - Where can these packages currently go?
-    - An upstream repository
-    - [nixpkgs]() or a fork of it,
-    - package-specific repositories under the ngi-nix GitHub organization
-    - a yet non-existent monorepo ngi-nix/ngipkgs
-  - We feel that a monorepo would serve the best balance between the needs of the users, the developers (participants) and the funding organizations. 
 
 ## Timeline
 
@@ -128,3 +115,17 @@ If you need help with preparation, ask for help [here](TODO)  anything, feel fre
 - Why are you using GitHub and other proprietary, unfree and closed-source programs? – Because ...
 - Why mob programming?
 - I am in timezone X. Can I participate?
+
+## TODO
+
+- a safe and welcoming environment
+- participation of Nix users of all levels
+
+monorepo reasons
+  - Primary produce of the Summer of Nix are open-source Nix packages (code, documentation, and deployment stories)
+  - Where can these packages currently go?
+    - An upstream repository
+    - [nixpkgs]() or a fork of it,
+    - package-specific repositories under the ngi-nix GitHub organization
+    - a yet non-existent monorepo ngi-nix/ngipkgs
+  - We feel that a monorepo would serve the best balance between the needs of the users, the developers (participants) and the funding organizations. 
