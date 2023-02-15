@@ -2,7 +2,8 @@
 
 ## Definition
 
-Summer of Nix is a program where participants contribute to Free/open-source projects in the Nix ecosystem.
+Summer of Nix is a program where participants contribute to the deployment story of Free/Open Source Software in Nix.
+
 
 that roughly takes place in the (northern hemisphere) summer months.
 It is made for anyone who wants to rapidly increase their Nix skills while doing useful work for the Nix and the wider FOSS community.
