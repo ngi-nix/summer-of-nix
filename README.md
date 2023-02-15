@@ -3,7 +3,13 @@
 ## Definition
 
 Summer of Nix is a rare opportunity to collaborate on Nix packaging of open-source software in a supportive environment while being paid.
-It's for anyone who wants to rapidly increase their Nix skills while doing useful work.
+
+It's for anyone who'd like to develop and share their Nix and software development skills while working together.
+
+As a participant, you'd join a team doing useful work together.
+
+It takes place within July to October.
+
 As participant you join a remote team and get paid a nice stipend.
 
 ## Goals
