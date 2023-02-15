@@ -16,7 +16,9 @@ As a participant, you join a team and work together remotely within July to Octo
 
 ## This year's plan
 
-mob programming
+In the last two years we've learned that the most significant challenge is the organizational one.
+Following the success of last year's mob programming experiment in solving a significant portion of the organ   , this year the 
+
 - public lectures
 - hiring event
 - shift from a many-repo strategy to a monorepo "ngipkgs"
