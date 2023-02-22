@@ -6,7 +6,7 @@ classoption:
 mainfont: DejaVu Serif
 sansfont: DejaVu Sans
 documentclass: scrartcl
-author: The Summer of Nix organization team
+author: The Summer of Nix 2023 organization team
 geometry: "left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm"
 numbersections: true
 links-as-notes: true
