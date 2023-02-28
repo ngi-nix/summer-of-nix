@@ -16,17 +16,18 @@ As a participant, you join a team and work together remotely within July to Octo
 
 ## This year's plan
 
-In the two years of Summer of Nix, a predominant challenge became apparent:
-participants contacted the organizers more frequently than we were able to provide for.
+In the two years of Summer of Nix, the most prominent challenge was onboarding:
+orchestrating a large-scale collaborative development program such that the needs of participants are met.
+Essentially in Summer of Nix everyone is new, needs to get onboarded and teams need to form.
 
+participants contacted the organizers more frequently than they were able to provide for.
 TODO CONTINUE HERE
 
-providing participants with the correspondence necessary for  confidence in them.
+providing participants with the correspondence necessary for confidence in them.
 Organizers were too few to provide this support meaningfully to all of the 
 
 and support. guidance, mentoring and decision making
 
-orchestrating a large-scale collaborative development program such that the participants needs are met.
 Following the success of last year's mob programming experiment in solving a significant portion of the organ   , this year the 
 
 - public lectures
