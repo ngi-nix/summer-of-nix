@@ -23,6 +23,8 @@ Often, which option is most appropriate is not clear from the information availa
 The organizers were approached with questions more frequently than they were able to respond to.
 And even if they were, they wouldn't necessarily have any more information.
 
+With mob programming, participants may be more comfortable making decisions as a group, hopefully alleviating that 
+
 
 
 The scope of the work in Summer of Nix includes making high level decisions with very little information at hand.
