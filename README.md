@@ -19,7 +19,9 @@ As a participant, you join a team and work together remotely within July to Octo
 In the two years of Summer of Nix, the prominent challenge could be considered an onboarding one:
 
 Participation in this program involves making decisions, such as what to work on or how to implement something.
-Often, which option is most appropriate is not made clear by the information available.
+Often, which option is most appropriate is not clear from the information available.
+The organizers were approached with questions more frequently than they were able to respond to.
+And even if they were, they wouldn't necessarily have any more information.
 
 
 
