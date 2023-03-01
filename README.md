@@ -16,14 +16,13 @@ As a participant, you join a team and work together remotely within July to Octo
 
 ## This year's plan
 
-In the two years of Summer of Nix, the prominent challenge could be considered an onboarding one:
-
 Participation in this program involves making decisions, such as what to work on or how to implement something.
-Often, which option is most appropriate is not clear from the information available.
-The organizers were approached with questions more frequently than they were able to respond to.
-And even if they were, they wouldn't necessarily have any more information.
+Often, which decision is most appropriate is not clear from the information available.
+In the past two editions, the organizers were approached with questions more frequently than they were able to respond to.
+And even if they were able, they wouldn't necessarily have the answers.
 
-With mob programming, participants may be more comfortable making decisions as a group, hopefully alleviating that 
+We hope to reduce that frequency with mob programming.
+We expect participants to feel more comfortable making decisions despite little information as a group.
 
 
 
