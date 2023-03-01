@@ -16,32 +16,22 @@ As a participant, you join a team and work together remotely within July to Octo
 
 ## This year's plan
 
+Summary:
+- participation will occur exclusively in mob programming format
+- for 20 hours per week
+- public talks
+- hiring event
+- shift from a many-repo strategy to a monorepo "ngipkgs"
+
 Participation in this program involves making decisions, such as what to work on or how to implement something.
 Often, which decision is most appropriate is not clear from the information available.
 In the past two editions, the organizers were approached with questions more frequently than they were able to respond to.
 And even if they were able, they wouldn't necessarily have the answers.
 We hope that the mob programming format will [help with decision making](#why-mob-programming).
-We expect participants to feel more comfortable making decisions despite little information as a group.
 
 
 
-The scope of the work in Summer of Nix includes making high level decisions with very little information at hand.
-We did our best to provide participants with the confidence to make such decisions even if information.
-Yet, it seems we were not entirely successful and many a participant approached us for more information.
-
-and teams need to form.
-Orchestrating a large-scale collaborative development program such that the needs of participants are met.
-
-participants contacted the organizers more frequently than they were able to provide for.
-TODO CONTINUE HERE
-
-providing participants with the correspondence necessary for confidence in them.
-Organizers were too few to provide this support meaningfully to all of the 
-
-and support. guidance, mentoring and decision making
-
-Following the success of last year's mob programming experiment in solving a significant portion of the organ   , this year the 
-
+- 20 hours per week
 - public lectures
 - hiring event
 - shift from a many-repo strategy to a monorepo "ngipkgs"
