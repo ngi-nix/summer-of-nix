@@ -21,7 +21,8 @@ Often, which decision is most appropriate is not clear from the information avai
 In the past two editions, the organizers were approached with questions more frequently than they were able to respond to.
 And even if they were able, they wouldn't necessarily have the answers.
 
-We hope to reduce that frequency with mob programming.
+We hope that the mob programming format will inspire the groups to make decisions even in the absence of information.
+
 We expect participants to feel more comfortable making decisions despite little information as a group.
 
 
