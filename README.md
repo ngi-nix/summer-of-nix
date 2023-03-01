@@ -19,9 +19,12 @@ As a participant, you join a team and work together remotely within July to Octo
 Summary:
 - participation will occur exclusively in mob programming format
 - for 20 hours per week
-- public talks
+- included public lecture series
 - hiring event
 - shift from a many-repo strategy to a monorepo "ngipkgs"
+
+=> dropping the project specific track handed over to NixOS Fdt
+=> dropping free packaging handed over to NLNet directly
 
 Participation in this program involves making decisions, such as what to work on or how to implement something.
 Often, which decision is most appropriate is not clear from the information available.
