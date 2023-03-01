@@ -16,9 +16,14 @@ As a participant, you join a team and work together remotely within July to Octo
 
 ## This year's plan
 
-In the two years of Summer of Nix, the most prominent challenge was onboarding:
-orchestrating a large-scale collaborative development program such that the needs of participants are met.
-Essentially in Summer of Nix everyone is new, needs to get onboarded and teams need to form.
+In the two years of Summer of Nix, the prominent challenge could be considered an onboarding one:
+
+What do participants need in order to gain confidence early enough into the program?
+We did our best to provide participants with all the information they need, in order to make decisions.
+Still, many lacked the confidence to 
+
+and teams need to form.
+Orchestrating a large-scale collaborative development program such that the needs of participants are met.
 
 participants contacted the organizers more frequently than they were able to provide for.
 TODO CONTINUE HERE
