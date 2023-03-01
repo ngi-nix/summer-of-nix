@@ -20,9 +20,7 @@ Participation in this program involves making decisions, such as what to work on
 Often, which decision is most appropriate is not clear from the information available.
 In the past two editions, the organizers were approached with questions more frequently than they were able to respond to.
 And even if they were able, they wouldn't necessarily have the answers.
-
-We hope that the mob programming format will inspire the groups to make decisions even in the absence of information.
-
+We hope that the mob programming format will [help with decision making](#why-mob-programming).
 We expect participants to feel more comfortable making decisions despite little information as a group.
 
 
@@ -117,6 +115,8 @@ SoN_Nepal = base_stipend × GSoC_medium_project_Nepal ÷ GSoC_medium_project_Net
 We will open an application form on March 1st and you can apply until March 31th (Anywhere on Earth).
 Decisions will be taken in the following 2 weeks.
 
+## Why mob programming
+
 ## How to prepare for the mob programming sessions
 
 If you need help with preparation, ask for help [here](TODO)  anything, feel free to message me. Please arrive prepared at your first session.
@@ -132,7 +132,7 @@ If you need help with preparation, ask for help [here](TODO)  anything, feel fre
 
 ## Specific project ideas for Summer of Nix 2023
 
-- write a deployment story for one package in the NLNet list. 
+- write a deployment story for one package in the NLNet list.
 
 ## Questions and answers
 
@@ -142,6 +142,9 @@ If you need help with preparation, ask for help [here](TODO)  anything, feel fre
 - Why are you using GitHub and other proprietary, unfree and closed-source programs? – Because ...
 - Why mob programming?
 - I am in timezone X. Can I participate?
+
+
+
 
 ## TODO
 
