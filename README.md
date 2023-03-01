@@ -18,9 +18,9 @@ As a participant, you join a team and work together remotely within July to Octo
 
 In the two years of Summer of Nix, the prominent challenge could be considered an onboarding one:
 
-What do participants need in order to gain confidence early enough into the program?
-We did our best to provide participants with all the information they need, in order to make decisions.
-Still, many lacked the confidence to 
+The scope of the work in Summer of Nix includes making impactful and high level decisions.
+We did our best to provide participants with the information and guidance necessary for that.
+Yet, it seems we were not entirely successful and many a participant approached us for more information.
 
 and teams need to form.
 Orchestrating a large-scale collaborative development program such that the needs of participants are met.
