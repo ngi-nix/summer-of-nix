@@ -18,8 +18,9 @@ As a participant, you join a team and work together remotely within July to Octo
 
 In the two years of Summer of Nix, the prominent challenge could be considered an onboarding one:
 
-The scope of the work in Summer of Nix includes making impactful and high level decisions.
-We did our best to provide participants with the information and guidance necessary for that.
+Participation in Summer of Nix involves making decisions often with little information.
+The scope of the work in Summer of Nix includes making high level decisions with very little information at hand.
+We did our best to provide participants with the confidence to make such decisions even if information.
 Yet, it seems we were not entirely successful and many a participant approached us for more information.
 
 and teams need to form.
