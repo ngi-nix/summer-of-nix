@@ -10,6 +10,8 @@ As a participant, you join a team and work together remotely within July to Octo
 
 ## Format
 
+In addition to collaboration on (the work), the 2023 edition also includes a public lecture series and a hiring event.
+
 The program is entirely remote.
 Participation will occur exclusively in mob programming format for 20 hours per week.
 There will be a public lecture series.
