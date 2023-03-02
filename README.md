@@ -8,31 +8,19 @@ It's for anyone who desires to develop and share their Nix and software developm
 
 As a participant, you join a team and work together remotely within July to October.
 
+## Format
+
+The program is entirely remote.
+Participation will occur exclusively in mob programming format for 20 hours per week.
+There will be a public lecture series.
+We would like to organize a hiring event at the end.
+Work on a monorepo "ngipkgs".
+
 ## Goals this year
 
 - improve the deployment story of NGI-funded projects using Nix
 - skill-sharing among the participants and beyond
 - expand the nix community
-
-## This year's plan
-
-Summary:
-- participation will occur exclusively in mob programming format
-- for 20 hours per week
-- included public lecture series
-- hiring event
-- shift from a many-repo strategy to a monorepo "ngipkgs"
-
-=> dropping the project specific track handed over to NixOS Fdt
-=> dropping free packaging handed over to NLNet directly
-
-Participation in this program involves making decisions, such as what to work on or how to implement something.
-Often, which decision is most appropriate is not clear from the information available.
-In the past two editions, the organizers were approached with questions more frequently than they were able to respond to.
-And even if they were able, they wouldn't necessarily have the answers.
-We hope that the mob programming format will [help with decision making](#why-mob-programming).
-
-
 
 - 20 hours per week
 - public lectures
@@ -47,18 +35,6 @@ We hope that the mob programming format will [help with decision making](#why-mo
 2023-07-17: start of the program
 2023-10-13: end of the program (13 weeks after start)
 2023-10-31: (maybe) hiring event
-
-## Format
-
-The program is entirely remote.
-
-Contribution toward improvement of deployment stories ("the work") occurs in the context of mob programming groups ("mobs").
-
-Each mob:
-
-- consist of four participants and a mob programming facilitator
-- has a regular weekly schedule
-- determines its own agenda and objectives within the scope of the program
 
 ## Stipends
 
@@ -108,7 +84,19 @@ SoN_Nepal = base_stipend × GSoC_medium_project_Nepal ÷ GSoC_medium_project_Net
 We will open an application form on March 1st and you can apply until March 31th (Anywhere on Earth).
 Decisions will be taken in the following 2 weeks.
 
-## Why mob programming
+## Why exclusively mob programming?
+
+=> dropping the project specific track handed over to NixOS Fdt
+=> dropping free packaging handed over to NLNet directly
+
+   - consist of four participants and a mob programming facilitator
+   - has a regular weekly schedule
+   - determines its own agenda and objectives within the scope of the program
+Participation in this program involves making decisions, such as what to work on or how to implement something.
+Often, which decision is most appropriate is not clear from the information available.
+In the past two editions, the organizers were approached with questions more frequently than they were able to respond to.
+And even if they were able, they wouldn't necessarily have the answers.
+We hope that the mob programming format will [help with decision making](#why-mob-programming).
 
 ## How to prepare for the mob programming sessions
 
