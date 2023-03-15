@@ -1,83 +1,80 @@
 # Summer of Nix 2023
 
-## What is Summer of Nix
+Summer of Nix is a rare opportunity for Nix users of varying skills and interests,
+to practice Nix remotely,
+in a format that emphasizes knowledge sharing,
+sustainable practice, and quality of product,
+while contributing to open source _and_ receiving [(some) payment](#stipends-payment) for it.
 
-Summer of Nix is a rare opportunity to collaborate on Nix packaging of open-source software in a supportive environment while being paid.
+The 2023 edition also includes [public talks](#public-talks)
+that you may give or just enjoy,
+and a [hiring event](#hiring-event) that you may not wish to miss.
 
-It's for anyone who desires to develop and share their Nix and software development skills while working together.
+Summer of Nix 2023 takes place between July and October 2023.
 
-As a participant, you join a team and work together remotely within July to October.
+## Goals
 
-## Format
+Summer of Nix is sponsored by a [Next Generation Internet (NGI)](https://www.ngi.eu/) grant
+funnelled through the [NLNet Foundation](https://nlnet.nl/) and the NixOS Foundation
+to:
 
-In addition to collaboration on (the work), the 2023 edition also includes a public lecture series and a hiring event.
+- improve the deployment story of NGI-funded projects (using Nix, of course)
+- skill share among the participants
+- expand and enrich the Nix community
 
-The program is entirely remote.
-Participation will occur exclusively in mob programming format for 20 hours per week.
-There will be a public lecture series.
-We would like to organize a hiring event at the end.
-Work on a monorepo "ngipkgs".
+## The main activity
 
-## Goals this year
+The main activity for achieving our [goals](#goals) is remote mob programming,
+primarily [as described here](https://www.remotemobprogramming.org/).
+Participants organize into mobs —
+collaboration groups of between five and seven each,
+and work 20 hours a week during the program.
+Each mob is joined by a facilitator —
+an experienced developer who is familiar with mob programming,
 
-- improve the deployment story of NGI-funded projects using Nix
-- skill-sharing among the participants and beyond
-- expand the nix community
+## Stipends (payment)
 
-- 20 hours per week
-- public lectures
-- hiring event
-- shift from a many-repo strategy to a monorepo "ngipkgs"
+### TL;DR
+
+See [this spreadsheet](https://docs.google.com/spreadsheets/d/e/2PACX-1vScs76kD8qJinBAMWX_rRD9Gxu9YbSZmutQhd4UCw7oN3iyVVHFDtAlB5tMKUba-8P6KsFLrcFQGSaJ/pubhtml).
+
+### Details
+
+Base rates:
+
+| Role            | Base rate EUR |
+|-----------------|---------------|
+| Participant     |          3000 |
+| Facilitator     |          5000 |
+| Organizer       |          2000 |
+
+Residents of EU member states receive the base rate without modification.
+For residents of other countries
+an adjustment applies according to [purchasing power parity](https://en.wikipedia.org/wiki/Purchasing_power_parity)
+as implemented by Google Summer of Code in [their stipend system](https://developers.google.com/open-source/gsoc/help/student-stipends).
 
 ## Timeline
 
-2023-04-01: open application window
-2023-04-30: close application window
-2023-05-15: answer applications
-2023-07-17: start of the program
-2023-10-13: end of the program (13 weeks after start)
-2023-10-31: (maybe) hiring event
-
-## Stipends
-
-Role            | Per role (EUR) 
-----------------|----------------
-mob facilitator |           5000 
-participant     |           3000 
-organizer       |           2000 
-grand total     |
-
-EU member states all receive the base rate without modification.
-Stipend for non-EU countries for any role are adjusted according to [Purchasing Power Parity](https://en.wikipedia.org/wiki/Purchasing_power_parity).
-[Google Summer of Code](https://developers.google.com/open-source/gsoc/help/student-stipends)'s stipend system is adopted for this purpose, as shown in this example:
-
-The stipend for a Nepalese participant is the base Summer of Nix stipend multiplied by the ratio of GSoC's Nepalese and Netherlands stipends (amounts sourced [here](https://developers.google.com/open-source/gsoc/help/student-stipends#total_stipend_amount)).
-The formula is
-
-```
-SoN_Nepal = base_stipend × GSoC_medium_project_Nepal ÷ GSoC_medium_project_Netherlands
-          = 3000 EUR × 1500 USD ÷ 2700 USD
-          ≅ 1666.67 EUR
-```
+2023-04-01: application window opens
+2023-04-30: application window closes
+2023-05-15: applications processed
+2023-07-17: program begins
+2023-10-13: program ends (duration 13 weeks)
+2023-10-31: hiring event
 
 ## Budget
 
+| Number |  Total (EUR) |
+|--------|--------------|
+|     5  |        25000 |
+|    20  |        60000 |
+|     3  |         6000 |
+|        |    **91000** |
 
- Total (EUR)
-------------
-       25000
-       60000
-        6000
-   **91000**Number | 
--------|-
-     5 | ## Eligibility
-    20 | 
-     3 | - Past the age of majority
-       | - Basic familiarity with Nix
-
-
-- Fluent in English
-- Equipment and means to participate in mob programming sessions
+## Eligibility
+ 
+ - Past the age of majority  - Fluent in English
+ - Basic familiarity with Nix- Equipment and means to participate in mob programming sessions
   - internet connection that is reliable and fast enough for long video sessions
   - ability to use all tools mentioned in the How to prepare for mob programming section
 
