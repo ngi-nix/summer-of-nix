@@ -6,16 +6,15 @@ in a format that emphasizes knowledge sharing,
 sustainable practice, and quality of product,
 while contributing to open source _and_ receiving [(some) payment](#stipends-payment) for it.
 
-The 2023 edition also includes [public talks](#public-talks)
-that you may give or just enjoy,
-and a [hiring event](#hiring-event) that you may not wish to miss.
+The 2023 edition also has [public talks](#public-talks)
+and a life-changing [hiring event](#hiring-event).
 
 Summer of Nix 2023 takes place between July and October 2023.
 
 ## Goals
 
 Summer of Nix is sponsored by a [Next Generation Internet (NGI)](https://www.ngi.eu/) grant
-funnelled through the [NLNet Foundation](https://nlnet.nl/) and the NixOS Foundation
+through the [NLNet Foundation](https://nlnet.nl/) and the NixOS Foundation
 to:
 
 - improve the deployment story of NGI-funded projects (using Nix, of course)
@@ -25,7 +24,7 @@ to:
 ## The main activity
 
 The main activity for achieving our [goals](#goals) is remote mob programming,
-primarily [as described here](https://www.remotemobprogramming.org/).
+mostly [as described here][remote mob programming].
 Participants organize into mobs —
 collaboration groups of between five and seven each,
 and work 20 hours a week during the program.
@@ -34,33 +33,27 @@ an experienced developer who is familiar with mob programming,
 
 ## Stipends (payment)
 
-### TL;DR
-
-See [this spreadsheet](https://docs.google.com/spreadsheets/d/e/2PACX-1vScs76kD8qJinBAMWX_rRD9Gxu9YbSZmutQhd4UCw7oN3iyVVHFDtAlB5tMKUba-8P6KsFLrcFQGSaJ/pubhtml).
-
-### Details
-
-Base rates:
-
-| Role            | Base rate EUR |
-|-----------------|---------------|
-| Participant     |          3000 |
-| Facilitator     |          5000 |
-| Organizer       |          2000 |
-
 Residents of EU member states receive the base rate without modification.
 For residents of other countries
 an adjustment applies according to [purchasing power parity](https://en.wikipedia.org/wiki/Purchasing_power_parity)
 as implemented by Google Summer of Code in [their stipend system](https://developers.google.com/open-source/gsoc/help/student-stipends).
 
+|               | Participant | Facilitator | Organizer |
+|---------------|-------------|-------------|-----------|
+| Base rate EUR |        3000 |        5000 |      2000 |
+
+For calculated rates, see [this spreadsheet](https://docs.google.com/spreadsheets/d/e/2PACX-1vScs76kD8qJinBAMWX_rRD9Gxu9YbSZmutQhd4UCw7oN3iyVVHFDtAlB5tMKUba-8P6KsFLrcFQGSaJ/pubhtml).
+
 ## Timeline
 
-2023-04-01: application window opens
-2023-04-30: application window closes
-2023-05-15: applications processed
-2023-07-17: program begins
-2023-10-13: program ends (duration 13 weeks)
-2023-10-31: hiring event
+| Date       |                               |
+| ---------- | ------------------------------| 
+| 2023-04-01 | application window opens      |
+| 2023-04-30 | application window closes     |
+| 2023-05-15 | applications processed        |
+| 2023-07-17 | program begins                |
+| 2023-10-13 | program ends (after 13 weeks) |
+| 2023-10-31 | hiring event                  |
 
 ## Budget
 
@@ -73,15 +66,16 @@ as implemented by Google Summer of Code in [their stipend system](https://develo
 
 ## Eligibility
  
- - Past the age of majority  - Fluent in English
- - Basic familiarity with Nix- Equipment and means to participate in mob programming sessions
-  - internet connection that is reliable and fast enough for long video sessions
-  - ability to use all tools mentioned in the How to prepare for mob programming section
+ - Past the age of majority
+ - Fluent English
+ - Basic familiarity with Nix
+ - Able to participate in [remote mob programming] throughout the program
+   with regards to willingness to do so
+   and [technical requirements].
 
 ## How to apply
 
-We will open an application form on March 1st and you can apply until March 31th (Anywhere on Earth).
-Decisions will be taken in the following 2 weeks.
+TBD
 
 ## Why exclusively mob programming?
 
@@ -123,8 +117,7 @@ If you need help with preparation, ask for help [here](TODO)  anything, feel fre
 - Why mob programming?
 - I am in timezone X. Can I participate?
 
-
-
+[remote mob programming]: https://www.remotemobprogramming.org/
 
 ## TODO
 
@@ -139,3 +132,4 @@ monorepo reasons
     - package-specific repositories under the ngi-nix GitHub organization
     - a yet non-existent monorepo ngi-nix/ngipkgs
   - We feel that a monorepo would serve the best balance between the needs of the users, the developers (participants) and the funding organizations. 
+
