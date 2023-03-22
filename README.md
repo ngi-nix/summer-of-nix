@@ -29,7 +29,7 @@ Participants organize into mobs —
 collaboration groups of between five and seven each,
 and work 20 hours a week during the program.
 Each mob is joined by a facilitator —
-an experienced developer who is familiar with mob programming,
+an experienced developer who is familiar with mob programming.
 
 ## Stipends (payment)
 
@@ -50,28 +50,18 @@ For calculated rates, see [this spreadsheet](https://docs.google.com/spreadsheet
 | ---------- | ------------------------------| 
 | 2023-04-01 | application window opens      |
 | 2023-04-30 | application window closes     |
-| 2023-05-15 | applications processed        |
+| 2023-05-15 | applications responded to     |
 | 2023-07-17 | program begins                |
 | 2023-10-13 | program ends (after 13 weeks) |
 | 2023-10-31 | hiring event                  |
-
-## Budget
-
-| Number |  Total (EUR) |
-|--------|--------------|
-|     5  |        25000 |
-|    20  |        60000 |
-|     3  |         6000 |
-|        |    **91000** |
 
 ## Eligibility
  
  - Past the age of majority
  - Fluent English
  - Basic familiarity with Nix
- - Able to participate in [remote mob programming] throughout the program
-   with regards to willingness to do so
-   and [technical requirements].
+ - Meeting the [technical requirements]
+   for participation in [remote mob programming] throughout the program.
 
 ## How to apply
 
