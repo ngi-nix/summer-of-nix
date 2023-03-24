@@ -57,11 +57,30 @@ For calculated rates, see [this spreadsheet](https://docs.google.com/spreadsheet
 
 ## Eligibility
  
- - Past the age of majority
- - Fluent English
- - Basic familiarity with Nix
- - Meeting the [technical requirements]
-   for participation in [remote mob programming] throughout the program.
+ - past the age of majority
+ - fluent English
+ - basic familiarity with Nix
+ - meeting the [technical requirements](#technical-requirements)
+
+## Technical requirements
+
+…for participation in [remote mob programming] throughout the program.
+
+- internet connection suitable for hours of ongoing video call
+  - stable (mobile broadband unlikely to satisfy this)
+  - sufficient badwidth
+- computer capable of doing work while sharing screen in a video call
+  - a CPU with CPU mark of 7,000 and single thread rating of 1,900
+    [according to PassMark](https://www.cpubenchmark.net/cpu_list.php)
+    should suffice.
+  - video camera
+  - headphones and reasonable quality microphone
+- consistently low noise environment
+
+Please use a friend to make a test [Jitsi Meet](https://meet.jit.si/) call,
+including video, audio and __entire screen__ sharing.
+Ask your friend whether they can see your screen and hear you well
+while you are [stressing your CPU](https://silver.urih.com/).
 
 ## How to apply
 
