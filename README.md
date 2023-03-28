@@ -29,7 +29,7 @@ Participants organize into mobs —
 collaboration groups of between five and seven each,
 and work 20 hours a week during the program.
 Each mob is joined by a facilitator —
-an experienced developer who is familiar with mob programming,
+an experienced developer who is familiar with mob programming.
 
 ## Stipends (payment)
 
@@ -50,28 +50,37 @@ For calculated rates, see [this spreadsheet](https://docs.google.com/spreadsheet
 | ---------- | ------------------------------| 
 | 2023-04-01 | application window opens      |
 | 2023-04-30 | application window closes     |
-| 2023-05-15 | applications processed        |
+| 2023-05-15 | applications responded to     |
 | 2023-07-17 | program begins                |
 | 2023-10-13 | program ends (after 13 weeks) |
 | 2023-10-31 | hiring event                  |
 
-## Budget
-
-| Number |  Total (EUR) |
-|--------|--------------|
-|     5  |        25000 |
-|    20  |        60000 |
-|     3  |         6000 |
-|        |    **91000** |
-
 ## Eligibility
  
- - Past the age of majority
- - Fluent English
- - Basic familiarity with Nix
- - Able to participate in [remote mob programming] throughout the program
-   with regards to willingness to do so
-   and [technical requirements].
+ - past the age of majority
+ - fluent English
+ - basic familiarity with Nix
+ - meeting the [technical requirements](#technical-requirements)
+
+## Technical requirements
+
+…for participation in [remote mob programming] throughout the program.
+
+- internet connection suitable for hours of ongoing video call
+  - stable (mobile broadband unlikely to satisfy this)
+  - sufficient badwidth
+- computer capable of doing work while sharing screen in a video call
+  - a CPU with CPU mark of 7,000 and single thread rating of 1,900
+    [according to PassMark](https://www.cpubenchmark.net/cpu_list.php)
+    should suffice.
+  - video camera
+  - headphones and reasonable quality microphone
+- consistently low noise environment
+
+Please use a friend to make a test [Jitsi Meet](https://meet.jit.si/) call,
+including video, audio and __entire screen__ sharing.
+Ask your friend whether they can see your screen and hear you well
+while you are [stressing your CPU](https://silver.urih.com/).
 
 ## How to apply
 
