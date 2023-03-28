@@ -33,14 +33,14 @@ an experienced developer who is familiar with mob programming.
 
 ## Stipends (payment)
 
-Residents of EU member states receive the base rate without modification.
-For residents of other countries
-an adjustment applies according to [purchasing power parity](https://en.wikipedia.org/wiki/Purchasing_power_parity)
-as implemented by Google Summer of Code in [their stipend system](https://developers.google.com/open-source/gsoc/help/student-stipends).
+The stipends for Summer of Nix 2023 are as follows:
 
 |               | Participant | Facilitator | Organizer |
 |---------------|-------------|-------------|-----------|
-| Base rate EUR |        3000 |        5000 |      2000 |
+| Base stipend EUR |        3000 |        5000 |      2000 |
+
+Residents of EU member states receive the base stipend without modification.
+For residents of other countries an adjustment applies according to [purchasing power parity](https://en.wikipedia.org/wiki/Purchasing_power_parity) relative to the Netherlands, derived via Google Summer of Code's [stipend system](https://developers.google.com/open-source/gsoc/help/student-stipends).
 
 For calculated rates, see [this spreadsheet](https://docs.google.com/spreadsheets/d/e/2PACX-1vScs76kD8qJinBAMWX_rRD9Gxu9YbSZmutQhd4UCw7oN3iyVVHFDtAlB5tMKUba-8P6KsFLrcFQGSaJ/pubhtml).
 
@@ -50,17 +50,19 @@ For calculated rates, see [this spreadsheet](https://docs.google.com/spreadsheet
 | ---------- | ------------------------------| 
 | 2023-04-01 | application window opens      |
 | 2023-04-30 | application window closes     |
-| 2023-05-15 | applications responded to     |
+| 2023-05-15 | application responses sent    |
 | 2023-07-17 | program begins                |
 | 2023-10-13 | program ends (after 13 weeks) |
 | 2023-10-31 | hiring event                  |
 
 ## Eligibility
- 
- - past the age of majority
- - fluent English
- - basic familiarity with Nix
- - meeting the [technical requirements](#technical-requirements)
+
+Applicants should
+
+ - be past the age of majority
+ - be fluent English
+ - have basic familiarity with Nix
+ - meet the [technical requirements](#technical-requirements)
 
 ## Technical requirements
 
