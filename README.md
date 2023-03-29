@@ -61,6 +61,7 @@ Applicants should
 
  - be past the age of majority
  - be fluent English
+ - posess at least "junior" programming skills
  - have basic familiarity with Nix
  - meet the [technical requirements](#technical-requirements)
 
@@ -88,42 +89,54 @@ while you are [stressing your CPU](https://silver.urih.com/).
 
 TBD
 
-## Why exclusively mob programming?
-
-=> dropping the project specific track handed over to NixOS Fdt
-=> dropping free packaging handed over to NLNet directly
-
-   - consist of four participants and a mob programming facilitator
-   - has a regular weekly schedule
-   - determines its own agenda and objectives within the scope of the program
-Participation in this program involves making decisions, such as what to work on or how to implement something.
-Often, which decision is most appropriate is not clear from the information available.
-In the past two editions, the organizers were approached with questions more frequently than they were able to respond to.
-And even if they were able, they wouldn't necessarily have the answers.
-We hope that the mob programming format will [help with decision making](#why-mob-programming).
-
-## How to prepare for the mob programming sessions
+## How to prepare
 
 If you need help with preparation, ask for help [here](TODO)  anything, feel free to message me. Please arrive prepared at your first session.
 
 1. Read http://remotemobprogramming.org/.
-1. Make a test [Jitsi Meet](https://meet.jit.si/) call with a friend and use it to test video, audio and screen sharing, entire screen.
-1. Install the [mob command line utility](https://mob.sh/).
-1. Test that [`git` is set up to authenticate with GitHub](https://docs.github.com/en/get-started/quickstart/set-up-git).
-1. Have [direnv](https://direnv.net/) or equivalent both;
+1. Make a test [Jitsi Meet](https://meet.jit.si/) call with a friend
+   and use it to test video, audio and entire screen sharing.
+1. Familiarize yourself with the [mob command line utility](https://mob.sh/).
+1. Have [`git` is set up to authenticate with GitHub](https://docs.github.com/en/get-started/quickstart/set-up-git).
+1. Have [direnv](https://direnv.net/) or equivalent, both;
    1. [installed](https://direnv.net/docs/installation.html)
    1. and [set up in your shell](https://direnv.net/docs/hook.html).
 1. Configure [two-factor authentication for your GitHub account](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/about-two-factor-authentication).
 
-## Specific project ideas for Summer of Nix 2023
-
-- write a deployment story for one package in the NLNet list.
-
 ## Questions and answers
 
-- Is this program specifically for experts? – No 
-- Is this program specifically for beginners? – No
-- How familiar must I be with Nix in order to participate?
+### Why mob programming?
+
+The mob programming format optimizes for knowledge sharing.
+This seems appropriate for short-lived teams
+working on a series of unfamiliar projects.
+
+Also, in the past two editions,
+a significant bottleneck was the ogranizers' time.
+With mob programming, we hope to reduce the load on organizers
+by maximizing cross-participant collaboration.
+
+Co-organizer [Dawn](#shahar-dawn-or), having been
+organizing and participating in regular mob programming sessions since 2021
+and having facilitated mob programming sessions in the [last year's edition](#2022),
+is convinced that the format — with proper facilitation —
+is absent many collaboration problems prevalent in solo-programming,
+and overall produces better software, more sustainably.
+
+Co-organizer [Matthias](#matthias-meschede) is optimistic about this premise and feels that holding this year's edition in mob programming format is a valuable experiment.
+
+### Is this program specifically for beginners?
+
+We intend to have participants of varying levels of experience.
+
+### How familiar must I be with Nix?
+
+Do you use NixOS?
+Do you use Nix shell?
+Do you use home-manager?
+Did you make a derivation?
+If you answered yes to any, you qualify.
+
 - Why are you using GitHub and other proprietary, unfree and closed-source programs? – Because ...
 - Why mob programming?
 - I am in timezone X. Can I participate?
@@ -143,4 +156,14 @@ monorepo reasons
     - package-specific repositories under the ngi-nix GitHub organization
     - a yet non-existent monorepo ngi-nix/ngipkgs
   - We feel that a monorepo would serve the best balance between the needs of the users, the developers (participants) and the funding organizations. 
+
+## Organizers
+
+## Previous editions
+
+### 2022
+
+### 2021
+
+[Report](https://summer.nixos.org/assets/report-2021.pdf)
 
