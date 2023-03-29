@@ -35,14 +35,19 @@ an experienced developer who is familiar with mob programming.
 
 The stipends for Summer of Nix 2023 are as follows:
 
-|               | Participant | Facilitator | Organizer |
-|---------------|-------------|-------------|-----------|
+|                  | Participant | Facilitator | Organizer |
+|------------------|-------------|-------------|-----------|
 | Base stipend EUR |        3000 |        5000 |      2000 |
 
 Residents of EU member states receive the base stipend without modification.
-For residents of other countries an adjustment applies according to [purchasing power parity](https://en.wikipedia.org/wiki/Purchasing_power_parity) relative to the Netherlands, derived via Google Summer of Code's [stipend system](https://developers.google.com/open-source/gsoc/help/student-stipends).
+For residents of other countries an adjustment applies
+according to [purchasing power parity] relative to the Netherlands,
+derived via [Google Summer of Code's stipend system].
 
 For calculated rates, see [this spreadsheet](https://docs.google.com/spreadsheets/d/e/2PACX-1vScs76kD8qJinBAMWX_rRD9Gxu9YbSZmutQhd4UCw7oN3iyVVHFDtAlB5tMKUba-8P6KsFLrcFQGSaJ/pubhtml).
+
+[purchasing power parity]: https://en.wikipedia.org/wiki/Purchasing_power_parity
+[Google Summer of Code's stipend system]: https://developers.google.com/open-source/gsoc/help/student-stipends
 
 ## Timeline
 
@@ -60,7 +65,7 @@ For calculated rates, see [this spreadsheet](https://docs.google.com/spreadsheet
 Applicants should
 
  - be past the age of majority
- - be fluent English
+ - have fluent English
  - posess at least "junior" programming skills
  - have basic familiarity with Nix
  - meet the [technical requirements](#technical-requirements)
