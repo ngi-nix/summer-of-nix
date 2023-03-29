@@ -137,11 +137,18 @@ Do you use home-manager?
 Did you make a derivation?
 If you answered yes to any, you qualify.
 
-- Why are you using GitHub and other proprietary, unfree and closed-source programs? – Because ...
-- Why mob programming?
-- I am in timezone X. Can I participate?
+### Why does this NGI sponsored program use this or that software?
+
+We do our best to select open source and [zero-knowledge] software.
+But those are not hard constraints,
+nor are they the only factors to consider.
 
 [remote mob programming]: https://www.remotemobprogramming.org/
+[zero-knowledge]: https://en.wikipedia.org/wiki/Zero-knowledge_service
+
+### Are participants from all timezones eligible?
+
+Yes.
 
 ## TODO
 
