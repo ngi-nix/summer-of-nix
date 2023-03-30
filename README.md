@@ -76,7 +76,7 @@ Applicants should
 
 - internet connection suitable for hours of ongoing video call
   - stable (mobile broadband unlikely to satisfy this)
-  - sufficient badwidth
+  - sufficient bandwidth
 - computer capable of doing work while sharing screen in a video call
   - a CPU with CPU mark of 7,000 and single thread rating of 1,900
     [according to PassMark](https://www.cpubenchmark.net/cpu_list.php)
