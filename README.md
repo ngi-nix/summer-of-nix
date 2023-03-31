@@ -92,7 +92,9 @@ while you are [stressing your CPU](https://silver.urih.com/).
 
 ## How to apply
 
-TBD
+Fill [the application form][application form].
+
+[application form]: https://baserow.io/form/HgVDOqCbHh5fWP1Tguu9DBpXmQzBA6WJv-zKbXnmAOk
 
 ## How to prepare
 
