@@ -96,8 +96,6 @@ TBD
 
 ## How to prepare
 
-If you need help with preparation, ask for help [here](TODO)  anything, feel free to message me. Please arrive prepared at your first session.
-
 1. Read http://remotemobprogramming.org/.
 1. Make a test [Jitsi Meet](https://meet.jit.si/) call with a friend
    and use it to test video, audio and entire screen sharing.
@@ -121,14 +119,14 @@ a significant bottleneck was the ogranizers' time.
 With mob programming, we hope to reduce the load on organizers
 by maximizing cross-participant collaboration.
 
-Co-organizer [Dawn](#shahar-dawn-or), having been
+Co-organizer [Dawn][Shahar "Dawn" Or], having been
 organizing and participating in regular mob programming sessions since 2021
 and having facilitated mob programming sessions in the [last year's edition](#2022),
 is convinced that the format — with proper facilitation —
 is absent many collaboration problems prevalent in solo-programming,
 and overall produces better software, more sustainably.
 
-Co-organizer [Matthias](#matthias-meschede) is optimistic about this premise and feels that holding this year's edition in mob programming format is a valuable experiment.
+Co-organizer [Matthias][Matthias Meschede] is optimistic about this premise and feels that holding this year's edition in mob programming format is a valuable experiment.
 
 ### Is this program specifically for beginners?
 
@@ -148,34 +146,32 @@ We do our best to select open source and [zero-knowledge] software.
 But those are not hard constraints,
 nor are they the only factors to consider.
 
-[remote mob programming]: https://www.remotemobprogramming.org/
+We use:
+
+- [Baserow](https://baserow.io/)
+- [GitHub](https://github.com/)
+- [Matrix](https://matrix.org/)
+
 [zero-knowledge]: https://en.wikipedia.org/wiki/Zero-knowledge_service
 
 ### Are participants from all timezones eligible?
 
 Yes.
 
-## TODO
+## Public discussion
 
-- a safe and welcoming environment
-- participation of Nix users of all levels
-
-monorepo reasons
-  - Primary produce of the Summer of Nix are open-source Nix packages (code, documentation, and deployment stories)
-  - Where can these packages currently go?
-    - An upstream repository
-    - [nixpkgs]() or a fork of it,
-    - package-specific repositories under the ngi-nix GitHub organization
-    - a yet non-existent monorepo ngi-nix/ngipkgs
-  - We feel that a monorepo would serve the best balance between the needs of the users, the developers (participants) and the funding organizations. 
+In [this category](https://discourse.nixos.org/c/45).
 
 ## Organizers
 
-## Previous editions
+Feel free to message us for private concerns.
 
-### 2022
+- [Matthias Meschede]
+- [Shahar "Dawn" Or]
 
-### 2021
+<!-- URLs -->
 
-[Report](https://summer.nixos.org/assets/report-2021.pdf)
-
+[remote mob programming]: https://www.remotemobprogramming.org/
+[son-2021-report]: https://summer.nixos.org/assets/report-2021.pdf
+[Matthias Meschede]: https://mmesch.com/
+[Shahar "Dawn" Or]: https://github.com/mightyiam
