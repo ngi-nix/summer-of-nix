@@ -7,7 +7,7 @@ sustainable practice, and quality of product,
 while contributing to open source _and_ receiving [(some) payment](#stipends-payment) for it.
 
 The 2023 edition also has [public talks](#public-talks)
-and a life-changing [hiring event](#hiring-event).
+and a (possibly) life-changing [hiring event](#hiring-event).
 
 Summer of Nix 2023 takes place between July and October 2023.
 
