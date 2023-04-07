@@ -11,10 +11,13 @@ and a (possibly) life-changing [hiring event](#hiring-event).
 
 Summer of Nix 2023 takes place between July and October 2023.
 
+Participation in Summer of Nix has proven to be — for some —
+a pathway to contract work for [NLNet] and the NixOS Foundation.
+
 ## Goals
 
 Summer of Nix is sponsored by a [Next Generation Internet (NGI)](https://www.ngi.eu/) grant
-through the [NLNet Foundation](https://nlnet.nl/) and the NixOS Foundation
+through the [NLNet Foundation][NLNet] and the NixOS Foundation
 to:
 
 - improve the deployment story of NGI-funded projects (using Nix, of course)
@@ -26,10 +29,15 @@ to:
 The main activity for achieving our [goals](#goals) is remote mob programming,
 mostly [as described here][remote mob programming].
 Participants organize into mobs —
-collaboration groups of between five and seven each,
-and work 20 hours a week during the program.
+collaboration groups of between five and seven each.
 Each mob is joined by a facilitator —
 an experienced developer who is familiar with mob programming.
+
+Mobs coordinate their own schedules.
+The schedules should fit within the duration of the program.
+
+Each participant participates in mob sessions for at least 160 hours in total
+(e.g. 40 days × 4 hours).
 
 ## Stipends (payment)
 
@@ -174,6 +182,7 @@ Feel free to message us for private concerns.
 
 <!-- URLs -->
 
+[NLNet]: https://nlnet.nl/
 [remote mob programming]: https://www.remotemobprogramming.org/
 [son-2021-report]: https://summer.nixos.org/assets/report-2021.pdf
 [Matthias Meschede]: https://mmesch.com/
