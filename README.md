@@ -44,8 +44,9 @@ For residents of other countries an adjustment applies
 according to [purchasing power parity] relative to the Netherlands,
 derived via [Google Summer of Code's stipend system].
 
-For calculated rates, see [this spreadsheet](https://docs.google.com/spreadsheets/d/e/2PACX-1vScs76kD8qJinBAMWX_rRD9Gxu9YbSZmutQhd4UCw7oN3iyVVHFDtAlB5tMKUba-8P6KsFLrcFQGSaJ/pubhtml).
+For calculated rates, see [this spreadsheet][spreadsheet].
 
+[spreadsheet]: https://docs.google.com/spreadsheets/d/1z04TuUptcZyXCEP_WjaiqbJOKwHaKyOUnj1VspBrEyo/edit?usp=sharing
 [purchasing power parity]: https://en.wikipedia.org/wiki/Purchasing_power_parity
 [Google Summer of Code's stipend system]: https://developers.google.com/open-source/gsoc/help/student-stipends
 
