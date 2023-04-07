@@ -24,7 +24,6 @@
           mkdir -p $out
           pandoc $src/README.md \
               -f gfm \
-              --template template.latex \
               --pdf-engine=xelatex \
               -M date="`date "+%B %e, %Y"`" \
               -o $out/README.pdf
