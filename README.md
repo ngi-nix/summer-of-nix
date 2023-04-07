@@ -2,8 +2,7 @@
 
 Summer of Nix is a rare opportunity for Nix users of varying skills and interests,
 to practice Nix remotely,
-in a format that emphasizes knowledge sharing,
-sustainable practice, and quality of product,
+in mob programming format,
 while contributing to open source _and_ receiving [(some) payment](#stipends-payment) for it.
 
 The 2023 edition also has [public talks](#public-talks)
