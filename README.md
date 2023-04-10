@@ -115,6 +115,12 @@ Here is [the playlist for last year's series].
 [NixOS YouTube channel]: https://www.youtube.com/@NixOS-Foundation
 [the playlist for last year's series]: https://youtube.com/playlist?list=PLt4-_lkyRrOMWyp5G-m_d1wtTcbBaOxZk
 
+## Hiring event
+
+Participants will be afforded an opportunity to meet with employers
+for whom Nix is a core strength.
+This can be your chance to get hired doing Nix long term.
+
 ## How to prepare
 
 1. Read http://remotemobprogramming.org/.
