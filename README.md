@@ -30,7 +30,8 @@ mostly [as described here][remote mob programming].
 Participants organize into mobs —
 collaboration groups of between five and seven each.
 Each mob is joined by a facilitator —
-an experienced developer who is familiar with mob programming.
+an experienced developer who is familiar with mob programming
+([apply for facilitation](#apply-for-facilitation)).
 
 Mobs coordinate their own schedules.
 The schedules should fit within the duration of the program.
@@ -120,6 +121,14 @@ Here is [the playlist for last year's series].
 Participants will be afforded an opportunity to meet with employers
 for whom Nix is a core strength.
 This can be your chance to get hired doing Nix long term.
+
+## Apply for facilitation
+
+Success of this program depends on a few capable mob programming facilitators.
+If you are experienced in software development and mob programming facilitation,
+consider [applying](#how-to-apply) for mob programming facilitation in Summer of Nix 2023.
+You'd likely be working with an enthusiastic and diverse group of Nix users,
+eager to learn Nix, professional software development and the mob format.
 
 ## How to prepare
 
