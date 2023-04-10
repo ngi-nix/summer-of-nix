@@ -107,14 +107,14 @@ Fill [the application form][application form].
 
 ## Public talks
 
-This year's public talks will be live streamed on several platforms.
-  - [Owncast]
-  - [NixOS YouTube channel]
-  - [Twitch]
+This year's public talks will be live streamed on several platforms. A asterisk indicates the interactive platfroms, where we'll read the chat.
+  - [Owncast]*
+  - [NixOS YouTube channel]*
+  - [Twitch]*
   - [Twitter]
   - [LinkedIn]
 
-Here is [the playlist for last year's series].
+Here is [the playlist for last year's series]. 
 
 [NixOS YouTube channel]: https://www.youtube.com/@NixOS-Foundation
 [the playlist for last year's series]: https://youtube.com/playlist?list=PLt4-_lkyRrOMWyp5G-m_d1wtTcbBaOxZk
