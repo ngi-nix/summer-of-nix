@@ -187,6 +187,7 @@ We use:
 - [Baserow](https://baserow.io/)
 - [GitHub](https://github.com/)
 - [Matrix](https://matrix.org/)
+- [YouTube](https://youtube.com/)
 
 [zero-knowledge]: https://en.wikipedia.org/wiki/Zero-knowledge_service
 
