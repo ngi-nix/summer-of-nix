@@ -188,6 +188,7 @@ We use:
 - [GitHub](https://github.com/)
 - [Matrix](https://matrix.org/)
 - [YouTube](https://youtube.com/)
+- [Google Sheets](https://www.google.com/sheets/about/)
 
 [zero-knowledge]: https://en.wikipedia.org/wiki/Zero-knowledge_service
 
