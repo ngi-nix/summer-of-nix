@@ -104,6 +104,17 @@ Fill [the application form][application form].
 
 [application form]: https://baserow.io/form/HgVDOqCbHh5fWP1Tguu9DBpXmQzBA6WJv-zKbXnmAOk
 
+## Public talks
+
+This year's public talks will be live streamed and archived
+on the [NixOS YouTube channel].
+Subscribed and hit the bell to be notified.
+
+Here is [the playlist for last year's series].
+
+[NixOS YouTube channel]: https://www.youtube.com/@NixOS-Foundation
+[the playlist for last year's series]: https://youtube.com/playlist?list=PLt4-_lkyRrOMWyp5G-m_d1wtTcbBaOxZk
+
 ## How to prepare
 
 1. Read http://remotemobprogramming.org/.
