@@ -107,14 +107,22 @@ Fill [the application form][application form].
 
 ## Public talks
 
-This year's public talks will be live streamed and archived
-on the [NixOS YouTube channel].
-Subscribed and hit the bell to be notified.
+This year's public talks will be live streamed on several platforms.
+The platforms on which you'll be able to chat with the speaker are marked with an asterisk.
+  - [Owncast]*
+  - [YouTube]*
+  - [Twitch]*
+  - [Twitter]
+  - [LinkedIn]
 
 Here is [the playlist for last year's series].
 
-[NixOS YouTube channel]: https://www.youtube.com/@NixOS-Foundation
 [the playlist for last year's series]: https://youtube.com/playlist?list=PLt4-_lkyRrOMWyp5G-m_d1wtTcbBaOxZk
+[YouTube]: https://www.youtube.com/@NixOS-Foundation
+[Owncast]: https://live.nixos.org/
+[Twitch]: https://www.twitch.tv/nixos_foundation
+[Twitter]: https://twitter.com/nixos_org
+[LinkedIn]: https://www.linkedin.com/company/nixos-foundation
 
 ## Hiring event
 
