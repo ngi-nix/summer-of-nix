@@ -63,7 +63,6 @@ For calculated rates, see [this spreadsheet][spreadsheet].
 | Date       |                               |
 | ---------- | ------------------------------| 
 | 2023-04-01 | application window opens      |
-| 2023-04-30 | application window closes     |
 | 2023-05-15 | application responses sent    |
 | 2023-07-17 | program begins                |
 | 2023-10-13 | program ends (after 13 weeks) |
