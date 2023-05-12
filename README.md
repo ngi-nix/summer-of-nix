@@ -203,7 +203,7 @@ Yes.
 
 ## Public discussion
 
-In [this category](https://discourse.nixos.org/c/45).
+In [this Matrix room](https://matrix.to/#/#summer-of-nix-2023-public:matrix.org).
 
 ## Organizers
 
