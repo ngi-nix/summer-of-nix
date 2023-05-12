@@ -100,9 +100,7 @@ while you are [stressing your CPU](https://silver.urih.com/).
 
 ## How to apply
 
-Fill [the application form][application form].
-
-[application form]: https://baserow.io/form/HgVDOqCbHh5fWP1Tguu9DBpXmQzBA6WJv-zKbXnmAOk
+Join [this Matrix room](https://matrix.to/#/#summer-of-nix-2023-application:matrix.org), where further instructions will be provided.
 
 ## Public talks
 
