@@ -60,13 +60,14 @@ For calculated rates, see [this spreadsheet][spreadsheet].
 
 ## Timeline
 
-| Date       |                               |
-| ---------- | ------------------------------| 
-| 2023-04-01 | application window opens      |
-| 2023-05-15 | application responses sent    |
-| 2023-07-17 | program begins                |
-| 2023-10-13 | program ends (after 13 weeks) |
-| 2023-10-31 | hiring event                  |
+| Date       |                                |
+| ---------- | -------------------------------| 
+| 2023-04-01 | opened for general application |
+| 2023-05-19 | opened for application to mobs |
+| 2023-06-14 | mobs finalized                 |
+| 2023-07-17 | program begins                 |
+| 2023-10-13 | program ends (after 13 weeks)  |
+| 2023-10-31 | hiring event                   |
 
 ## Eligibility
 
