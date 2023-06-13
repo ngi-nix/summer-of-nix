@@ -45,7 +45,7 @@ The stipends for Summer of Nix 2023 are as follows:
 
 |                  | Participant | Facilitator | Organizer |
 |------------------|-------------|-------------|-----------|
-| Base stipend EUR |        3000 |        5000 |      2000 |
+| Base stipend EUR |        3000 |        5000 |      5000 |
 
 Residents of EU member states receive the base stipend without modification.
 For residents of other countries an adjustment applies
