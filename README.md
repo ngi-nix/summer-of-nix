@@ -157,7 +157,7 @@ This seems appropriate for short-lived teams
 working on a series of unfamiliar projects.
 
 Also, in the past two editions,
-a significant bottleneck was the ogranizers' time.
+a significant bottleneck was the organizers' time.
 With mob programming, we hope to reduce the load on organizers
 by maximizing cross-participant collaboration.
 
