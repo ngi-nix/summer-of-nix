@@ -28,7 +28,7 @@ Intermediate status updates were posted in a [NixOS Discourse thread](https://di
     - For comparison, this is roughly the amount of time 3 full-time engineers would spend in the same period, at less than half the cost.
       During that time, we had 15 software developers go through a crash course in complexity management with Nix.
 - NGI0 Review
-    - Got 11 requests
+    - Got 11 support requests
     - 3 were not actionable, 1 came in very late in the year
     - Handled 7 requests
         - 5 finished, notably
@@ -92,21 +92,30 @@ Many insights from the 2021 and 2022 editions were implemented successfully, and
 Some things have not been addressed though, but should be in the next iteration:
 
 - Improve the technical introduction so participants can get started more quickly.
+
   For example, provide pointers to documentation on key aspects of the ecosystem, or re-introduce the mentor role.
+
 - Keep up motivation until the end.
+
   A final presentation or closing ceremony could help.
   Participants should get NixCon 2024 tickets for an opportunity to meet developers in person.
   This could be combined with a hiring event.
   This time we had two participants present at a Nix workshop, which was well-received by the audience.
+
 - Consider more support roles, such as technical writer, community manager, web master.
+
   This time we focused exclusively on software development.
   In 2022 there were alternative tracks, but those did not see much interest, possibly because they were announced after the application phase.
   But its clear that eventually, if we want to improve the overall user and developer experience, we will need dedicated work done in various problem domains.
   This is also a chance to increase diversity among participants.
+
 - Plan for additional outreach efforts.
+
   Make time for participants to write experience reports, technical articles, or other content to convey what we’re doing and why.
   This could also be implemented as a follow-up stipend.
+
 - Make Summer of Nix more than just about NGI.
+
   Asking companies to submit and fund project proposals could help to leverage the visibility of the program, and to make progress on long-standing issues that can’t be addressed through the purpose-bound grants.
   It could also be coupled with a hiring event to help companies with talent-acquisition.
 
