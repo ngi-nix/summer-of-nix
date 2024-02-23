@@ -124,8 +124,9 @@ We also learned some new lessons:
 It’s vital to have at least one person to be available for answering questions and making more high-level decisions.
 That generally went well this time, but would have benefited from more consistency and a more regular schedule.
 
-Also this year’s experience shows the real price of getting things to work end-to-end, including building up the required contextual knowledge.
-Actually finishing things is sometimes surprisingly expensive.
+The past two Summers of Nix produced impressive numbers of new packages.
+This year’s experience shows a more realistic price of getting things to work smoothly end-to-end, an effort that includes developers building up the required contextual knowledge.
+Actually finishing things is sometimes surprisingly expensive!
 In particular those high-value targets with far reach or great potential, which we originally aimed at, tend to be beasts of complexity.
 
 Taking note of that was only possible due to more detailed accounting than was done in prior years.
@@ -143,8 +144,13 @@ Since the program is now supposed to be continuous in order to support ongoing p
 
 ## Goals for the next years
 
-With the current grant agreements there is budget for another three iterations of Summer of Nix.
-The next periods should align with NGI0 program goals:
+Having overseen the 2023 program, participated in overcoming technical and organisational challenges, observed the 2021 and 2022 editions, and assisted with their evaluation, I recommend to further narrow the focus on key strategic objectives in the following years.
+Assuming that a high-level goal of the NGI0 program is to enable viable participatory alternatives to proprietary offerings, we have to set good examples demonstrating competitive quality – and find ways to do this repeatably, independent of particular individuals, and with very limited means since those won't be available after public funding runs out.
+On the technical side this would mean for future program participants to work on providing great user and contributor experience in terms of configuration and deployment, with selected projects that will have the largest impact on the broader ecosystem, and where this is most likely to succeed within our budget constraints.
+On the organisational side it would mean to select such projects and find out under which conditions such success is more likely, and our program reports are part of that investigation.
+
+With the current grant agreements in place, there is budget for another three iterations of Summer of Nix.
+The next periods should align with the explicitly defined NGI0 program goals:
 
 1. Operate the agile, effective and low-threshold funding mechanism of NGI0
 2. Attract, recruit and select the best possible projects to the program
@@ -155,24 +161,26 @@ The next periods should align with NGI0 program goals:
 Generally, the low-threshold funding mechanism seems to work.
 Currently there are more than 150 projects supported through NGI0 that have been packaged since 2021.
 Many of them have been abandoned, but some are very successful and actively developed.
+What seems to be lacking, in my opinion, observing from the outside as well as experiencing it on the inside of the program, is an overview of what we consider high value, good quality, successful projects; in short: curation.
 
 Summer of Nix in a sense has become a litmus test for project maturity:
 Participants have repeatedly taken software for a ride when trying to ensure that it builds and runs repeatably with Nix.
 This requires stable interfaces, useful documentation, and responsive maintainers.
 Participants come from diverse technical backgrounds, and their attention and critical inquiries are helpful feedback for project authors.
 We should continue in that fashion, and in 2024 focus on showcasing exceptional open source software and ensure there are up-to-date, readily available Nix packages or service modules that can be put to use with minimal effort.
-This should also involve expanding consumer-facing documentation with guides and examples.
+This should also involve expanding consumer-facing documentation in NGIpkgs with guides and examples.
 
 What still seems unanswered is the question of sustainability.
 This is not a technical problem, but rather a social and economic one:
-Nix infrastructure is designed for ensuring long-term availability of packages, and the Nix ecosystem already has almost all the tooling needed for maintaining sophisticated setups.
+Nix infrastructure is designed for and demonstrably capable of ensuring long-term availability of packages, and the Nix ecosystem already has almost all the tooling needed for maintaining sophisticated setups.
 Primarily lacking are comprehensive reference documentation, a corpus of best practices or recipes for common use cases, and more structured approaches to teaching the underlying principles.
 Continuing with Summer of Nix, NGIpkgs should eventually complement Nixpkgs as a vital place of exchange and as a curated repository of useful open source software.
-What is unclear at the moment is how to enable continued maintenance of NGIpkgs, and the effort required to effectively adopt Nix tooling into development processes is related to that.
+
+What is unclear at the moment is how to enable continued maintenance of NGIpkgs, and the effort required to effectively adopt Nix tooling into project authors' development processes is related to that.
 With Summer of Nix we successfully manage to onboard participants quickly into the Nix ecosystem, and embedding them into the community keeps growing our network of experts.
 And while Nix packaging reduces the cost of adoption of and contributions to software, project authors tend to keep relying on external support to evolve their Nix setups.
 Apart from maturing the NGIpkgs software distribution, in the next years we should therefore focus on expanding the knowledge sharing to project authors and enable them to maintain their own packages.
-Ideally participants should also, based on practical experience, contribute documentation and insights back to the Nix ecosystem to make future users and contributors less dependent on availability of individuals.
+Ideally participants should also, based on their practical experience, contribute documentation and insights back to the Nix ecosystem to make future users and contributors less dependent on availability of individuals.
 
 A possible set of objectives in the next years, apart from concrete deliverables, could therefore be:
 
