@@ -60,6 +60,15 @@ Intermediate status updates were posted in a [NixOS Discourse thread](https://di
 
 ## Evaluation
 
+We can claim that developer experience around using or contributing to software projects supported through NGI0 was substantially improved.
+Notable progress was made in all areas of focus for this program.
+
+We did not reach the goal of setting up a convenient presentation layer in NGIpkgs.
+This was for scheduling reasons; the allocated budget is still available.
+
+The program was accompanied by a public narrative that reached on the order of 2000 people (with view counts between 300 and 4400).
+This corresponds to the known number of active participants in the Nix community and adjacent groups.
+
 - What went well:
     - Knowledge sharing: Mob programming is very effective
     - Code quality: Mobs worked very diligently; packages and services are tested automatically
