@@ -1,7 +1,15 @@
 # 2023 Summer of Nix program report
 
+*Written by Valentin Gagarin (NGI project manager for the NixOS Foundation)*/
+*Reviewed by Shahar "Dawn" Or (Project organiser for Summer of Nix 2023)*
+
+This year's goals were focused on software developers as users of projects funded through NGI0:
+Supporting development of the open hardware ecosystem, fostering self-hosting and service portability, and enabling the spread of federated services.
+Additionally, supported open source projects should be made more visible and easier to discover through a monorepo called [NGIpkgs](https://github.com/ngi-nix/ngipkgs/), as modeled by [Nixpkgs](https://github.com/NixOS/nixpkgs/).
+
 The 2023 Summer of Nix program followed the original idea from 2021 in spirit: “work, learn, and meet”.
 It was the first time we experimented with more centralised direction rather than primarily self-organised work.
+Intermediate status updates were posted in a [NixOS Discourse thread](https://discourse.nixos.org/t/2023-summer-of-nix-program-updates/30376).
 
 ## Summary
 
