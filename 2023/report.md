@@ -113,7 +113,7 @@ But there are still 15 private repositories with scattered bits of information t
 For participants, we turned out to actually need only one internal Matrix room.
 Eventually all information on the concerning program organisation should live in one public repository which documents all related resources and procedures.
 
-Since the program is now supposed to be continuous in order to support ongoing projects funded by NLnet, opportunities to continue work after the Summer of Nix period should be announced in the application phase to ensure that more people are available to take on tasks.
+Since the program is now supposed to be continuous in order to support ongoing projects funded by NLnet, opportunities to continue work after the Summer of Nix period should be announced in the application phase to make the program more attractive and ensure that more people are available to take on tasks.
 
 ## Goals for the next years
 
