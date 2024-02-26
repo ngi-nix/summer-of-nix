@@ -1,222 +1,184 @@
-# Summer of Nix 2023
+# Summer of Nix 2024
 
-Summer of Nix is a rare opportunity for Nix users of varying skills and interests,
-to practice Nix remotely,
-in mob programming format,
-while contributing to open source _and_ receiving [some payment](#stipends-payment) for it.
+Summer of Nix is a coordinated effort to support selected free and open source software (FOSS) projects, by making them available as [Nix packages](https://search.nixos.org/packages) or [NixOS service modules](https://search.nixos.org/options?query=services).
+It is funded by the European Commission's [Next Generation Internet (NGI)](https://www.ngi.eu/) initiative through the [NLNet Foundation](https://nlnet.nl/) and the [NixOS Foundation](https://github.com/NixOS/foundation).
 
-The 2023 edition also has [public talks](#public-talks)
-and a (possibly) life-changing [hiring event](#hiring-event).
+This northern-hemisphere-summer program is a rare opportunity for students or early-career professionals with diverse technical skills and interests to practice disciplined software development with Nix while contributing to the public good and receiving some payment for it.
+Participation in Summer of Nix has been – for some – a pathway to attractive jobs in software development.
 
-Summer of Nix 2023 takes place between July and October 2023.
-
-Participation in Summer of Nix has proven to be — for some —
-a pathway to contract work for [NLNet] and the NixOS Foundation.
+Learn more about Nix on [nix.dev](https://nix.dev/).
 
 ## Goals
 
-Summer of Nix is sponsored by a [Next Generation Internet (NGI)](https://www.ngi.eu/) grant
-through the [NLNet Foundation][NLNet] and the NixOS Foundation
-to:
+The program is designed for participants to **work, learn, and meet**:
 
-- improve the deployment story of NGI-funded projects (using Nix, of course)
-- skill share among the participants
-- expand and enrich the Nix community
+- Improving the deployment story of [software projects funded by the NLnet Foundation](https://nlnet.nl/project/)
 
-## The main activity
+  Just writing the code is not enough: Programs have to be easy to obtain and run to be widely adopted.
+  Getting complex software to work reliably on a whim is the aspiration for Summer of Nix.
 
-The main activity for achieving our [goals](#goals) is remote mob programming,
-mostly [as described here][remote mob programming].
-Participants organize into mobs —
-collaboration groups of between five and seven each.
-Each mob is joined by a facilitator —
-an experienced developer who is familiar with mob programming
-([apply for facilitation](#apply-for-facilitation)).
+  As a participant, you will write Nix derivations, NixOS modules, integration tests, and documentation.
+  And you will solve a lot of tricky problems on the way.
 
-Mobs coordinate their own schedules.
-The schedules should fit within the duration of the program.
+- Skill-sharing among participants
 
-Each participant participates in mob sessions for at least 160 hours in total
-(e.g. 40 days × 4 hours).
+  Making computers useful for a mass audience requires diverse skills and broad knowledge, and no one person has it all.
 
-## Stipends (payment)
+  As a participant, you will learn from – and teach – your peers about widely used programming languages, software testing, technical writing, web design, and the Nix ecosystem with various its tools.
+  You will closely collaborate in a group of five people on a regular schedule over 12 weeks.
 
-The stipends for Summer of Nix 2023 are as follows:
+- Growing the Nix community
 
-|                  | Participant | Facilitator | Organizer |
-|------------------|-------------|-------------|-----------|
-| Base stipend EUR |        3000 |        5000 |      5000 |
+  As a participant, you will join a community of [more than 700 active contributors](https://github.com/NixOS/nixpkgs/pulse/monthly).
+  You will engage in an open source software development workflow and take part in public technical discussion.
 
-Residents of EU member states receive the base stipend without modification.
-For residents of other countries an adjustment applies
-according to [purchasing power parity] relative to the Netherlands,
-derived via [Google Summer of Code's stipend system].
+  After successful participation, you will be invited to NixCon 2024, a conference for Nix users and developers from all over the world.
+  And you will be afforded an opportunity for exposure with potential employers for whom Nix is a core strength.
 
-For calculated rates, see [this spreadsheet][spreadsheet].
+## Mob programming
 
-[spreadsheet]: https://docs.google.com/spreadsheets/d/1z04TuUptcZyXCEP_WjaiqbJOKwHaKyOUnj1VspBrEyo/edit?usp=sharing
-[purchasing power parity]: https://en.wikipedia.org/wiki/Purchasing_power_parity
-[Google Summer of Code's stipend system]: https://developers.google.com/open-source/gsoc/help/student-stipends
+As a participant, you will be in one of several teams working in [remote mob programming format](https://www.remotemobprogramming.org/).
+To ensure successful collaboration, each team includes a facilitator – an experienced developer who is familiar with mob programming.
+
+The teams will be supported by a resident developer and the program organisers.
 
 ## Timeline
 
-| Date       |                                |
-| ---------- | -------------------------------| 
-| 2023-04-01 | opened for general application |
-| 2023-05-19 | opened for application to mobs |
-| 2023-06-14 | mobs finalized                 |
-| 2023-07-17 | program begins                 |
-| 2023-10-13 | program ends (after 13 weeks)  |
-| 2023-10-31 | hiring event                   |
+- March: Organisers begins recruiting facilitators
+- April: Facilitators begin recruiting mob members
+- Late May to early September: Mobs work
+
+We will publish exact dates together with the call for facilitator applications.
+
+## Applications
+
+Mob programming facilitators are recruited by the organisers.
+We will publish a call for facilitator applicatons in March 2024.
+
+Each facilitator sets their mob's schedule and, in turn, recruits four members for their mob.
+We will publish a call for participant applications in April 2024.
 
 ## Eligibility
 
-Applicants should
+People from anywhere in the world can apply.
+To be considered for participation, applicants must:
 
- - be past the age of majority
- - have fluent English
- - posess at least "junior" programming skills
- - have basic familiarity with Nix
- - meet the [technical requirements](#technical-requirements)
+ - Be a natural person of legal age
+ - Be fluent in English
+ - Have essential programming skills, including proficiency with
+   - The command line
+   - Git version control
+   - At least one programming language
+ - Have basic familiarity with Nix
+ - Meet the [technical requirements](#technical-requirements)
+
+## Stipends and benefits
+
+| Role               | Base stipend [EUR] |
+|--------------------|--------------------|
+| Mob member         |               3000 |
+| Mob facilitator    |               5000 |
+
+Residents of EU member states receive the base stipend.
+For residents of other countries, stipends are adjusted according to [purchasing power parity](https://en.wikipedia.org/wiki/Purchasing_power_parity) relative to the Netherlands.
+
+You must be able to receive payments via one of:
+
+- Bank transfer
+- [PayPal](https://www.paypal.com)
+- [Wise](https://wise.com)
 
 ## Technical requirements
 
-…for participation in [remote mob programming] throughout the program.
+Remote mob programming requires being able to simultaneously share your screen, view others' screens, talk to each other, and compile software.
+This is only possible with sufficiently performant hardware, and therefore it's a condition for participation.
 
-- internet connection suitable for hours of ongoing video call
-  - stable (mobile broadband unlikely to satisfy this)
-  - sufficient bandwidth
-- computer capable of doing work while sharing screen in a video call
-  - a CPU with CPU mark of 7,000 and single thread rating of 1,900
-    [according to PassMark](https://www.cpubenchmark.net/cpu_list.php)
-    should suffice.
-  - video camera
-  - headphones and reasonable quality microphone
-- consistently low noise environment
+### Processing power
 
-Please use a friend to make a test [Jitsi Meet](https://meet.jit.si/) call,
-including video, audio and __entire screen__ sharing.
-Ask your friend whether they can see your screen and hear you well
-while you are [stressing your CPU](https://silver.urih.com/).
+Be able to build the Linux kernel in under 35 minutes.
+Here's how to benchmark using Nix:
 
-## How to apply
+```bash
+PKGS="github:NixOS/nixpkgs?tag=23.11"
+NIX_CONFIG="experimental-features = nix-command flakes"
+nix build --no-link "$PKGS#linux.inputDerivation"
+time nix build --offline --no-link --print-build-logs "$PKGS#linux"
+```
 
-Join [this Matrix room](https://matrix.to/#/#summer-of-nix-2023-application:matrix.org), where further instructions will be provided.
+To rebuild, execute the last command with an additional flag `--rebuild`.
 
-## Public talks
+### Video calls
 
-This year's public talks will be live streamed on several platforms.
-The platforms on which you'll be able to chat with the speaker are marked with an asterisk.
-  - [Owncast]*
-  - [YouTube]*
-  - [Twitch]*
-  - [Twitter]
-  - [LinkedIn]
+- Video camera
+- Headphones and reasonable-quality microphone
+- Consistently low-noise environment
 
-Here is [the playlist for last year's series].
+Please use a friend to make a test call on [Jitsi Meet](https://meet.jit.si/), including video, audio and *entire screen* sharing.
+Ask a friend whether they can see your screen and hear you well while you are running [the benchmark](#processing-power).
 
-[the playlist for last year's series]: https://youtube.com/playlist?list=PLt4-_lkyRrOMWyp5G-m_d1wtTcbBaOxZk
-[YouTube]: https://www.youtube.com/@NixOS-Foundation
-[Owncast]: https://live.nixos.org/
-[Twitch]: https://www.twitch.tv/nixos_foundation
-[Twitter]: https://twitter.com/nixos_org
-[LinkedIn]: https://www.linkedin.com/company/nixos-foundation
+### Internet connection
 
-## Hiring event
+- Sufficient bandwidth
+- Stable throughout multiple hours of video call
 
-Participants will be afforded an opportunity to meet with employers
-for whom Nix is a core strength.
-This can be your chance to get hired doing Nix long term.
-
-## Apply for facilitation
-
-Success of this program depends on a few capable mob programming facilitators.
-If you are experienced in software development and mob programming facilitation,
-consider [applying](#how-to-apply) for mob programming facilitation in Summer of Nix 2023.
-You'd likely be working with an enthusiastic and diverse group of Nix users,
-eager to learn Nix, professional software development and the mob format.
-
-## How to prepare
-
-1. Read http://remotemobprogramming.org/.
-1. Make a test [Jitsi Meet](https://meet.jit.si/) call with a friend
-   and use it to test video, audio and entire screen sharing.
-1. Familiarize yourself with the [mob command line utility](https://mob.sh/).
-1. Have [`git` is set up to authenticate with GitHub](https://docs.github.com/en/get-started/quickstart/set-up-git).
-1. Have [direnv](https://direnv.net/) or equivalent, both;
-   1. [installed](https://direnv.net/docs/installation.html)
-   1. and [set up in your shell](https://direnv.net/docs/hook.html).
-1. Configure [two-factor authentication for your GitHub account](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/about-two-factor-authentication).
+From the organisers' experience, mobile data is unlikely to suffice.
 
 ## Questions and answers
 
 ### Why mob programming?
 
-The mob programming format optimizes for knowledge sharing.
-This seems appropriate for short-lived teams
-working on a series of unfamiliar projects.
+With proper facilitation, mob programming avoids many problems prevalent in solo-programming and asynchronous collaboration.
+It seems to produce better software and make for happier developers.
+It optimises for knowledge sharing, which is critical for short-term teams that collaborate on unfamiliar projects, such as in this program.
+It also reduces the organisation overhead due to cross-participant support.
 
-Also, in the past two editions,
-a significant bottleneck was the organizers' time.
-With mob programming, we hope to reduce the load on organizers
-by maximizing cross-participant collaboration.
+### Do I have to pay taxes on my stipend?
 
-Co-organizer [Dawn][Shahar "Dawn" Or], having been
-organizing and participating in regular mob programming sessions since 2021
-and having facilitated mob programming sessions in the [last year's edition](#2022),
-is convinced that the format — with proper facilitation —
-is absent many collaboration problems prevalent in solo-programming,
-and overall produces better software, more sustainably.
+It depends.
+**You are responsible for observing the laws that apply to you when receiving payments.**
 
-Co-organizer [Matthias][Matthias Meschede] is optimistic about this premise and feels that holding this year's edition in mob programming format is a valuable experiment.
+The stipend is compensation for work towards a non-profit cause.
+This means that in some jurisdictions it may be exempt from income tax, value-added tax (VAT), or from counting towards social insurance or health insurance obligations.
 
-### Is this program specifically for beginners?
+In some jurisdictions you may have to register a business to legally receive such payments.
 
-We intend to have participants of varying levels of experience.
+Note that the stipend amount is exactly what the NixOS Foundation can pay.
+If you have to process VAT, the total expense for the NixOS Foundation still must be the stipend amount, even if you put "reverse charge" on the invoice.
 
-### How familiar must I be with Nix?
+### Is this related to Google Summer of Code?
 
-Do you use NixOS?
-Do you use Nix shell?
-Do you use home-manager?
-Did you make a derivation?
-If you answered yes to any, you qualify.
+No, Summer of Nix is an independent program organised by the NixOS Foundation.
+It is funded by the European Commission via the NLnet Foundation.
 
-### Why does this NGI sponsored program use this or that software?
+Summer of Nix was originally modeled after Google Summer of Code, but has developed its own profile.
+We use the [purchasing power parity data](https://developers.google.com/open-source/gsoc/help/student-stipends#total_stipend_amount) from Google Summer of Code to calculate our stipends.
 
-We do our best to select open source and [zero-knowledge] software.
-But those are not hard constraints,
-nor are they the only factors to consider.
+Unrelated, the Nix community applied for [Google Summer of Code 2024](https://discourse.nixos.org/t/call-for-mentors-google-summer-of-code-2024/39031) and [Google Season of Docs 2024](https://discourse.nixos.org/t/google-season-of-docs-2024-call-for-proposals-to-enhance-nix-documentation/40107), where you can participate to directly improve tooling and documentation in the Nix ecosystem.
+
+### Why does this NGI-sponsored program use this or that software?
+
+We do our best to select free and open source, privacy-respecting software.
+But this is not a hard constraint, nor the only criterion.
 
 We use:
 
-- [Baserow](https://baserow.io/)
-- [GitHub](https://github.com/)
-- [Matrix](https://matrix.org/)
-- [YouTube](https://youtube.com/)
-- [Google Sheets](https://www.google.com/sheets/about/)
+- [GitHub](https://github.com/) for development and public technical discussion
+- [Matrix](https://matrix.org/) for ephemeral or real-time communication
+- [Notion](https://notion.so/) for accounting
 
-[zero-knowledge]: https://en.wikipedia.org/wiki/Zero-knowledge_service
+As a participant, you will need an account on each of these services.
 
-### Are participants from all timezones eligible?
+## Organisers
 
-Yes.
+- Shahar "Dawn" Or (mob programming)
 
-## Public discussion
+  - GitHub: [@mightyiam](https://github.com/mightyiam)
+  - Matrix [@mightyiam:matrix.org](https://matrix.to/#/@mightyiam:matrix.org)
 
-In [this Matrix room](https://matrix.to/#/#summer-of-nix-2023-public:matrix.org).
+- Valentin Gagarin (program direction)
 
-## Organizers
+  - GitHub: [@fricklerhandwerk](https://github.com/fricklerhandwerk)
+  - Matrix: [@fricklerhandwerk:matrix.org](https://matrix.to/#/@fricklerhandwerk:matrix.org)
 
-Feel free to message us for private concerns.
-
-- [Matthias Meschede]
-- [Shahar "Dawn" Or]
-
-<!-- URLs -->
-
-[NLNet]: https://nlnet.nl/
-[remote mob programming]: https://www.remotemobprogramming.org/
-[son-2021-report]: https://summer.nixos.org/assets/report-2021.pdf
-[Matthias Meschede]: https://mmesch.com/
-[Shahar "Dawn" Or]: https://github.com/mightyiam
+[Open an issue](https://github.com/ngi-nix/summer-of-nix/issues) to ask a question in public.
+Send us direct messages on Matrix for questions that require privacy.
