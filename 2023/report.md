@@ -3,9 +3,16 @@
 *Written by Valentin Gagarin (NGI project manager for the NixOS Foundation)*/
 *Reviewed by Shahar "Dawn" Or (Project organiser for Summer of Nix 2023)*
 
+Summer of Nix is a coordinated effort to support free and open source software (FOSS) projects that are funded by the European Commission's [Next Generation Internet (NGI)](https://www.ngi.eu/about/) initiative through the [NGI0](https://nlnet.nl/NGI0/) consortium coordinated by the [NLnet Foundation](https://nlnet.nl/foundation/).
+
+The program's main objective is to make more software available as Nix packages or NixOS service modules.
+This is in order to make the projects developed under NGI0 easier to obtain and run – something that is not a given due to the complexities involved in software development – and thus help end users and developers to reap the benefits of the public funding campaign.
+Nix itself is a proven technology for highly repeatable software builds and deployments, and supports an ecosystem of tools for building a fully transparent software supply chain.
+
 This year's goals were focused on software developers as users of projects funded through NGI0:
-Supporting development of the open hardware ecosystem, fostering self-hosting and service portability, and enabling the spread of federated services.
-Additionally, supported open source projects should be made more visible and easier to discover through a monorepo called [NGIpkgs](https://github.com/ngi-nix/ngipkgs/), as modeled by [Nixpkgs](https://github.com/NixOS/nixpkgs/).
+Propmoting development of the open hardware ecosystem, fostering self-hosting and service portability, and enabling the spread of federated services.
+Additionally, supported open source projects should be made more visible and easier to discover through a monorepo called [NGIpkgs](https://github.com/ngi-nix/ngipkgs/).
+The new monorepo is modeled after [Nixpkgs](https://github.com/NixOS/nixpkgs/), currently the [the largest, most up-to-date software repository in the world](https://repology.org/repositories/graphs).
 
 The 2023 Summer of Nix program followed the original idea from 2021 in spirit: “work, learn, and meet”.
 It was the first time we experimented with more centralised direction rather than primarily self-organised work.
