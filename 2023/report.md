@@ -26,9 +26,9 @@ Intermediate status updates were posted in a [NixOS Discourse thread](https://di
     - 3 Middle East or Central Asia
     - 3 East Asia or Pacific
 - 93 000 EUR allocated
-    - 82 324 EUR spent
-        - 26 941 EUR for NGI0 Review
-        - 55 383 EUR for NGI0 Entrust
+- 82 324 EUR spent
+    - 26 941 EUR for NGI0 Review
+    - 55 383 EUR for NGI0 Entrust
 - Activities from June 2023 to December 2023
     - Time worked: 3225.5 h
     - Average compensation: 25.52 EUR/h
@@ -58,8 +58,7 @@ Intermediate status updates were posted in a [NixOS Discourse thread](https://di
     - dozens stale projects archived
 - Monorepo
     - Set up continuous integration
-    - Added support for NixOS VM tests
-    - Migrated to `pkgs/by-name` convention
+    - Added support for testing with NixOS virtual machines
 - Outreach
     - Participated in a podcast recording of [Mob Mentality](https://discourse.nixos.org/t/2023-summer-of-nix-program-updates/30376/15)
     - Recorded 12 episodes of [2023 Nix Developer Dialogues](https://discourse.nixos.org/t/2023-nix-developer-dialogues-live-stream/35386)
@@ -77,18 +76,18 @@ The program was accompanied by a public narrative that reached on the order of 2
 This corresponds to the known number of active participants in the Nix community and adjacent groups.
 
 - What went well:
-    - Knowledge sharing: Mob programming is very effective
-    - Code quality: Mobs worked very diligently; packages and services are tested automatically
-    - Collaboration: Participants and project authors successfully worked together
-    - Focus: The teams solved a handful of hard problems
-    - Task curation: Everyone knew what to work on and why
-    - Monorepo: Reduced overhead and improved developer experience
+  - Knowledge sharing: Mob programming is very effective
+  - Code quality: Mobs worked very diligently; packages and services are tested automatically
+  - Collaboration: Participants and project authors successfully worked together
+  - Focus: The teams solved a handful of hard problems
+  - Task curation: Everyone knew what to work on and why
+  - Monorepo: Reduced overhead and improved developer experience
 - What should be improved:
-    - Diversity: No non-male participants this time
-    - Scope: The delivery goals were ambitious and task complexity hard to predict
-    - Cohesion: The effort got diffuse towards the end of the year, not all work got done; more check-ins needed
-    - Nixpkgs tooling and documentation: Still a major source of friction
-    - Efficiency: Mob programming is not a silver bullet; we have to figure out a sensible balance which tasks to do alone or in a group, and when
+  - Diversity: No non-male participants this time
+  - Scope: The delivery goals were ambitious and task complexity hard to predict
+  - Cohesion: The effort got diffuse towards the end of the year, not all work got done; more check-ins needed
+  - Nixpkgs tooling and documentation: Still a major source of friction
+  - Efficiency: Mob programming is not a silver bullet; we have to figure out a sensible balance which tasks to do alone or in a group, and when
 
 Overall, and as predicted, better preparation greatly reduced the challenges reported from the 2021 and 2022 programs — such as clear objectives and task assignments — while keeping some freedom for participants to follow their tech interests.
 This came at the cost of a smaller number of software projects that were packaged in this period.
