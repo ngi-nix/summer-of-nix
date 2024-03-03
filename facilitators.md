@@ -1,6 +1,6 @@
 # 2024 Summer of Nix: Call for mob facilitators
 
-We are looking for mob facilitators to run 160 hours of [remote mob programming](https://www.remotemobprogramming.org/) sessions between May and September 2024 for this year’s [Summer of Nix](https://github.com/ngi-nix/summer-of-nix).
+We are looking for mob facilitators to run 160 hours of [remote mob programming](https://www.remotemobprogramming.org/) sessions over 13 weeks between May and September 2024 for this year’s [Summer of Nix](https://github.com/ngi-nix/summer-of-nix).
 
 # Requirements
 
