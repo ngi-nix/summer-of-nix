@@ -81,6 +81,7 @@ To be considered for participation, applicants must:
 
 Residents of EU member states receive the base stipend.
 For residents of other countries, stipends are adjusted according to [purchasing power parity](https://en.wikipedia.org/wiki/Purchasing_power_parity) relative to the Netherlands.
+See the [list of stipends by country](./stipends.md) for exact amounts.
 
 You must be able to receive payments via one of:
 
