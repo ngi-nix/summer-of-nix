@@ -44,16 +44,14 @@ The teams will be supported by a resident developer and the program organisers.
 
 ## Timeline
 
-- March: Organisers begins recruiting facilitators
-- April: Facilitators begin recruiting mob members
+- March: Organisers recruit facilitators
+- April: Facilitators recruit mob members
 - Late May to early September: Mobs work
-
-We will publish exact dates together with the call for facilitator applications.
 
 ## Applications
 
 Mob programming facilitators are recruited by the organisers.
-We will publish a call for facilitator applicatons in March 2024.
+The [call for facilitator applicatons](./facilitators.md) is open until 2024-03-24.
 
 Each facilitator sets their mob's schedule and, in turn, recruits four members for their mob.
 We will publish a call for participant applications in April 2024.
