@@ -38,7 +38,7 @@ The program is designed for participants to **work, learn, and meet**:
 ## Mob programming
 
 As a participant, you will be in one of several teams working in [remote mob programming format](https://www.remotemobprogramming.org/).
-To ensure successful collaboration, each team includes a facilitator – an experienced developer who is familiar with mob programming.
+To ensure successful collaboration, each team includes a facilitator – a more experienced developer who is familiar with mob programming.
 
 The teams will be supported by a resident developer and the program organisers.
 
