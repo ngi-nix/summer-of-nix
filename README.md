@@ -25,7 +25,7 @@ The program is designed for participants to **work, learn, and meet**:
   Making computers useful for a mass audience requires diverse skills and broad knowledge, and no one person has it all.
 
   As a participant, you will learn from – and teach – your peers about widely used programming languages, software testing, technical writing, web design, and the Nix ecosystem with various its tools.
-  You will closely collaborate in a group of five people on a regular schedule over 12 weeks.
+  You will closely collaborate in a group of five people on a regular schedule.
 
 - Growing the Nix community
 
@@ -69,6 +69,7 @@ To be considered for participation, applicants must:
    - At least one programming language
  - Have basic familiarity with Nix
  - Meet the [technical requirements](#technical-requirements)
+ - Be available for a total of 160 hours of regular sessions over 13 weeks.
 
 ## Stipends
 
