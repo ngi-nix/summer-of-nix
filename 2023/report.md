@@ -10,7 +10,7 @@ This is in order to make the projects developed under NGI0 easier to obtain and 
 Nix itself is a proven technology for highly repeatable software builds and deployments, and supports an ecosystem of tools for building a fully transparent software supply chain.
 
 This year's goals were focused on software developers as users of projects funded through NGI0:
-Propmoting development of the open hardware ecosystem, fostering self-hosting and service portability, and enabling the spread of federated services.
+Promoting development of the open hardware ecosystem, fostering self-hosting and service portability, and enabling the spread of federated services.
 Additionally, supported open source projects should be made more visible and easier to discover through a monorepo called [NGIpkgs](https://github.com/ngi-nix/ngipkgs/).
 The new monorepo is modeled after [Nixpkgs](https://github.com/NixOS/nixpkgs/), currently the [the largest, most up-to-date software repository in the world](https://repology.org/repositories/graphs).
 
