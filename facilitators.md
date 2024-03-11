@@ -1,12 +1,18 @@
 # 2024 Summer of Nix: Call for mob facilitators
 
 We are looking for mob facilitators to run 160 hours of [remote mob programming](https://www.remotemobprogramming.org/) sessions over 13 weeks between May and September 2024 for this year’s [Summer of Nix](https://github.com/ngi-nix/summer-of-nix).
+You are tasked to assemble a team who may have no experience with mob programming and guide them into successful collaboration and productivity.
+You will be in charge of the process, including keeping to the schedule and following software development best practices — as well as the outcome of the team’s work: getting selected free and open source software (FOSS) to work reliably on a whim.
 
-# Requirements
+# Profile
 
-You should have extensive experience with mob programming. You should be confident that you could bring a group of developers who are mob programming novices to success within a few weeks. This requires leadership and programming skills. Nix experience is a bonus.
+An optimal applicant would meet the following:
 
-Your main responsibility will be to assemble a team and facilitate their work. You will be in charge of the process — such as keeping to the schedule and following software development best practices — as well as the outcome of your team’s work: getting selected free and open source software (FOSS) to work reliably on a whim.
+- Extensive experience with software development
+- Firm grasp on best practices such as test driven and atomic commits
+- Excellent control of git, including rewriting history and conflict resolution
+- Team coaching experience
+- Nix experience is a bonus.
 
 # Compensation and benefits
 
@@ -38,11 +44,10 @@ People from anywhere in the world can apply, regardless of background. We strive
     - GitHub: [@mightyiam](https://github.com/mightyiam)
     - Discourse: [@mightyiam](https://discourse.nixos.org/u/mightyiam)
     - Matrix: [@mightyiam:matrix.org](https://matrix.to/#/@mightyiam:matrix.org)
-- Provide a general idea of your experience in
-    - Mob programming
-    - Software development
-    - Collaborating in a public online community
-    - Nix
-- Dawn will schedule a call with you
+- Explain, in general, how you fit [the profile](#profile).
+- If you are deemed to fit the profile, you will have a video call with Dawn.
+
+It is up to the organizers to make selection decisions based on their best discernment, provided the information they have and the impressions they perceive.
+Applicants are encouraged to ask for feedback.
 
 In 2023 we had 7 applicants and 2 were selected. In 2024 we aim to have 5 facilitators.
