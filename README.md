@@ -163,7 +163,7 @@ But this is not a hard constraint, nor the only criterion.
 We use:
 
 - [GitHub](https://github.com/) for development and public technical discussion
-- [Matrix](https://matrix.org/) for ephemeral or real-time communication
+- [Matrix](https://matrix.org/) for private, ephemeral, or real-time communication
 - [Notion](https://notion.so/) for accounting
 
 As a participant, you will need an account on each of these services.
