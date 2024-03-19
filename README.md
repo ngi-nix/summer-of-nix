@@ -132,6 +132,14 @@ It seems to produce better software and make for happier developers.
 It optimises for knowledge sharing, which is critical for short-term teams that collaborate on unfamiliar projects, such as in this program.
 It also reduces the organisation overhead due to cross-participant support.
 
+### How to get notifications and updates?
+
+Notifications are posted in the public Matrix room [Summer of Nix Announcements](https://matrix.to/#/#summer-of-nix-announce:matrix.org).
+Set up your [Matrix client](https://matrix.org/try-matrix/) to receive push notifications on new messages.
+
+News about the program are published in the [Summer of Nix Discourse category](https://discourse.nixos.org/c/events/summer-of-nix/45).
+[Subscribe](https://meta.discourse.org/t/notifications-primer/228439) to receive push notifications or emails on new messages.
+
 ### Do I have to pay taxes on my stipend?
 
 It depends.
