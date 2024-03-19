@@ -1,0 +1,31 @@
+## General timeline
+
+- February:
+  - Submit finantial report to European Commission
+  - Publish last year's program report 
+- March:
+  - Publish call for mob facilitator applications
+  - Create Matrix private space "Summer of Nix <year>" under the space [Summer of Nix](https://matrix.to/#/!qzIzzQxUDNzcqKXNNW:matrix.org) with rooms:
+    - Facilitator introductions (public)
+    - SoN<year> participants (private)
+    - (rooms for private discussions can be created ad-hoc)
+  - Sign facilitator contracts
+- April:
+  - Facilitators introduce themselves on Matrix
+  - Publish call for mob member applications
+  - Start preparing public video series
+- May:
+  - Sign mob member contracts
+  - Schedule kick-off meetings
+  - Schedule periodic check-in meetings
+- June: 
+  - Mobs begin work
+  - Try to schedule a podcast recording with some participants
+- July:
+  - Prepare NixCon participation
+  - Air public video series 
+- August:
+  - Schedule wrap-up meetings
+- September:
+  - Send out reminders for timesheets and payment requests
+  - Fill in NLNet project reports
