@@ -51,7 +51,7 @@ The teams will be supported by a resident developer and the program organisers.
 ## Applications
 
 Mob programming facilitators are recruited by the organisers.
-The [call for facilitator applicatons](./facilitators.md) is open until 2024-03-24.
+The [call for facilitator applications](./facilitators.md) is open until 2024-03-24.
 
 Each facilitator sets their mob's schedule and, in turn, recruits four members for their mob.
 We will publish a call for participant applications in April 2024.
