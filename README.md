@@ -69,7 +69,6 @@ To be considered for participation, applicants must:
    - At least one programming language
  - Have basic familiarity with Nix
  - Meet the [technical requirements](#technical-requirements)
- - Be available for a total of 160 hours of regular sessions over 13 weeks.
 
 ## Stipends
 
