@@ -51,10 +51,10 @@ The teams will be supported by a resident developer and the program organisers.
 ## Applications
 
 Mob programming facilitators are recruited by the organisers.
-The [call for facilitator applicatons](./facilitators.md) is open until 2024-03-24.
+The [call for facilitator applicatons](./facilitators.md) has closed on 2024-03-24.
 
 Each facilitator sets their mob's schedule and, in turn, recruits four members for their mob.
-We will publish a call for participant applications in April 2024.
+The [call for participant applications](./participants.md) is open until 2024-05-10.
 
 ## Eligibility
 
@@ -69,6 +69,7 @@ To be considered for participation, applicants must:
    - At least one programming language
  - Have basic familiarity with Nix
  - Meet the [technical requirements](#technical-requirements)
+ - Be available for a total of 160 hours of regular sessions over 13 weeks.
 
 ## Stipends
 
