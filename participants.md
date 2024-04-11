@@ -8,6 +8,7 @@ Apply for [Summer of Nix 2024](https://github.com/ngi-nix/summer-of-nix) to join
 - Profiency with at least one widely-used programming language
 - Experience with software development best practices (version control, testing, ...)
 - Bonus: Nix experience
+- Bonus: Experience with contributing to open source software
 - Bonus: Mob programming experience
 
 # Compensation and benefits
