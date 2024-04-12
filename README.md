@@ -93,28 +93,14 @@ You must be able to receive payments via one of:
 Remote mob programming requires being able to simultaneously share your screen, view others' screens, talk to each other, and compile software.
 This is only possible with sufficiently performant hardware, and therefore it's a condition for participation.
 
-### Processing power
-
-Be able to build the Linux kernel in under 35 minutes.
-Here's how to benchmark using Nix:
-
-```bash
-PKGS="github:NixOS/nixpkgs?tag=23.11"
-NIX_CONFIG="experimental-features = nix-command flakes"
-nix build --no-link "$PKGS#linux.inputDerivation"
-time nix build --offline --no-link --print-build-logs "$PKGS#linux"
-```
-
-To rebuild, execute the last command with an additional flag `--rebuild`.
-
 ### Video calls
 
 - Video camera
 - Headphones and reasonable-quality microphone
 - Consistently low-noise environment
+- Enough processing power for multiple concurrent video streams
 
-Please use a friend to make a test call on [Jitsi Meet](https://meet.jit.si/), including video, audio and *entire screen* sharing.
-Ask a friend whether they can see your screen and hear you well while you are running [the benchmark](#processing-power).
+Please ask a friend to make a test call on [Jitsi Meet](https://meet.jit.si/) to ensure that they can see your screen and hear you well.
 
 ### Internet connection
 
