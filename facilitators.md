@@ -54,7 +54,7 @@ We strive to have a collaboration environment that is safe, constructive, friend
 - Explain briefly how you meet or exceed [the requirements](#requirements).
 - If you are deemed to fit the profile, you will have a video call with Dawn.
 - Dawn will select candidates based on the information available.
-- You will get a reply with the result by 2023-04-01.
+- You will get a reply with the result by 2024-04-01.
 
 Mob facilitators will be selected taking geographic, cultural, and gender diversity into account.
 This is in order to allow for diversity among mob members, who will be selected by facilitators.
