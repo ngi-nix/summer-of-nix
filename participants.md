@@ -40,4 +40,4 @@ We strive to have a collaboration environment that is safe, constructive, friend
 - Facilitators will announce their schedule and other team details.
 - Message one of the facilitators with your application until 2024-05-10.
 - Facilitators will select their team members among applicants, taking geographic, cultural, and gender diversity into account.
-- You will get a reply with the result by 2023-05-13.
+- You will get a reply with the result by 2024-05-13.
