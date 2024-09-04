@@ -7,6 +7,7 @@ This northern-hemisphere-summer program is a rare opportunity for students or ea
 Participation in Summer of Nix has been – for some – a pathway to attractive jobs in software development.
 
 Learn more about Nix on [nix.dev](https://nix.dev/).
+Follow [updates on Summer of Nix on the NixOS Discourse](https://discourse.nixos.org/c/events/summer-of-nix/45).
 
 ## Goals
 
