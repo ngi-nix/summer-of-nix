@@ -1,0 +1,597 @@
+- name: Namecoin package
+  website: https://www.namecoin.org/
+  description: Namecoin is a key/value pair registration and transfer system based on the Bitcoin technology. Bitcoin frees money – Namecoin frees DNS, identities, and other technologies.
+  code:
+    - https://github.com/ngi-nix/namecoin-core/pull/1/files
+
+- name: Kazarma
+  website: https://gitlab.com/kazarma/kazarma/
+  description: A bridge between Matrix and Activity pub.
+  code:
+    - https://github.com/ngi-nix/kazarma/pull/1
+
+- name: Lemmy
+  website: https://join-lemmy.org/
+  description: Lemmy is similar to sites like Reddit, Lobste.rs, or Hacker News. You subscribe to communities you're interested in, post links and discussions, then vote and comment on them.
+  code:
+    - https://github.com/ngi-nix/lemmy-ui/tree/flakes
+    - https://github.com/ngi-nix/lemmy/tree/flakes
+    - https://github.com/NixOS/nixpkgs/pull/137186
+    - https://github.com/NixOS/nixpkgs/pull/139174
+
+- name: PeerTube
+  website: https://joinpeertube.org/
+  description: Free software to take back control of your videos
+  code:
+    - https://github.com/NixOS/nixpkgs/pull/119110#issuecomment-961536164
+    - https://github.com/Chocobozzz/PeerTube/issues/4393
+    - https://github.com/Chocobozzz/PeerTube/issues/4394
+
+- name: Hyperspace
+  website: https://www.hyperhyperspace.org/
+  description: Make all data local. Communicate only through data sync
+  code:
+    - https://github.com/ngi-nix/hyperspace/pull/1
+    - https://github.com/hypercore-protocol/cli/issues/51
+
+- name: GnuNet
+  website: https://www.gnunet.org/en/index.html
+  description: A network protocol stack for building secure, distributed, and privacy-preserving applications.
+  code:
+    - https://github.com/NixOS/nixpkgs/pull/136365
+
+- name: Interpeer
+  website: https://interpeer.io/
+  description: A secure and efficient peer-to-peer networking stack that will empower a human centric internet, circumventing the protocols of the past.
+  code:
+    - https://github.com/ngi-nix/channeler
+    - https://github.com/ngi-nix/packeteer
+    - https://github.com/ngi-nix/liberate
+
+- name: KiwiIRC
+  website: https://kiwiirc.com/
+  description: Makes Web IRC easy. A hand-crafted IRC client that you can enjoy. Designed to be used easily and freely.
+  code:
+    - https://github.com/kiwiirc/kiwiirc/pull/1605
+
+- name: TCN
+  description: Specification and reference implementation of the TCN Protocol for decentralized, privacy-preserving contact tracing.
+  website: https://github.com/TCNCoalition/TCN
+  code:
+    - https://github.com/ngi-nix/TCN
+
+- name: Corteza
+  website: https://github.com/cortezaproject/corteza-server
+  description: Corteza is the only 100% free, open-source, standardized and enterprise-grade Low-code platform.
+  code:
+    - https://github.com/cortezaproject/corteza-server/pull/253
+
+- name: Blink
+  website: https://icanblink.com/
+  description: A state of the art, easy to use SIP client, a protocol for real-time sessions such as voice, video and messaging appls.
+  code:
+    - https://github.com/ngi-nix/blink
+
+- name: Castopod
+  website: https://podlibre.org/tag/castopod-host/
+  description: An open-source server made for podcasters who want engage and interact with their audience.
+  code:
+    - https://github.com/ngi-nix/castopod-host
+
+- name: Jitsi ecosystem
+  website: https://jitsi.org/
+  description: Completely free video conferencing
+  code:
+    - https://github.com/NixOS/nixpkgs/pull/137202
+    - https://github.com/NixOS/nixpkgs/pull/139948
+    - https://github.com/jitsi/jibri/issues/441
+
+- name: Liberaforms
+  website: https://liberaforms.org/en
+  description: Makes it easy to create and manage forms that respect the digital rights of the people who use it.
+  code:
+    - https://github.com/ngi-nix/liberaforms
+    - https://gitlab.com/liberaforms/liberaforms/-/issues/126
+    - https://gitlab.com/liberaforms/liberaforms/-/merge_requests/221
+
+- name: Etesync
+  website: https://www.etesync.com/
+  description: Secure, end-to-end encrypted, and privacy respecting sync for your contacts, calendars, tasks and notes.
+  code:
+    - https://github.com/NixOS/nixpkgs/pull/133536
+    - https://github.com/ngi-nix/libetebase
+    - https://github.com/ngi-nix/etebase-rs
+    - https://github.com/ngi-nix/libetebase
+    - https://github.com/ngi-nix/etebase-java
+    - https://github.com/NixOS/nixpkgs/pull/134343
+
+- name: liboqs
+  website: https://openquantumsafe.org/
+  description: An open source C library for quantum-safe cryptographic algorithms
+  code:
+    - https://github.com/ngi-nix/liboqs
+
+- name: Milagro
+  website: https://github.com/apache/incubator-milagro
+  description: A set of crypto libraries and core security infrastructure applications, built for decentralized networks yet suitable for enterprises.
+  code:
+    - https://github.com/ngi-nix/incubator-milagro
+
+- name: Software Heritage
+  website: https://www.softwareheritage.org/
+  code:
+    - https://github.com/ngi-nix/swh-environment/pull/1
+
+- name: DiffPrivacyInference
+  website: https://github.com/DiffMu/DiffPrivacyInference.jl
+  description: A type checker which can automatically analyze Julia programs with respect to differential privacy guarantees.
+  code:
+    - https://github.com/ngi-nix/DiffPrivacyInference/
+
+- name: Kaidan
+  website: https://www.kaidan.im/
+  description: A user-friendly and modern chat app for every device. It uses the open communication protocol XMPP (Jabber).
+  code:
+    - https://github.com/NixOS/nixpkgs/pull/136916
+
+- name: Weblate
+  website: https://weblate.org/en/
+  description: A web based translation tool, used by over 2,500 libre software projects and companies in over 165 countries.
+  code:
+    - https://github.com/ngi-nix/weblate
+    - https://github.com/WeblateOrg/weblate/issues/6679
+
+- name: LibreSOC
+  website: https://libre-soc.org/
+  description: With Libre-SOC, you can take complex algorithms usually intended for power hungry servers with big fat GPUs, and run them on tiny devices like smartwatches, cellphones, and pocket drones without changing your code at all.
+  code:
+    - https://github.com/ngi-nix/libresoc-soc/pull/1
+    - https://git.libre-soc.org/?p=soc.git;a=commit;h=506c93ac12aa4d52db5ba22a10676bb1dfd200f0
+
+- name: Coriolis
+  website: http://coriolis.lip6.fr/
+  description: A complete toolchain for vlsi design. It provides a vhdl compiler and simulator, logic synthetiser, automatic place & route and portable cmos library.
+  code:
+    - https://gitlab.lip6.fr/vlsi-eda/coriolis/-/merge_requests/8
+
+- name: Meta Press
+  website: https://www.meta-press.es/
+  description: Decentralized search engine & automatized press reviews
+  code:
+    - https://github.com/ngi-nix/meta-press
+
+- name: OpenFoodFacts
+  website: https://world.openfoodfacts.org/
+  description: A food products database made by everyone, for everyone. You can use it to make better food choices, and as it is open data, anyone can re-use it for any purpose.
+  code:
+    - https://github.com/ngi-nix/openfoodfacts-server/tree/ngi-nix
+
+- name: Nyxt
+  website: https://nyxt.atlas.engineer/
+  description: Power-browser that ships with tens of features that allow you to quickly analyze, navigate, and extract information from the Internet.
+  code:
+    - https://github.com/ngi-nix/nyxt
+
+- name: ForgeFed
+  website: https://forgefed.peers.community/
+  description: An upcoming federation protocol for enabling interoperability between version control services.
+  code:
+    - https://github.com/ngi-nix/mcfi
+    - https://github.com/ngi-nix/forgefed
+
+- name: CVEHound
+  website: https://github.com/evdenis/cvehound
+  description: A tool for checking linux sources for known CVEs (Common Vulnerabilities and Exposures).
+  code:
+    - https://github.com/ngi-nix/cvehound/
+
+- name: trackingthetrackers
+  website: https://nlnet.nl/project/F-Droid-Trackers/
+  description: A free software, community app store on Android that has been working since 2010 to make all forms of tracking and advertising visible to users.
+  code:
+    - https://github.com/ngi-nix/trackingthetrackers-apk-api
+    - https://github.com/ngi-nix/trackingthetrackers-scripts
+    - https://github.com/ngi-nix/trackingthetrackers-etl
+    - https://github.com/ngi-nix/trackingthetrackers-classifier
+    - https://github.com/ngi-nix/trackingthetrackers-extracted-features
+
+- name: movim
+  website: https://nlnet.nl/project/Movim-OMEMO/
+  description: A web platform that delivers social and IM features on top of the mature XMPP standard (aka Jabber)
+  code:
+    - https://github.com/ngi-nix/movim
+
+- name: url-frontier
+  website: https://github.com/crawler-commons/url-frontier
+  description: A web crawler-neutral API
+  code:
+    - https://github.com/ngi-nix/url-frontier
+
+- name: Katzenpost
+  website: https://katzenpost.mixnetworks.org/
+  description: Mix network protocol libraries. What is a mix network? It is an anonymous communications system.
+  code:
+    - https://github.com/ngi-nix/katzenpost
+
+- name: Variation Graph
+  website: https://github.com/vgteam/vg
+  description: Tools for working with genome variation graphs
+  code:
+    - https://github.com/ngi-nix/magic_rb-vg
+
+- name: Xemu for MEGA65 Phone
+  website: https://github.com/lgblgblgb/xemu
+  description: Emulations of mainly 8 bit machines, including the Commodore LCD, Commodore 65, and the MEGA65 as well.
+  code:
+    - https://github.com/ngi-nix/xemu
+
+- name: rebuilderd
+  website: https://rebuilderd.com/
+  description: Independent verification of binary packages - reproducible builds
+  code:
+    - https://github.com/ngi-nix/rebuilderd
+
+- name: ricochet
+  website: https://github.com/blueprint-freespeech/ricochet-refresh
+  description: Anonymous peer-to-peer instant messaging
+  code:
+    - https://github.com/ngi-nix/ricochet
+
+- name: poliscoops
+  website: https://github.com/openstate/poliscoops
+  description: An interactive online platform that allows journalists and citizens to stay informed, and keep up to date with the growing group of political parties and politicians relevant to them.
+  code:
+    - https://github.com/ngi-nix/poliscoops-flake
+
+- name: GoatCounter
+  website: https://www.goatcounter.com/
+  description: Easy web analytics. No tracking of personal data.
+  code:
+    - https://github.com/ngi-nix/magic_rb-goatcounter
+
+- name: Simple Bandwidth Scanner (OnBaSca)
+  website: https://tpo.pages.torproject.net/network-health/sbws/README.html
+  description: Tor bandwidth scanner
+  code:
+    - https://github.com/ngi-nix/sbws-flake
+
+- name: NetFilter
+  website: https://www.netfilter.org/
+  description: Provides packet filtering software for the Linux 2.4.x and later kernel series. The netfilter project is commonly associated with iptables and its successor nftables.
+  code:
+    - https://github.com/NixOS/nixpkgs/pull/140994
+
+- name: Bitcoin Transactions
+  website: https://peersm.com/wallet
+  description: Javascript implementation of the Bitcoin protocol for any Bitcoin based coins, on server and inside browsers
+  code:
+    - https://github.com/ngi-nix/bitcoin-transactions
+
+- name: Anastasis
+  website: https://anastasis.lu/en/
+  description: A key recovery system that allows the user to securely deposit shares of a core secret with an open set of escrow providers, to recover it if the secret is lost
+  code:
+    - https://github.com/ngi-nix/anastasis
+    - https://github.com/ngi-nix/anastasis-gtk
+
+- name: GNU Taler
+  website: https://taler.net/en/
+  description: A payment system that makes privacy-friendly online transactions fast and easy
+  code:
+    - https://github.com/NixOS/nixpkgs/pull/140477
+
+- name: Arpa2
+  website: http://arpa2.net/
+  description: Tools to repopulate a decentralised global internet that offers security and privacy by design.
+  code:
+    - https://github.com/ngi-nix/arpa2
+    - https://github.com/NixOS/nixpkgs/pull/134965
+    - https://github.com/NixOS/nixpkgs/pull/134332
+
+- name: P2Pcollab
+  website: https://p2pcollab.net/
+  description: Protocols for peer-to-peer collaboration.
+  code:
+    - https://github.com/ngi-nix/p2pcollab
+    - https://github.com/p2pcollab/ocaml-noise-socket/issues/4
+    - https://github.com/p2pcollab/ocaml-blip/pull/1
+    - https://github.com/p2pcollab/ocaml-urps/pull/2
+    - https://github.com/p2pcollab/ocaml-fsq/issues/2
+    - https://github.com/p2pcollab/ocaml-sunnyhash/pull/2
+    - https://github.com/ngi-nix/bloomf/tree/flake-only
+
+- name: CWE checker
+  website: https://github.com/fkie-cad/cwe_checker
+  description: A security checker written in Rust using Ghidra
+  code:
+    - https://github.com/ngi-nix/cwe_checker/tree/flake-only
+    - https://github.com/fkie-cad/cwe_checker/pull/234
+
+- name: Manyverse
+  website: https://www.manyver.se/
+  description: A social network off the grid.
+  code:
+    - https://github.com/ngi-nix/manyverse/tree/nix/napalm-mazurel-2
+
+- name: EEZ ecosystem
+  website: https://www.envox.eu/
+  description: The modular BB3 (Bench Box 3) test & measurement solution which in combination with the cross-platform EEZ Studio offers an appealing open source feature packed framework for automating everyday testing and development tasks suitable for makers, hobbyists, students and professionals.
+  code:
+    - https://github.com/ngi-nix/studio/tree/flake-only
+
+- name: DNSSEC
+  website: https://github.com/NLnetLabs/dnssec-ceremony-tools/
+  description: DNSSEC provides trust in the DNS by guaranteeing the authenticity and integrity of DNS responses.
+  code:
+   - https://github.com/ngi-nix/dnssec-ceremony-tools/tree/flake
+
+- name: URLExtract
+  website: https://github.com/lipoja/URLExtract
+  description: URLExtract is python class for collecting (extracting) URLs from given text based on locating TLD.
+  code:
+    - https://github.com/NixOS/nixpkgs/pull/139814
+
+- name: Owncast
+  website: https://owncast.online/
+  description: A self-hosted live video and web chat server for use with existing popular broadcasting software.
+  code:
+    - https://github.com/ngi-nix/owncast/tree/cleanup
+    - https://github.com/ngi-nix/owncast-admin/tree/flake
+
+- name: BigBlueButton
+  website: https://bigbluebutton.org/
+  description: A global teaching platform. It was developed in a school, not in a boardroom. Making it the only virtual classroom built from the ground up, just for teachers.
+  code:
+    - https://github.com/ngi-nix/bbb4nix/tree/flake
+
+- name: Briar
+  website: https://briarproject.org/
+  description: A secure messaging app designed for activists, journalists and civil society groups. Instead of using a central server, encrypted messages are synchronized directly between the users' devices, protecting users and their relationships from surveillance. 
+  code:
+    - https://github.com/ngi-nix/briar
+
+- name: elRepo.io
+  website: https://elrepo.io/
+  description: Resilient, human-centered, distributed content sharing and discovery.
+  code:
+    - https://github.com/ngi-nix/elRepo.io
+
+- name: IMSI Pseudonymization
+  website: https://osmocom.org/
+  description: Open Source Mobile Communications
+  code:
+    - https://github.com/ngi-nix/imsi-pseudo
+
+- name: Conversations
+  website: https://conversations.im/
+  description: An Android client for the federated, provider independent network of instant messaging servers that use the Extensible messaging and Presence Protocol (XMPP).
+  code:
+    - https://github.com/ngi-nix/Conversations-1/tree/flake-only
+
+- name: Reowulft
+  website: https://reowolf.net/ 
+  description: Replace a decades-old application programming interface (BSD-style sockets) for communication on the Internet. In this project, a novel programming interface is implemented at the systems level that is interoperable with existing Internet applications.
+  code:
+    - https://github.com/ngi-nix/reowolf
+
+- name: Mailpile
+  website: https://www.mailpile.is/
+  description: Mailpile is an e-mail client! Mailpile is a search engine and a personal webmail server. Mailpile is an easy way to encrypt your e-mail. Mailpile is software you run yourself, on your own computer.
+  code:
+    - https://github.com/NixOS/nixpkgs/pull/135543
+
+- name: mobile-nixos
+  website: https://github.com/NixOS/mobile-nixos
+  description: Mobile NixOS is a superset on top of NixOS Linux, Nixpkgs and Nix, aiming to abstract away the differences between mobile devices. In four words “NixOS, on your phone”.
+  code:
+    - https://github.com/NixOS/mobile-nixos/pull/404
+
+- name: OSX-KVM
+  website: https://github.com/foxlet/macOS-Simple-KVM
+  description: Tools to set up a quick macOS VM in QEMU, accelerated by KVM.
+  code:
+    - https://github.com/ngi-nix/OSX-KVM
+
+- name: Waasabi
+  website: https://waasabi.org/
+  description: Open source framework for custom live streaming events and conferences.
+  code:
+    - https://github.com/ngi-nix/waasabi
+
+- name: Wireguard
+  website: https://www.wireguard.com/
+  description: An extremely simple yet fast and modern VPN that utilizes state-of-the-art cryptography. It aims to be faster, simpler, leaner, and more useful than IPsec, while avoiding the massive headache.
+  code:
+    - https://github.com/NixOS/nixpkgs/pull/133763
+
+- name: SearX
+  website: https://searx.me/
+  description: Privacy-respecting metasearch engine
+  code:
+    - https://github.com/ngi-nix/searx-thegreenopenweb
+    - https://github.com/ngi-nix/tgwf-searx-plugins/tree/nix-flake
+
+- name: PCB-rnd
+  website: http://repo.hu/projects/pcb-rnd/
+  description: Is a free/open source, flexible, modular Printed Circuit Board editor.
+  code:
+    - https://github.com/ngi-nix/pcb-rnd/pull/2
+
+- name: Noise Explorer
+  website: https://noiseexplorer.com/
+  description: An online engine for reasoning about Noise Protocol Framework (revision 34) Handshake Patterns.
+  code:
+    - https://github.com/ngi-nix/noiseExplorer
+
+- name: Universal Resolver
+  website: https://danubetech.com/
+  description: Resolve any DID on any blockchain, DLT, or other decentralized network.
+  code:
+    - https://github.com/ngi-nix/universal-resolver
+
+- name: IRMA
+  website: https://irma.app/
+  description: Everyone can freely download the IRMA app (Android and iOS and F-droid) and fill it with their own data. For instance, store your email address and possibly mobile number as attribute in your IRMA app.
+  code:
+    - https://github.com/ngi-nix/irmago-server
+    - https://github.com/ngi-nix/IRMAseal
+
+- name: Delta Chat
+  website: https://delta.chat/en/
+  description: Delta Chat is like Telegram or Whatsapp but without the tracking or central control. Delta Chat does not need your phone number. Check out our privacy statement.
+  code:
+    - https://github.com/ngi-nix/deltabot
+
+- name: IPFS and IPFS Search
+  website: https://ipfs-search.com/#/
+  description: A Free and Open Source (FOSS) search engine for directories, documents, videos, music on the Interplanetary Filesystem (IPFS)
+  code:
+    - https://github.com/ngi-nix/ipfs-search
+    - https://github.com/NixOS/nixpkgs/pull/135850
+    - https://github.com/NixOS/nixpkgs/pull/135867
+    - https://github.com/NixOS/nixpkgs/pull/136137
+    - https://github.com/NixOS/nixpkgs/pull/136143
+    - https://github.com/NixOS/nixpkgs/pull/136170
+    - https://github.com/NixOS/nixpkgs/pull/136255
+    - https://github.com/NixOS/nixpkgs/pull/136261
+    - https://github.com/NixOS/nixpkgs/pull/137070
+
+- name: Meilisearch
+  website: https://www.meilisearch.com/ 
+  description: Powerful, fast, and an easy to use search engine
+  code:
+    - https://github.com/NixOS/nixpkgs/pull/136353
+    - https://github.com/NixOS/nixpkgs/pull/137612
+    - https://github.com/NixOS/nixpkgs/pull/137078
+    - https://github.com/NixOS/nixpkgs/pull/138778
+
+- name: Cryptpad
+  website: https://cryptpad.fr/
+  description: End-to-end encrypted and open-source collaborative documents.
+  code:
+    - https://github.com/NixOS/nixpkgs/pull/133202
+    - https://github.com/NixOS/nixpkgs/issues/128154
+
+- name: Sonar
+  website: https://arso.xyz/
+  description: We're developing tools to make it easy to share media collaboratively without relying on centralized services. 
+  code:
+    - https://github.com/ngi-nix/sonar-1
+    - https://github.com/ngi-nix/sonar-tantivy/pull/1
+
+- name: Webshell
+  website: https://wiki.ljudmila.org/WebShell
+  description: A free, open-source, private and secure alternative to commercial cloud storage and web-based software. It's a web desktop which can be self-hosted on your server to provide access to your files and apps from the web.
+  code:
+    - https://github.com/ngi-nix/webshell
+
+- name: Misskey
+  website: https://join.misskey.page/en-US/
+  description: A decentralized and open source microblogging platform
+  code:
+    - https://github.com/ngi-nix/misskey/tree/flake
+
+- name: EgilSCIM 
+  website: https://github.com/Sambruk/EgilSCIM
+  description: The EGIL SCIM client implements the EGIL profile of the SS 12000 standard. It reads information about students, groups etc. from LDAP and sends updates to a SCIM server.
+  code:
+    - https://github.com/Sambruk/EgilSCIM/pull/118
+    - https://github.com/Sambruk/EgilSCIM/pull/121
+    - https://github.com/Sambruk/EgilSCIM/pull/122
+    - https://github.com/Sambruk/EgilSCIM/pull/123
+    - https://github.com/ngi-nix/EgilSCIM/tree/flake-only
+
+- name: Other flakes on the ngi organization
+  description: Mostly dependencies of NGI projects
+  code:
+    - https://github.com/ngi-nix/pymilter
+    - https://github.com/ngi-nix/pgp-milter
+    - https://github.com/ngi-nix/libspng 
+    - https://github.com/ngi-nix/tika
+
+- name: 2nix tooling
+  description: Contributions to various 2nix tools.
+  code:
+    - https://github.com/svanderburg/composer2nix/pull/24
+    - https://github.com/svanderburg/composer2nix/issues/21#issuecomment-939113960
+    - https://github.com/nix-community/napalm/pull/35
+    - https://github.com/svanderburg/node2nix/pull/261
+    - https://github.com/nix-community/npmlock2nix/pull/93
+    - https://github.com/nix-community/npmlock2nix/pull/94
+    - https://github.com/nix-community/npmlock2nix/pull/108,
+    - https://github.com/nix-community/npmlock2nix/pull/110,
+    - https://github.com/nix-community/npmlock2nix/pull/111,
+    - https://github.com/nix-community/npmlock2nix/pull/115
+    - https://github.com/nix-community/poetry2nix/pull/368
+    - https://github.com/fzakaria/mvn2nix/issues/40
+    - https://github.com/nix-community/naersk/issues/187
+    - https://github.com/nix-community/naersk/issues/188
+    - https://github.com/rvl/bower2nix/pull/21
+    - https://github.com/nix-community/dream2nix
+
+- name: Flake templates
+  description: Nix flake templates
+  code:
+    - https://github.com/ngi-nix/flakes-templates/pull/1
+    - https://github.com/NixOS/templates/pull/7
+    - https://github.com/ngi-nix/nixos-modules-flake-template/blob/main/flake.nix
+
+- name: Other nixpkgs contributions
+  website: https://github.com/NixOS/nixpkgs
+  description: Docs, broken, version bumps, adding dependencies
+  code:
+    - https://github.com/NixOS/nixpkgs/pull/126758
+    - https://github.com/NixOS/nixpkgs/pull/127724
+    - https://github.com/NixOS/nixpkgs/pull/130419
+    - https://github.com/NixOS/nixpkgs/pull/132287#pullrequestreview-736233478
+      https://github.com/NixOS/nixpkgs/pull/132739
+    - https://github.com/NixOS/nixpkgs/pull/132906
+    - https://github.com/NixOS/nixpkgs/pull/133354
+    - https://github.com/NixOS/nixpkgs/pull/133593 
+    - https://github.com/NixOS/nixpkgs/pull/136274
+    - https://github.com/NixOS/nixpkgs/pull/133753
+    - https://github.com/NixOS/nixpkgs/pull/134110
+    - https://github.com/NixOS/nixpkgs/pull/134384
+    - https://github.com/NixOS/nixpkgs/pull/134657
+    - https://github.com/NixOS/nixpkgs/pull/135573
+    - https://github.com/NixOS/nixpkgs/pull/135730#pullrequestreview-739660033
+    - https://github.com/NixOS/nixpkgs/pull/136476
+    - https://github.com/NixOS/nixpkgs/pull/136524
+    - https://github.com/NixOS/nixpkgs/pull/136632
+    - https://github.com/NixOS/nixpkgs/pull/136637
+    - https://github.com/NixOS/nixpkgs/pull/136703
+    - https://github.com/NixOS/nixpkgs/pull/138016
+    - https://github.com/NixOS/nixpkgs/pull/138587
+    - https://github.com/NixOS/nixpkgs/pull/138591
+    - https://github.com/NixOS/nixpkgs/pull/138707
+    - https://github.com/NixOS/nixpkgs/pull/138750
+    - https://github.com/NixOS/nixpkgs/pull/140208
+    - https://github.com/NixOS/nixpkgs/pull/141822
+    - https://github.com/NixOS/nixpkgs/pull/142393
+    - https://github.com/NixOS/nixpkgs/pull/144547
+    - https://github.com/NixOS/nixpkgs/pull/144314
+
+- name: Other Nix contributions
+  code:
+    - https://github.com/NixOS/nix/pull/5364
+    - https://github.com/NixOS/nixos-search/pull/360
+    - https://github.com/nprindle/nix-parsec/pull/4
+    - https://github.com/NixOS/rfcs/pull/99
+    - https://github.com/NixOS/rfcs/pull/100
+    - https://github.com/nix-community/home-manager/issues/2251
+    - https://github.com/seppeljordan/nix-prefetch-github/issues/40
+    - https://github.com/NixOS/nix/issues/5169
+    - https://github.com/NixOS/nix/pull/5286
+    - https://github.com/NixOS/nix/pull/5163#issuecomment-924488262
+    - https://github.com/Mic92/nixos-shell/pull/41
+
+- name: Other
+  description: Other upstream contributions
+  code:
+    - https://github.com/bytefury/crater/issues/578
+    - https://github.com/bytefury/crater/pull/579
+    - https://github.com/YosysHQ/prjtrellis/pull/178
+    - https://github.com/unbit/uwsgi-docs/pull/499
+    - https://github.com/celery/celery/pull/6988
+    - https://github.com/electron/electron/issues/31121
+    - https://github.com/Mazurel/android2nix

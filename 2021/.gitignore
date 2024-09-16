@@ -1,0 +1,5 @@
+**/.direnv
+**/.envrc
+result
+scripts/**/dist-newstyle
+scripts/**/out

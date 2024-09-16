@@ -1,0 +1,49 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.5.
+--
+-- see: https://github.com/sol/hpack
+
+name:           plotter
+version:        0.1.0.0
+build-type:     Simple
+data-files:
+    github-schema.gql
+
+library
+  exposed-modules:
+      Plots
+  other-modules:
+      Paths_plotter
+  hs-source-dirs:
+      src
+  build-depends:
+      aeson
+    , base ==4.*
+    , bytestring
+    , hvega
+    , process
+    , process-extras
+    , text
+    , time
+    , yaml
+  default-language: Haskell2010
+
+executable plotter
+  main-is: Main.hs
+  other-modules:
+      Paths_plotter
+  hs-source-dirs:
+      app
+  build-depends:
+      aeson
+    , base ==4.*
+    , bytestring
+    , hvega
+    , plotter
+    , process
+    , process-extras
+    , text
+    , time
+    , yaml
+  default-language: Haskell2010
