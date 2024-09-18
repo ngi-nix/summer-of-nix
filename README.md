@@ -177,3 +177,11 @@ As a participant, you will need an account on each of these services.
 
 [Open an issue](https://github.com/ngi-nix/summer-of-nix/issues) to ask a question in public.
 Send us direct messages on Matrix for questions that require privacy.
+
+## Annual reports
+
+Reports from previous years available for consultation:
+
+- [SoN 2021](https://ngi-nix.github.io/summer-of-nix/SoN-2021-report.pdf)
+- [SoN 2022](https://ngi-nix.github.io/summer-of-nix/SoN-2022-report.pdf)
+- [SoN 2023](https://ngi-nix.github.io/summer-of-nix/SoN-2023-report.pdf)
