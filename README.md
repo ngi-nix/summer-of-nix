@@ -180,8 +180,6 @@ Send us direct messages on Matrix for questions that require privacy.
 
 ## Annual reports
 
-Reports from previous years available for consultation:
-
-- [SoN 2021](https://ngi-nix.github.io/summer-of-nix/SoN-2021-report.pdf)
-- [SoN 2022](https://ngi-nix.github.io/summer-of-nix/SoN-2022-report.pdf)
-- [SoN 2023](https://ngi-nix.github.io/summer-of-nix/SoN-2023-report.pdf)
+- [Report: 2023 Summer of Nix](https://ngi-nix.github.io/summer-of-nix/SoN-2023-report.pdf)
+- [Report: 2022 Summer of Nix](https://ngi-nix.github.io/summer-of-nix/SoN-2022-report.pdf)
+- [Report: 2021 Summer of Nix](https://ngi-nix.github.io/summer-of-nix/SoN-2021-report.pdf)
