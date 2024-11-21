@@ -46,22 +46,40 @@ The program is designed for participants to **work, learn, and meet**:
 
 All details about applications will be announced here in the first months of 2025.
 
-## Eligibility
+### Participants
 
-People from anywhere in the world can apply.
-To be considered for participation, applicants must:
-
- - Be a natural person of legal age
- - Be fluent in English
- - Have essential programming skills, including proficiency with
+To be considered for participation, applicants must demonstrate:
+ - Fluency in English
+ - Essential programming skills, including proficiency with
    - The command line
    - Git version control
    - At least one programming language
- - Have basic familiarity with Nix
- - Meet the [technical requirements](#technical-requirements)
- - Be available for a total of 160 hours of regular sessions over 13 weeks.
+ - Basic familiarity with Nix
 
-Applicants for the mentor role must be Nixpkgs maintainers with [merge access](https://github.com/orgs/nixos/teams/nixpkgs-committers).
+Additionally, applicants have to:
+ - Meet the [technical requirements](#technical-requirements)
+ - Be available for a total of 160 hours of regular sessions over 13 weeks
+
+### Mentors
+
+To be considered for the mentor role, in addition to the [requirements for participants](#participants), applicants must have:
+- [Merge access to Nixpkgs](https://github.com/orgs/nixos/teams/nixpkgs-committers).
+- Command of at least two widely-used programming languages
+- Firm grasp of software development best practices
+- Excellent control of Git
+- Experience with leadership and teaching
+- Fluency with the Nix language, the module system, NixOS tests, and related tools
+
+## Selection criteria
+
+We select for qualification and motivation, as well as for diverse perspectives and backgrounds.
+
+People who identify as members of groups currently underrepresented in open source software development communities are particularly encouraged to apply.
+We put emphasis on establishing a safe, respectful, and inclusive environment where everyone can contribute their best.
+
+## Eligibility
+
+Natural persons of legal age from anywhere in the world can apply.
 
 ## Stipends
 
