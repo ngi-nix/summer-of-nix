@@ -1,4 +1,4 @@
-# Summer of Nix 2024
+# Summer of Nix 2025
 
 Summer of Nix is a coordinated effort to support selected free and open source software (FOSS) projects, by making them available as [Nix packages](https://search.nixos.org/packages) or [NixOS service modules](https://search.nixos.org/options?query=services).
 It is funded by the European Commission's [Next Generation Internet (NGI)](https://www.ngi.eu/) initiative through the [NLNet Foundation](https://nlnet.nl/) and the [NixOS Foundation](https://github.com/NixOS/foundation).
@@ -36,26 +36,15 @@ The program is designed for participants to **work, learn, and meet**:
   After successful participation, you will be invited to NixCon 2024, a conference for Nix users and developers from all over the world.
   And you will be afforded an opportunity for exposure with potential employers for whom Nix is a core strength.
 
-## Mob programming
-
-As a participant, you will be in one of several teams working in [remote mob programming format](https://www.remotemobprogramming.org/).
-To ensure successful collaboration, each team includes a facilitator – a more experienced developer who is familiar with mob programming.
-
-The teams will be supported by a resident developer and the program organisers.
-
 ## Timeline
 
-- March: Organisers recruit facilitators
-- April: Facilitators recruit mob members
-- Late May to early September: Mobs work
+- March: Organisers recruit mentors
+- April: Mentors recruit participants
+- Late May to early September: Work period with regular meetings
 
 ## Applications
 
-Mob programming facilitators are recruited by the organisers.
-The [call for facilitator applications](./facilitators.md) has closed on 2024-03-24.
-
-Each facilitator sets their mob's schedule and, in turn, recruits four members for their mob.
-The [call for participant applications](./participants.md) is open until 2024-05-10.
+All details about applications will be announced here in the first months of 2025.
 
 ## Eligibility
 
@@ -72,14 +61,16 @@ To be considered for participation, applicants must:
  - Meet the [technical requirements](#technical-requirements)
  - Be available for a total of 160 hours of regular sessions over 13 weeks.
 
+Applicants for the mentor role must be Nixpkgs maintainers with [merge access](https://github.com/orgs/nixos/teams/nixpkgs-committers).
+
 ## Stipends
 
 | Role               | Base stipend [EUR] |
 |--------------------|--------------------|
-| Mob member         |               3000 |
-| Mob facilitator    |               5000 |
+| Participant        |               3000 |
+| Mentor             |               5000 |
 
-Residents of EU member states receive the base stipend.
+Residents of [EU member states](https://european-union.europa.eu/principles-countries-history/eu-countries_en) receive the base stipend.
 For residents of other countries, stipends are adjusted according to [purchasing power parity](https://en.wikipedia.org/wiki/Purchasing_power_parity) relative to the Netherlands.
 See the [list of stipends by country](./stipends.md) for exact amounts.
 
@@ -91,7 +82,7 @@ You must be able to receive payments via one of:
 
 ## Technical requirements
 
-Remote mob programming requires being able to simultaneously share your screen, view others' screens, talk to each other, and compile software.
+Effective remote collaboration requires being able to simultaneously share your screen, view others' screens, talk to each other, and compile software.
 This is only possible with sufficiently performant hardware, and therefore it's a condition for participation.
 
 ### Video calls
@@ -111,13 +102,6 @@ Please ask a friend to make a test call on [Jitsi Meet](https://meet.jit.si/) to
 From the organisers' experience, mobile data is unlikely to suffice.
 
 ## Questions and answers
-
-### Why mob programming?
-
-With proper facilitation, mob programming avoids many problems prevalent in solo-programming and asynchronous collaboration.
-It seems to produce better software and make for happier developers.
-It optimises for knowledge sharing, which is critical for short-term teams that collaborate on unfamiliar projects, such as in this program.
-It also reduces the organisation overhead due to cross-participant support.
 
 ### How to get notifications and updates?
 
@@ -163,20 +147,19 @@ We use:
 
 As a participant, you will need an account on each of these services.
 
-## Organisers
+## Contact
 
-- Shahar "Dawn" Or (mob programming)
+Responsible: Valentin Gagarin (program direction)
 
-  - GitHub: [@mightyiam](https://github.com/mightyiam)
-  - Matrix [@mightyiam:matrix.org](https://matrix.to/#/@mightyiam:matrix.org)
-
-- Valentin Gagarin (program direction)
-
-  - GitHub: [@fricklerhandwerk](https://github.com/fricklerhandwerk)
-  - Matrix: [@fricklerhandwerk:matrix.org](https://matrix.to/#/@fricklerhandwerk:matrix.org)
+- GitHub: [@fricklerhandwerk](https://github.com/fricklerhandwerk)
+- Matrix: [@fricklerhandwerk:matrix.org](https://matrix.to/#/@fricklerhandwerk:matrix.org)
 
 [Open an issue](https://github.com/ngi-nix/summer-of-nix/issues) to ask a question in public.
-Send us direct messages on Matrix for questions that require privacy.
+Send direct messages on Matrix for questions that require privacy.
+
+Accountable: [Stichting NixOS Foundation](https://github.com/NixOS/foundation/) (legal partner in the NGI Zero consortium, fiscal host)
+
+Consulted and informed: [Nix Community Steering Committee](https://github.com/NixOS/org/blob/main/doc/governance.md) (governing body of the Nix ecosystem)
 
 ## Annual reports
 
