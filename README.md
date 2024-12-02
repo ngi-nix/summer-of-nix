@@ -184,3 +184,11 @@ Consulted and informed: [Nix Community Steering Committee](https://github.com/Ni
 - [Report: 2023 Summer of Nix](https://ngi-nix.github.io/summer-of-nix/SoN-2023-report.pdf)
 - [Report: 2022 Summer of Nix](https://ngi-nix.github.io/summer-of-nix/SoN-2022-report.pdf)
 - [Report: 2021 Summer of Nix](https://ngi-nix.github.io/summer-of-nix/SoN-2021-report.pdf)
+
+## Acknowledgements
+
+Summer of Nix is funded by the European Commission's [Next Generation Internet (NGI)](https://www.ngi.eu/) initiative through the [NLNet Foundation](https://nlnet.nl/) and the [NixOS Foundation](https://github.com/NixOS/foundation).
+
+[<img src="https://nlnet.nl/image/logos/EC.svg" alt="European Commission logo" style="width:10rem;" />](https://ngi.eu/about/)
+&nbsp;&nbsp;
+[<img src="https://nlnet.nl/logo/banner.svg" alt="NLnet foundation logo" style="width:10rem;" />](https://nlnet.nl/foundation/)
