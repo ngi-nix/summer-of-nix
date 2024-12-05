@@ -167,13 +167,14 @@ As a participant, you will need an account on each of these services.
 
 ## Contact
 
+[Open an issue](https://github.com/ngi-nix/summer-of-nix/issues) to ask a question in public.
+Send direct messages for questions that require privacy.
+
 Responsible: Valentin Gagarin (program direction)
 
 - GitHub: [@fricklerhandwerk](https://github.com/fricklerhandwerk)
 - Matrix: [@fricklerhandwerk:matrix.org](https://matrix.to/#/@fricklerhandwerk:matrix.org)
-
-[Open an issue](https://github.com/ngi-nix/summer-of-nix/issues) to ask a question in public.
-Send direct messages on Matrix for questions that require privacy.
+- Email: [ngi@nixos.org](mailto:ngi@nixos.org)
 
 Accountable: [Stichting NixOS Foundation](https://github.com/NixOS/foundation/) (legal partner in the NGI Zero consortium, fiscal host)
 
