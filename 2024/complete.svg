@@ -1,0 +1,397 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 754 1490">
+  <g transform="translate(204, 20)">
+    <!-- Table Headers -->
+    <text x="90" y="15" font-family="sans-serif" font-size="12" text-anchor="middle">Implemented</text>
+    <text x="165" y="15" font-family="sans-serif" font-size="12" text-anchor="middle">Missing</text>
+    <text x="0" y="55" font-family="sans-serif" font-size="12">derivations</text>
+    <rect x="80" y="40" width="20" height="20" fill="mediumturquoise" />
+    <rect x="160" y="40" width="20" height="20" fill="lightcoral" />
+    <text x="0" y="85" font-family="sans-serif" font-size="12">services</text>
+    <rect x="80" y="70" width="20" height="20" fill="seagreen" />
+    <rect x="160" y="70" width="20" height="20" fill="crimson" />
+    <text x="0" y="115" font-family="sans-serif" font-size="12">programs</text>
+    <rect x="80" y="100" width="20" height="20" fill="teal" />
+    <rect x="160" y="100" width="20" height="20" fill="tomato" />
+    <text x="0" y="145" font-family="sans-serif" font-size="12">tests</text>
+    <rect x="80" y="130" width="20" height="20" fill="green" />
+    <rect x="160" y="130" width="20" height="20" fill="hotpink" />
+    <text x="0" y="175" font-family="sans-serif" font-size="12">examples</text>
+    <rect x="80" y="160" width="20" height="20" fill="mediumseagreen" />
+    <rect x="160" y="160" width="20" height="20" fill="orange" />
+  </g>
+  <g transform="translate(0, 990)">
+    <text x="194" y="20" font-family="sans-serif" font-size="14" text-anchor="end">Alive2</text>
+    <g transform="translate(204, 0)">
+      <rect x="0" y="0" width="400" height="30" fill="mediumturquoise" />
+      <rect x="400" y="0" width="0" height="30" fill="seagreen" />
+      <rect x="400" y="0" width="0" height="30" fill="teal" />
+      <rect x="400" y="0" width="0" height="30" fill="green" />
+      <rect x="400" y="0" width="0" height="30" fill="mediumseagreen" />
+      <rect x="400" y="0" width="0" height="30" fill="lightcoral" />
+      <rect x="400" y="0" width="0" height="30" fill="crimson" />
+      <rect x="400" y="0" width="0" height="30" fill="tomato" />
+      <rect x="400" y="0" width="0" height="30" fill="hotpink" />
+      <rect x="400" y="0" width="0" height="30" fill="orange" />
+    </g>
+  </g>
+  <g transform="translate(0, 340)">
+    <text x="194" y="20" font-family="sans-serif" font-size="14" text-anchor="end">AtomicData</text>
+    <g transform="translate(204, 0)">
+      <rect x="0" y="0" width="89" height="30" fill="mediumturquoise" />
+      <rect x="89" y="0" width="238" height="30" fill="seagreen" />
+      <rect x="328" y="0" width="0" height="30" fill="teal" />
+      <rect x="328" y="0" width="59" height="30" fill="green" />
+      <rect x="388" y="0" width="11" height="30" fill="mediumseagreen" />
+      <rect x="400" y="0" width="0" height="30" fill="lightcoral" />
+      <rect x="400" y="0" width="0" height="30" fill="crimson" />
+      <rect x="400" y="0" width="0" height="30" fill="tomato" />
+      <rect x="400" y="0" width="0" height="30" fill="hotpink" />
+      <rect x="400" y="0" width="0" height="30" fill="orange" />
+    </g>
+  </g>
+  <g transform="translate(0, 1040)">
+    <text x="194" y="20" font-family="sans-serif" font-size="14" text-anchor="end">DMT-Core</text>
+    <g transform="translate(204, 0)">
+      <rect x="0" y="0" width="400" height="30" fill="mediumturquoise" />
+      <rect x="400" y="0" width="0" height="30" fill="seagreen" />
+      <rect x="400" y="0" width="0" height="30" fill="teal" />
+      <rect x="400" y="0" width="0" height="30" fill="green" />
+      <rect x="400" y="0" width="0" height="30" fill="mediumseagreen" />
+      <rect x="400" y="0" width="0" height="30" fill="lightcoral" />
+      <rect x="400" y="0" width="0" height="30" fill="crimson" />
+      <rect x="400" y="0" width="0" height="30" fill="tomato" />
+      <rect x="400" y="0" width="0" height="30" fill="hotpink" />
+      <rect x="400" y="0" width="0" height="30" fill="orange" />
+    </g>
+  </g>
+  <g transform="translate(0, 1090)">
+    <text x="194" y="20" font-family="sans-serif" font-size="14" text-anchor="end">Dokieli</text>
+    <g transform="translate(204, 0)">
+      <rect x="0" y="0" width="400" height="30" fill="mediumturquoise" />
+      <rect x="400" y="0" width="0" height="30" fill="seagreen" />
+      <rect x="400" y="0" width="0" height="30" fill="teal" />
+      <rect x="400" y="0" width="0" height="30" fill="green" />
+      <rect x="400" y="0" width="0" height="30" fill="mediumseagreen" />
+      <rect x="400" y="0" width="0" height="30" fill="lightcoral" />
+      <rect x="400" y="0" width="0" height="30" fill="crimson" />
+      <rect x="400" y="0" width="0" height="30" fill="tomato" />
+      <rect x="400" y="0" width="0" height="30" fill="hotpink" />
+      <rect x="400" y="0" width="0" height="30" fill="orange" />
+    </g>
+  </g>
+  <g transform="translate(0, 640)">
+    <text x="194" y="20" font-family="sans-serif" font-size="14" text-anchor="end">Hypermachines</text>
+    <g transform="translate(204, 0)">
+      <rect x="0" y="0" width="400" height="30" fill="mediumturquoise" />
+      <rect x="400" y="0" width="0" height="30" fill="seagreen" />
+      <rect x="400" y="0" width="0" height="30" fill="teal" />
+      <rect x="400" y="0" width="0" height="30" fill="green" />
+      <rect x="400" y="0" width="0" height="30" fill="mediumseagreen" />
+      <rect x="400" y="0" width="0" height="30" fill="lightcoral" />
+      <rect x="400" y="0" width="0" height="30" fill="crimson" />
+      <rect x="400" y="0" width="0" height="30" fill="tomato" />
+      <rect x="400" y="0" width="0" height="30" fill="hotpink" />
+      <rect x="400" y="0" width="0" height="30" fill="orange" />
+    </g>
+  </g>
+  <g transform="translate(0, 1140)">
+    <text x="194" y="20" font-family="sans-serif" font-size="14" text-anchor="end">Icestudio</text>
+    <g transform="translate(204, 0)">
+      <rect x="0" y="0" width="400" height="30" fill="mediumturquoise" />
+      <rect x="400" y="0" width="0" height="30" fill="seagreen" />
+      <rect x="400" y="0" width="0" height="30" fill="teal" />
+      <rect x="400" y="0" width="0" height="30" fill="green" />
+      <rect x="400" y="0" width="0" height="30" fill="mediumseagreen" />
+      <rect x="400" y="0" width="0" height="30" fill="lightcoral" />
+      <rect x="400" y="0" width="0" height="30" fill="crimson" />
+      <rect x="400" y="0" width="0" height="30" fill="tomato" />
+      <rect x="400" y="0" width="0" height="30" fill="hotpink" />
+      <rect x="400" y="0" width="0" height="30" fill="orange" />
+    </g>
+  </g>
+  <g transform="translate(0, 890)">
+    <text x="194" y="20" font-family="sans-serif" font-size="14" text-anchor="end">Inko</text>
+    <g transform="translate(204, 0)">
+      <rect x="0" y="0" width="400" height="30" fill="mediumturquoise" />
+      <rect x="400" y="0" width="0" height="30" fill="seagreen" />
+      <rect x="400" y="0" width="0" height="30" fill="teal" />
+      <rect x="400" y="0" width="0" height="30" fill="green" />
+      <rect x="400" y="0" width="0" height="30" fill="mediumseagreen" />
+      <rect x="400" y="0" width="0" height="30" fill="lightcoral" />
+      <rect x="400" y="0" width="0" height="30" fill="crimson" />
+      <rect x="400" y="0" width="0" height="30" fill="tomato" />
+      <rect x="400" y="0" width="0" height="30" fill="hotpink" />
+      <rect x="400" y="0" width="0" height="30" fill="orange" />
+    </g>
+  </g>
+  <g transform="translate(0, 390)">
+    <text x="194" y="20" font-family="sans-serif" font-size="14" text-anchor="end">Kbin</text>
+    <g transform="translate(204, 0)">
+      <rect x="0" y="0" width="89" height="30" fill="mediumturquoise" />
+      <rect x="89" y="0" width="238" height="30" fill="seagreen" />
+      <rect x="328" y="0" width="0" height="30" fill="teal" />
+      <rect x="328" y="0" width="59" height="30" fill="green" />
+      <rect x="388" y="0" width="11" height="30" fill="mediumseagreen" />
+      <rect x="400" y="0" width="0" height="30" fill="lightcoral" />
+      <rect x="400" y="0" width="0" height="30" fill="crimson" />
+      <rect x="400" y="0" width="0" height="30" fill="tomato" />
+      <rect x="400" y="0" width="0" height="30" fill="hotpink" />
+      <rect x="400" y="0" width="0" height="30" fill="orange" />
+    </g>
+  </g>
+  <g transform="translate(0, 740)">
+    <text x="194" y="20" font-family="sans-serif" font-size="14" text-anchor="end">KiKit</text>
+    <g transform="translate(204, 0)">
+      <rect x="0" y="0" width="400" height="30" fill="mediumturquoise" />
+      <rect x="400" y="0" width="0" height="30" fill="seagreen" />
+      <rect x="400" y="0" width="0" height="30" fill="teal" />
+      <rect x="400" y="0" width="0" height="30" fill="green" />
+      <rect x="400" y="0" width="0" height="30" fill="mediumseagreen" />
+      <rect x="400" y="0" width="0" height="30" fill="lightcoral" />
+      <rect x="400" y="0" width="0" height="30" fill="crimson" />
+      <rect x="400" y="0" width="0" height="30" fill="tomato" />
+      <rect x="400" y="0" width="0" height="30" fill="hotpink" />
+      <rect x="400" y="0" width="0" height="30" fill="orange" />
+    </g>
+  </g>
+  <g transform="translate(0, 290)">
+    <text x="194" y="20" font-family="sans-serif" font-size="14" text-anchor="end">Libervia</text>
+    <g transform="translate(204, 0)">
+      <rect x="0" y="0" width="229" height="30" fill="mediumturquoise" />
+      <rect x="229" y="0" width="131" height="30" fill="seagreen" />
+      <rect x="360" y="0" width="0" height="30" fill="teal" />
+      <rect x="360" y="0" width="32" height="30" fill="green" />
+      <rect x="393" y="0" width="6" height="30" fill="mediumseagreen" />
+      <rect x="400" y="0" width="0" height="30" fill="lightcoral" />
+      <rect x="400" y="0" width="0" height="30" fill="crimson" />
+      <rect x="400" y="0" width="0" height="30" fill="tomato" />
+      <rect x="400" y="0" width="0" height="30" fill="hotpink" />
+      <rect x="400" y="0" width="0" height="30" fill="orange" />
+    </g>
+  </g>
+  <g transform="translate(0, 940)">
+    <text x="194" y="20" font-family="sans-serif" font-size="14" text-anchor="end">Libre-SOC-OpenPOWER-ISA</text>
+    <g transform="translate(204, 0)">
+      <rect x="0" y="0" width="400" height="30" fill="mediumturquoise" />
+      <rect x="400" y="0" width="0" height="30" fill="seagreen" />
+      <rect x="400" y="0" width="0" height="30" fill="teal" />
+      <rect x="400" y="0" width="0" height="30" fill="green" />
+      <rect x="400" y="0" width="0" height="30" fill="mediumseagreen" />
+      <rect x="400" y="0" width="0" height="30" fill="lightcoral" />
+      <rect x="400" y="0" width="0" height="30" fill="crimson" />
+      <rect x="400" y="0" width="0" height="30" fill="tomato" />
+      <rect x="400" y="0" width="0" height="30" fill="hotpink" />
+      <rect x="400" y="0" width="0" height="30" fill="orange" />
+    </g>
+  </g>
+  <g transform="translate(0, 790)">
+    <text x="194" y="20" font-family="sans-serif" font-size="14" text-anchor="end">LibreCastLiveStudio</text>
+    <g transform="translate(204, 0)">
+      <rect x="0" y="0" width="400" height="30" fill="mediumturquoise" />
+      <rect x="400" y="0" width="0" height="30" fill="seagreen" />
+      <rect x="400" y="0" width="0" height="30" fill="teal" />
+      <rect x="400" y="0" width="0" height="30" fill="green" />
+      <rect x="400" y="0" width="0" height="30" fill="mediumseagreen" />
+      <rect x="400" y="0" width="0" height="30" fill="lightcoral" />
+      <rect x="400" y="0" width="0" height="30" fill="crimson" />
+      <rect x="400" y="0" width="0" height="30" fill="tomato" />
+      <rect x="400" y="0" width="0" height="30" fill="hotpink" />
+      <rect x="400" y="0" width="0" height="30" fill="orange" />
+    </g>
+  </g>
+  <g transform="translate(0, 1190)">
+    <text x="194" y="20" font-family="sans-serif" font-size="14" text-anchor="end">Meta-Presses</text>
+    <g transform="translate(204, 0)">
+      <rect x="0" y="0" width="400" height="30" fill="mediumturquoise" />
+      <rect x="400" y="0" width="0" height="30" fill="seagreen" />
+      <rect x="400" y="0" width="0" height="30" fill="teal" />
+      <rect x="400" y="0" width="0" height="30" fill="green" />
+      <rect x="400" y="0" width="0" height="30" fill="mediumseagreen" />
+      <rect x="400" y="0" width="0" height="30" fill="lightcoral" />
+      <rect x="400" y="0" width="0" height="30" fill="crimson" />
+      <rect x="400" y="0" width="0" height="30" fill="tomato" />
+      <rect x="400" y="0" width="0" height="30" fill="hotpink" />
+      <rect x="400" y="0" width="0" height="30" fill="orange" />
+    </g>
+  </g>
+  <g transform="translate(0, 1240)">
+    <text x="194" y="20" font-family="sans-serif" font-size="14" text-anchor="end">Naja</text>
+    <g transform="translate(204, 0)">
+      <rect x="0" y="0" width="400" height="30" fill="mediumturquoise" />
+      <rect x="400" y="0" width="0" height="30" fill="seagreen" />
+      <rect x="400" y="0" width="0" height="30" fill="teal" />
+      <rect x="400" y="0" width="0" height="30" fill="green" />
+      <rect x="400" y="0" width="0" height="30" fill="mediumseagreen" />
+      <rect x="400" y="0" width="0" height="30" fill="lightcoral" />
+      <rect x="400" y="0" width="0" height="30" fill="crimson" />
+      <rect x="400" y="0" width="0" height="30" fill="tomato" />
+      <rect x="400" y="0" width="0" height="30" fill="hotpink" />
+      <rect x="400" y="0" width="0" height="30" fill="orange" />
+    </g>
+  </g>
+  <g transform="translate(0, 690)">
+    <text x="194" y="20" font-family="sans-serif" font-size="14" text-anchor="end">Nitrokey-3</text>
+    <g transform="translate(204, 0)">
+      <rect x="0" y="0" width="400" height="30" fill="mediumturquoise" />
+      <rect x="400" y="0" width="0" height="30" fill="seagreen" />
+      <rect x="400" y="0" width="0" height="30" fill="teal" />
+      <rect x="400" y="0" width="0" height="30" fill="green" />
+      <rect x="400" y="0" width="0" height="30" fill="mediumseagreen" />
+      <rect x="400" y="0" width="0" height="30" fill="lightcoral" />
+      <rect x="400" y="0" width="0" height="30" fill="crimson" />
+      <rect x="400" y="0" width="0" height="30" fill="tomato" />
+      <rect x="400" y="0" width="0" height="30" fill="hotpink" />
+      <rect x="400" y="0" width="0" height="30" fill="orange" />
+    </g>
+  </g>
+  <g transform="translate(0, 490)">
+    <text x="194" y="20" font-family="sans-serif" font-size="14" text-anchor="end">Openfire-IPv6</text>
+    <g transform="translate(204, 0)">
+      <rect x="0" y="0" width="35" height="30" fill="mediumturquoise" />
+      <rect x="35" y="0" width="280" height="30" fill="seagreen" />
+      <rect x="315" y="0" width="0" height="30" fill="teal" />
+      <rect x="315" y="0" width="70" height="30" fill="green" />
+      <rect x="385" y="0" width="14" height="30" fill="mediumseagreen" />
+      <rect x="400" y="0" width="0" height="30" fill="lightcoral" />
+      <rect x="400" y="0" width="0" height="30" fill="crimson" />
+      <rect x="400" y="0" width="0" height="30" fill="tomato" />
+      <rect x="400" y="0" width="0" height="30" fill="hotpink" />
+      <rect x="400" y="0" width="0" height="30" fill="orange" />
+    </g>
+  </g>
+  <g transform="translate(0, 240)">
+    <text x="194" y="20" font-family="sans-serif" font-size="14" text-anchor="end">PeerTube</text>
+    <g transform="translate(204, 0)">
+      <rect x="0" y="0" width="248" height="30" fill="mediumturquoise" />
+      <rect x="248" y="0" width="116" height="30" fill="seagreen" />
+      <rect x="364" y="0" width="0" height="30" fill="teal" />
+      <rect x="364" y="0" width="29" height="30" fill="green" />
+      <rect x="394" y="0" width="5" height="30" fill="mediumseagreen" />
+      <rect x="400" y="0" width="0" height="30" fill="lightcoral" />
+      <rect x="400" y="0" width="0" height="30" fill="crimson" />
+      <rect x="400" y="0" width="0" height="30" fill="tomato" />
+      <rect x="400" y="0" width="0" height="30" fill="hotpink" />
+      <rect x="400" y="0" width="0" height="30" fill="orange" />
+    </g>
+  </g>
+  <g transform="translate(0, 440)">
+    <text x="194" y="20" font-family="sans-serif" font-size="14" text-anchor="end">Pretalx</text>
+    <g transform="translate(204, 0)">
+      <rect x="0" y="0" width="32" height="30" fill="mediumturquoise" />
+      <rect x="32" y="0" width="262" height="30" fill="seagreen" />
+      <rect x="295" y="0" width="0" height="30" fill="teal" />
+      <rect x="295" y="0" width="65" height="30" fill="green" />
+      <rect x="360" y="0" width="39" height="30" fill="mediumseagreen" />
+      <rect x="400" y="0" width="0" height="30" fill="lightcoral" />
+      <rect x="400" y="0" width="0" height="30" fill="crimson" />
+      <rect x="400" y="0" width="0" height="30" fill="tomato" />
+      <rect x="400" y="0" width="0" height="30" fill="hotpink" />
+      <rect x="400" y="0" width="0" height="30" fill="orange" />
+    </g>
+  </g>
+  <g transform="translate(0, 1290)">
+    <text x="194" y="20" font-family="sans-serif" font-size="14" text-anchor="end">Servo</text>
+    <g transform="translate(204, 0)">
+      <rect x="0" y="0" width="400" height="30" fill="mediumturquoise" />
+      <rect x="400" y="0" width="0" height="30" fill="seagreen" />
+      <rect x="400" y="0" width="0" height="30" fill="teal" />
+      <rect x="400" y="0" width="0" height="30" fill="green" />
+      <rect x="400" y="0" width="0" height="30" fill="mediumseagreen" />
+      <rect x="400" y="0" width="0" height="30" fill="lightcoral" />
+      <rect x="400" y="0" width="0" height="30" fill="crimson" />
+      <rect x="400" y="0" width="0" height="30" fill="tomato" />
+      <rect x="400" y="0" width="0" height="30" fill="hotpink" />
+      <rect x="400" y="0" width="0" height="30" fill="orange" />
+    </g>
+  </g>
+  <g transform="translate(0, 1340)">
+    <text x="194" y="20" font-family="sans-serif" font-size="14" text-anchor="end">Stract</text>
+    <g transform="translate(204, 0)">
+      <rect x="0" y="0" width="400" height="30" fill="mediumturquoise" />
+      <rect x="400" y="0" width="0" height="30" fill="seagreen" />
+      <rect x="400" y="0" width="0" height="30" fill="teal" />
+      <rect x="400" y="0" width="0" height="30" fill="green" />
+      <rect x="400" y="0" width="0" height="30" fill="mediumseagreen" />
+      <rect x="400" y="0" width="0" height="30" fill="lightcoral" />
+      <rect x="400" y="0" width="0" height="30" fill="crimson" />
+      <rect x="400" y="0" width="0" height="30" fill="tomato" />
+      <rect x="400" y="0" width="0" height="30" fill="hotpink" />
+      <rect x="400" y="0" width="0" height="30" fill="orange" />
+    </g>
+  </g>
+  <g transform="translate(0, 540)">
+    <text x="194" y="20" font-family="sans-serif" font-size="14" text-anchor="end">Vula</text>
+    <g transform="translate(204, 0)">
+      <rect x="0" y="0" width="35" height="30" fill="mediumturquoise" />
+      <rect x="35" y="0" width="280" height="30" fill="seagreen" />
+      <rect x="315" y="0" width="0" height="30" fill="teal" />
+      <rect x="315" y="0" width="70" height="30" fill="green" />
+      <rect x="385" y="0" width="14" height="30" fill="mediumseagreen" />
+      <rect x="400" y="0" width="0" height="30" fill="lightcoral" />
+      <rect x="400" y="0" width="0" height="30" fill="crimson" />
+      <rect x="400" y="0" width="0" height="30" fill="tomato" />
+      <rect x="400" y="0" width="0" height="30" fill="hotpink" />
+      <rect x="400" y="0" width="0" height="30" fill="orange" />
+    </g>
+  </g>
+  <g transform="translate(0, 590)">
+    <text x="194" y="20" font-family="sans-serif" font-size="14" text-anchor="end">arpa2</text>
+    <g transform="translate(204, 0)">
+      <rect x="0" y="0" width="400" height="30" fill="mediumturquoise" />
+      <rect x="400" y="0" width="0" height="30" fill="seagreen" />
+      <rect x="400" y="0" width="0" height="30" fill="teal" />
+      <rect x="400" y="0" width="0" height="30" fill="green" />
+      <rect x="400" y="0" width="0" height="30" fill="mediumseagreen" />
+      <rect x="400" y="0" width="0" height="30" fill="lightcoral" />
+      <rect x="400" y="0" width="0" height="30" fill="crimson" />
+      <rect x="400" y="0" width="0" height="30" fill="tomato" />
+      <rect x="400" y="0" width="0" height="30" fill="hotpink" />
+      <rect x="400" y="0" width="0" height="30" fill="orange" />
+    </g>
+  </g>
+  <g transform="translate(0, 840)">
+    <text x="194" y="20" font-family="sans-serif" font-size="14" text-anchor="end">lib25519</text>
+    <g transform="translate(204, 0)">
+      <rect x="0" y="0" width="400" height="30" fill="mediumturquoise" />
+      <rect x="400" y="0" width="0" height="30" fill="seagreen" />
+      <rect x="400" y="0" width="0" height="30" fill="teal" />
+      <rect x="400" y="0" width="0" height="30" fill="green" />
+      <rect x="400" y="0" width="0" height="30" fill="mediumseagreen" />
+      <rect x="400" y="0" width="0" height="30" fill="lightcoral" />
+      <rect x="400" y="0" width="0" height="30" fill="crimson" />
+      <rect x="400" y="0" width="0" height="30" fill="tomato" />
+      <rect x="400" y="0" width="0" height="30" fill="hotpink" />
+      <rect x="400" y="0" width="0" height="30" fill="orange" />
+    </g>
+  </g>
+  <g transform="translate(0, 1390)">
+    <text x="194" y="20" font-family="sans-serif" font-size="14" text-anchor="end">mitmproxy</text>
+    <g transform="translate(204, 0)">
+      <rect x="0" y="0" width="400" height="30" fill="mediumturquoise" />
+      <rect x="400" y="0" width="0" height="30" fill="seagreen" />
+      <rect x="400" y="0" width="0" height="30" fill="teal" />
+      <rect x="400" y="0" width="0" height="30" fill="green" />
+      <rect x="400" y="0" width="0" height="30" fill="mediumseagreen" />
+      <rect x="400" y="0" width="0" height="30" fill="lightcoral" />
+      <rect x="400" y="0" width="0" height="30" fill="crimson" />
+      <rect x="400" y="0" width="0" height="30" fill="tomato" />
+      <rect x="400" y="0" width="0" height="30" fill="hotpink" />
+      <rect x="400" y="0" width="0" height="30" fill="orange" />
+    </g>
+  </g>
+  <g transform="translate(0, 1440)">
+    <text x="194" y="20" font-family="sans-serif" font-size="14" text-anchor="end">tslib</text>
+    <g transform="translate(204, 0)">
+      <rect x="0" y="0" width="400" height="30" fill="mediumturquoise" />
+      <rect x="400" y="0" width="0" height="30" fill="seagreen" />
+      <rect x="400" y="0" width="0" height="30" fill="teal" />
+      <rect x="400" y="0" width="0" height="30" fill="green" />
+      <rect x="400" y="0" width="0" height="30" fill="mediumseagreen" />
+      <rect x="400" y="0" width="0" height="30" fill="lightcoral" />
+      <rect x="400" y="0" width="0" height="30" fill="crimson" />
+      <rect x="400" y="0" width="0" height="30" fill="tomato" />
+      <rect x="400" y="0" width="0" height="30" fill="hotpink" />
+      <rect x="400" y="0" width="0" height="30" fill="orange" />
+    </g>
+  </g>
+</svg>
