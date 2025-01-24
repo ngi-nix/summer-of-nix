@@ -1,0 +1,8 @@
+*.csv
+*.json
+.env
+funds*
+
+# Python
+.venv
+__pycache__
