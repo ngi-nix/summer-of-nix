@@ -1,10 +1,10 @@
 #!/usr/bin/env nix-shell
 #!nix-shell -i python3 -p "python3.withPackages(ps: with ps; [ pandas pygithub python-dotenv ])"
 
+import argparse
 import pandas as pd
 from dotenv import load_dotenv
 
-from cli import Cli
 from gh import GH
 from utils import cleanup_empty, cleanup_urls, remove_urls
 
@@ -13,6 +13,32 @@ args = Cli().args
 input = "./projects.csv"
 
 count = 1
+
+class Cli:
+    def __init__(self) -> None:
+        self.parser = argparse.ArgumentParser()
+
+        self.parser.add_argument(
+            "-d",
+            "--dry_run",
+            action="store_true",
+            help="Print information without creating anything",
+        )
+        self.parser.add_argument(
+            "-n", "--number", help="Number of projects to process", default=1, type=int
+        )
+        self.parser.add_argument(
+            "--repo",
+            help="Repository where the automation should happen",
+            default="ngipkgs",
+        )
+        self.parser.add_argument(
+            "--template",
+            help="Location for the project template file in Nix",
+            default="./template.nix",
+        )
+
+        self.args = self.parser.parse_args()
 
 
 if __name__ == "__main__":
