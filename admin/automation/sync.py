@@ -8,15 +8,17 @@ from dotenv import load_dotenv
 from gh import GH
 from utils import cleanup_empty, cleanup_urls, remove_urls
 
-args = Cli().args
-
 input = "./projects.csv"
 
 count = 1
 
 class Cli:
     def __init__(self) -> None:
-        self.parser = argparse.ArgumentParser()
+        self.parser = argparse.ArgumentParser(
+            description = """
+            Read project information exported from the NLnet dashboard and Notion, and create one GitHub pull request and milestone per project, based on a template.
+            """
+        )
 
         self.parser.add_argument(
             "-d",
@@ -33,13 +35,21 @@ class Cli:
             default="ngipkgs",
         )
         self.parser.add_argument(
+            "--credentials",
+            help="Directory from which GitHub credentials are loaded",
+            type=argpars.FileType('r'),
+            default="./.env",
+        
+        self.parser.add_argument(
             "--template",
-            help="Location for the project template file in Nix",
-            default="./template.nix",
+            help="Location for the project template file",
+            default="./template",
         )
 
         self.args = self.parser.parse_args()
 
+
+args = Cli().args
 
 if __name__ == "__main__":
     projects = pd.read_csv(input, usecols=["Name", "Subgrants"])

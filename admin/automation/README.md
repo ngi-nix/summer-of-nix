@@ -1,42 +1,37 @@
-## Description
+# Description
 
 Scripts to automatically open PRs for projects and track them in milestones.
 
-## Usage
+# Usage
 
-Currently, the scripts require manual data from Notion and the dashboard.
-In the future, this step will be automatically done by connecting to them
-through directly.
+Currently, the scripts require passing manual data from Notion and the NLnet dashboard.
+In the future, this step will be automatically done by connecting to the data sources directly.
 
-### Setup
+## Setup
 
-#### GitHub authentication
-
-Connecting with the GitHub API requires an authentication token. Create a [fine-grained token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token) with the following permissions:
+Connecting with the GitHub API requires an authentication token.
+Create a [fine-grained token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token) with the following permissions:
 
 - Pull Requests: Read & write
 - Contents: Read & write
 
-After generating the token, put it in a `.env` file in this directory in the
-following format:
+After generating the token, put it in a `.env` file in this directory in the following format:
 
 ```
 GH_TOKEN="<TOKEN>"
 ```
 
-### Getting Data
+## Getting Data
 
-#### Dashboard
+### NLnet Dashboard
 
-Execute the `process.py` script on a directory containing the json files for
-the dashboard.
+Run the extraction script on a directory containing the JSON files exported from the NLnet dashboard:
 
 ```sh
-./process.py
+extract-project-data-from-nlnet ./directory >> projects.json
 ```
 
-The result is a json that contains the name and websites for subgrants, which
-will later be used to populate the milestones.
+The result is a JSON file that contains relevant information for each subgrant, which will later be used to populate the milestones.
 
 #### Notion
 
@@ -48,18 +43,11 @@ Get the project list from Notion:
 
 Put the exported file in this directory under the name `projects.csv`.
 
-### Creating Automatic PRs
 
-Execute the main script with the data files as input, specifying the number of
-projects to sync with `-n`:
+Run
 
 ```sh
-./sync.py -n 10
+create-prs --help
 ```
 
-To see which projects will be synced and how the milestone descriptions will
-look like without running anything, use:
-
-```sh
-./sync.py -n 10 --dry_run
-```
+and follow the instructions.
