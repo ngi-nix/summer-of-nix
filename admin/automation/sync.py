@@ -80,7 +80,7 @@ if __name__ == "__main__":
         name = project.name
 
         if gh.project_exists(name):
-            print(f"{name} already exists in repo. Skipping.")
+            log.info(f"{name} already exists in repo. Skipping.")
             continue
 
         if gh.pr_exists(name):
