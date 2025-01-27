@@ -20,13 +20,23 @@ class Cli:
         )
 
         self.parser.add_argument(
-            "-d",
-            "--dry_run",
+            "-n",
+            "--dry",
             action="store_true",
             help="Print information without creating anything",
         )
         self.parser.add_argument(
-            "-n", "--number", help="Number of projects to process", default=1, type=int
+            "-d",
+            "--debug",
+            action="store_true",
+            help="Print debugging information",
+        )
+        self.parser.add_argument(
+            "-p",
+            "--projects",
+            help="Number of projects to process",
+            default=1,
+            type=int,
         )
         self.parser.add_argument(
             "--repo",
@@ -71,8 +81,9 @@ args = Cli().args
 logger = logging.getLogger(__name__)
 input = "./projects.csv"
 
-logging.basicConfig()
-logger.setLevel(logging.DEBUG)
+logging_level = logging.DEBUG if args.debug else logging.INFO
+
+logging.basicConfig(level=logging_level)
 
 
 def main():
@@ -134,10 +145,10 @@ def main():
         logger.debug(f"\n{branch_name}\n{description}\n")
 
         # TODO: refactor?
-        if not args.dry_run:
+        if not args.dry:
             if gh.branch_exists(branch_name):
                 # TODO: if branch exists, perhaps update its contents?
-                print(f"Branch already exists for {name}.")
+                logging.info(f"Branch already exists for {name}.")
             else:
                 gh.create_branch(branch_name)
                 gh.add_project(name, args.template)
@@ -148,7 +159,7 @@ def main():
             if not gh.milestone_exists(name):
                 gh.create_milestone(name, [pr], description)
 
-        if count == args.number:
+        if count == args.projects:
             break
 
         count += 1
