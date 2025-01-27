@@ -10,11 +10,6 @@ import pandas as pd
 from gh import GH
 from utils import cleanup_empty, cleanup_urls, remove_urls
 
-logger = logging.getLogger(__name__)
-input = "./projects.csv"
-
-count = 1
-
 
 class Cli:
     def __init__(self) -> None:
@@ -72,10 +67,17 @@ def load_credentials(directory):
 
 args = Cli().args
 
+
+logger = logging.getLogger(__name__)
+input = "./projects.csv"
+
 logging.basicConfig()
 logger.setLevel(logging.DEBUG)
 
-if __name__ == "__main__":
+
+def main():
+    count = 1
+
     projects = pd.read_csv(input, usecols=["Name", "Subgrants"])
     projects["Name"] = cleanup_empty(projects["Name"])
 
@@ -99,7 +101,7 @@ if __name__ == "__main__":
 
     gh = GH(args.repo)
 
-    for i, project in projects.iterrows():
+    for _i, project in projects.iterrows():
         name = project.name
 
         if gh.project_exists(name):
@@ -152,3 +154,7 @@ if __name__ == "__main__":
         count += 1
 
     gh.close()
+
+
+if __name__ == "__main__":
+    main()
