@@ -120,55 +120,54 @@ def main():
 
     load_credentials(args.credentials)
 
-    gh = GH(args.repo)
+    with GH(args.repo) as gh:
+        github = gh
 
     for _i, project in projects.iterrows():
         p = Project(str(project["Name"]))
 
-        if gh.project_exists(p.name):
+        if github.project_exists(p.name):
             logger.info(f"{p.name} already exists in repo. Skipping.")
             continue
 
-        if gh.pr_exists(p.name):
+        if github.pr_exists(p.name):
             logger.info(f"Pull request already open for {p.name}. Skipping.")
             continue
 
         for subgrant in project["Subgrants"]:
-            if p.description == "":
-                p.description = "\n### Websites"
-
             p.websites += funds.get(subgrant, {}).get("Websites", [])
 
         websites = pd.Series(p.websites)
         websites = cleanup_series(websites)
 
         if len(websites) > 0:
+            if p.description == "":
+                p.description = "\n### Websites"
+
             for site in websites:
                 p.description += f"\n- {site}"
 
-        logger.debug(f"\n{p.branch_name}\n{p.description}\n")
+        logger.debug(f"{p.branch_name}\n{p.description}\n")
 
         # TODO: refactor?
         if not args.dry:
-            if gh.branch_exists(p.branch_name):
+            if github.branch_exists(p.branch_name):
                 # TODO: if branch exists, perhaps update its contents?
                 logging.info(f"Branch already exists for {p.name}.")
             else:
-                gh.create_branch(p.branch_name)
-                gh.add_project(p.name, args.template)
+                github.create_branch(p.branch_name)
+                github.add_project(p.name, args.template)
 
             # TODO: automatically delete branch when PRs are closed?
-            pr = gh.create_pr(p.name, p.branch_name)
+            pr = github.create_pr(p.name, p.branch_name)
 
-            if not gh.milestone_exists(p.name):
-                gh.create_milestone(p.name, [pr], p.description)
+            if not github.milestone_exists(p.name):
+                github.create_milestone(p.name, [pr], p.description)
 
         if count == args.projects:
             break
 
         count += 1
-
-    gh.close()
 
 
 if __name__ == "__main__":
