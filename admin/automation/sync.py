@@ -1,9 +1,10 @@
 #!/usr/bin/env nix-shell
-#!nix-shell -i python3 -p "python3.withPackages(ps: with ps; [ pandas pygithub python-dotenv ])"
+#!nix-shell -i python3 -p "python3.withPackages(ps: with ps; [ pandas pygithub ])"
 
 import argparse
+import os
+
 import pandas as pd
-from dotenv import load_dotenv
 
 from gh import GH
 from utils import cleanup_empty, cleanup_urls, remove_urls
@@ -11,6 +12,7 @@ from utils import cleanup_empty, cleanup_urls, remove_urls
 input = "./projects.csv"
 
 count = 1
+
 
 class Cli:
     def __init__(self) -> None:
@@ -37,9 +39,8 @@ class Cli:
         self.parser.add_argument(
             "--credentials",
             help="Directory from which GitHub credentials are loaded",
-            type=argpars.FileType('r'),
+            type=dir_path,
             default="./.env",
-        
         )
         self.parser.add_argument(
             "--template",
@@ -48,6 +49,23 @@ class Cli:
         )
 
         self.args = self.parser.parse_args()
+
+
+def dir_path(string):
+    if os.path.isdir(string):
+        return string
+    else:
+        raise NotADirectoryError(string)
+
+
+def load_credentials(directory):
+    for filename in os.listdir(directory):
+        file_path = os.path.join(directory, filename)
+
+        if os.path.isfile(file_path):
+            with open(file_path, "r") as file:
+                content = file.read().strip()
+                os.environ[filename] = content
 
 
 args = Cli().args
@@ -72,8 +90,7 @@ if __name__ == "__main__":
     # Contains websites
     funds = pd.read_json("./info.json")
 
-    # WARN: You need to add `GH_TOKEN=<your token>` in a .env file
-    load_dotenv()
+    load_credentials(args.credentials)
 
     gh = GH(args.repo)
 

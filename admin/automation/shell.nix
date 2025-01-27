@@ -8,7 +8,6 @@ let
       pandas
       pandas-stubs
       pygithub
-      python-dotenv
     ]
   );
 in
