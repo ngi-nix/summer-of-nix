@@ -5,7 +5,7 @@ import argparse
 import json
 import logging
 import os
-from typing import List, Optional
+from typing import List
 
 from pydantic import BaseModel, ValidationError
 

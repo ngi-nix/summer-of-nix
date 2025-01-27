@@ -1,12 +1,15 @@
 #!/usr/bin/env nix-shell
-#!nix-shell -i python3 -p "python3.withPackages(ps: with ps; [ pandas pygithub ])"
+#!nix-shell -i python3 -p "python3.withPackages(ps: with ps; [ pandas pygithub pydantic ])"
 
 import argparse
+import json
 import logging
 import os
 from dataclasses import dataclass, field
+from typing import List
 
 import pandas as pd
+from pydantic import BaseModel
 
 from gh import GH
 from utils import cleanup_empty, cleanup_series, remove_urls
@@ -77,14 +80,39 @@ def load_credentials(directory):
 
 
 @dataclass
-class Project:
+class Result:
     name: str
     branch_name: str = field(init=False)
     description: str = ""
-    websites: list[str] = field(default_factory=list)
+    websites: List[str] = field(default_factory=list)
 
     def __post_init__(self):
         self.branch_name = f"projects/{self.name}"
+
+
+class Subgrant(BaseModel):
+    Name: str = ""
+    Websites: List[str] = []
+    Summary: str = ""
+
+
+class Subgrants(BaseModel):
+    subgrants: List[Subgrant] = []
+
+    def get_websites(self, name: str) -> List[str]:
+        for f in self.subgrants:
+            if name == f.Name:
+                return f.Websites
+        return []
+
+
+class NotionProject(BaseModel):
+    name: str = ""
+    subgrants: List[str] = []
+
+
+class Projects(BaseModel):
+    subgrants: List[NotionProject] = []
 
 
 args = Cli().args
@@ -115,27 +143,23 @@ def main():
         lambda x: remove_urls(x).split(" ") if pd.notna(x) else []
     )
 
+    projects_dict = projects.to_dict(orient="records")
+    projects = [
+        NotionProject(name=item["Name"], subgrants=item["Subgrants"])
+        for item in projects_dict
+    ]
+
     # Contains websites
-    funds = pd.read_json("./info.json")
+    with open("./info.json", "r") as f:
+        funds = Subgrants(subgrants=json.load(f))
 
     load_credentials(args.credentials)
 
-    with GH(args.repo) as gh:
-        github = gh
+    for project in projects:
+        p = Result(project.name)
 
-    for _i, project in projects.iterrows():
-        p = Project(str(project["Name"]))
-
-        if github.project_exists(p.name):
-            logger.info(f"{p.name} already exists in repo. Skipping.")
-            continue
-
-        if github.pr_exists(p.name):
-            logger.info(f"Pull request already open for {p.name}. Skipping.")
-            continue
-
-        for subgrant in project["Subgrants"]:
-            p.websites += funds.get(subgrant, {}).get("Websites", [])
+        for subgrant in project.subgrants:
+            p.websites += funds.get_websites(subgrant)
 
         websites = pd.Series(p.websites)
         websites = cleanup_series(websites)
@@ -149,8 +173,18 @@ def main():
 
         logger.debug(f"{p.branch_name}\n{p.description}\n")
 
-        # TODO: refactor?
         if not args.dry:
+            with GH(args.repo) as gh:
+                github = gh
+
+            if github.project_exists(p.name):
+                logger.info(f"{p.name} already exists in repo. Skipping.")
+                continue
+
+            if github.pr_exists(p.name):
+                logger.info(f"Pull request already open for {p.name}. Skipping.")
+                continue
+
             if github.branch_exists(p.branch_name):
                 # TODO: if branch exists, perhaps update its contents?
                 logging.info(f"Branch already exists for {p.name}.")
