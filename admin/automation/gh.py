@@ -1,3 +1,4 @@
+import logging
 import os
 
 from github import Auth, Github, InputGitAuthor
@@ -8,6 +9,7 @@ class GH:
     def __init__(self, repo) -> None:
         self.gh = Github(auth=Auth.Token(os.environ["GH_TOKEN"]))
         self.repo = self.gh.get_user().get_repo(repo)
+        self.logger = logging.getLogger(__name__)
 
         self.branches = self.repo.get_git_refs()
         self.milestones = self.repo.get_milestones()
@@ -32,7 +34,7 @@ class GH:
         self.repo.create_git_ref(
             ref=f"refs/heads/{branch_name}", sha=base_branch.commit.sha
         )
-        print(f"Branch {branch_name} created.")
+        self.logger.info(f"Branch {branch_name} created.")
 
     def create_pr(self, title, head_branch, body=""):
         pr = self.repo.create_pull(
@@ -41,7 +43,7 @@ class GH:
             head=head_branch,
             base="main",
         )
-        print(f"PR created for {title}: {pr.html_url}")
+        self.logger.info(f"PR created for {title}: {pr.html_url}")
         return pr
 
     def add_project(self, name, filename, message="", branch=""):
@@ -65,7 +67,7 @@ class GH:
         for pr in pull_requests:
             issue = self.repo.get_issue(pr.number)
             issue.edit(milestone=milestone)
-        print(f"Milestone created for {title}: {milestone.url}")
+        self.logger.info(f"Milestone created for {title}: {milestone.url}")
 
     def exists(self, collection, attribute, value):
         for item in collection:

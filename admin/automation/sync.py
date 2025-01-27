@@ -2,6 +2,7 @@
 #!nix-shell -i python3 -p "python3.withPackages(ps: with ps; [ pandas pygithub ])"
 
 import argparse
+import logging
 import os
 
 import pandas as pd
@@ -9,6 +10,7 @@ import pandas as pd
 from gh import GH
 from utils import cleanup_empty, cleanup_urls, remove_urls
 
+logger = logging.getLogger(__name__)
 input = "./projects.csv"
 
 count = 1
@@ -70,6 +72,9 @@ def load_credentials(directory):
 
 args = Cli().args
 
+logging.basicConfig()
+logger.setLevel(logging.DEBUG)
+
 if __name__ == "__main__":
     projects = pd.read_csv(input, usecols=["Name", "Subgrants"])
     projects["Name"] = cleanup_empty(projects["Name"])
@@ -98,13 +103,11 @@ if __name__ == "__main__":
         name = project.name
 
         if gh.project_exists(name):
-            # TODO:
-            # log.info(f"{name} already exists in repo. Skipping.")
+            logger.info(f"{name} already exists in repo. Skipping.")
             continue
 
         if gh.pr_exists(name):
-            # TODO:
-            # print(f"Pull request already open for {name}. Skipping.")
+            logger.info(f"Pull request already open for {name}. Skipping.")
             continue
 
         # Preparing contents
@@ -126,6 +129,8 @@ if __name__ == "__main__":
             for site in websites:
                 description += f"\n- {site}"
 
+        logger.debug(f"\n{branch_name}\n{description}\n")
+
         # TODO: refactor?
         if not args.dry_run:
             if gh.branch_exists(branch_name):
@@ -140,8 +145,6 @@ if __name__ == "__main__":
 
             if not gh.milestone_exists(name):
                 gh.create_milestone(name, [pr], description)
-        else:
-            print(description)
 
         if count == args.number:
             break
