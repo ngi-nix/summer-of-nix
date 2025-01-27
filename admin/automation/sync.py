@@ -15,7 +15,7 @@ count = 1
 class Cli:
     def __init__(self) -> None:
         self.parser = argparse.ArgumentParser(
-            description = """
+            description="""
             Read project information exported from the NLnet dashboard and Notion, and create one GitHub pull request and milestone per project, based on a template.
             """
         )
@@ -40,6 +40,7 @@ class Cli:
             type=argpars.FileType('r'),
             default="./.env",
         
+        )
         self.parser.add_argument(
             "--template",
             help="Location for the project template file",
@@ -80,11 +81,13 @@ if __name__ == "__main__":
         name = project.name
 
         if gh.project_exists(name):
-            log.info(f"{name} already exists in repo. Skipping.")
+            # TODO:
+            # log.info(f"{name} already exists in repo. Skipping.")
             continue
 
         if gh.pr_exists(name):
-            print(f"Pull request already open for {name}. Skipping.")
+            # TODO:
+            # print(f"Pull request already open for {name}. Skipping.")
             continue
 
         # Preparing contents
