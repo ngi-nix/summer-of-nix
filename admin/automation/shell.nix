@@ -8,6 +8,7 @@ let
       pandas
       pandas-stubs
       pygithub
+      pydantic
     ]
   );
 in
