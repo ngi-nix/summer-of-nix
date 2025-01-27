@@ -52,7 +52,7 @@ class Websites(BaseModel):
 
 
 class Webpage(BaseModel):
-    sitename: str
+    sitename: str = ""
     summary: str
 
 
@@ -74,20 +74,9 @@ class Fund(BaseModel):
 
 
 class Result(BaseModel):
-    Name: Optional[str]
+    Name: str
     Websites: List[str]
     Summary: str
-
-
-def map_proposals(fund: Fund) -> List[Result]:
-    return [
-        Result(
-            Name=proposal.properties.webpage.sitename,
-            Websites=proposal.proposal.websites.website,
-            Summary=proposal.properties.webpage.summary,
-        )
-        for proposal in fund.proposals
-    ]
 
 
 def main(input_dir: str, output_file: str):
@@ -95,7 +84,7 @@ def main(input_dir: str, output_file: str):
         print(f"Error: '{input_dir}' does not exist or is not a directory.")
         exit(1)
 
-    proposals: List[Result] = []
+    proposals = []
 
     for input_file in os.listdir(input_dir):
         if input_file.endswith(".json"):
@@ -103,15 +92,31 @@ def main(input_dir: str, output_file: str):
 
             with open(input_path, "r") as f:
                 data = json.load(f)
+
             try:
                 fund = Fund(**data["fund"])
-                proposals += map_proposals(fund)
+                for proposal in fund.proposals:
+                    name = proposal.properties.webpage.sitename
+                    websites = proposal.proposal.websites.website
+                    summary = proposal.properties.webpage.summary
+
+                    if name == "":
+                        logger.debug(proposal)
+                        continue
+
+                    proposals.append(
+                        Result(
+                            Name=name,
+                            Websites=websites,
+                            Summary=summary,
+                        )
+                    )
             except ValidationError as e:
-                logger.debug(e)
+                logger.error(e)
 
     # Write all processed proposals to a single output file
     with open(output_file, "w") as f:
-        json.dump([proposal.model_dump() for proposal in proposals], f, indent=4)
+        json.dump([proposal.dict() for proposal in proposals], f, indent=4)
 
 
 if __name__ == "__main__":
