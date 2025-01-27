@@ -21,14 +21,13 @@ class Cli:
             "-i",
             "--input",
             type=dir_path,
-            help="Input directory containing grant files",
+            help="Input directory, containing grant files",
             default="./funds",
         )
         self.parser.add_argument(
             "-o",
             "--output",
-            # TODO: better message?
-            help="Output file",
+            help="Output JSON file",
             default="./info.json",
         )
         self.parser.add_argument(
@@ -87,36 +86,35 @@ def main(input_dir: str, output_file: str):
     proposals = []
 
     for input_file in os.listdir(input_dir):
-        if input_file.endswith(".json"):
-            input_path = os.path.join(input_dir, input_file)
+        if not input_file.endswith(".json"):
+            continue
 
-            with open(input_path, "r") as f:
-                data = json.load(f)
+        input_path = os.path.join(input_dir, input_file)
 
-            try:
-                fund = Fund(**data["fund"])
-                for proposal in fund.proposals:
-                    name = proposal.properties.webpage.sitename
-                    websites = proposal.proposal.websites.website
-                    summary = proposal.properties.webpage.summary
+        with open(input_path, "r") as f:
+            data = json.load(f)
 
-                    if name == "":
-                        logger.debug(proposal)
-                        continue
+        try:
+            fund = Fund(**data["fund"])
 
-                    proposals.append(
-                        Result(
-                            Name=name,
-                            Websites=websites,
-                            Summary=summary,
-                        )
+            for proposal in fund.proposals:
+                if proposal.properties.webpage.sitename == "":
+                    logger.debug(proposal)
+                    continue
+
+                proposals.append(
+                    Result(
+                        Name=proposal.properties.webpage.sitename,
+                        Websites=proposal.proposal.websites.website,
+                        Summary=proposal.properties.webpage.summary,
                     )
-            except ValidationError as e:
-                logger.error(e)
+                )
+        except ValidationError as e:
+            logger.error(e)
 
     # Write all processed proposals to a single output file
     with open(output_file, "w") as f:
-        json.dump([proposal.dict() for proposal in proposals], f, indent=4)
+        json.dump([proposal.dict() for proposal in proposals], f, indent=2)
 
 
 if __name__ == "__main__":

@@ -9,10 +9,11 @@ from dataclasses import dataclass, field
 from typing import List
 
 import pandas as pd
+from pandas import Series
 from pydantic import BaseModel
 
 from gh import GH
-from utils import cleanup_empty, cleanup_series, remove_urls
+from utils import cleanup_empty, cleanup_urls, remove_urls
 
 
 class Cli:
@@ -80,14 +81,33 @@ def load_credentials(directory):
 
 
 @dataclass
-class Result:
+class Project:
     name: str
     branch_name: str = field(init=False)
-    description: str = ""
-    websites: List[str] = field(default_factory=list)
+    description: str = "\n### Websites"
+    websites: Series = field(default_factory=Series)
 
     def __post_init__(self):
         self.branch_name = f"projects/{self.name}"
+
+    def append_websites(self, websites: List[str]):
+        self.websites = pd.concat(
+            [self.websites, pd.Series(websites)], ignore_index=True
+        )
+
+    # TODO: make a template for this
+    def update_description(self):
+        if len(self.websites) > 0:
+            pass
+
+        for site in self.websites:
+            self.description += f"\n- {site}"
+
+    def clean_websites(self):
+        """Remove empty values, clean up URLs and remove duplicates"""
+        self.websites = cleanup_empty(self.websites)
+        self.websites = cleanup_urls(self.websites)
+        self.websites = self.websites.drop_duplicates()
 
 
 class Subgrant(BaseModel):
@@ -100,30 +120,15 @@ class Subgrants(BaseModel):
     subgrants: List[Subgrant] = []
 
     def get_websites(self, name: str) -> List[str]:
-        for f in self.subgrants:
-            if name == f.Name:
-                return f.Websites
+        for s in self.subgrants:
+            if name == s.Name:
+                return s.Websites
         return []
 
 
 class NotionProject(BaseModel):
     name: str = ""
     subgrants: List[str] = []
-
-
-class Projects(BaseModel):
-    subgrants: List[NotionProject] = []
-
-
-args = Cli().args
-
-
-# Debugging
-logger = logging.getLogger(__name__)
-logging_level = logging.DEBUG if args.debug else logging.INFO
-logging.basicConfig(level=logging_level)
-
-input = "./projects.csv"
 
 
 def main():
@@ -156,20 +161,13 @@ def main():
     load_credentials(args.credentials)
 
     for project in projects:
-        p = Result(project.name)
+        p = Project(project.name)
 
         for subgrant in project.subgrants:
-            p.websites += funds.get_websites(subgrant)
+            p.append_websites(funds.get_websites(subgrant))
 
-        websites = pd.Series(p.websites)
-        websites = cleanup_series(websites)
-
-        if len(websites) > 0:
-            if p.description == "":
-                p.description = "\n### Websites"
-
-            for site in websites:
-                p.description += f"\n- {site}"
+        p.clean_websites()
+        p.update_description()
 
         logger.debug(f"{p.branch_name}\n{p.description}\n")
 
@@ -195,6 +193,7 @@ def main():
             # TODO: automatically delete branch when PRs are closed?
             pr = github.create_pr(p.name, p.branch_name)
 
+            # TODO: replace with sub-issues
             if not github.milestone_exists(p.name):
                 github.create_milestone(p.name, [pr], p.description)
 
@@ -205,4 +204,12 @@ def main():
 
 
 if __name__ == "__main__":
+    args = Cli().args
+
+    logger = logging.getLogger(__name__)
+    logging_level = logging.DEBUG if args.debug else logging.INFO
+    logging.basicConfig(level=logging_level)
+
+    input = "./projects.csv"
+
     main()

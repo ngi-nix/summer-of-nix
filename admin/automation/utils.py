@@ -3,17 +3,17 @@ import re
 from pandas import Series
 
 
-def remove_urls(column: str):
+def remove_urls(column: str) -> str:
     """Remove page URLs from column"""
     return re.sub(r" \(http[s]?://\S+|www\.\S+", "", column)
 
 
-def cleanup_empty(series: Series):
+def cleanup_empty(series: Series) -> Series:
     """Remove empty values in a column"""
     return series[series.notnull() & (series != "")]
 
 
-def cleanup_urls(series: Series):
+def cleanup_urls(series: Series) -> Series:
     """
     Clean up URLs from column
     - remove `www`
@@ -22,10 +22,3 @@ def cleanup_urls(series: Series):
     return series.str.replace(r"^https?://(www\.)?", "https://", regex=True).str.rstrip(
         "/"
     )
-
-
-def cleanup_series(series: Series):
-    """Remove empty values, clean up URLs and remove duplicates"""
-    series = cleanup_empty(series)
-    series = cleanup_urls(series)
-    return series.drop_duplicates()
