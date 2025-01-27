@@ -90,12 +90,12 @@ class Project:
 args = Cli().args
 
 
+# Debugging
 logger = logging.getLogger(__name__)
-input = "./projects.csv"
-
 logging_level = logging.DEBUG if args.debug else logging.INFO
-
 logging.basicConfig(level=logging_level)
+
+input = "./projects.csv"
 
 
 def main():
@@ -115,8 +115,6 @@ def main():
         lambda x: remove_urls(x).split(" ") if pd.notna(x) else []
     )
 
-    projects.set_index("Name", inplace=True)
-
     # Contains websites
     funds = pd.read_json("./info.json")
 
@@ -125,15 +123,14 @@ def main():
     gh = GH(args.repo)
 
     for _i, project in projects.iterrows():
-        name = str(project.name)
-        p = Project(name)
+        p = Project(str(project["Name"]))
 
-        if gh.project_exists(name):
-            logger.info(f"{name} already exists in repo. Skipping.")
+        if gh.project_exists(p.name):
+            logger.info(f"{p.name} already exists in repo. Skipping.")
             continue
 
-        if gh.pr_exists(name):
-            logger.info(f"Pull request already open for {name}. Skipping.")
+        if gh.pr_exists(p.name):
+            logger.info(f"Pull request already open for {p.name}. Skipping.")
             continue
 
         for subgrant in project["Subgrants"]:
@@ -156,16 +153,16 @@ def main():
         if not args.dry:
             if gh.branch_exists(p.branch_name):
                 # TODO: if branch exists, perhaps update its contents?
-                logging.info(f"Branch already exists for {name}.")
+                logging.info(f"Branch already exists for {p.name}.")
             else:
                 gh.create_branch(p.branch_name)
-                gh.add_project(name, args.template)
+                gh.add_project(p.name, args.template)
 
             # TODO: automatically delete branch when PRs are closed?
-            pr = gh.create_pr(name, p.branch_name)
+            pr = gh.create_pr(p.name, p.branch_name)
 
-            if not gh.milestone_exists(name):
-                gh.create_milestone(name, [pr], p.description)
+            if not gh.milestone_exists(p.name):
+                gh.create_milestone(p.name, [pr], p.description)
 
         if count == args.projects:
             break
