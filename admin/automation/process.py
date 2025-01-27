@@ -40,12 +40,6 @@ class Cli:
         self.args = self.parser.parse_args()
 
 
-class Proposal(BaseModel):
-    Name: Optional[str]
-    Websites: List[str]
-    Summary: Optional[str]
-
-
 def dir_path(string):
     if os.path.isdir(string):
         return string
@@ -53,26 +47,47 @@ def dir_path(string):
         raise NotADirectoryError(string)
 
 
-def map_fund_data(input_file: str, all_proposals: List[Proposal]):
-    with open(input_file, "r") as f:
-        data = json.load(f)
+class Websites(BaseModel):
+    website: List[str]
 
-    proposals = data.get("fund", {}).get("proposals", [])
 
-    for p in proposals:
-        name = p.get("properties", {}).get("webpage", {}).get("sitename")
-        websites = p.get("proposal", {}).get("websites", {}).get("website", [])
-        summary = p.get("properties", {}).get("webpage", {}).get("summary")
+class Webpage(BaseModel):
+    sitename: str
+    summary: str
 
-        proposal_data = {"Name": name, "Websites": websites, "Summary": summary}
 
-        try:
-            if name is None:
-                logging.warning(f"Skipping entry due to null name: {proposal_data}")
-                continue
-            all_proposals.append(Proposal(**proposal_data))
-        except ValidationError as e:
-            logger.error(f"Invalid data for proposal: {proposal_data}. Error: {e}")
+class PropertiesField(BaseModel):
+    webpage: Webpage
+
+
+class ProposalField(BaseModel):
+    websites: Websites
+
+
+class Proposal(BaseModel):
+    properties: PropertiesField
+    proposal: ProposalField
+
+
+class Fund(BaseModel):
+    proposals: List[Proposal]
+
+
+class Result(BaseModel):
+    Name: Optional[str]
+    Websites: List[str]
+    Summary: str
+
+
+def map_proposals(fund: Fund) -> List[Result]:
+    return [
+        Result(
+            Name=proposal.properties.webpage.sitename,
+            Websites=proposal.proposal.websites.website,
+            Summary=proposal.properties.webpage.summary,
+        )
+        for proposal in fund.proposals
+    ]
 
 
 def main(input_dir: str, output_file: str):
@@ -80,23 +95,30 @@ def main(input_dir: str, output_file: str):
         print(f"Error: '{input_dir}' does not exist or is not a directory.")
         exit(1)
 
-    all_proposals = []
+    proposals: List[Result] = []
 
     for input_file in os.listdir(input_dir):
         if input_file.endswith(".json"):
             input_path = os.path.join(input_dir, input_file)
-            map_fund_data(input_path, all_proposals)
+
+            with open(input_path, "r") as f:
+                data = json.load(f)
+            try:
+                fund = Fund(**data["fund"])
+                proposals += map_proposals(fund)
+            except ValidationError as e:
+                logger.debug(e)
 
     # Write all processed proposals to a single output file
     with open(output_file, "w") as f:
-        json.dump([proposal.dict() for proposal in all_proposals], f, indent=4)
+        json.dump([proposal.model_dump() for proposal in proposals], f, indent=4)
 
 
 if __name__ == "__main__":
     args = Cli().args
 
     logger = logging.getLogger(__name__)
-    logging_level = logging.DEBUG if args.debug else logging.INFO
+    logging_level = logging.DEBUG if args.debug else logging.WARNING
     logging.basicConfig(level=logging_level)
 
     main(args.input, args.output)
