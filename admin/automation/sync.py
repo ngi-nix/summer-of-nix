@@ -9,7 +9,7 @@ from dataclasses import dataclass, field
 import pandas as pd
 
 from gh import GH
-from utils import cleanup_empty, cleanup_urls, remove_urls
+from utils import cleanup_empty, cleanup_series, remove_urls
 
 
 class Cli:
@@ -134,16 +134,15 @@ def main():
             continue
 
         for subgrant in project["Subgrants"]:
+            if p.description == "":
+                p.description = "\n### Websites"
+
             p.websites += funds.get(subgrant, {}).get("Websites", [])
 
-        # TODO: refactor?
         websites = pd.Series(p.websites)
-        websites = cleanup_urls(websites)
-        websites = cleanup_empty(websites)
-        websites.drop_duplicates()
+        websites = cleanup_series(websites)
 
         if len(websites) > 0:
-            p.description += "\n### Websites"
             for site in websites:
                 p.description += f"\n- {site}"
 

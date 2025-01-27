@@ -22,3 +22,10 @@ def cleanup_urls(series: Series):
     return series.str.replace(r"^https?://(www\.)?", "https://", regex=True).str.rstrip(
         "/"
     )
+
+
+def cleanup_series(series: Series):
+    """Remove empty values, clean up URLs and remove duplicates"""
+    series = cleanup_empty(series)
+    series = cleanup_urls(series)
+    return series.drop_duplicates()
