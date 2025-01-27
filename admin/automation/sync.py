@@ -4,6 +4,7 @@
 import argparse
 import logging
 import os
+from dataclasses import dataclass, field
 
 import pandas as pd
 
@@ -75,6 +76,17 @@ def load_credentials(directory):
                 os.environ[filename] = content
 
 
+@dataclass
+class Project:
+    name: str
+    branch_name: str = field(init=False)
+    description: str = ""
+    websites: list[str] = field(default_factory=list)
+
+    def __post_init__(self):
+        self.branch_name = f"projects/{self.name}"
+
+
 args = Cli().args
 
 
@@ -113,7 +125,8 @@ def main():
     gh = GH(args.repo)
 
     for _i, project in projects.iterrows():
-        name = project.name
+        name = str(project.name)
+        p = Project(name)
 
         if gh.project_exists(name):
             logger.info(f"{name} already exists in repo. Skipping.")
@@ -123,41 +136,36 @@ def main():
             logger.info(f"Pull request already open for {name}. Skipping.")
             continue
 
-        # Preparing contents
-        branch_name = f"projects/{name}"
-        websites = []
-
         for subgrant in project["Subgrants"]:
-            websites += funds.get(subgrant, {}).get("Websites", [])
+            p.websites += funds.get(subgrant, {}).get("Websites", [])
 
         # TODO: refactor?
-        websites = pd.Series(websites)
+        websites = pd.Series(p.websites)
         websites = cleanup_urls(websites)
         websites = cleanup_empty(websites)
         websites.drop_duplicates()
 
-        description = ""
         if len(websites) > 0:
-            description += "\n### Websites"
+            p.description += "\n### Websites"
             for site in websites:
-                description += f"\n- {site}"
+                p.description += f"\n- {site}"
 
-        logger.debug(f"\n{branch_name}\n{description}\n")
+        logger.debug(f"\n{p.branch_name}\n{p.description}\n")
 
         # TODO: refactor?
         if not args.dry:
-            if gh.branch_exists(branch_name):
+            if gh.branch_exists(p.branch_name):
                 # TODO: if branch exists, perhaps update its contents?
                 logging.info(f"Branch already exists for {name}.")
             else:
-                gh.create_branch(branch_name)
+                gh.create_branch(p.branch_name)
                 gh.add_project(name, args.template)
 
             # TODO: automatically delete branch when PRs are closed?
-            pr = gh.create_pr(name, branch_name)
+            pr = gh.create_pr(name, p.branch_name)
 
             if not gh.milestone_exists(name):
-                gh.create_milestone(name, [pr], description)
+                gh.create_milestone(name, [pr], p.description)
 
         if count == args.projects:
             break
