@@ -53,6 +53,12 @@ class Status(str, Enum):
     COMPLETE = "Complete"
 
 
+class Contact(BaseModel):
+    name: str
+    email: str
+    organisationName: str
+
+
 class Websites(BaseModel):
     website: List[str]
 
@@ -68,6 +74,7 @@ class PropertiesField(BaseModel):
 
 class ProposalField(BaseModel):
     websites: Websites
+    contact: Contact
 
 
 class Proposal(BaseModel):
@@ -85,6 +92,7 @@ class Result(BaseModel):
     websites: List[str]
     summary: str
     status: Status
+    contact: Contact
 
 
 def main(input_dir: str, output_file: str):
@@ -113,7 +121,6 @@ def main(input_dir: str, output_file: str):
                     continue
 
                 if proposal.status != Status.RUNNING:
-                    logger.debug(proposal)
                     continue
 
                 proposals.append(
@@ -121,6 +128,7 @@ def main(input_dir: str, output_file: str):
                         name=proposal.properties.webpage.sitename,
                         websites=proposal.proposal.websites.website,
                         summary=proposal.properties.webpage.summary,
+                        contact=proposal.proposal.contact,
                         status=proposal.status,
                     )
                 )
