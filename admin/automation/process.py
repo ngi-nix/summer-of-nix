@@ -5,9 +5,10 @@ import argparse
 import json
 import logging
 import os
-from typing import List
+from enum import Enum
+from typing import List, Optional
 
-from pydantic import BaseModel, ValidationError
+from pydantic import BaseModel, Field, ValidationError
 
 
 class Cli:
@@ -46,12 +47,18 @@ def dir_path(string):
         raise NotADirectoryError(string)
 
 
+class Status(str, Enum):
+    SELECTED = "Selected"
+    RUNNING = "Running"
+    COMPLETE = "Complete"
+
+
 class Websites(BaseModel):
     website: List[str]
 
 
 class Webpage(BaseModel):
-    sitename: str = ""
+    sitename: Optional[str] = Field(default=None)
     summary: str
 
 
@@ -66,6 +73,7 @@ class ProposalField(BaseModel):
 class Proposal(BaseModel):
     properties: PropertiesField
     proposal: ProposalField
+    status: Status
 
 
 class Fund(BaseModel):
@@ -73,9 +81,10 @@ class Fund(BaseModel):
 
 
 class Result(BaseModel):
-    Name: str
-    Websites: List[str]
-    Summary: str
+    name: Optional[str] = Field(default=None)
+    websites: List[str]
+    summary: str
+    status: Status
 
 
 def main(input_dir: str, output_file: str):
@@ -97,16 +106,22 @@ def main(input_dir: str, output_file: str):
         try:
             fund = Fund(**data["fund"])
 
+            # TODO: improve
             for proposal in fund.proposals:
-                if proposal.properties.webpage.sitename == "":
+                if proposal.properties.webpage.sitename is None:
+                    logger.debug(proposal)
+                    continue
+
+                if proposal.status != Status.RUNNING:
                     logger.debug(proposal)
                     continue
 
                 proposals.append(
                     Result(
-                        Name=proposal.properties.webpage.sitename,
-                        Websites=proposal.proposal.websites.website,
-                        Summary=proposal.properties.webpage.summary,
+                        name=proposal.properties.webpage.sitename,
+                        websites=proposal.proposal.websites.website,
+                        summary=proposal.properties.webpage.summary,
+                        status=proposal.status,
                     )
                 )
         except ValidationError as e:
