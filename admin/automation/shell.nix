@@ -8,7 +8,6 @@ let
     ps: with ps; [
       pandas
       pandas-stubs
-      pygithub # TODO: remove
       pydantic
       githubkit
     ]

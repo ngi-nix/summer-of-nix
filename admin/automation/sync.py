@@ -1,5 +1,5 @@
 #!/usr/bin/env nix-shell
-#!nix-shell -i python3 -p "python3.withPackages(ps: with ps; [ pandas pygithub pydantic ])"
+#!nix-shell -i python3 -p "python3.withPackages(ps: with ps; [ pandas pydantic githubkit ])"
 
 import argparse
 import json
@@ -10,9 +10,10 @@ from typing import List
 
 import pandas as pd
 from pandas import Series
-from pydantic import BaseModel
+from pydantic import BaseModel, ValidationError
 
-from gh import GH
+from ghkit import GitClient
+from process import Result as Subgrant  # TODO: put this in a better place
 from utils import cleanup_empty, cleanup_urls, remove_urls
 
 
@@ -57,7 +58,7 @@ class Cli:
         self.parser.add_argument(
             "--template",
             help="Location for the project template file",
-            default="./template",
+            default="./template.nix",
         )
 
         self.args = self.parser.parse_args()
@@ -110,19 +111,13 @@ class Project:
         self.websites = self.websites.drop_duplicates()
 
 
-class Subgrant(BaseModel):
-    Name: str = ""
-    Websites: List[str] = []
-    Summary: str = ""
-
-
 class Subgrants(BaseModel):
     subgrants: List[Subgrant] = []
 
     def get_websites(self, name: str) -> List[str]:
         for s in self.subgrants:
-            if name == s.Name:
-                return s.Websites
+            if name == s.name:
+                return s.websites
         return []
 
 
@@ -134,7 +129,7 @@ class NotionProject(BaseModel):
 def main():
     count = 1
 
-    projects = pd.read_csv(input, usecols=["Name", "Subgrants"])
+    projects = pd.read_csv(input_file, usecols=["Name", "Subgrants"])
     projects["Name"] = cleanup_empty(projects["Name"])
 
     # Some project names have spaces in them, so we'd either need to remove
@@ -154,11 +149,15 @@ def main():
         for item in projects_dict
     ]
 
-    # Contains websites
-    with open("./info.json", "r") as f:
-        funds = Subgrants(subgrants=json.load(f))
+    try:
+        with open(info_file, "r") as f:
+            funds = Subgrants(subgrants=json.load(f))
+    except ValidationError as e:
+        logger.error(f"Failed to parse subgrant information from {info_file}: {e}")
+        exit()
 
-    load_credentials(args.credentials)
+    # TODO: use env variable or argument for repo?
+    github = GitClient(*os.environ["REPO"].split("/"))
 
     for project in projects:
         p = Project(project.name)
@@ -172,9 +171,6 @@ def main():
         logger.debug(f"{p.branch_name}\n{p.description}\n")
 
         if not args.dry:
-            with GH(args.repo) as gh:
-                github = gh
-
             if github.project_exists(p.name):
                 logger.info(f"{p.name} already exists in repo. Skipping.")
                 continue
@@ -184,18 +180,12 @@ def main():
                 continue
 
             if github.branch_exists(p.branch_name):
-                # TODO: if branch exists, perhaps update its contents?
                 logging.info(f"Branch already exists for {p.name}.")
             else:
                 github.create_branch(p.branch_name)
-                github.add_project(p.name, args.template)
 
-            # TODO: automatically delete branch when PRs are closed?
-            pr = github.create_pr(p.name, p.branch_name)
-
-            # TODO: replace with sub-issues
-            if not github.milestone_exists(p.name):
-                github.create_milestone(p.name, [pr], p.description)
+            github.add_project(p.name, args.template)
+            github.create_pr(p.name, p.branch_name)
 
         if count == args.projects:
             break
@@ -206,10 +196,13 @@ def main():
 if __name__ == "__main__":
     args = Cli().args
 
+    load_credentials(args.credentials)
+
     logger = logging.getLogger(__name__)
     logging_level = logging.DEBUG if args.debug else logging.INFO
     logging.basicConfig(level=logging_level)
 
-    input = "./projects.csv"
+    input_file = "./projects.csv"
+    info_file = "./info.json"
 
     main()
