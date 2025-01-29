@@ -126,6 +126,7 @@ class NotionProject(BaseModel):
     subgrants: List[str] = []
 
 
+# TODO: get status from Notion
 def main():
     count = 1
 
@@ -175,6 +176,13 @@ def main():
                 logger.info(f"{p.name} already exists in repo. Skipping.")
                 continue
 
+            # Track projects
+            if github.issue_exists(p.name):
+                logger.info(f"{p.name} already tracked with an issue.")
+            else:
+                github.create_issue(p.name, p.description)
+
+            # Add new projects to repo
             if github.pr_exists(p.name):
                 logger.info(f"Pull request already open for {p.name}. Skipping.")
                 continue

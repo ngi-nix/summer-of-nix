@@ -171,14 +171,10 @@ class GitClient:
         return self.exists(self.branches, "name", name)
 
     def pr_exists(self, title: str):
-        for item in self.pulls_open:
-            item: PullRequestSimple
-            if item.title == title:
-                return True
-        return False
+        return self.exists(self.pulls_open, "title", title)
 
     def issue_exists(self, title):
-        return self.exists(self.pulls_open, "title", title)
+        return self.exists(self.issues, "title", title)
 
     def get_file_sha(self, path: str) -> Optional[str]:
         try:
