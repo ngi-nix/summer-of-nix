@@ -96,41 +96,59 @@ class GitClient:
         except Exception as e:
             self.logger.debug(e)
 
-    def update_project(self, name, filename, msg="", branch=""):
-        msg = f"Init {name}" if msg == "" else msg
-        branch_name = f"projects/{name}" if branch == "" else branch
-        path = f"projects/{name}"
-        file_sha = self.get_file_sha(path)
-
-        self.add_project(name, filename, message=msg, branch=branch_name, sha=file_sha)
-
-    def add_project(self, name, filename, message="", branch="", sha=None):
+    def add_project(self, name, template_dir, message="", branch=""):
         message = f"Init {name}" if message == "" else message
         branch_name = f"projects/{name}" if branch == "" else branch
-        path = f"projects/{name}"
 
-        if self.get_file_sha(path) is not None and sha is None:
-            self.logger.debug(f"The template for '{name}' already exists in '{path}'")
+        if not os.path.isdir(template_dir):
+            self.logger.debug(
+                f"The provided template for {name} is not a directory: '{template_dir}'"
+            )
             return
 
-        # The GitHub API expects the file contents to be in Base64
-        file_content = open(filename, "r").read().encode("utf-8")
-        file_content = b64encode(file_content).decode("utf-8")
+        template_files = []
 
-        try:
-            self.api.repos.create_or_update_file_contents(
-                owner=self.owner,
-                repo=self.repo,
-                path=path,
-                message=message,
-                content=file_content,
-                branch=branch_name,
-                committer=self.committer,
-                author=self.author,
-                sha=sha,
-            )
-        except Exception as e:
-            self.logger.debug(e)
+        # Recursively get the file contents to commit
+        for root, _, files in os.walk(template_dir):
+            for file in files:
+                file_path = os.path.join(root, file)
+                relative_path = os.path.relpath(file_path, template_dir)
+                path = f"projects/{name}/{relative_path}"
+
+                if self.get_file_sha(path) is not None:
+                    self.logger.debug(f"Template: '{path}' already exists.")
+                    continue
+
+                # The GitHub API expects the file contents to be in Base64
+                with open(file_path, "r") as f:
+                    file_content = f.read().encode("utf-8")
+                file_content = b64encode(file_content).decode("utf-8")
+
+                # Append the file change to the list
+                template_files.append(
+                    {
+                        "path": path,
+                        "content": file_content,
+                        "sha": None,  # No SHA since we're creating new files
+                    }
+                )
+
+        # Commit all the files
+        for change in template_files:
+            try:
+                self.api.repos.create_or_update_file_contents(
+                    owner=self.owner,
+                    repo=self.repo,
+                    path=change["path"],
+                    message=message,
+                    content=change["content"],
+                    branch=branch_name,
+                    committer=self.committer,
+                    author=self.author,
+                    sha=change["sha"],
+                )
+            except Exception as e:
+                self.logger.debug(e)
 
     def create_issue(self, title, body="") -> Issue:
         return self.api.issues.create(

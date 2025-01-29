@@ -56,8 +56,9 @@ class Cli:
         )
         self.parser.add_argument(
             "--template",
-            help="Location for the project template file",
-            default="./template.nix",
+            help="Directory for the project template",
+            type=dir_path,
+            default="./template",
         )
 
         self.args = self.parser.parse_args()
