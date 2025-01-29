@@ -124,7 +124,7 @@ The 2023 Summer of Nix report stated improvement goals, which we mostly reached:
 
 - Improve the technical introduction so participants can get started more quickly.
 
-  Two of the four team leads were Nixpkgs maintainers, and set up their groups around a mentorship model, which clearly yielded better results (7 mid-to-large and 10 smaller vs. 1 large and 4 mid-sized projects).
+  Two of the four team leads were Nixpkgs maintainers, and set up their groups around a mentorship model instead of mob programming, which clearly yielded better results (7 mid-to-large and 10 smaller vs. 1 large and 4 mid-sized projects).
   Independently produced improvements to documentation in the Nix ecosystem additionally allowed us to point beginners to known-good materials.
 
 - Keep up motivation until the end.
