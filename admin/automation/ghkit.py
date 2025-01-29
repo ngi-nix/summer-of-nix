@@ -6,7 +6,7 @@ from typing import Callable, List, Optional, TypeVar
 
 from githubkit import GitHub, TokenAuthStrategy
 from githubkit.versions import RestVersionSwitcher
-from githubkit.versions.latest.models import (
+from githubkit.versions.v2022_11_28.models import (
     Issue,
     PullRequestSimple,
     ShortBranch,
@@ -142,15 +142,14 @@ class GitClient:
             self.owner, self.repo, issue_number
         ).parsed_data
 
-    def add_sub_issue(self, issue_number, sub_issue_number):
+    def link_sub_issue(self, issue_number, sub_issue_id):
         """Add sub-issue to a parent issue"""
-        sub_issue: Issue = self.api.issues.get(
-            self.owner, self.repo, sub_issue_number
+        self.api.issues.add_sub_issue(
+            self.owner,
+            self.repo,
+            issue_number=issue_number,
+            sub_issue_id=sub_issue_id,
         ).parsed_data
-
-        return self.api.issues.add_sub_issue(
-            self.owner, self.repo, issue_number=issue_number, sub_issue_id=sub_issue.id
-        )
 
     def sub_issue_summary(self, issue_number):
         return self.api.issues.get(

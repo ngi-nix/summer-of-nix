@@ -1,5 +1,4 @@
-#!/usr/bin/env nix-shell
-#!nix-shell -i python3 -p "python3.withPackages(ps: with ps; [ pandas pydantic githubkit ])"
+#!/usr/bin/env python3
 
 import argparse
 import json
@@ -180,7 +179,13 @@ def main():
             if github.issue_exists(p.name):
                 logger.info(f"{p.name} already tracked with an issue.")
             else:
-                github.create_issue(p.name, p.description)
+                project_issue = github.create_issue(p.name, p.description)
+
+                deliverables = ["Packages", "Modules", "Examples", "Tests"]
+
+                for d in deliverables:
+                    sub_issue = github.create_issue(f"{p.name} {d}")
+                    github.link_sub_issue(project_issue.number, sub_issue.id)
 
             # Add new projects to repo
             if github.pr_exists(p.name):
