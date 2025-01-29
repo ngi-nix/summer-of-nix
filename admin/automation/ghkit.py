@@ -93,6 +93,7 @@ class GitClient:
                 base="main",
             )
             self.logger.info(f"Created PR for {title}: {response.parsed_data.html_url}")
+            self.add_label(response.parsed_data.number, ["automated"])
         except Exception as e:
             self.logger.debug(e)
 
@@ -151,9 +152,12 @@ class GitClient:
                 self.logger.debug(e)
 
     def create_issue(self, title, body="") -> Issue:
-        return self.api.issues.create(
+        issue = self.api.issues.create(
             self.owner, self.repo, title=title, body=body
         ).parsed_data
+
+        self.add_label(issue.number, ["automated"])
+        return issue
 
     def get_sub_issues(self, issue_number) -> list[Issue]:
         return self.api.issues.list_sub_issues(
@@ -173,6 +177,11 @@ class GitClient:
         return self.api.issues.get(
             self.owner, self.repo, issue_number=issue_number
         ).parsed_data.sub_issues_summary
+
+    def add_label(self, issue_number: int, labels: list[str]):
+        return self.api.issues.add_labels(
+            self.owner, self.repo, issue_number, data=labels
+        )
 
     def exists(self, collection, attribute, value: str):
         for item in collection:
