@@ -1,6 +1,6 @@
 # Summer of Nix 2025 stipends
 
-Residents of EU member states receive the base stipend (see [Stipends](https://github.com/ngi-nix/summer-of-nix/tree/main?tab=readme-ov-file#stipends).)
+Residents of EU member states receive the [base stipend](./README.md#stipends).
 For residents of other countries, stipends are adjusted according to [purchasing power parity](https://en.wikipedia.org/wiki/Purchasing_power_parity) relative to the Netherlands.
 
 The following amounts are calculated using [data from Google Summer of Code](https://developers.google.com/open-source/gsoc/help/student-stipends#total_stipend_amount):
