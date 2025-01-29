@@ -5,6 +5,7 @@ import json
 import logging
 import os
 from dataclasses import dataclass, field
+from enum import Enum
 from typing import List
 
 import pandas as pd
@@ -79,6 +80,14 @@ def load_credentials(directory):
             with open(file_path, "r") as file:
                 content = file.read().strip()
                 os.environ[filename] = content
+
+
+class Deliverable(str, Enum):
+    SERVICES = "services"
+    EXECUTABLES = "executables"
+    LIBRARIES = "libraries"
+    TESTS = "tests"
+    DEVENV = "development environment"
 
 
 @dataclass
@@ -183,10 +192,9 @@ def main():
             else:
                 project_issue = github.create_issue(p.name, p.description)
 
-                deliverables = ["packages", "modules", "examples", "tests"]
-
+                deliverables = list(Deliverable)
                 for d in deliverables:
-                    sub_issue = github.create_issue(f"{p.name} ({d})")
+                    sub_issue = github.create_issue(f"{p.name} ({d.value})")
                     github.link_sub_issue(project_issue.number, sub_issue.id)
 
             # Add new projects to repo
