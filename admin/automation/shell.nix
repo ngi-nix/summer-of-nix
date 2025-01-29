@@ -4,6 +4,7 @@
   pkgs ? import sources.nixpkgs { inherit system; },
 }:
 let
+  src = ./.;
   python = pkgs.python3.withPackages (
     ps: with ps; [
       pandas
@@ -12,18 +13,17 @@ let
       githubkit
     ]
   );
-  # Commands
-  export = pkgs.writeShellScriptBin "extract-project-data-from-nlnet" ''
-    ${pkgs.lib.getExe python} ${./process.py}
+  export-project-data = pkgs.writeShellScriptBin "extract-project-data-from-nlnet" ''
+    ${pkgs.lib.getExe python} "${src}/process.py" "$@"
   '';
-  sync = pkgs.writeShellScriptBin "sync-projects" ''
-    ${pkgs.lib.getExe python} ${./sync.py}
+  sync-projects = pkgs.writeShellScriptBin "sync-projects" ''
+    ${pkgs.lib.getExe python} "${src}/sync.py" "$@"
   '';
 in
 pkgs.mkShellNoCC {
   packages = [
-    export
+    export-project-data
     python
-    sync
+    sync-projects
   ];
 }
