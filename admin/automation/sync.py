@@ -182,10 +182,10 @@ def main():
             else:
                 project_issue = github.create_issue(p.name, p.description)
 
-                deliverables = ["Packages", "Modules", "Examples", "Tests"]
+                deliverables = ["packages", "modules", "examples", "tests"]
 
                 for d in deliverables:
-                    sub_issue = github.create_issue(f"{p.name} {d}")
+                    sub_issue = github.create_issue(f"{p.name} ({d})")
                     github.link_sub_issue(project_issue.number, sub_issue.id)
 
             # Add new projects to repo

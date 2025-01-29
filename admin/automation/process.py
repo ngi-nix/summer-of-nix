@@ -1,5 +1,4 @@
-#!/usr/bin/env nix-shell
-#!nix-shell -i python3 -p jaq "python3.withPackages(ps: with ps; [ pydantic ])"
+#!/usr/bin/env python3
 
 import argparse
 import json
@@ -137,7 +136,7 @@ def main(input_dir: str, output_file: str):
 
     # Write all processed proposals to a single output file
     with open(output_file, "w") as f:
-        json.dump([proposal.dict() for proposal in proposals], f, indent=2)
+        json.dump([proposal.model_dump() for proposal in proposals], f, indent=2)
 
 
 if __name__ == "__main__":
