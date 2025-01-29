@@ -172,6 +172,7 @@ def main():
         logger.debug(f"{p.branch_name}\n{p.description}\n")
 
         if not args.dry:
+            # TODO: link missing artifacts to projects already in the repo
             if github.project_exists(p.name):
                 logger.info(f"{p.name} already exists in repo. Skipping.")
                 continue

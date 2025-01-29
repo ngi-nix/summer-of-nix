@@ -4,6 +4,7 @@ import argparse
 import json
 import logging
 import os
+import sys
 from enum import Enum
 from typing import List, Optional
 
@@ -18,17 +19,9 @@ class Cli:
             """
         )
         self.parser.add_argument(
-            "-i",
-            "--input",
+            "input",
             type=dir_path,
             help="Input directory, containing grant files",
-            default="./funds",
-        )
-        self.parser.add_argument(
-            "-o",
-            "--output",
-            help="Output JSON file",
-            default="./info.json",
         )
         self.parser.add_argument(
             "-d",
@@ -94,7 +87,7 @@ class Result(BaseModel):
     contact: Contact
 
 
-def main(input_dir: str, output_file: str):
+def main(input_dir: str):
     if not os.path.isdir(input_dir):
         print(f"Error: '{input_dir}' does not exist or is not a directory.")
         exit(1)
@@ -134,9 +127,8 @@ def main(input_dir: str, output_file: str):
         except ValidationError as e:
             logger.error(e)
 
-    # Write all processed proposals to a single output file
-    with open(output_file, "w") as f:
-        json.dump([proposal.model_dump() for proposal in proposals], f, indent=2)
+    content = [proposal.model_dump() for proposal in proposals]
+    json.dump(content, sys.stdout, indent=2)
 
 
 if __name__ == "__main__":
@@ -146,4 +138,4 @@ if __name__ == "__main__":
     logging_level = logging.DEBUG if args.debug else logging.WARNING
     logging.basicConfig(level=logging_level)
 
-    main(args.input, args.output)
+    main(args.input)
