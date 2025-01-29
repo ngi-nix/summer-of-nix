@@ -28,6 +28,12 @@ ngi-nix/ngipkgs
 
 ## NLnet Dashboard
 
+Activate the development environment:
+
+```sh
+$ nix-shell
+```
+
 Run the extraction script on a directory containing the JSON files exported from the NLnet dashboard:
 
 ```sh
@@ -45,7 +51,7 @@ Get the project list from Notion:
 
 # Usage
 
-Run
+With the development environment active, run:
 
 ```sh
 sync-projects --help
