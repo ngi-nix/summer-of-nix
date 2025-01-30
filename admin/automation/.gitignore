@@ -1,7 +1,8 @@
 *.csv
 *.json
 .env
+!npins/sources.json
 
-# Python
+# python
 .venv
 __pycache__
