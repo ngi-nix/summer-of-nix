@@ -26,6 +26,17 @@ class Cli:
         )
 
         self.parser.add_argument(
+            "notion_file",
+            type=argparse.FileType("r"),
+            help="Contains the exported data from Notion",
+        )
+        self.parser.add_argument(
+            "dashboard_file",
+            type=argparse.FileType("r"),
+            help="Contains extracted data from the NLnet dashboard",
+        )
+
+        self.parser.add_argument(
             "-n",
             "--dry",
             action="store_true",
@@ -69,7 +80,7 @@ def dir_path(string):
     if os.path.isdir(string):
         return string
     else:
-        raise NotADirectoryError(string)
+        raise argparse.ArgumentTypeError(f"'{string}' is not a valid file directory.")
 
 
 def load_credentials(directory):
@@ -139,7 +150,7 @@ class NotionProject(BaseModel):
 def main():
     count = 1
 
-    projects = pd.read_csv(input_file, usecols=["Name", "Subgrants"])
+    projects = pd.read_csv(args.notion_file, usecols=["Name", "Subgrants"])
     projects["Name"] = cleanup_empty(projects["Name"])
 
     # Some project names have spaces in them, so we'd either need to remove
@@ -160,10 +171,10 @@ def main():
     ]
 
     try:
-        with open(info_file, "r") as f:
+        with args.dashboard_file as f:
             funds = Subgrants(subgrants=json.load(f))
     except ValidationError as e:
-        logger.error(f"Failed to parse subgrant information from {info_file}: {e}")
+        logger.error(f"Failed to parse {args.dashboard_file}: {e}")
         exit()
 
     # TODO: use env variable or argument for repo?
@@ -224,8 +235,5 @@ if __name__ == "__main__":
     logger = logging.getLogger(__name__)
     logging_level = logging.DEBUG if args.debug else logging.INFO
     logging.basicConfig(level=logging_level)
-
-    input_file = "./projects.csv"
-    info_file = "./info.json"
 
     main()
