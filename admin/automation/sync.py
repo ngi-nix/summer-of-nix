@@ -9,11 +9,10 @@ from enum import Enum
 from typing import List
 
 import pandas as pd
-from pandas import Series
-from pydantic import BaseModel, ValidationError
-
 from ghkit import GitClient
+from pandas import Series
 from process import Result as Subgrant  # TODO: put this in a better place
+from pydantic import BaseModel, ValidationError
 from utils import cleanup_empty, cleanup_urls, remove_urls
 
 
@@ -98,7 +97,7 @@ class Deliverable(str, Enum):
     EXECUTABLES = "executables"
     LIBRARIES = "libraries"
     TESTS = "tests"
-    DEVENV = "development environment"
+    DEVENV = "devenv"
 
 
 @dataclass
@@ -116,11 +115,7 @@ class Project:
             [self.websites, pd.Series(websites)], ignore_index=True
         )
 
-    # TODO: make a template for this
     def update_description(self):
-        if len(self.websites) > 0:
-            pass
-
         for site in self.websites:
             self.description += f"\n- {site}"
 

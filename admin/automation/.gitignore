@@ -1,7 +1,6 @@
 *.csv
 *.json
 .env
-funds*
 
 # Python
 .venv
