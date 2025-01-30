@@ -16,7 +16,7 @@ class Cli:
     def __init__(self) -> None:
         self.parser = argparse.ArgumentParser(
             description="""
-            Extract useful information from processed grant files
+            Extract useful information from the exported NLnet grant database
             """
         )
         self.parser.add_argument(
