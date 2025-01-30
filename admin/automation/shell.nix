@@ -4,7 +4,7 @@
   pkgs ? import sources.nixpkgs { inherit system; },
 }:
 let
-  src = ./.;
+  src = ./sync;
   python = pkgs.python3.withPackages (
     ps: with ps; [
       pandas
