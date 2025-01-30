@@ -5,7 +5,6 @@ import json
 import logging
 import os
 import sys
-from enum import Enum
 from typing import List, Optional
 
 from pydantic import BaseModel, Field, ValidationError
@@ -31,12 +30,6 @@ class Cli:
             help="Print debugging information",
         )
         self.args = self.parser.parse_args()
-
-
-class Status(str, Enum):
-    SELECTED = "Selected"
-    RUNNING = "Running"
-    COMPLETE = "Complete"
 
 
 class Contact(BaseModel):
@@ -66,7 +59,6 @@ class ProposalField(BaseModel):
 class Proposal(BaseModel):
     properties: PropertiesField
     proposal: ProposalField
-    status: Status
 
 
 class Fund(BaseModel):
@@ -77,7 +69,6 @@ class Result(BaseModel):
     name: Optional[str] = Field(default=None)
     websites: List[str]
     summary: str
-    status: Status
     contact: Contact
 
 
@@ -108,16 +99,12 @@ if __name__ == "__main__":
                     logger.debug(proposal)
                     continue
 
-                if proposal.status != Status.RUNNING:
-                    continue
-
                 proposals.append(
                     Result(
                         name=proposal.properties.webpage.sitename,
                         websites=proposal.proposal.websites.website,
                         summary=proposal.properties.webpage.summary,
                         contact=proposal.proposal.contact,
-                        status=proposal.status,
                     )
                 )
         except ValidationError as e:
