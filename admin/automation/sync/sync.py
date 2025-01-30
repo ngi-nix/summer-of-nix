@@ -125,7 +125,15 @@ class NotionProject(BaseModel):
 
 
 # TODO: get status from Notion
-def main():
+if __name__ == "__main__":
+    args = Cli().args
+
+    load_credentials(args.credentials)
+
+    logger = logging.getLogger(__name__)
+    logging_level = logging.DEBUG if args.debug else logging.INFO
+    logging.basicConfig(level=logging_level)
+
     count = 1
 
     projects = pd.read_csv(args.notion_file, usecols=["Name", "Subgrants"])
@@ -203,15 +211,3 @@ def main():
             break
 
         count += 1
-
-
-if __name__ == "__main__":
-    args = Cli().args
-
-    load_credentials(args.credentials)
-
-    logger = logging.getLogger(__name__)
-    logging_level = logging.DEBUG if args.debug else logging.INFO
-    logging.basicConfig(level=logging_level)
-
-    main()
