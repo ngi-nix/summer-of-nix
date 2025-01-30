@@ -19,7 +19,7 @@ class Cli:
             """
         )
         self.parser.add_argument(
-            "input",
+            "input_dir",
             type=dir_path,
             help="Input directory, containing grant files",
         )
@@ -87,18 +87,20 @@ class Result(BaseModel):
     contact: Contact
 
 
-def main(input_dir: str):
-    if not os.path.isdir(input_dir):
-        print(f"Error: '{input_dir}' does not exist or is not a directory.")
-        exit(1)
+if __name__ == "__main__":
+    args = Cli().args
+
+    logger = logging.getLogger(__name__)
+    logging_level = logging.DEBUG if args.debug else logging.WARNING
+    logging.basicConfig(level=logging_level)
 
     proposals = []
 
-    for input_file in os.listdir(input_dir):
+    for input_file in os.listdir(args.input_dir):
         if not input_file.endswith(".json"):
             continue
 
-        input_path = os.path.join(input_dir, input_file)
+        input_path = os.path.join(args.input_dir, input_file)
 
         with open(input_path, "r") as f:
             data = json.load(f)
@@ -129,13 +131,3 @@ def main(input_dir: str):
 
     content = [proposal.model_dump() for proposal in proposals]
     json.dump(content, sys.stdout, indent=2)
-
-
-if __name__ == "__main__":
-    args = Cli().args
-
-    logger = logging.getLogger(__name__)
-    logging_level = logging.DEBUG if args.debug else logging.WARNING
-    logging.basicConfig(level=logging_level)
-
-    main(args.input)
