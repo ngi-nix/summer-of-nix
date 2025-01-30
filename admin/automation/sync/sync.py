@@ -3,7 +3,6 @@
 import argparse
 import json
 import logging
-import os
 from dataclasses import dataclass, field
 from enum import Enum
 from typing import List
@@ -34,6 +33,10 @@ class Cli:
             type=argparse.FileType("r"),
             help="Contains extracted data from the NLnet dashboard",
         )
+        self.parser.add_argument(
+            "repo",
+            help="Repository where the automation should happen (e.g., ngi-nix/ngipkgs)",
+        )
 
         self.parser.add_argument(
             "-n",
@@ -53,11 +56,6 @@ class Cli:
             help="Number of projects to process",
             default=1,
             type=int,
-        )
-        self.parser.add_argument(
-            "--repo",
-            help="Repository where the automation should happen",
-            default="ngipkgs",
         )
         self.parser.add_argument(
             "--credentials",
@@ -163,8 +161,7 @@ if __name__ == "__main__":
         logger.error(f"Failed to parse {args.dashboard_file}: {e}")
         exit()
 
-    # TODO: use env variable or argument for repo?
-    github = GitClient(*os.environ["REPO"].split("/"))
+    github = GitClient(*args.repo.split("/"))
 
     for project in projects:
         p = Project(project.name)
