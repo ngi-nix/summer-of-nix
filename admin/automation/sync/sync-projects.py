@@ -9,8 +9,8 @@ from typing import List
 
 import pandas as pd
 from ghkit import GitClient
+from models_notion import Project, Subgrant
 from pandas import Series
-from process import MappedSubgrant as Subgrant  # TODO: put this in a better place
 from pydantic import BaseModel, ValidationError
 from utils import cleanup_empty, cleanup_urls, dir_path, load_credentials, remove_urls
 
@@ -82,7 +82,7 @@ class Deliverable(str, Enum):
 
 
 @dataclass
-class Project:
+class GitProject:
     name: str
     branch_name: str = field(init=False)
     description: str = "\n### Websites"
@@ -117,11 +117,6 @@ class Subgrants(BaseModel):
         return []
 
 
-class NotionProject(BaseModel):
-    name: str = ""
-    subgrants: List[str] = []
-
-
 # TODO: get status from Notion
 if __name__ == "__main__":
     args = Cli().args
@@ -150,7 +145,7 @@ if __name__ == "__main__":
 
     projects_dict = projects.to_dict(orient="records")
     projects = [
-        NotionProject(name=item["Name"], subgrants=item["Subgrants"])
+        Project(name=item["Name"], subgrants=item["Subgrants"])
         for item in projects_dict
     ]
 
@@ -164,7 +159,7 @@ if __name__ == "__main__":
     github = GitClient(*args.repo.split("/"))
 
     for project in projects:
-        p = Project(project.name)
+        p = GitProject(project.name)
 
         for subgrant in project.subgrants:
             p.append_websites(funds.get_websites(subgrant))

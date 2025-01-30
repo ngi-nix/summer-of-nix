@@ -5,11 +5,10 @@ import json
 import logging
 import os
 import sys
-from dataclasses import dataclass
-from typing import List, Optional
 
-from pydantic import BaseModel, Field, ValidationError
-
+from models_dashboard import Fund
+from models_notion import Subgrant
+from pydantic import ValidationError
 from utils import dir_path
 
 
@@ -32,53 +31,6 @@ class Cli:
             help="Print debugging information",
         )
         self.args = self.parser.parse_args()
-
-
-class Fund(BaseModel):
-    @dataclass
-    class Subgrant(BaseModel):
-        @dataclass
-        class Properties(BaseModel):
-            @dataclass
-            class Webpage(BaseModel):
-                name: Optional[str] = Field(
-                    default=None,
-                    alias="sitename",
-                    description="Symbolic name for the subgrant, as shown under https://nlnet.nl/project",
-                    examples=["GNUnet-CONG"],
-                )
-                summary: str
-
-            webpage: Webpage
-
-        @dataclass
-        class Proposal(BaseModel):
-            @dataclass
-            class Websites(BaseModel):
-                website: List[str]
-
-            @dataclass
-            class Contact(BaseModel):
-                name: str
-                email: str
-                organisationName: str
-
-            websites: Websites
-            contact: Contact
-
-        properties: Properties
-        proposal: Proposal
-
-    subgrants: List[Subgrant] = Field(
-        alias="proposals",
-    )
-
-
-class MappedSubgrant(BaseModel):
-    name: Optional[str] = Field(default=None)
-    websites: List[str]
-    summary: str
-    contact: Fund.Subgrant.Proposal.Contact
 
 
 if __name__ == "__main__":
@@ -108,7 +60,7 @@ if __name__ == "__main__":
                     continue
 
                 subgrants.append(
-                    MappedSubgrant(
+                    Subgrant(
                         name=subgrant.properties.webpage.name,
                         websites=subgrant.proposal.websites.website,
                         summary=subgrant.properties.webpage.summary,
