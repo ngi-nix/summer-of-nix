@@ -31,13 +31,13 @@ ngi-nix/ngipkgs
 Activate the development environment:
 
 ```sh
-$ nix-shell
+nix-shell
 ```
 
 Run the extraction script on a directory containing the JSON files exported from the NLnet dashboard:
 
 ```sh
-extract-project-data-from-nlnet ./directory >>projects.json
+extract-project-data ./directory >>projects.json
 ```
 
 ## Notion
