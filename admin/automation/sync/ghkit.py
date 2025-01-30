@@ -1,6 +1,7 @@
 import logging
 import os
 import re
+import urllib.parse
 from base64 import b64encode
 from dataclasses import dataclass
 from typing import Callable, List, Optional, TypeVar
@@ -118,6 +119,7 @@ class GitClient:
                 file_path = os.path.join(root, file)
                 relative_path = os.path.relpath(file_path, template_dir)
                 path = f"projects/{name}/{relative_path}"
+                path = urllib.parse.quote(path)
 
                 if self.get_file_sha(path) is not None:
                     self.logger.debug(f"Template: '{path}' already exists.")
