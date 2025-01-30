@@ -13,7 +13,7 @@ from ghkit import GitClient
 from pandas import Series
 from process import Result as Subgrant  # TODO: put this in a better place
 from pydantic import BaseModel, ValidationError
-from utils import cleanup_empty, cleanup_urls, remove_urls
+from utils import cleanup_empty, cleanup_urls, dir_path, load_credentials, remove_urls
 
 
 class Cli:
@@ -73,23 +73,6 @@ class Cli:
         )
 
         self.args = self.parser.parse_args()
-
-
-def dir_path(string):
-    if os.path.isdir(string):
-        return string
-    else:
-        raise argparse.ArgumentTypeError(f"'{string}' is not a valid file directory.")
-
-
-def load_credentials(directory):
-    for filename in os.listdir(directory):
-        file_path = os.path.join(directory, filename)
-
-        if os.path.isfile(file_path):
-            with open(file_path, "r") as file:
-                content = file.read().strip()
-                os.environ[filename] = content
 
 
 class Deliverable(str, Enum):

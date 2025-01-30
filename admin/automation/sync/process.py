@@ -9,6 +9,7 @@ from enum import Enum
 from typing import List, Optional
 
 from pydantic import BaseModel, Field, ValidationError
+from utils import dir_path
 
 
 class Cli:
@@ -30,13 +31,6 @@ class Cli:
             help="Print debugging information",
         )
         self.args = self.parser.parse_args()
-
-
-def dir_path(string):
-    if os.path.isdir(string):
-        return string
-    else:
-        raise NotADirectoryError(string)
 
 
 class Status(str, Enum):
