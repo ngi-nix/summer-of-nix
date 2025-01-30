@@ -43,29 +43,34 @@ class Websites(BaseModel):
 
 
 class Webpage(BaseModel):
-    sitename: Optional[str] = Field(default=None)
+    name: Optional[str] = Field(
+        default=None,
+        alias="sitename",
+        description="Symbolic name for the subgrant, as shown under https://nlnet.nl/project",
+        examples=["GNUnet-CONG"],
+    )
     summary: str
 
 
-class PropertiesField(BaseModel):
+class Properties(BaseModel):
     webpage: Webpage
 
 
-class ProposalField(BaseModel):
+class Proposal(BaseModel):
     websites: Websites
     contact: Contact
 
 
-class Proposal(BaseModel):
-    properties: PropertiesField
-    proposal: ProposalField
+class Subgrant(BaseModel):
+    properties: Properties
+    proposal: Proposal
 
 
 class Fund(BaseModel):
-    proposals: List[Proposal]
+    sungrants: List[Subgrant]
 
 
-class Result(BaseModel):
+class MappedSubgrant(BaseModel):
     name: Optional[str] = Field(default=None)
     websites: List[str]
     summary: str
@@ -79,7 +84,7 @@ if __name__ == "__main__":
     logging_level = logging.DEBUG if args.debug else logging.WARNING
     logging.basicConfig(level=logging_level)
 
-    proposals = []
+    subgrants = []
 
     for input_file in os.listdir(args.input_dir):
         if not input_file.endswith(".json"):
@@ -93,22 +98,21 @@ if __name__ == "__main__":
         try:
             fund = Fund(**data["fund"])
 
-            # TODO: improve
-            for proposal in fund.proposals:
-                if proposal.properties.webpage.sitename is None:
-                    logger.debug(proposal)
+            for subgrant in fund.sungrants:
+                if subgrant.properties.webpage.name is None:
+                    logger.warning(subgrant)
                     continue
 
-                proposals.append(
-                    Result(
-                        name=proposal.properties.webpage.sitename,
-                        websites=proposal.proposal.websites.website,
-                        summary=proposal.properties.webpage.summary,
-                        contact=proposal.proposal.contact,
+                subgrants.append(
+                    MappedSubgrant(
+                        name=subgrant.properties.webpage.name,
+                        websites=subgrant.proposal.websites.website,
+                        summary=subgrant.properties.webpage.summary,
+                        contact=subgrant.proposal.contact,
                     )
                 )
         except ValidationError as e:
             logger.error(e)
 
-    content = [proposal.model_dump() for proposal in proposals]
+    content = [s.model_dump() for s in subgrants]
     json.dump(content, sys.stdout, indent=2)

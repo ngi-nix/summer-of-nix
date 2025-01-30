@@ -10,7 +10,7 @@ from typing import List
 import pandas as pd
 from ghkit import GitClient
 from pandas import Series
-from process import Result as Subgrant  # TODO: put this in a better place
+from process import MappedSubgrant as Subgrant  # TODO: put this in a better place
 from pydantic import BaseModel, ValidationError
 from utils import cleanup_empty, cleanup_urls, dir_path, load_credentials, remove_urls
 
