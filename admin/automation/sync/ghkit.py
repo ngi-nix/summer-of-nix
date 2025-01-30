@@ -1,5 +1,6 @@
 import logging
 import os
+import re
 from base64 import b64encode
 from dataclasses import dataclass
 from typing import Callable, List, Optional, TypeVar
@@ -66,21 +67,23 @@ class GitClient:
         ).parsed_data
 
     def create_branch(self, branch_name):
+        branch = self.clean_branch_name(branch_name)
         base_branch = self.api.repos.get_branch(
             self.owner, self.repo, branch="main"
         ).parsed_data
         ref = self.api.git.create_ref(
             self.owner,
             self.repo,
-            ref=f"refs/heads/{branch_name}",
+            ref=f"refs/heads/{branch}",
             sha=base_branch.commit.sha,
         ).parsed_data
-        self.logger.info(f"Branch {branch_name} created.")
+        self.logger.info(f"Branch {branch} created.")
         return ref
 
     def delete_branch(self, branch_name):
-        self.api.git.delete_ref(self.owner, self.repo, ref=f"heads/{branch_name}")
-        self.logger.debug(f"Deleted branch: {branch_name}")
+        branch = self.clean_branch_name(branch_name)
+        self.api.git.delete_ref(self.owner, self.repo, ref=f"heads/{branch}")
+        self.logger.debug(f"Deleted branch: {branch}")
 
     def create_pr(self, title, head_branch, body=""):
         try:
@@ -89,7 +92,7 @@ class GitClient:
                 self.repo,
                 title=title,
                 body=body,
-                head=head_branch,
+                head=self.clean_branch_name(head_branch),
                 base="main",
             )
             self.logger.info(f"Created PR for {title}: {response.parsed_data.html_url}")
@@ -143,7 +146,7 @@ class GitClient:
                     path=change["path"],
                     message=message,
                     content=change["content"],
-                    branch=branch_name,
+                    branch=self.clean_branch_name(branch_name),
                     committer=self.committer,
                     author=self.author,
                     sha=change["sha"],
@@ -183,6 +186,11 @@ class GitClient:
             self.owner, self.repo, issue_number, data=labels
         )
 
+    def clean_branch_name(self, name: str) -> str:
+        cleaned_name = name.strip().replace(" ", "-").lower()
+        cleaned_name = re.sub(r"[^a-z0-9._/-]", "", cleaned_name)
+        return cleaned_name
+
     def exists(self, collection, attribute, value: str):
         for item in collection:
             if str(getattr(item, attribute)).lower() == value.lower():
@@ -194,7 +202,7 @@ class GitClient:
         return self.exists(self.projects, "path", f"projects/{name}")
 
     def branch_exists(self, name):
-        return self.exists(self.branches, "name", name)
+        return self.exists(self.branches, "name", self.clean_branch_name(name))
 
     def pr_exists(self, title: str):
         return self.exists(self.pulls_open, "title", title)

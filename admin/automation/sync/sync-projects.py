@@ -127,16 +127,10 @@ if __name__ == "__main__":
     logging_level = logging.DEBUG if args.debug else logging.INFO
     logging.basicConfig(level=logging_level)
 
-    count = 1
+    synched_projects = 0
 
     projects = pd.read_csv(args.notion_file, usecols=["Name", "Subgrants"])
     projects["Name"] = cleanup_empty(projects["Name"])
-
-    # Some project names have spaces in them, so we'd either need to remove
-    # that in Notion or just replace them here.
-    projects["Name"] = projects["Name"].apply(
-        lambda x: x.replace(" ", "-") if pd.notna(x) else ""
-    )
 
     # Remove notion URLs from the subgrants. We need these for getting the project websites.
     projects["Subgrants"] = projects["Subgrants"].apply(
@@ -199,7 +193,7 @@ if __name__ == "__main__":
             github.add_project(p.name, args.template)
             github.create_pr(p.name, p.branch_name)
 
-        if count == args.projects:
-            break
+        synched_projects += 1
 
-        count += 1
+        if synched_projects == args.projects:
+            break
