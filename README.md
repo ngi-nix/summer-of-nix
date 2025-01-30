@@ -119,6 +119,15 @@ Please ask a friend to make a test call on [Jitsi Meet](https://meet.jit.si/) to
 
 From the organisers' experience, mobile data is unlikely to suffice.
 
+## Testimonials
+
+> I participated as a mentor in the first two Summers of Nix.
+> This gave me an opportunity to help introduce others to the ecosystem and gain experience leading a globally distributed team.
+> The greatest outcome was the joy of [seeing some of the participants stick around](https://www.youtube.com/watch?v=FY66f8epAE8) and grow to become major contributors.
+> The program is an effective way to create value in open source as well as make the Nix ecosystem stronger, with a focus on the people that make up the community.
+>
+> — [@tomberek](https://github.com/tomberek/), Summer of Nix participant (2021 and 2022), [Nix maintainer](https://github.com/orgs/NixOS/teams/nix-team) (since 2022) and [Nix Community Steering Committee](https://github.com/NixOS/org/blob/bef9342c85519784532cd647f91c341cae5e3bed/doc/governance.md) member (2025)
+
 ## Questions and answers
 
 ### How to get notifications and updates?
