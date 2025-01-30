@@ -5,9 +5,11 @@ import json
 import logging
 import os
 import sys
+from dataclasses import dataclass
 from typing import List, Optional
 
 from pydantic import BaseModel, Field, ValidationError
+
 from utils import dir_path
 
 
@@ -32,49 +34,51 @@ class Cli:
         self.args = self.parser.parse_args()
 
 
-class Contact(BaseModel):
-    name: str
-    email: str
-    organisationName: str
-
-
-class Websites(BaseModel):
-    website: List[str]
-
-
-class Webpage(BaseModel):
-    name: Optional[str] = Field(
-        default=None,
-        alias="sitename",
-        description="Symbolic name for the subgrant, as shown under https://nlnet.nl/project",
-        examples=["GNUnet-CONG"],
-    )
-    summary: str
-
-
-class Properties(BaseModel):
-    webpage: Webpage
-
-
-class Proposal(BaseModel):
-    websites: Websites
-    contact: Contact
-
-
-class Subgrant(BaseModel):
-    properties: Properties
-    proposal: Proposal
-
-
 class Fund(BaseModel):
-    sungrants: List[Subgrant]
+    @dataclass
+    class Subgrant(BaseModel):
+        @dataclass
+        class Properties(BaseModel):
+            @dataclass
+            class Webpage(BaseModel):
+                name: Optional[str] = Field(
+                    default=None,
+                    alias="sitename",
+                    description="Symbolic name for the subgrant, as shown under https://nlnet.nl/project",
+                    examples=["GNUnet-CONG"],
+                )
+                summary: str
+
+            webpage: Webpage
+
+        @dataclass
+        class Proposal(BaseModel):
+            @dataclass
+            class Websites(BaseModel):
+                website: List[str]
+
+            @dataclass
+            class Contact(BaseModel):
+                name: str
+                email: str
+                organisationName: str
+
+            websites: Websites
+            contact: Contact
+
+        properties: Properties
+        proposal: Proposal
+
+    subgrants: List[Subgrant] = Field(
+        alias="proposals",
+    )
 
 
 class MappedSubgrant(BaseModel):
     name: Optional[str] = Field(default=None)
     websites: List[str]
     summary: str
-    contact: Contact
+    contact: Fund.Subgrant.Proposal.Contact
 
 
 if __name__ == "__main__":
@@ -98,7 +102,7 @@ if __name__ == "__main__":
         try:
             fund = Fund(**data["fund"])
 
-            for subgrant in fund.sungrants:
+            for subgrant in fund.subgrants:
                 if subgrant.properties.webpage.name is None:
                     logger.warning(subgrant)
                     continue
