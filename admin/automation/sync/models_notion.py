@@ -2,14 +2,20 @@ from typing import List, Optional
 
 from pydantic import BaseModel, Field
 
-from models_dashboard import Fund
-
 
 class Subgrant(BaseModel):
+    class Contact(BaseModel):
+        name: str
+        email: str
+        organisationName: str
+
     name: Optional[str] = Field(default=None)
     websites: List[str]
     summary: str
-    contact: Fund.Subgrant.Proposal.Contact
+    contact: Contact
+
+    def test(self):
+        return self.contact.name
 
 
 class Project(BaseModel):

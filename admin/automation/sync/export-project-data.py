@@ -6,9 +6,10 @@ import logging
 import os
 import sys
 
+from pydantic import ValidationError
+
 from models_dashboard import Fund
 from models_notion import Subgrant
-from pydantic import ValidationError
 from utils import dir_path
 
 
@@ -64,7 +65,9 @@ if __name__ == "__main__":
                         name=subgrant.properties.webpage.name,
                         websites=subgrant.proposal.websites.website,
                         summary=subgrant.properties.webpage.summary,
-                        contact=subgrant.proposal.contact,
+                        contact=Subgrant.Contact(
+                            **subgrant.proposal.contact.model_dump()
+                        ),
                     )
                 )
         except ValidationError as e:
