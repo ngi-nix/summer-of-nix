@@ -6,6 +6,7 @@ import logging
 import os
 import sys
 
+import ijson
 from pydantic import ValidationError
 from tqdm import tqdm
 
@@ -51,27 +52,26 @@ def main():
 
         input_path = os.path.join(args.input_dir, input_file)
 
-        with open(input_path, "r") as f:
-            data = json.load(f)
-
         try:
-            fund = Fund(**data["fund"])
+            with open(input_path, "rb") as f:
+                data = ijson.items(f, "fund")
+                fund = Fund(**next(data))
 
-            for subgrant in tqdm(fund.subgrants, desc=input_file):
-                if subgrant.properties.webpage.name is None:
-                    logger.warning(subgrant)
-                    continue
+                for subgrant in tqdm(fund.subgrants, desc=input_file):
+                    if subgrant.properties.webpage.name is None:
+                        logger.warning(subgrant)
+                        continue
 
-                subgrants.append(
-                    Subgrant(
-                        name=subgrant.properties.webpage.name,
-                        websites=subgrant.proposal.websites.website,
-                        summary=subgrant.properties.webpage.summary,
-                        contact=Subgrant.Contact(
-                            **subgrant.proposal.contact.model_dump()
-                        ),
+                    subgrants.append(
+                        Subgrant(
+                            name=subgrant.properties.webpage.name,
+                            websites=subgrant.proposal.websites.website,
+                            summary=subgrant.properties.webpage.summary,
+                            contact=Subgrant.Contact(
+                                **subgrant.proposal.contact.model_dump()
+                            ),
+                        )
                     )
-                )
         except ValidationError as e:
             logger.error(e)
 

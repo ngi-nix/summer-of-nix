@@ -12,6 +12,7 @@ let
       pydantic
       githubkit
       tqdm
+      ijson
     ]
   );
   export-project-data = pkgs.writeShellScriptBin "extract-project-data" ''

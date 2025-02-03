@@ -8,6 +8,7 @@ from enum import Enum
 from time import sleep
 from typing import List
 
+import ijson
 import pandas as pd
 from pandas import Series
 from pydantic import BaseModel, ValidationError
@@ -163,7 +164,7 @@ def main():
 
     try:
         with args.dashboard_file as f:
-            funds = Subgrants(subgrants=json.load(f))
+            funds = Subgrants(subgrants=ijson.items(f, "."))
     except ValidationError as e:
         logger.error(f"Failed to parse {args.dashboard_file}: {e}")
         exit()
