@@ -14,10 +14,10 @@ let
     ]
   );
   export-project-data = pkgs.writeShellScriptBin "extract-project-data" ''
-    ${pkgs.lib.getExe python} "${src}/sync/export-project-data.py" "$@"
+    ${pkgs.lib.getExe python} "${src}/scripts/export_project_data.py" "$@"
   '';
   sync-projects = pkgs.writeShellScriptBin "sync-projects" ''
-    ${pkgs.lib.getExe python} "${src}/sync/sync-projects.py" "$@"
+    ${pkgs.lib.getExe python} "${src}/scripts/sync_projects.py" "$@"
   '';
 in
 pkgs.mkShellNoCC {
