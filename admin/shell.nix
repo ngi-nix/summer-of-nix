@@ -11,6 +11,7 @@ let
       pandas-stubs
       pydantic
       githubkit
+      tqdm
     ]
   );
   export-project-data = pkgs.writeShellScriptBin "extract-project-data" ''

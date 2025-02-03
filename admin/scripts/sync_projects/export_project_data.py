@@ -7,6 +7,7 @@ import os
 import sys
 
 from pydantic import ValidationError
+from tqdm import tqdm
 
 from lib.models.dashboard import Fund
 from lib.models.notion import Subgrant
@@ -43,6 +44,7 @@ def main():
 
     subgrants = []
 
+    logger.info("Extracting data from subgrant files")
     for input_file in os.listdir(args.input_dir):
         if not input_file.endswith(".json"):
             continue
@@ -55,7 +57,7 @@ def main():
         try:
             fund = Fund(**data["fund"])
 
-            for subgrant in fund.subgrants:
+            for subgrant in tqdm(fund.subgrants, desc=input_file):
                 if subgrant.properties.webpage.name is None:
                     logger.warning(subgrant)
                     continue
