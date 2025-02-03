@@ -5,6 +5,7 @@ import json
 import logging
 from dataclasses import dataclass, field
 from enum import Enum
+from time import sleep
 from typing import List
 
 import pandas as pd
@@ -212,6 +213,9 @@ def main():
 
         synched_projects += 1
         projects_iterator.display()
+
+        if args.dry:
+            sleep(1)
 
         if synched_projects == args.projects:
             projects_iterator.update(1)
