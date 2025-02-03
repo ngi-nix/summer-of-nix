@@ -193,7 +193,6 @@ def main():
             # TODO: link missing artifacts to projects already in the repo
             if github.project_exists(p.name):
                 logger.info(f"{p.name} already exists in repo. Skipping.")
-                continue
 
             # Track projects
             if github.issue_exists(p.name):
@@ -211,7 +210,6 @@ def main():
             # Add new projects to repo
             if github.pr_exists(p.name):
                 logger.info(f"Pull request already open for {p.name}. Skipping.")
-                continue
 
             if github.branch_exists(p.branch_name):
                 logging.info(f"Branch already exists for {p.name}.")
