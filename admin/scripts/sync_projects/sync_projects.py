@@ -8,17 +8,18 @@ from enum import Enum
 from typing import List
 
 import pandas as pd
-from common.ghkit import GitClient
-from common.models.notion import Project, Subgrant
-from common.utils import (
+from pandas import Series
+from pydantic import BaseModel, ValidationError
+
+from lib.ghkit import GitClient
+from lib.models.notion import Project, Subgrant
+from lib.utils import (
     cleanup_empty,
     cleanup_urls,
     dir_path,
     load_credentials,
     remove_urls,
 )
-from pandas import Series
-from pydantic import BaseModel, ValidationError
 
 
 class Cli:
@@ -123,8 +124,7 @@ class Subgrants(BaseModel):
         return []
 
 
-# TODO: get status from Notion
-if __name__ == "__main__":
+def main():
     args = Cli().args
 
     load_credentials(args.credentials)
@@ -203,3 +203,8 @@ if __name__ == "__main__":
 
         if synched_projects == args.projects:
             break
+
+
+# TODO: get status from Notion
+if __name__ == "__main__":
+    main()

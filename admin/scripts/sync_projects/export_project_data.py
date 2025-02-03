@@ -6,10 +6,11 @@ import logging
 import os
 import sys
 
-from common.models.dashboard import Fund
-from common.models.notion import Subgrant
-from common.utils import dir_path
 from pydantic import ValidationError
+
+from lib.models.dashboard import Fund
+from lib.models.notion import Subgrant
+from lib.utils import dir_path
 
 
 class Cli:
@@ -33,7 +34,7 @@ class Cli:
         self.args = self.parser.parse_args()
 
 
-if __name__ == "__main__":
+def main():
     args = Cli().args
 
     logger = logging.getLogger(__name__)
@@ -74,3 +75,7 @@ if __name__ == "__main__":
 
     content = [s.model_dump() for s in subgrants]
     json.dump(content, sys.stdout, indent=2)
+
+
+if __name__ == "__main__":
+    main()
