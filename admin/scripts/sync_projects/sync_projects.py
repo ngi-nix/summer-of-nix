@@ -215,13 +215,14 @@ def main():
         projects_iterator.display()
 
         if args.dry:
-            sleep(1)
+            sleep(0.5)
 
         if synched_projects == args.projects:
             projects_iterator.update(1)
-            projects_iterator.display("Syncing Complete!")
             projects_iterator.close()
             break
+
+    tqdm.write(f"Synced {synched_projects} Projects.")
 
 
 # TODO: get status from Notion
