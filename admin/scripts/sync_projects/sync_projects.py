@@ -10,6 +10,7 @@ from typing import List
 import pandas as pd
 from pandas import Series
 from pydantic import BaseModel, ValidationError
+from tqdm import tqdm
 
 from lib.ghkit import GitClient
 from lib.models.notion import Project, Subgrant
@@ -157,8 +158,9 @@ def main():
         exit()
 
     github = GitClient(*args.repo.split("/"))
+    projects_iterator = tqdm(projects, total=args.projects, desc="Sync Progress")
 
-    for project in projects:
+    for project in projects_iterator:
         p = GitProject(project.name)
 
         for subgrant in project.subgrants:
@@ -182,7 +184,7 @@ def main():
                 project_issue = github.create_issue(p.name, p.description)
 
                 deliverables = list(Deliverable)
-                for d in deliverables:
+                for d in tqdm(deliverables, desc=f"Deliverables for {p.name}"):
                     sub_issue = github.create_issue(f"{p.name}: {d.value}")
                     github.link_sub_issue(project_issue.number, sub_issue.id)
 
@@ -200,8 +202,11 @@ def main():
             github.create_pr(p.name, p.branch_name)
 
         synched_projects += 1
+        projects_iterator.update()
+        projects_iterator.display()
 
         if synched_projects == args.projects:
+            projects_iterator.close()
             break
 
 
