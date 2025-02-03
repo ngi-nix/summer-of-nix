@@ -24,6 +24,7 @@ from lib.utils import (
 )
 
 
+@dataclass
 class Cli:
     def __init__(self) -> None:
         self.parser = argparse.ArgumentParser(
@@ -32,6 +33,7 @@ class Cli:
             """
         )
 
+        # Positional
         self.parser.add_argument(
             "notion_file",
             type=argparse.FileType("r"),
@@ -47,11 +49,12 @@ class Cli:
             help="Repository where the automation should happen (e.g., ngi-nix/ngipkgs)",
         )
 
+        # Optional
         self.parser.add_argument(
             "-n",
             "--dry",
             action="store_true",
-            help="Print information without creating anything",
+            help="Print expected actions without making any changes",
         )
         self.parser.add_argument(
             "-d",
@@ -62,27 +65,31 @@ class Cli:
         self.parser.add_argument(
             "-p",
             "--projects",
-            help=f"Number of projects to sync (default {default_projects})",
-            default=default_projects,
+            help=f"Number of projects to sync (defaults to {DefaultArgs.projects})",
+            default=DefaultArgs.projects,
             type=int,
         )
         self.parser.add_argument(
             "--credentials",
-            help="Directory from which GitHub credentials are loaded",
+            help=f"Directory from which GitHub credentials are loaded (defaults to '{DefaultArgs.credentials}')",
             type=dir_path,
-            default="./.env",
+            default=DefaultArgs.credentials,
         )
         self.parser.add_argument(
             "--template",
-            help="Directory for the project template",
+            help=f"Directory for the project template (defaults to '{DefaultArgs.template}')",
             type=dir_path,
-            default="./template",
+            default=DefaultArgs.template,
         )
 
         self.args = self.parser.parse_args()
 
 
-default_projects = 5
+class DefaultArgs:
+    # TODO: sync all projects by default?
+    projects = 5
+    credentials = "./.env"
+    template = "./template"
 
 
 class Deliverable(str, Enum):
