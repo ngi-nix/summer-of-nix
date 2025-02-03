@@ -132,7 +132,7 @@ def main():
     load_credentials(args.credentials)
 
     logger = logging.getLogger(__name__)
-    logging_level = logging.DEBUG if args.debug else logging.INFO
+    logging_level = logging.DEBUG if args.debug else logging.WARNING
     logging.basicConfig(level=logging_level)
 
     synched_projects = 0
