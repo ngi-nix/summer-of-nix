@@ -8,11 +8,17 @@ from enum import Enum
 from typing import List
 
 import pandas as pd
-from ghkit import GitClient
-from models_notion import Project, Subgrant
+from common.ghkit import GitClient
+from common.models.notion import Project, Subgrant
+from common.utils import (
+    cleanup_empty,
+    cleanup_urls,
+    dir_path,
+    load_credentials,
+    remove_urls,
+)
 from pandas import Series
 from pydantic import BaseModel, ValidationError
-from utils import cleanup_empty, cleanup_urls, dir_path, load_credentials, remove_urls
 
 
 class Cli:

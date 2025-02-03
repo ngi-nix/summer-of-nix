@@ -6,11 +6,10 @@ import logging
 import os
 import sys
 
+from common.models.dashboard import Fund
+from common.models.notion import Subgrant
+from common.utils import dir_path
 from pydantic import ValidationError
-
-from models_dashboard import Fund
-from models_notion import Subgrant
-from utils import dir_path
 
 
 class Cli:
