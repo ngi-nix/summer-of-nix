@@ -19,13 +19,6 @@ $ cat .env/GH_TOKEN
 <TOKEN>
 ```
 
-In the same directory, put the repository you'd like to sync with in a `REPO` file. Example:
-
-```sh
-$ cat .env/REPO
-ngi-nix/ngipkgs
-```
-
 ## NLnet Dashboard
 
 Activate the development environment:
