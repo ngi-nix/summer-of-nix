@@ -62,8 +62,8 @@ class Cli:
         self.parser.add_argument(
             "-p",
             "--projects",
-            help="Number of projects to process",
-            default=1,
+            help=f"Number of projects to sync (default {default_projects})",
+            default=default_projects,
             type=int,
         )
         self.parser.add_argument(
@@ -80,6 +80,9 @@ class Cli:
         )
 
         self.args = self.parser.parse_args()
+
+
+default_projects = 5
 
 
 class Deliverable(str, Enum):
