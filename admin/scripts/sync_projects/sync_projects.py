@@ -183,7 +183,7 @@ def main():
 
                 deliverables = list(Deliverable)
                 for d in deliverables:
-                    sub_issue = github.create_issue(f"{p.name} ({d.value})")
+                    sub_issue = github.create_issue(f"{p.name}: {d.value}")
                     github.link_sub_issue(project_issue.number, sub_issue.id)
 
             # Add new projects to repo
