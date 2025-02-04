@@ -4,7 +4,7 @@ import re
 import urllib.parse
 from base64 import b64encode
 from dataclasses import dataclass
-from typing import Callable, List, Optional, TypeVar
+from typing import Any, Optional
 
 from githubkit import GitHub, TokenAuthStrategy
 from githubkit.versions import RestVersionSwitcher
@@ -16,13 +16,6 @@ from githubkit.versions.v2022_11_28.models import (
 from githubkit.versions.v2022_11_28.types import (
     ReposOwnerRepoContentsPathPutBodyPropCommitterType,
 )
-
-T = TypeVar("T")
-
-
-def fetch_paginated_items(fetch_function: Callable, *args, **kwargs) -> List[T]:
-    """Fetches all items from a paginated API and returns them as a list."""
-    return [item for item in fetch_function(*args, **kwargs)]
 
 
 @dataclass
@@ -42,30 +35,34 @@ class GitClient:
         )
         self.author = self.committer
 
-        # https://yanyongyu.github.io/githubkit/usage/rest-api/#rest-api-pagination
-        self.issues: list[Issue] = fetch_paginated_items(
-            self.gh.paginate,
-            self.api.issues.list_for_repo,
-            owner=self.owner,
-            repo=self.repo,
-        )
-        self.branches: list[ShortBranch] = fetch_paginated_items(
-            self.gh.paginate,
-            self.gh.rest.repos.list_branches,
-            owner=self.owner,
-            repo=self.repo,
-        )
-        self.pulls_open: list[PullRequestSimple] = fetch_paginated_items(
-            self.gh.paginate,
-            self.api.pulls.list,
-            owner=self.owner,
-            repo=self.repo,
-            state="open",
-        )
+        self.issues: list[Issue] = self.get_issues()
+        self.branches: list[ShortBranch] = self.get_branches()
+        self.pulls: list[PullRequestSimple] = self.get_pulls()
+        self.projects = self.get_projects()
 
-        self.projects = self.api.repos.get_content(
-            self.owner, self.repo, path="projects"
-        ).parsed_data
+        # PRs are counted as issues in the API
+        self.issues = self.remove_prs_from_issues()
+
+    # https://yanyongyu.github.io/githubkit/usage/rest-api/#rest-api-pagination
+    def get_paginated_items(self, fetch_function) -> list:
+        """Fetches all items from a paginated API and returns them as a list."""
+        paginator = self.gh.paginate(fetch_function, owner=self.owner, repo=self.repo)
+        return [item for item in paginator]
+
+    def get_issues(self) -> list[Issue]:
+        return self.get_paginated_items(self.api.issues.list_for_repo)
+
+    def get_branches(self) -> list[ShortBranch]:
+        return self.get_paginated_items(self.gh.rest.repos.list_branches)
+
+    def get_pulls(self) -> list[PullRequestSimple]:
+        return self.get_paginated_items(self.api.pulls.list)
+
+    def get_projects(self):
+        return self.get_path_contents("projects")
+
+    def get_path_contents(self, path):
+        return self.api.repos.get_content(self.owner, self.repo, path=path).parsed_data
 
     def create_branch(self, branch_name):
         branch = self.clean_branch_name(branch_name)
