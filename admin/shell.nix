@@ -13,6 +13,7 @@ let
       githubkit
       tqdm
       ijson
+      pytest
     ]
   );
   export-project-data = pkgs.writeShellScriptBin "extract-project-data" ''
