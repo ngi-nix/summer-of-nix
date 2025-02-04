@@ -38,9 +38,10 @@ extract-project-data ./directory >>projects.json
 Get the project list from Notion:
 
 - Navigate to the [Projects list](https://www.notion.so/nixos-foundation/15759d49e1be808186e5dc8c2c600ba8?v=9e8141539d9c41ad98ab2368b12d030f) page
-- Make sure that the `Subgrants` field is in the view
+- If you can't access the page, you should request permissions
+- In the database table, make sure that the `Subgrants` field is in the view
 - Click on the top-right menu and export as a csv, choosing the default options
-- Save the ZIP file in your filesystem
+- Save the ZIP file to your filesystem
 
 # Usage
 

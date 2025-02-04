@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import argparse
-import json
 import logging
 from dataclasses import dataclass, field
 from enum import Enum
@@ -68,19 +67,19 @@ class Cli:
         self.parser.add_argument(
             "-p",
             "--projects",
-            help=f"Number of projects to sync (defaults to {DefaultArgs.projects})",
+            help=f"Number of projects to sync (default: to {DefaultArgs.projects})",
             default=DefaultArgs.projects,
             type=int,
         )
         self.parser.add_argument(
             "--credentials",
-            help=f"Directory from which GitHub credentials are loaded (defaults to '{DefaultArgs.credentials}')",
+            help=f"Directory from which GitHub credentials are loaded (default: to '{DefaultArgs.credentials}')",
             type=dir_path,
             default=DefaultArgs.credentials,
         )
         self.parser.add_argument(
             "--template",
-            help=f"Directory for the project template (defaults to '{DefaultArgs.template}')",
+            help=f"Directory for the project template (default: to '{DefaultArgs.template}')",
             type=dir_path,
             default=DefaultArgs.template,
         )
@@ -148,7 +147,7 @@ def main():
     logging_level = logging.DEBUG if args.debug else logging.WARNING
     logging.basicConfig(level=logging_level)
 
-    synched_projects = 0
+    synced_projects = 0
 
     notion_file = get_notion_projects(args.notion_zip)
 
@@ -228,18 +227,18 @@ def main():
             github.add_project(p.name, args.template)
             github.create_pr(p.name, p.branch_name)
 
-        synched_projects += 1
+        synced_projects += 1
         projects_iterator.display()
 
         if args.dry:
             sleep(0.5)
 
-        if synched_projects == args.projects:
+        if synced_projects == args.projects:
             projects_iterator.update(1)
             projects_iterator.close()
             break
 
-    tqdm.write(f"Synced {synched_projects} Projects.")
+    tqdm.write(f"Synced {synced_projects} Projects.")
 
 
 # TODO: get status from Notion
