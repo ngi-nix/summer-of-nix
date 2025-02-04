@@ -1,5 +1,17 @@
 {
   "pins": {
+    "ngipkgs": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "ngi-nix",
+        "repo": "ngipkgs"
+      },
+      "branch": "deliverable-models",
+      "revision": "159c1a48ff65b43c9ea27aba355d16507a8684c0",
+      "url": "https://github.com/ngi-nix/ngipkgs/archive/159c1a48ff65b43c9ea27aba355d16507a8684c0.tar.gz",
+      "hash": "1ld6jp5ss5bwqrd92jb9jxan09mc6sn0pbdxyc3vnwkcf11j8frw"
+    },
     "nixpkgs": {
       "type": "Git",
       "repository": {
