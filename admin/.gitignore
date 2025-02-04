@@ -1,5 +1,6 @@
 *.csv
 *.json
+*.zip
 .env
 !npins/sources.json
 

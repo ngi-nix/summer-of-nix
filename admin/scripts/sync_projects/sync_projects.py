@@ -20,8 +20,10 @@ from lib.utils import (
     cleanup_empty,
     cleanup_urls,
     dir_path,
+    get_notion_projects,
     load_credentials,
     remove_urls,
+    zip_file_type,
 )
 
 
@@ -36,9 +38,9 @@ class Cli:
 
         # Positional
         self.parser.add_argument(
-            "notion_file",
-            type=argparse.FileType("r"),
-            help="Contains the exported data from Notion",
+            "notion_zip",
+            type=zip_file_type,
+            help="ZIP file containing the exported data from Notion",
         )
         self.parser.add_argument(
             "dashboard_file",
@@ -148,7 +150,13 @@ def main():
 
     synched_projects = 0
 
-    projects = pd.read_csv(args.notion_file, usecols=["Name", "Subgrants"])
+    notion_file = get_notion_projects(args.notion_zip)
+
+    if notion_file is None:
+        logger.error(f"Failed to extract {args.notion_zip}")
+        exit()
+
+    projects = pd.read_csv(notion_file, usecols=["Name", "Subgrants"])
     projects["Name"] = cleanup_empty(projects["Name"])
 
     # Remove notion URLs from the subgrants. We need these for getting the project websites.
