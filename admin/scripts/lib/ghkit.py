@@ -9,6 +9,7 @@ from typing import Any, Optional
 from githubkit import GitHub, TokenAuthStrategy
 from githubkit.versions import RestVersionSwitcher
 from githubkit.versions.v2022_11_28.models import (
+    BranchWithProtection,
     Issue,
     PullRequestSimple,
     ShortBranch,
@@ -43,6 +44,8 @@ class GitClient:
         # PRs are counted as issues in the API
         self.issues = self.remove_prs_from_issues()
 
+        self.base_branch = self.get_branch("main")
+
     # https://yanyongyu.github.io/githubkit/usage/rest-api/#rest-api-pagination
     def get_paginated_items(self, fetch_function) -> list:
         """Fetches all items from a paginated API and returns them as a list."""
@@ -64,16 +67,18 @@ class GitClient:
     def get_path_contents(self, path):
         return self.api.repos.get_content(self.owner, self.repo, path=path).parsed_data
 
+    def get_branch(self, branch) -> BranchWithProtection:
+        return self.api.repos.get_branch(
+            self.owner, self.repo, branch=branch
+        ).parsed_data
+
     def create_branch(self, branch_name):
         branch = self.clean_branch_name(branch_name)
-        base_branch = self.api.repos.get_branch(
-            self.owner, self.repo, branch="main"
-        ).parsed_data
         ref = self.api.git.create_ref(
             self.owner,
             self.repo,
             ref=f"refs/heads/{branch}",
-            sha=base_branch.commit.sha,
+            sha=self.base_branch.commit.sha,
         ).parsed_data
         self.logger.info(f"Branch {branch} created.")
         return ref
