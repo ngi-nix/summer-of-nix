@@ -80,7 +80,7 @@ def main():
         except ValidationError as e:
             logger.error(e)
 
-    content = [s.model_dump() for s in subgrants]
+    content = {s.name: s.model_dump() for s in subgrants}
     json.dump(content, sys.stdout, indent=2)
 
 

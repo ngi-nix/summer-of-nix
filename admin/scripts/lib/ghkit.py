@@ -4,9 +4,10 @@ import re
 import urllib.parse
 from base64 import b64encode
 from dataclasses import dataclass
-from typing import Any, Optional
+from typing import Any, Callable, Optional
 
 from githubkit import GitHub, TokenAuthStrategy
+from githubkit.utils import UNSET
 from githubkit.versions import RestVersionSwitcher
 from githubkit.versions.v2022_11_28.models import (
     BranchWithProtection,
@@ -36,30 +37,41 @@ class GitClient:
         )
         self.author = self.committer
 
-        self.issues: list[Issue] = self.get_issues()
-        self.branches: list[ShortBranch] = self.get_branches()
-        self.pulls: list[PullRequestSimple] = self.get_pulls()
+        self.issues = self.get_issues()
+        self.branches = self.get_branches()
+        self.pulls = self.get_pulls()
         self.projects = self.get_projects()
-
-        # PRs are counted as issues in the API
-        self.issues = self.remove_prs_from_issues()
-
         self.base_branch = self.get_branch("main")
 
+    def issue_is_pr(self, fetch_function: Callable, issue):
+        """Determines if an issue item is a PR"""
+        if fetch_function.__name__ == "fetch_issues":
+            return hasattr(issue, "pull_request") and issue.pull_request is not UNSET
+        return False
+
     # https://yanyongyu.github.io/githubkit/usage/rest-api/#rest-api-pagination
-    def get_paginated_items(self, fetch_function) -> list:
+    def get_paginated_items(self, fetch_function: Callable, key: str, *args, **kwargs):
         """Fetches all items from a paginated API and returns them as a list."""
-        paginator = self.gh.paginate(fetch_function, owner=self.owner, repo=self.repo)
-        return [item for item in paginator]
+        paginator = self.gh.paginate(
+            fetch_function, owner=self.owner, repo=self.repo, *args, **kwargs
+        )
+        items = {}
+        for item in paginator:
+            if self.issue_is_pr(fetch_function, item):
+                continue
+            items[getattr(item, key)] = item
+        return items
 
-    def get_issues(self) -> list[Issue]:
-        return self.get_paginated_items(self.api.issues.list_for_repo)
+    def get_issues(self) -> dict[str, Issue]:
+        return self.get_paginated_items(
+            self.api.issues.list_for_repo, "title", state="all"
+        )
 
-    def get_branches(self) -> list[ShortBranch]:
-        return self.get_paginated_items(self.gh.rest.repos.list_branches)
+    def get_branches(self) -> dict[str, ShortBranch]:
+        return self.get_paginated_items(self.gh.rest.repos.list_branches, "name")
 
-    def get_pulls(self) -> list[PullRequestSimple]:
-        return self.get_paginated_items(self.api.pulls.list)
+    def get_pulls(self) -> dict[str, PullRequestSimple]:
+        return self.get_paginated_items(self.api.pulls.list, "title")
 
     def get_projects(self):
         return self.get_path_contents("projects")
