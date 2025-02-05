@@ -29,7 +29,5 @@ pkgs.mkShellNoCC {
     python
     sync-projects
   ];
-  shellHook = ''
-    ln -s "${sources.ngipkgs}/projects/deliverables.py" scripts/lib/models/deliverables.py
-  '';
+  PYTHONPATH = "${sources.ngipkgs}/projects";
 }
