@@ -4,6 +4,18 @@ Scripts to automatically open PRs for projects and track them in issues.
 
 # Setup
 
+First, make sure that you're inside the development environment:
+
+```sh
+nix-shell
+```
+
+If you have [direnv](https://github.com/nix-community/nix-direnv) installed, you can also automatically do this when you enter the directory by executing:
+
+```sh
+direnv allow
+```
+
 ## Credentials
 
 Create a [fine-grained token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token) with the following permissions:
@@ -21,13 +33,13 @@ $ cat .env/GH_TOKEN
 
 ## NLnet Dashboard
 
-Activate the development environment:
+First, you have to:
 
-```sh
-nix-shell
-```
+- Go the the [NLnet dashboard](https://dashboard.nlnet.nl) and enter your credentials
+- Go to each grant page, append `?json=true` to the URL, and download the file
+- Put all downloaded files in a single directory
 
-Run the extraction script on a directory containing the JSON files exported from the NLnet dashboard:
+Then, to extract the data, run:
 
 ```sh
 extract-project-data ./directory >>projects.json
