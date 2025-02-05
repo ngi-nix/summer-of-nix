@@ -33,6 +33,11 @@ class Cli:
             action="store_true",
             help="Print debugging information",
         )
+
+        if len(sys.argv) == 1:
+            self.parser.print_help()
+            sys.exit(1)
+
         self.args = self.parser.parse_args()
 
 

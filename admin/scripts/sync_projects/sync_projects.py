@@ -2,6 +2,7 @@
 
 import argparse
 import logging
+import sys
 from dataclasses import dataclass, field
 from enum import Enum
 from time import sleep
@@ -83,6 +84,10 @@ class Cli:
             type=dir_path,
             default=DefaultArgs.template,
         )
+
+        if len(sys.argv) == 1:
+            self.parser.print_help()
+            sys.exit(1)
 
         self.args = self.parser.parse_args()
 
