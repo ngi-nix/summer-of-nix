@@ -1,6 +1,6 @@
 import json
 from pathlib import Path
-from typing import Any, Callable, List, Type, Union
+from typing import Any, Callable, Type, Union
 
 import httpx
 import pytest
@@ -8,14 +8,9 @@ from githubkit import GitHub
 from githubkit.response import Response
 from githubkit.typing import UnsetType, URLTypes
 from githubkit.utils import UNSET
-from githubkit.versions.v2022_11_28.models import Issue, ShortBranch
-from pydantic import BaseModel
+from githubkit.versions.v2022_11_28.models import Issue, PullRequestSimple, ShortBranch
 
 from ...lib.ghkit import GitClient
-
-
-class ItemsList(BaseModel):
-    items: List[Any]
 
 
 def load_fake_response(filename: str) -> Any:
@@ -28,29 +23,44 @@ fake_pulls_response = load_fake_response("fake_responses/pulls.json")
 fake_branch_main = load_fake_response("fake_responses/main.json")
 
 
-def mock_items(api_method: Callable, *args, **kwargs) -> Any:
-    response = api_method("owner", "repo", *args, **kwargs).parsed_data
-    return ItemsList(items=response)
+def mock_items(api_method: Callable, key: str, *args, **kwargs) -> Any:
+    response: list[Any] = api_method("owner", "repo", *args, **kwargs).parsed_data
+    return {getattr(item, key): item for item in response}
 
 
-def mock_issues(self) -> ItemsList:
-    return mock_items(self.api.issues.list_for_repo)
+def mock_issues(self) -> dict[str, Issue]:
+    return mock_items(self.api.issues.list_for_repo, "title")
 
 
-def mock_branches(self) -> ItemsList:
-    return mock_items(self.api.repos.list_branches)
+def mock_branches(self) -> dict[str, ShortBranch]:
+    return mock_items(self.api.repos.list_branches, "name")
 
 
-def mock_pulls(self) -> ItemsList:
-    return mock_items(self.api.pulls.list)
+def mock_pulls(self) -> dict[str, PullRequestSimple]:
+    return mock_items(self.api.pulls.list, "title")
 
 
 def mock_projects(self):
     return ""
 
 
-def remove_prs_from_issues(self):
-    pass
+def get_issue(issues: dict[str, Issue], title) -> Issue | None:
+    if title in issues:
+        return issues[title]
+    return None
+
+
+def unique_issues(issues: dict[str, Issue], title: str):
+    """Checks that the issue does not exist multiple times"""
+    issue_number = []
+
+    for i in issues.values():
+        if i.title == title:
+            issue_number.append(i.number)
+
+    if len(issue_number) > 1:
+        return False
+    return True
 
 
 def mock_request(
@@ -91,7 +101,6 @@ def test_sync_mock():
             "get_branches": mock_branches,
             "get_pulls": mock_pulls,
             "get_projects": mock_projects,
-            "remove_prs_from_issues": remove_prs_from_issues,
         }
 
         for method_name, mock_method in mock_methods.items():
@@ -99,8 +108,13 @@ def test_sync_mock():
 
         gh = GitClient("owner", "repo")
 
-        issues: list[Issue] = gh.get_issues()
-        assert isinstance(issues, ItemsList)
+        issues: dict[str, Issue] = gh.get_issues()
+        issue = get_issue(issues, "#Seppo!")
 
-        branches: list[ShortBranch] = gh.get_branches()
-        assert isinstance(branches, ItemsList)
+        assert issue is not None
+
+        # Only one issue exists for the project
+        assert unique_issues(issues, issue.title)
+
+        # The original issue is picked and not the duplicate
+        assert issue.number == 575
