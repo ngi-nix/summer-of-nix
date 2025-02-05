@@ -12,7 +12,6 @@ from githubkit.versions.v2022_11_28.models import Issue, ShortBranch
 from pydantic import BaseModel
 
 from ...lib.ghkit import GitClient
-from ...lib.utils import load_credentials
 
 
 class ItemsList(BaseModel):
@@ -85,6 +84,7 @@ def mock_request(
 def test_sync_mock():
     with pytest.MonkeyPatch.context() as m:
         m.setattr(GitHub, "request", mock_request)
+        m.setenv("GH_TOKEN", "xxxx")
 
         mock_methods = {
             "get_issues": mock_issues,
@@ -96,8 +96,6 @@ def test_sync_mock():
 
         for method_name, mock_method in mock_methods.items():
             m.setattr(GitClient, method_name, mock_method)
-
-        load_credentials("./.env")
 
         gh = GitClient("owner", "repo")
 
