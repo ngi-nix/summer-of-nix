@@ -68,19 +68,19 @@ class Cli:
         self.parser.add_argument(
             "-p",
             "--projects",
-            help=f"Number of projects to sync (default: {DefaultArgs.projects})",
+            help="Number of projects to sync (default: %(default)s)",
             default=DefaultArgs.projects,
             type=int,
         )
         self.parser.add_argument(
             "--credentials",
-            help=f"Directory from which GitHub credentials are loaded (default: '{DefaultArgs.credentials}')",
+            help="Directory from which GitHub credentials are loaded (default: %(default)s)",
             type=dir_path,
             default=DefaultArgs.credentials,
         )
         self.parser.add_argument(
             "--template",
-            help=f"Directory for the project template (default: '{DefaultArgs.template}')",
+            help="Directory for the project template (default: %(default)s)",
             type=dir_path,
             default=DefaultArgs.template,
         )
