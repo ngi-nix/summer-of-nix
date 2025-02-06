@@ -45,11 +45,9 @@ class GitClient:
         self.projects = self.get_projects()
         self.base_branch = self.get_branch("main")
 
-    def issue_is_pr(self, fetch_function: Callable, issue):
+    def issue_is_pr(self, issue: Issue):
         """Determines if an issue item is a PR"""
-        if fetch_function.__name__ == "fetch_issues":
-            return hasattr(issue, "pull_request") and issue.pull_request is not UNSET
-        return False
+        return hasattr(issue, "pull_request") and issue.pull_request is not UNSET
 
     # https://yanyongyu.github.io/githubkit/usage/rest-api/#rest-api-pagination
     def get_paginated_items(self, fetch_function: Callable, key: str, *args, **kwargs):
@@ -57,11 +55,14 @@ class GitClient:
         paginator = self.gh.paginate(
             fetch_function, owner=self.owner, repo=self.repo, *args, **kwargs
         )
+
         items = {}
         for item in paginator:
-            if self.issue_is_pr(fetch_function, item):
-                continue
+            if fetch_function.__name__ == "list_for_repo":
+                if self.issue_is_pr(item):
+                    continue
             items[getattr(item, key)] = item
+
         return items
 
     def get_issues(self) -> dict[str, Issue]:
