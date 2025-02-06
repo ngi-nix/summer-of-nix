@@ -11,6 +11,8 @@ from githubkit.utils import UNSET
 from githubkit.versions import RestVersionSwitcher
 from githubkit.versions.v2022_11_28.models import (
     BranchWithProtection,
+    ContentDirectoryItems,
+    ContentFile,
     Issue,
     PullRequestSimple,
     ShortBranch,
@@ -207,24 +209,27 @@ class GitClient:
         cleaned_name = re.sub(r"[^a-z0-9._/-]", "", cleaned_name)
         return cleaned_name
 
-    def exists(self, collection, attribute, value: str):
-        for item in collection:
-            if str(getattr(item, attribute)).lower() == value.lower():
-                return True
-
-        return False
+    def exists(self, issues: dict[str, Any], title) -> Any | None:
+        if title in issues:
+            return issues[title]
+        return None
 
     def project_exists(self, name: str):
-        return self.exists(self.projects, "path", f"projects/{name}")
+        for item in self.projects:
+            if isinstance(item, ContentDirectoryItems):
+                return item.path == name
+            else:
+                return name in item
+        return False
 
     def branch_exists(self, name):
-        return self.exists(self.branches, "name", self.clean_branch_name(name))
+        return self.exists(self.branches, self.clean_branch_name(name))
 
     def pr_exists(self, title: str):
-        return self.exists(self.pulls_open, "title", title)
+        return self.exists(self.pulls, title)
 
     def issue_exists(self, title):
-        return self.exists(self.issues, "title", title)
+        return self.exists(self.issues, title)
 
     def get_file_sha(self, path: str) -> Optional[str]:
         try:
