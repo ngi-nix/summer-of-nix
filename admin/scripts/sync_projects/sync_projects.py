@@ -208,17 +208,12 @@ def main():
                 logger.info(f"{p.name} already exists in repo. Skipping.")
 
             # Track projects
-            if github.issue_exists(p.name):
-                logger.info(f"{p.name} already tracked with an issue.")
-            else:
-                project_issue = github.create_issue(p.name, p.description)
+            project_issue = github.get_or_create_issue(p.name, p.description)
 
-                deliverables = list(Deliverable)
-                for d in tqdm(
-                    deliverables, desc=f"Deliverables for {p.name}", position=1
-                ):
-                    sub_issue = github.create_issue(f"{p.name}: {d.value}")
-                    github.link_sub_issue(project_issue.number, sub_issue.id)
+            deliverables = list(Deliverable)
+            for d in tqdm(deliverables, desc=f"Deliverables for {p.name}", position=1):
+                sub_issue = github.get_or_create_issue(f"{p.name}: {d.value}")
+                github.link_sub_issue(project_issue, sub_issue)
 
             # Add new projects to repo
             if github.pr_exists(p.name):
