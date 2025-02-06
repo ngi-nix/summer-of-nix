@@ -1,18 +1,19 @@
 import logging
 import os
 import re
+import textwrap
 import urllib.parse
 from base64 import b64encode
 from dataclasses import dataclass
 from typing import Any, Callable, Optional
 
 from githubkit import GitHub, TokenAuthStrategy
+from githubkit.exception import RequestFailed
 from githubkit.utils import UNSET
 from githubkit.versions import RestVersionSwitcher
 from githubkit.versions.v2022_11_28.models import (
     BranchWithProtection,
     ContentDirectoryItems,
-    ContentFile,
     Issue,
     PullRequestSimple,
     ShortBranch,
@@ -173,27 +174,64 @@ class GitClient:
             except Exception as e:
                 self.logger.debug(e)
 
-    def create_issue(self, title, body="") -> Issue:
+    def get_or_create_issue(self, title, body="") -> Issue:
+        issue = self.get_issue(self.issues, title)
+
+        if issue is not None:
+            self.logger.info(f"{title} already tracked with an issue.")
+            return issue
+
         issue = self.api.issues.create(
             self.owner, self.repo, title=title, body=body
         ).parsed_data
 
         self.add_label(issue.number, ["automated"])
+
         return issue
 
-    def get_sub_issues(self, issue_number) -> list[Issue]:
-        return self.api.issues.list_sub_issues(
+    def get_sub_issues(self, issue_number):
+        response = self.api.issues.list_sub_issues(
             self.owner, self.repo, issue_number
         ).parsed_data
+        return {issue.id: issue for issue in response}
 
-    def link_sub_issue(self, issue_number, sub_issue_id):
+    def get_sub_issue_summary(self, issue: Issue):
+        if (
+            hasattr(issue, "sub_issues_summary")
+            and issue.sub_issues_summary is not UNSET
+        ):
+            return issue.sub_issues_summary
+        return None
+
+    def link_sub_issue(self, issue: Issue, sub_issue: Issue):
         """Add sub-issue to a parent issue"""
-        self.api.issues.add_sub_issue(
-            self.owner,
-            self.repo,
-            issue_number=issue_number,
-            sub_issue_id=sub_issue_id,
-        ).parsed_data
+
+        def msg(i: Issue):
+            return f"'{i.title} (#{i.number})'"
+
+        sub_issues = self.get_sub_issues(issue.number)
+        if sub_issue.id in sub_issues:
+            self.logger.info(
+                f"Sub-issue '{msg(sub_issue)}' is already linked to parent '{msg(issue)}'."
+            )
+            return
+
+        try:
+            self.api.issues.add_sub_issue(
+                self.owner,
+                self.repo,
+                issue_number=issue.number,
+                sub_issue_id=sub_issue.id,
+            ).parsed_data
+        except RequestFailed as e:
+            self.logger.warning(
+                textwrap.dedent(
+                    f"""
+                        Failed to link sub-issue {msg(sub_issue)} to parent {msg(issue)}.
+                        {e}
+                        """
+                )
+            )
 
     def sub_issue_summary(self, issue_number):
         return self.api.issues.get(
@@ -231,6 +269,11 @@ class GitClient:
 
     def issue_exists(self, title):
         return self.exists(self.issues, title)
+
+    def get_issue(self, issues: dict[str, Issue], title) -> Issue | None:
+        if title in issues:
+            return issues[title]
+        return None
 
     def get_file_sha(self, path: str) -> Optional[str]:
         try:
