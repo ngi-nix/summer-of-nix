@@ -1,11 +1,9 @@
 import logging
 import os
-import textwrap
 from dataclasses import dataclass
 from typing import Any, Callable
 
 from githubkit import GitHub, TokenAuthStrategy
-from githubkit.exception import RequestFailed
 from githubkit.utils import UNSET
 from githubkit.versions import RestVersionSwitcher
 from githubkit.versions.v2022_11_28.models import (
@@ -60,7 +58,7 @@ class GitClient:
             self.api.issues.list_for_repo, "title", state="all"
         )
 
-    def get_or_create_issue(self, title, body="") -> Issue:
+    def create_issue(self, title, body="") -> Issue:
         issue = self.get_issue(title)
 
         if issue is not None:
@@ -74,55 +72,6 @@ class GitClient:
         self.add_label(issue.number, ["automated"])
 
         return issue
-
-    def get_sub_issues(self, issue_number):
-        response = self.api.issues.list_sub_issues(
-            self.owner, self.repo, issue_number
-        ).parsed_data
-        return {issue.id: issue for issue in response}
-
-    def get_sub_issue_summary(self, issue: Issue):
-        if (
-            hasattr(issue, "sub_issues_summary")
-            and issue.sub_issues_summary is not UNSET
-        ):
-            return issue.sub_issues_summary
-        return None
-
-    def link_sub_issue(self, issue: Issue, sub_issue: Issue):
-        """Add sub-issue to a parent issue"""
-
-        def msg(i: Issue):
-            return f"'{i.title} (#{i.number})'"
-
-        sub_issues = self.get_sub_issues(issue.number)
-        if sub_issue.id in sub_issues:
-            self.logger.info(
-                f"Sub-issue '{msg(sub_issue)}' is already linked to parent '{msg(issue)}'."
-            )
-            return
-
-        try:
-            self.api.issues.add_sub_issue(
-                self.owner,
-                self.repo,
-                issue_number=issue.number,
-                sub_issue_id=sub_issue.id,
-            ).parsed_data
-        except RequestFailed as e:
-            self.logger.warning(
-                textwrap.dedent(
-                    f"""
-                        Failed to link sub-issue {msg(sub_issue)} to parent {msg(issue)}.
-                        {e}
-                        """
-                )
-            )
-
-    def sub_issue_summary(self, issue_number):
-        return self.api.issues.get(
-            self.owner, self.repo, issue_number=issue_number
-        ).parsed_data.sub_issues_summary
 
     def add_label(self, issue_number: int, labels: list[str]):
         return self.api.issues.add_labels(

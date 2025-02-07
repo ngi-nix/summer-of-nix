@@ -4,7 +4,6 @@ import argparse
 import logging
 import sys
 from dataclasses import dataclass, field
-from enum import Enum
 from time import sleep
 from typing import List
 
@@ -96,14 +95,6 @@ class DefaultArgs:
     projects = 5
     credentials = "./.env"
     template = "./template"
-
-
-class Deliverable(str, Enum):
-    SERVICES = "services"
-    EXECUTABLES = "executables"
-    LIBRARIES = "libraries"
-    TESTS = "tests"
-    DEVENV = "devenv"
 
 
 @dataclass
@@ -202,21 +193,8 @@ def main():
 
         if args.dry:
             logger.debug(f"{p.branch_name}\n{p.description}\n")
-        else:
-            project_issue = gh.get_or_create_issue(p.name, p.description)
 
-        deliverables = list(Deliverable)
-        deliverable_iter = tqdm(
-            deliverables, desc=f"Deliverables for {p.name}", position=1
-        )
-
-        for d in deliverable_iter:
-            if args.dry:
-                sleep(0.5)
-                continue
-
-            sub_issue = gh.get_or_create_issue(f"{p.name}: {d.value}")
-            gh.link_sub_issue(project_issue, sub_issue)
+        gh.create_issue(p.name, p.description)
 
         synced_projects += 1
         projects_iter.display()
