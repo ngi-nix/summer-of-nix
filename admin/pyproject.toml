@@ -1,0 +1,18 @@
+[project]
+name = "automation-scripts"
+version = "0.1.0"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "ijson",
+  "pandas",
+  "pandas-stubs",
+  "githubkit",
+  "pydantic",
+  "tqdm",
+]
+
+[dependency-groups]
+dev = [
+  "pytest>=8.3.4",
+]
