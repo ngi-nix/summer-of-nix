@@ -40,6 +40,7 @@
           pkgs.mkShell {
             buildInputs = [
               pkgs.uv
+              self'.packages.extract-project-data
               self'.packages.sync-issues
               virtualenv
             ];
