@@ -7,6 +7,7 @@ import os
 import sys
 
 import ijson
+import pandas as pd
 from common.models.dashboard import Fund
 from common.models.notion import Subgrant
 from common.utils import dir_path
@@ -31,6 +32,13 @@ class Cli:
             "--debug",
             action="store_true",
             help="Print debugging information",
+        )
+        self.parser.add_argument(
+            "-f",
+            "--format",
+            default="json",
+            choices=["json", "csv"],
+            help="Output file format (default: %(default)s)",
         )
 
         if len(sys.argv) == 1:
@@ -68,7 +76,9 @@ def main():
 
                     subgrants.append(
                         Subgrant(
+                            id=subgrant.id,
                             name=subgrant.properties.webpage.name,
+                            fund=subgrant.proposal.fund,
                             websites=subgrant.proposal.websites.website,
                             summary=subgrant.properties.webpage.summary,
                             contact=Subgrant.Contact(
@@ -78,6 +88,16 @@ def main():
                     )
         except ValidationError as e:
             logger.error(e)
+
+    if args.format == "csv":
+        df = pd.DataFrame([s.model_dump() for s in subgrants])
+
+        # Naming should correspond to Notion columns
+        df.columns = df.columns.str.capitalize()
+        df.rename(columns={"Id": "Subgrant ID"}, inplace=True)
+
+        df.to_csv(sys.stdout, encoding="utf-8", index=False)
+        return
 
     content = {s.name: s.model_dump() for s in subgrants}
     json.dump(content, sys.stdout, indent=2)
