@@ -1,5 +1,5 @@
 {
-  description = "Using Nix Flake apps to run scripts with uv2nix";
+  description = "Automation scripts for NIX@NGI applications";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
