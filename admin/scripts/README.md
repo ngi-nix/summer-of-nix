@@ -60,7 +60,7 @@ Get the project list from Notion:
 With the development environment active, run:
 
 ```sh
-sync-projects --help
+sync-issues --help
 ```
 
 and follow the instructions.
