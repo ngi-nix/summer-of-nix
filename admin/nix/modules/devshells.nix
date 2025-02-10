@@ -36,12 +36,17 @@
             #
             # Enable all optional dependencies for development.
             virtualenv = editablePythonSet.mkVirtualEnv "scripts-dev-env" devArgs.workspace.deps.all;
+
+            packages = lib.mapAttrsToList (name: value: value) self'.packages;
+            packagesMessage = lib.pipe self'.packages [
+              (lib.mapAttrsToList (name: value: "- ${name}"))
+              (lib.concatStringsSep "\n")
+            ];
           in
           pkgs.mkShell {
             buildInputs = [
               pkgs.uv
-              self'.packages.extract-project-data
-              self'.packages.sync-issues
+              packages
               virtualenv
             ];
 
@@ -62,6 +67,9 @@
 
               # Get repository root using git. This is expanded at runtime by the editable `.pth` machinery.
               export REPO_ROOT=$(git rev-parse --show-toplevel)
+
+              echo "Available scripts:"
+              echo "${packagesMessage}"
             '';
           };
       };
