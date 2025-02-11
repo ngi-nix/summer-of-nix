@@ -1,6 +1,6 @@
 # Description
 
-Scripts to automatically open issues for projects, with useful information in their descriptions.
+Automatically open issues for NLnet projects containing useful project metadata.
 
 # Setup
 
@@ -33,7 +33,7 @@ $ cat .env/GH_TOKEN
 
 ## NLnet Dashboard
 
-First, you have to:
+Download projects metadata from NLnet dashboard:
 
 - Go the the [NLnet dashboard](https://dashboard.nlnet.nl) and enter your credentials
 - Go to each grant page, append `?json=true` to the URL, and download the file
@@ -42,7 +42,7 @@ First, you have to:
 Then, to extract the data, run:
 
 ```sh
-extract-project-data ./directory >>projects.json
+extract-project-metadata ./project-metadata >>metadata.json
 ```
 
 ## Notion
