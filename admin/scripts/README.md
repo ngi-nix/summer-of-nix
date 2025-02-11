@@ -7,7 +7,7 @@ Automatically open issues for NLnet projects containing useful project metadata.
 First, make sure that you're inside the development environment:
 
 ```sh
-nix develop
+nix-shell
 ```
 
 If you have [direnv](https://github.com/nix-community/nix-direnv) installed, you can also automatically do this when you enter the directory by executing:
