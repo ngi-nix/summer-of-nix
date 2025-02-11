@@ -66,15 +66,14 @@ class Cli:
         self.parser.add_argument(
             "-p",
             "--projects",
-            help="Number of projects to sync (default: %(default)s)",
-            default=DefaultArgs.projects,
+            help="Number of projects to sync (default: all projects)",
             type=int,
         )
         self.parser.add_argument(
             "--credentials",
             help="Directory from which GitHub credentials are loaded (default: %(default)s)",
             type=dir_path,
-            default=DefaultArgs.credentials,
+            default="./.env",
         )
 
         if len(sys.argv) == 1:
@@ -82,12 +81,6 @@ class Cli:
             sys.exit(1)
 
         self.args = self.parser.parse_args()
-
-
-class DefaultArgs:
-    # TODO: sync all projects by default?
-    projects = 5
-    credentials = "./.env"
 
 
 @dataclass
@@ -166,11 +159,13 @@ def main():
 
     gh = GitClient(*args.repo.split("/"))
 
+    total_projects = args.projects if args.projects != 0 else len(projects)
+
     projects_iter = tqdm(
         projects,
         desc="Sync Progress",
         unit="Project",
-        total=args.projects,
+        total=total_projects,
         leave=False,
         position=0,
     )
