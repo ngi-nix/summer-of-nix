@@ -35,12 +35,15 @@ pkgs.mkShellNoCC {
 
   shellHook = ''
     # Undo dependency propagation by nixpkgs.
+    # See https://pyproject-nix.github.io/pyproject.nix/build.html
     unset PYTHONPATH
 
     # Get repository root using git. This is expanded at runtime by the editable `.pth` machinery.
     export REPO_ROOT=$(git rev-parse --show-toplevel)
 
-    echo "Available scripts:"
-    echo "${scriptsList}"
+    echo "
+    Available scripts:
+    ${scriptsList}
+    "
   '';
 }

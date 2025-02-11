@@ -24,7 +24,7 @@ Create a [fine-grained token](https://docs.github.com/en/authentication/keeping-
 - Issues: Read & write
 - Pull Requests: Read & write
 
-Put the token in a file with the name `GH_TOKEN` in your crendentials directory. Example:
+Store the token in a `.env/GH_TOKEN` file. For example:
 
 ```sh
 $ cat .env/GH_TOKEN
@@ -42,7 +42,7 @@ Download projects metadata from NLnet dashboard:
 Then, to extract the data, run:
 
 ```sh
-extract-project-metadata ./project-metadata >>metadata.json
+extract-project-metadata ./directory >>metadata.json
 ```
 
 ## Notion
