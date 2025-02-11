@@ -7,9 +7,9 @@
 rec {
   # Get a list of regular Python files in a directory
   getPyFiles =
-    basedir:
+    scriptsDir:
     lib.filterAttrs (name: type: type == "regular" && lib.hasSuffix ".py" name) (
-      builtins.readDir basedir
+      builtins.readDir scriptsDir
     );
 
   scriptName =
@@ -21,14 +21,14 @@ rec {
 
   mkPackage =
     {
-      basedir,
+      scriptsDir,
       file_name,
       buildInputs ? [ ],
       extraHook ? "",
       ...
     }:
     let
-      script = basedir + "/${file_name}";
+      script = scriptsDir + "/${file_name}";
       name = scriptName file_name;
 
       # Patch script shebang
@@ -45,21 +45,4 @@ rec {
     writeShellScriptBin name ''
       ${program}/${name} "$@"
     '';
-
-  # Make a script "greet.py" runnable as "nix run .#greet"
-  mkApps =
-    { basedir, packages, ... }:
-    let
-      files = getPyFiles basedir;
-    in
-    lib.mapAttrs' (
-      file_name: _:
-      let
-        name = scriptName file_name;
-      in
-      lib.nameValuePair name {
-        type = "app";
-        program = packages.${name};
-      }
-    ) files;
 }

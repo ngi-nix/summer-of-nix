@@ -17,3 +17,4 @@ wheels/
 # Nix
 result*
 .direnv*
+!npins/sources.json
