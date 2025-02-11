@@ -166,7 +166,6 @@ def main():
         desc="Sync Progress",
         unit="Project",
         total=total_projects,
-        leave=False,
         position=0,
     )
 
@@ -194,8 +193,6 @@ def main():
             projects_iter.update(1)
             projects_iter.close()
             break
-
-    tqdm.write(f"Synced {synced_projects} Projects.")
 
 
 if __name__ == "__main__":
