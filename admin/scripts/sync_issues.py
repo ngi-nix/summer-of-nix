@@ -179,10 +179,10 @@ def main():
         p.clean_websites()
         p.update_description()
 
-        if args.dry:
-            logger.debug(f"{p.branch_name}\n{p.description}\n")
+        logger.debug(f"{p.branch_name}\n{p.description}\n")
 
-        gh.create_issue(p.name, p.description)
+        if not args.dry:
+            gh.create_issue(p.name, p.description)
 
         synced_projects += 1
         projects_iter.display()
