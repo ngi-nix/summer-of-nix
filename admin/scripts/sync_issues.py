@@ -157,7 +157,7 @@ def main():
         logger.error(f"Failed to parse {args.dashboard_file}: {e}")
         exit()
 
-    gh = GitClient(*args.repo.split("/"))
+    gh = GitClient(*args.repo.split("/")) if not args.dry else None
 
     total_projects = args.projects if args.projects != 0 else len(projects)
 
@@ -181,7 +181,7 @@ def main():
 
         logger.debug(f"{p.branch_name}\n{p.description}\n")
 
-        if not args.dry:
+        if gh is not None:
             gh.create_issue(p.name, p.description)
 
         synced_projects += 1
