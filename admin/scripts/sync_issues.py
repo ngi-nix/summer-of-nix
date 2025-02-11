@@ -30,7 +30,7 @@ class Cli:
     def __init__(self) -> None:
         self.parser = argparse.ArgumentParser(
             description="""
-            Read project information exported from the NLnet dashboard and Notion, and create one GitHub pull request and milestone per project, based on a template.
+            Read project information exported from the NLnet dashboard and Notion, and create one GitHub issue per project.
             """
         )
 
@@ -76,12 +76,6 @@ class Cli:
             type=dir_path,
             default=DefaultArgs.credentials,
         )
-        self.parser.add_argument(
-            "--template",
-            help="Directory for the project template (default: %(default)s)",
-            type=dir_path,
-            default=DefaultArgs.template,
-        )
 
         if len(sys.argv) == 1:
             self.parser.print_help()
@@ -94,7 +88,6 @@ class DefaultArgs:
     # TODO: sync all projects by default?
     projects = 5
     credentials = "./.env"
-    template = "./template"
 
 
 @dataclass
