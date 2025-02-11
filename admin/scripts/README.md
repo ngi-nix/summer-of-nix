@@ -20,9 +20,7 @@ direnv allow
 
 Create a [fine-grained token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token) with the following permissions:
 
-- Contents: Read & write
 - Issues: Read & write
-- Pull Requests: Read & write
 
 Store the token in a `.env/GH_TOKEN` file. For example:
 
