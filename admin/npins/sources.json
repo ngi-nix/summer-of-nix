@@ -1,0 +1,65 @@
+{
+  "pins": {
+    "ngipkgs": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "ngi-nix",
+        "repo": "ngipkgs"
+      },
+      "branch": "deliverable-models",
+      "revision": "159c1a48ff65b43c9ea27aba355d16507a8684c0",
+      "url": "https://github.com/ngi-nix/ngipkgs/archive/159c1a48ff65b43c9ea27aba355d16507a8684c0.tar.gz",
+      "hash": "1ld6jp5ss5bwqrd92jb9jxan09mc6sn0pbdxyc3vnwkcf11j8frw"
+    },
+    "nixpkgs": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nixos",
+        "repo": "nixpkgs"
+      },
+      "branch": "nixos-unstable",
+      "revision": "a79cfe0ebd24952b580b1cf08cd906354996d547",
+      "url": "https://github.com/nixos/nixpkgs/archive/a79cfe0ebd24952b580b1cf08cd906354996d547.tar.gz",
+      "hash": "1imkffvs7h2c9ppf00jb6m5ah9zk46i3dqxmzm4x4dfdiw5c92wq"
+    },
+    "pyproject-build-systems": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "pyproject-nix",
+        "repo": "build-system-pkgs"
+      },
+      "branch": "master",
+      "revision": "e4ec65fabc1ff5abf61825f3ac07d0e1d157f1c1",
+      "url": "https://github.com/pyproject-nix/build-system-pkgs/archive/e4ec65fabc1ff5abf61825f3ac07d0e1d157f1c1.tar.gz",
+      "hash": "142qx9dbaclffbd35qbpwybw1hwsqj4h6ij5ik9j230miws9wwyg"
+    },
+    "pyproject-nix": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "pyproject-nix",
+        "repo": "pyproject.nix"
+      },
+      "branch": "master",
+      "revision": "a73f9035165484aaec8b8720a3a85c0b3e50e11e",
+      "url": "https://github.com/pyproject-nix/pyproject.nix/archive/a73f9035165484aaec8b8720a3a85c0b3e50e11e.tar.gz",
+      "hash": "1q1a7fn4kbz0sp0lzvisfrhhnznwsxdmia6hyjq8hw6dqjsxc4fg"
+    },
+    "uv2nix": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "pyproject-nix",
+        "repo": "uv2nix"
+      },
+      "branch": "master",
+      "revision": "bc0ce72a9bf053328486a0bc0b08235eb0d50fc1",
+      "url": "https://github.com/pyproject-nix/uv2nix/archive/bc0ce72a9bf053328486a0bc0b08235eb0d50fc1.tar.gz",
+      "hash": "1il50bd00vdgnxfza2xp9c8wz8dl51sizpql4in01bb6lpif7975"
+    }
+  },
+  "version": 3
+}

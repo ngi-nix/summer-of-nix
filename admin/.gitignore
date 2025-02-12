@@ -1,0 +1,20 @@
+*.csv
+*.json
+*.zip
+.env
+
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Nix
+result*
+.direnv*
+!npins/sources.json
