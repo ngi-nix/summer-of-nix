@@ -8,7 +8,7 @@ import sys
 
 import ijson
 from common.models.dashboard import Fund
-from common.models.notion import Subgrant
+from common.models.notion import Overview, Subgrant
 from common.utils import dir_path
 from pydantic import ValidationError
 from tqdm import tqdm
@@ -31,6 +31,12 @@ class Cli:
             "--debug",
             action="store_true",
             help="Print debugging information",
+        )
+        self.parser.add_argument(
+            "-p",
+            "--preset",
+            choices=["default", "contacts", "overview"],
+            help="",
         )
 
         if len(sys.argv) == 1:
@@ -80,6 +86,17 @@ def main():
             logger.error(e)
 
     content = {s.name: s.model_dump() for s in subgrants}
+
+    if args.preset == "contacts":
+        contacts = [s.contact.email for s in subgrants]
+        content = sorted(set(contacts))
+    elif args.preset == "overview":
+        content = [
+            Overview(name=s.name, websites=s.websites, summary=s.summary)
+            for s in subgrants
+        ]
+        content = {c.name: c.model_dump() for c in content}
+
     json.dump(content, sys.stdout, indent=2)
 
 

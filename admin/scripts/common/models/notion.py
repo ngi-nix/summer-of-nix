@@ -10,12 +10,18 @@ class Subgrant(BaseModel):
         organisationName: str
 
     name: Optional[str] = Field(default=None)
-    websites: List[str]
     summary: str
+    websites: List[str]
     contact: Contact
 
     def test(self):
         return self.contact.name
+
+
+class Overview(BaseModel):
+    name: Optional[str] = Field(default=None)
+    summary: str
+    websites: List[str]
 
 
 class Project(BaseModel):
