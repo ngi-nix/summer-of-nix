@@ -30,20 +30,20 @@ class Cli:
     def __init__(self) -> None:
         self.parser = argparse.ArgumentParser(
             description="""
-            Read project information exported from the NLnet dashboard and Notion, and create one GitHub issue per project.
+            Read the project list and metadata files and create one GitHub issue per project.
             """
         )
 
         # Positional
         self.parser.add_argument(
-            "notion_zip",
+            "projects_list_file",
             type=zip_file_type,
-            help="ZIP file containing the exported data from Notion",
+            help="ZIP file containing the exported list of projects from Notion",
         )
         self.parser.add_argument(
-            "dashboard_file",
+            "metadata_file",
             type=argparse.FileType("r"),
-            help="Contains extracted data from the NLnet dashboard",
+            help="Contains extracted project metadata from the NLnet dashboard in JSON format",
         )
         self.parser.add_argument(
             "repo",
@@ -130,10 +130,10 @@ def main():
 
     synced_projects = 0
 
-    notion_file = get_notion_projects(args.notion_zip)
+    notion_file = get_notion_projects(args.projects_list_file)
 
     if notion_file is None:
-        logger.error(f"Failed to extract {args.notion_zip}")
+        logger.error(f"Failed to extract {args.projects_list_file}")
         exit()
 
     projects = pd.read_csv(notion_file, usecols=["Name", "Subgrants"])
@@ -154,7 +154,7 @@ def main():
         with args.dashboard_file as f:
             funds = Subgrants(subgrants=ijson.items(f, "."))
     except ValidationError as e:
-        logger.error(f"Failed to parse {args.dashboard_file}: {e}")
+        logger.error(f"Failed to parse {args.metadata_file}: {e}")
         exit()
 
     gh = GitClient(*args.repo.split("/")) if not args.dry else None
