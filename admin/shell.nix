@@ -6,8 +6,15 @@ let
     lib
     pkgs
     packages
-    venv
+    workspace
+    pythonSet
     ;
+
+  editableOverlay = workspace.mkEditablePyprojectOverlay { root = "$REPO_ROOT"; };
+  editablePythonSet = pythonSet.overrideScope (lib.composeManyExtensions [ editableOverlay ]);
+
+  # Enable all optional dependencies for development
+  venv = editablePythonSet.mkVirtualEnv "scripts-development-env" workspace.deps.all;
 
   scripts = lib.mapAttrsToList (name: value: value) packages;
   scriptsList = lib.pipe packages [

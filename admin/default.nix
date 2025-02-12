@@ -35,7 +35,8 @@ rec {
     pkgs
     sources
     system
-    venv
+    workspace
+    pythonSet
     ;
 
   packages =
