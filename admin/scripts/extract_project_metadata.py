@@ -88,8 +88,8 @@ def main():
     content = {s.name: s.model_dump() for s in subgrants}
 
     if args.preset == "contacts":
-        contacts = [s.contact.email for s in subgrants]
-        content = sorted(set(contacts))
+        contacts = set(s.contact.email for s in subgrants)
+        content = sorted(contacts, key=lambda email: email.split("@")[1])
     elif args.preset == "overview":
         content = [
             Overview(name=s.name, websites=s.websites, summary=s.summary)
