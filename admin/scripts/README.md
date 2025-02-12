@@ -18,7 +18,7 @@ direnv allow
 
 ## Credentials
 
-Create a [fine-grained token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token) with the following permissions:
+Create a [fine-grained token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token) with the following permissions for the target repository:
 
 - Issues: Read & write
 
@@ -40,7 +40,7 @@ Download projects metadata from NLnet dashboard:
 Then, to extract the data, run:
 
 ```sh
-extract-project-metadata ./directory >>metadata.json
+extract-project-metadata <NLNET-METADATA-DIRECTORY> >metadata.json
 ```
 
 ## Notion
