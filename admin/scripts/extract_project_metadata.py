@@ -13,6 +13,26 @@ from common.utils import dir_path
 from pydantic import ValidationError
 from tqdm import tqdm
 
+# fmt: off
+choices = {
+    "default": lambda subgrants: {
+        s.name: s.model_dump() 
+        for s in subgrants
+    },
+    "emails": lambda subgrants: sorted(
+        set(s.contact.email for s in subgrants), 
+        key=lambda email: email.split("@")[1]
+    ),
+    "overview": lambda subgrants: {
+        o.name: o.model_dump() 
+        for o in [
+            Overview(name=s.name, websites=s.websites, summary=s.summary)
+            for s in subgrants
+        ]
+    },
+}
+# fmt: on
+
 
 class Cli:
     def __init__(self) -> None:
@@ -35,8 +55,9 @@ class Cli:
         self.parser.add_argument(
             "-p",
             "--preset",
-            choices=["default", "contacts", "overview"],
-            help="",
+            choices=choices.keys(),
+            default="default",
+            help="Output the metadata in a specific format",
         )
 
         if len(sys.argv) == 1:
@@ -85,17 +106,7 @@ def main():
         except ValidationError as e:
             logger.error(e)
 
-    content = {s.name: s.model_dump() for s in subgrants}
-
-    if args.preset == "contacts":
-        contacts = set(s.contact.email for s in subgrants)
-        content = sorted(contacts, key=lambda email: email.split("@")[1])
-    elif args.preset == "overview":
-        content = [
-            Overview(name=s.name, websites=s.websites, summary=s.summary)
-            for s in subgrants
-        ]
-        content = {c.name: c.model_dump() for c in content}
+    content = choices[args.preset](subgrants)
 
     json.dump(content, sys.stdout, indent=2)
 
