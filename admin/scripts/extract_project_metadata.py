@@ -15,7 +15,7 @@ from pydantic import ValidationError
 from tqdm import tqdm
 
 # fmt: off
-choices = {
+presetChoices = {
     "default": lambda subgrants: {
         s.name: s.model_dump()
         for s in subgrants
@@ -33,6 +33,19 @@ choices = {
     },
 }
 # fmt: on
+
+formatChoices = {
+    "json": lambda preset, subgrants: json.dump(
+        presetChoices[preset](subgrants), sys.stdout, indent=2
+    ),
+    "csv": lambda _preset, subgrants: (
+        pd.DataFrame([s.model_dump() for s in subgrants])
+        # Format name to match CSV columns
+        .rename(columns=lambda x: x.capitalize())
+        .rename(columns={"Id": "Subgrant ID"})
+        .to_csv(sys.stdout, encoding="utf-8", index=False)
+    ),
+}
 
 
 class Cli:
@@ -56,7 +69,7 @@ class Cli:
         self.parser.add_argument(
             "-p",
             "--preset",
-            choices=choices.keys(),
+            choices=presetChoices.keys(),
             default="default",
             help="Output the metadata in a specific format",
         )
@@ -64,7 +77,7 @@ class Cli:
             "-f",
             "--format",
             default="json",
-            choices=["json", "csv"],
+            choices=formatChoices.keys(),
             help="Output file format (default: %(default)s)",
         )
 
@@ -116,19 +129,7 @@ def main():
         except ValidationError as e:
             logger.error(e)
 
-    content = choices[args.preset](subgrants)
-
-    if args.format == "csv":
-        df = pd.DataFrame([s.model_dump() for s in subgrants])
-
-        # Naming should correspond to Notion columns
-        df.columns = df.columns.str.capitalize()
-        df.rename(columns={"Id": "Subgrant ID"}, inplace=True)
-
-        df.to_csv(sys.stdout, encoding="utf-8", index=False)
-        return
-
-    json.dump(content, sys.stdout, indent=2)
+    formatChoices[args.format](args.preset, subgrants)
 
 
 if __name__ == "__main__":
