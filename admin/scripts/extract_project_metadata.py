@@ -8,10 +8,30 @@ import sys
 
 import ijson
 from common.models.dashboard import Fund
-from common.models.notion import Subgrant
+from common.models.notion import Overview, Subgrant
 from common.utils import dir_path
 from pydantic import ValidationError
 from tqdm import tqdm
+
+# fmt: off
+choices = {
+    "default": lambda subgrants: {
+        s.name: s.model_dump()
+        for s in subgrants
+    },
+    "emails": lambda subgrants: sorted(
+        set(s.contact.email for s in subgrants),
+        key=lambda email: email.split("@")[1]
+    ),
+    "overview": lambda subgrants: {
+        o.name: o.model_dump()
+        for o in [
+            Overview(name=s.name, websites=s.websites, summary=s.summary)
+            for s in subgrants
+        ]
+    },
+}
+# fmt: on
 
 
 class Cli:
@@ -31,6 +51,13 @@ class Cli:
             "--debug",
             action="store_true",
             help="Print debugging information",
+        )
+        self.parser.add_argument(
+            "-p",
+            "--preset",
+            choices=choices.keys(),
+            default="default",
+            help="Output the metadata in a specific format",
         )
 
         if len(sys.argv) == 1:
@@ -79,7 +106,8 @@ def main():
         except ValidationError as e:
             logger.error(e)
 
-    content = {s.name: s.model_dump() for s in subgrants}
+    content = choices[args.preset](subgrants)
+
     json.dump(content, sys.stdout, indent=2)
 
 
