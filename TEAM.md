@@ -4,19 +4,18 @@
 * [Team members](https://github.com/orgs/ngi-nix/teams/team)
 
 
-## Guiding principles
-
-* Transparency
-* TODO
+## Goals
+* Package all eligible NGI-funded software for NixOS
+* Make NGI-funded software easy to discover and run
 
 
 ## Procedures
 
 ### Meetings
 
-* Weekly review and work planning on [Friday](TODO: Calendar link)
-* Mandatory daily meetings on [Wed](TODO: Calendar link)
-* Optional daily meetings on [Mon, Tue, Thu](TODO: Calendar link)
+* [Planning on Monday](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=ZGVlZXQ3dTN0bXNjYmJiZ291NmVnMmJ2djdfMjAyNTAyMjRUMTAwMDAwWiB2YWxlbnRpbi5nYWdhcmluQGdvb2dsZW1haWwuY29t&tmsrc=valentin.gagarin%40googlemail.com&scp=ALL)
+* [Demo and review on Friday](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NGpudGFtcm9qN2w3aWxyN2puNmZ2OGdkZ3ZfMjAyNTAyMjFUMTIwMDAwWiB2YWxlbnRpbi5nYWdhcmluQGdvb2dsZW1haWwuY29t&tmsrc=valentin.gagarin%40googlemail.com&scp=ALL
+* Ad hoc work or decision meetings as needed
 
 
 ## Public services
