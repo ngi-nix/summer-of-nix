@@ -14,7 +14,7 @@
 ### Meetings
 
 * [Planning on Monday](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=ZGVlZXQ3dTN0bXNjYmJiZ291NmVnMmJ2djdfMjAyNTAyMjRUMTAwMDAwWiB2YWxlbnRpbi5nYWdhcmluQGdvb2dsZW1haWwuY29t&tmsrc=valentin.gagarin%40googlemail.com&scp=ALL)
-* [Demo and review on Friday](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NGpudGFtcm9qN2w3aWxyN2puNmZ2OGdkZ3ZfMjAyNTAyMjFUMTIwMDAwWiB2YWxlbnRpbi5nYWdhcmluQGdvb2dsZW1haWwuY29t&tmsrc=valentin.gagarin%40googlemail.com&scp=ALL
+* [Demo and review on Friday](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NGpudGFtcm9qN2w3aWxyN2puNmZ2OGdkZ3ZfMjAyNTAyMjFUMTIwMDAwWiB2YWxlbnRpbi5nYWdhcmluQGdvb2dsZW1haWwuY29t&tmsrc=valentin.gagarin%40googlemail.com&scp=ALL)
 * Ad hoc work or decision meetings as needed
 
 
