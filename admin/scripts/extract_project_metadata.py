@@ -6,6 +6,7 @@ import logging
 import os
 import random
 import sys
+import textwrap
 from contextlib import contextmanager
 
 import ijson
@@ -38,9 +39,20 @@ choices = {
 class Cli:
     def __init__(self) -> None:
         self.parser = argparse.ArgumentParser(
-            description="""
+            description=textwrap.dedent(f"""\
             Extract medatata from the exported NLnet grant database
-            """
+
+            Examples:
+            # Extract metadata
+            {sys.argv[0]} <NLNET-METADATA-DIRECTORY> > metadata.json
+
+            # Get the list of project author emails for a certain message
+            {sys.argv[0]} <NLNET-METADATA-DIRECTORY> <MESSAGES-ZIP> -p emails > emails.csv
+
+            ---
+
+            """),
+            formatter_class=argparse.RawTextHelpFormatter,
         )
 
         self.parser.add_argument(
