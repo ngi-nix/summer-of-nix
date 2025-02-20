@@ -138,17 +138,19 @@ def get_new_contacts_for_message(
     if response is None:
         exit()
 
+    # Output data to stdout
+    print("Name,Email,Contacted for")  # CSV header
+
     new_contacts: list[str] = []
     for c in subgrants:
         if c.contact.name in messages[response].contacted:
             continue
-        new_contacts.append(f'"{c.contact.name}","<{c.contact.email}>"')
+        new_contacts.append(f'"{c.contact.name}","<{c.contact.email}>","{response}"')
     new_contacts = sorted(set(new_contacts))
 
     if args.samples is not None:
         new_contacts = random.sample(new_contacts, args.samples)
 
-    print("Name,Email")
     for c in new_contacts:
         print(c)
     exit()
