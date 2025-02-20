@@ -9,7 +9,7 @@ import sys
 import ijson
 from common.models.dashboard import Fund
 from common.models.notion import Overview, Subgrant
-from common.utils import dir_path
+from common.utils import dir_path, get_notion_projects, remove_urls, zip_file_type
 from pydantic import ValidationError
 from tqdm import tqdm
 
@@ -41,6 +41,7 @@ class Cli:
             Extract medatata from the exported NLnet grant database
             """
         )
+
         self.parser.add_argument(
             "input_dir",
             type=dir_path,
@@ -60,6 +61,20 @@ class Cli:
             help="Output the metadata in a specific format",
         )
 
+        self.contacts_group = self.parser.add_argument_group("Author Contacts (email)")
+        self.contacts_group.add_argument(
+            "author_messages_zip",
+            nargs="?",
+            type=zip_file_type,
+            help="ZIP file containing author messages from Notion",
+        )
+        self.contacts_group.add_argument(
+            "-s",
+            "--samples",
+            help="Number of new author contacts to sample (default: all)",
+            type=int,
+        )
+
         if len(sys.argv) == 1:
             self.parser.print_help()
             sys.exit(1)
@@ -73,6 +88,12 @@ def main():
     logger = logging.getLogger(__name__)
     logging_level = logging.DEBUG if args.debug else logging.WARNING
     logging.basicConfig(level=logging_level)
+
+    if args.preset == "emails" and args.author_messages_zip is None:
+        logger.error(
+            "Please provide the author messages zip file when choosing the 'emails' preset."
+        )
+        exit()
 
     subgrants = []
 
