@@ -76,7 +76,7 @@ class Cli:
 
         self.contacts_group = self.parser.add_argument_group("Author Contacts (email)")
         self.contacts_group.add_argument(
-            "author_messages_zip",
+            "messages_zip",
             nargs="?",
             type=zip_file_type,
             help="ZIP file containing author messages from Notion",
@@ -113,10 +113,10 @@ def get_new_contacts_for_message(
     Prompts users to choose a message, then determines which NGI project authors
     have not been contacted for that message, yet
     """
-    messages = get_notion_projects(args.author_messages_zip)
+    messages = get_notion_projects(args.messages_zip)
 
     if messages is None:
-        logger.error(f"Failed to extract {args.author_messages_zip}")
+        logger.error(f"Failed to extract {args.messages_zip}")
         exit()
 
     messages = pd.read_csv(messages, usecols=["Name", "Already contacted"])
@@ -161,7 +161,7 @@ def main():
     logging_level = logging.DEBUG if args.debug else logging.WARNING
     logging.basicConfig(level=logging_level)
 
-    if args.preset == "emails" and args.author_messages_zip is None:
+    if args.preset == "emails" and args.messages_zip is None:
         logger.error(
             "Please provide the author messages zip file when choosing the 'emails' preset."
         )
