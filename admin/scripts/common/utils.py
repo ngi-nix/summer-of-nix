@@ -85,6 +85,6 @@ def get_notion_projects(zip_file_path) -> Optional[str | None]:
     for file in os.listdir(unzipped_dir):
         if file.endswith("_all.csv") or not file.endswith(".csv"):
             continue
-        if file.startswith("Projects"):
-            return os.path.join(unzipped_dir, file)
+
+        return os.path.join(unzipped_dir, file)
     return None
