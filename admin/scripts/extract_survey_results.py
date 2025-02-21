@@ -2,6 +2,7 @@
 
 import argparse
 import json
+import logging
 import sys
 
 import ijson
@@ -36,22 +37,33 @@ class Cli:
 def main():
     args = Cli().args
 
+    logger = logging.getLogger(__name__)
+    logging.basicConfig(level=logging.DEBUG if args.debug else logging.WARNING)
+
     with args.form_file as f:
         data = ijson.items(f, "")
         form = Form(**next(data))
 
-    projects = [
-        Project(
-            name=r.project_name,
-            author=Project.Author(author_name=r.author_name, role=r.author_role),
-            contributors=r.contributors,
-            build_system=Project.CI_CD(
-                build_failure_duration=r.build_failure_duration,
-                dependency_update=r.automatic_dependency_update,
-            ),
+    projects = []
+
+    for r in form.responses:
+        if r.contributors is None:
+            logger.error(
+                f'The `contributors` field for "{r.project_name}" is invalid. Skipping project entry.'
+            )
+            continue
+
+        projects.append(
+            Project(
+                name=r.project_name,
+                author=Project.Author(author_name=r.author_name, role=r.author_role),
+                contributors=r.contributors,
+                build_system=Project.CI_CD(
+                    build_failure_duration=r.build_failure_duration,
+                    dependency_update=r.automatic_dependency_update,
+                ),
+            )
         )
-        for r in form.responses
-    ]
 
     json.dump([p.model_dump() for p in projects], sys.stdout, indent=2)
 

@@ -79,6 +79,12 @@ class Form(BaseModel):
                 return f"{value}h per week"
             return value
 
+        @field_validator(question_alias_mapping["q6"], mode="before")
+        def map_contributors(cls, value: str) -> float | None:
+            if value.replace(".", "", 1).isdigit():
+                return float(value)
+            return None
+
         time: str = Field(alias="_time")
         author_name: str = Field(alias="_name")
         author_role: list[AuthorRole]
@@ -86,7 +92,7 @@ class Form(BaseModel):
         build_failure_duration: str
         automatic_dependency_update: Choice
         dependency_update_frequency: UpdateFrequency
-        contributors: str
+        contributors: int | None
         structured_data_provided: bool = Field(default=False)
         reminder: Optional[ChoiceReminder] = Field(default=None)
 
@@ -105,5 +111,5 @@ class Project(BaseModel):
 
     name: str
     author: Author
-    contributors: str
+    contributors: int
     build_system: CI_CD
