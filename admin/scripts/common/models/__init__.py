@@ -33,11 +33,21 @@ class ProjectRole(str, Enum):
     other = "Other"
 
 
+class UpdateFrequency(str, Enum):
+    cant_say = "Can't say"
+    more_once_per_day = "More than once per day"
+    more_once_per_week = "More than once per week"
+    more_once_per_month = "More than once per month"
+    more_once_per_year = "More than once per year"
+    less_once_per_year = "Less than once per year"
+
+
 question_alias_mapping = {
     "q1": "project_name",
     "q2": "author_role",
     "q3": "build_failure_duration",
-    "q4": "has_dependency_update",
+    "q4": "automatic_dependency_update",
+    "q5": "dependency_update_frequency",
     "q6": "contributors",
     "q24": "structured_data_provided",
     "q25": "reminder",
@@ -59,12 +69,19 @@ class Form(BaseModel):
                 return True
             return False
 
+        @field_validator(question_alias_mapping["q3"], mode="before")
+        def map_duration(cls, value: str) -> str:
+            if value.replace(".", "", 1).isdigit():
+                return f"{value}h per week"
+            return value
+
         time: str = Field(alias="_time")
         author_name: str = Field(alias="_name")
         author_role: ProjectRole | list[ProjectRole]
         project_name: str
         build_failure_duration: str
-        has_dependency_update: Choice
+        automatic_dependency_update: Choice
+        dependency_update_frequency: UpdateFrequency
         contributors: str
         structured_data_provided: bool = Field(default=False)
         reminder: Optional[ChoiceReminder] = Field(default=None)
