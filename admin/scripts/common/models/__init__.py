@@ -42,6 +42,10 @@ class UpdateFrequency(str, Enum):
     less_once_per_year = "Less than once per year"
 
 
+# NOTE:
+# This is a bidirectional mapping between the questions and the data fields,
+# which not only makes it possible to access one from another, but also makes
+# setting field aliases much cleaner.
 question_alias_mapping = {
     "q1": "project_name",
     "q2": "author_role",
