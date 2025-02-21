@@ -1,7 +1,7 @@
 from enum import Enum
-from typing import Optional
+from typing import Any, Optional
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator, model_validator
 
 
 class Choice(str, Enum):
@@ -33,17 +33,41 @@ class ProjectRole(str, Enum):
     other = "Other"
 
 
+question_alias_mapping = {
+    "q1": "name",
+    "q2": "role",
+    "q3": "build_failure_duration",
+    "q4": "dependency_update",
+    "q6": "contributors",
+    "q24": "structured_data_provided",
+    "q25": "reminder",
+}
+
+
 class Form(BaseModel):
     class Response(BaseModel):
+        @model_validator(mode="before")
+        def map_aliases(cls, values: dict[str, Any]) -> dict[str, Any]:
+            for alias, field_name in question_alias_mapping.items():
+                if alias in values:
+                    values[field_name] = values.pop(alias)
+            return values
+
+        @field_validator(question_alias_mapping["q24"], mode="before")
+        def map_yes_no_to_bool(cls, value: str) -> bool:
+            if value.lower() == "yes":
+                return True
+            return False
+
         time: str = Field(alias="_time")
         author_name: str = Field(alias="_name")
-        name: str = Field(alias="q1")
-        role: ProjectRole | list[ProjectRole] = Field(alias="q2")
-        build_failure_duration: str = Field(alias="q3")
-        dependency_update: Choice = Field(alias="q4")
-        contributors: str = Field(alias="q6")
-        q24: Optional[Choice2] = Field(alias="q24", default=None)
-        reminder: Optional[ChoiceReminder] = Field(alias="q25", default=None)
+        name: str
+        role: ProjectRole | list[ProjectRole]
+        build_failure_duration: str
+        dependency_update: Choice
+        contributors: str
+        structured_data_provided: bool = Field(default=False)
+        reminder: Optional[ChoiceReminder] = Field(default=None)
 
     questions: dict[str, str]
     responses: list[Response]
