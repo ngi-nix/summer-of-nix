@@ -73,12 +73,6 @@ class Form(BaseModel):
                 return True
             return False
 
-        @field_validator(question_alias_mapping["q3"], mode="before")
-        def map_duration(cls, value: str) -> str:
-            if value.replace(".", "", 1).isdigit():
-                return f"{value}h per week"
-            return value
-
         @field_validator(question_alias_mapping["q6"], mode="before")
         def map_contributors(cls, value: str) -> float | None:
             if value.replace(".", "", 1).isdigit():
