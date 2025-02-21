@@ -42,12 +42,12 @@ def main():
 
     projects = [
         Project(
-            name=r.name,
-            author=Project.Author(author_name=r.author_name, role=r.role),
+            name=r.project_name,
+            author=Project.Author(author_name=r.author_name, role=r.author_role),
             contributors=r.contributors,
             build_system=Project.CI_CD(
                 build_failure_duration=r.build_failure_duration,
-                dependency_update=r.dependency_update,
+                dependency_update=r.has_dependency_update,
             ),
         )
         for r in form.responses

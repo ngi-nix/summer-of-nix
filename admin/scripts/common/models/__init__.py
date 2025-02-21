@@ -34,10 +34,10 @@ class ProjectRole(str, Enum):
 
 
 question_alias_mapping = {
-    "q1": "name",
-    "q2": "role",
+    "q1": "project_name",
+    "q2": "author_role",
     "q3": "build_failure_duration",
-    "q4": "dependency_update",
+    "q4": "has_dependency_update",
     "q6": "contributors",
     "q24": "structured_data_provided",
     "q25": "reminder",
@@ -61,10 +61,10 @@ class Form(BaseModel):
 
         time: str = Field(alias="_time")
         author_name: str = Field(alias="_name")
-        name: str
-        role: ProjectRole | list[ProjectRole]
+        author_role: ProjectRole | list[ProjectRole]
+        project_name: str
         build_failure_duration: str
-        dependency_update: Choice
+        has_dependency_update: Choice
         contributors: str
         structured_data_provided: bool = Field(default=False)
         reminder: Optional[ChoiceReminder] = Field(default=None)
