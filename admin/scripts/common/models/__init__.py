@@ -1,4 +1,5 @@
 from enum import Enum
+from operator import itemgetter
 from typing import Any, Optional
 
 from pydantic import BaseModel, Field, field_validator, model_validator
@@ -46,7 +47,7 @@ class UpdateFrequency(str, Enum):
 # This is a bidirectional mapping between the questions and the data fields,
 # which not only makes it possible to access one from another, but also makes
 # setting field aliases much cleaner.
-question_alias_mapping = {
+alias_mapping = {
     "q1": "project_name",
     "q2": "author_role",
     "q3": "build_failure_duration",
@@ -55,6 +56,7 @@ question_alias_mapping = {
     "q6": "contributors",
     "q24": "structured_data_provided",
     "q25": "reminder",
+    "q36": "has_extensions",
 }
 
 
@@ -62,18 +64,18 @@ class Form(BaseModel):
     class Response(BaseModel):
         @model_validator(mode="before")
         def map_aliases(cls, values: dict[str, Any]) -> dict[str, Any]:
-            for alias, field_name in question_alias_mapping.items():
+            for alias, field_name in alias_mapping.items():
                 if alias in values:
                     values[field_name] = values.pop(alias)
             return values
 
-        @field_validator(question_alias_mapping["q24"], mode="before")
+        @field_validator(*itemgetter("q24", "q36")(alias_mapping), mode="before")
         def map_yes_no_to_bool(cls, value: str) -> bool:
             if value.lower() == "yes":
                 return True
             return False
 
-        @field_validator(question_alias_mapping["q6"], mode="before")
+        @field_validator(alias_mapping["q6"], mode="before")
         def map_contributors(cls, value: str) -> float | None:
             if value.replace(".", "", 1).isdigit():
                 return float(value)
@@ -88,6 +90,7 @@ class Form(BaseModel):
         dependency_update_frequency: UpdateFrequency
         contributors: int | None
         structured_data_provided: bool = Field(default=False)
+        has_extensions: bool = Field(default=False)
         reminder: Optional[ChoiceReminder] = Field(default=None)
 
     questions: dict[str, str]
