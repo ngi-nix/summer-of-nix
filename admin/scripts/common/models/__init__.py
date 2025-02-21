@@ -22,7 +22,7 @@ class ChoiceReminder(str, Enum):
     YES_ONE_MONTH = "Yes, in one month"
 
 
-class ProjectRole(str, Enum):
+class AuthorRole(str, Enum):
     PRINCIPAL_AUTHOR_LEAD_ENGINEER = "Principal author / lead engineer"
     CORE_CONTRIBUTOR_MAINTAINER = "Core contributor / maintainer"
     RELEASE_MANAGER = "Release manager"
@@ -81,7 +81,7 @@ class Form(BaseModel):
 
         time: str = Field(alias="_time")
         author_name: str = Field(alias="_name")
-        author_role: ProjectRole | list[ProjectRole]
+        author_role: list[AuthorRole]
         project_name: str
         build_failure_duration: str
         automatic_dependency_update: Choice
@@ -97,7 +97,7 @@ class Form(BaseModel):
 class Project(BaseModel):
     class Author(BaseModel):
         author_name: str
-        role: ProjectRole | list[ProjectRole]
+        role: list[AuthorRole]
 
     class CI_CD(BaseModel):
         build_failure_duration: str
