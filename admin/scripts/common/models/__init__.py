@@ -5,41 +5,41 @@ from pydantic import BaseModel, Field, field_validator, model_validator
 
 
 class Choice(str, Enum):
-    yes = "Yes"
-    not_planned = "Not planned"
-    not_yet = "Not yet"
+    YES = "Yes"
+    NOT_PLANNED = "Not planned"
+    NOT_YET = "Not yet"
 
 
 class Choice2(str, Enum):
-    yes = "Yes"
-    not_sure_yet = "Not sure yet"
-    no = "No"
+    YES = "Yes"
+    NOT_SURE_YET = "Not sure yet"
+    NO = "No"
 
 
 class ChoiceReminder(str, Enum):
-    no = "No"
-    yes_one_week = "Yes, in one week"
-    yes_one_month = "Yes, in one month"
+    NO = "No"
+    YES_ONE_WEEK = "Yes, in one week"
+    YES_ONE_MONTH = "Yes, in one month"
 
 
 class ProjectRole(str, Enum):
-    principal_author_lead_engineer = "Principal author / lead engineer"
-    core_contributor_maintainer = "Core contributor / maintainer"
-    release_manager = "Release manager"
-    security = "Security"
-    infrastructure_devops = "Infrastructure/DevOps"
-    community_manager = "Community manager"
-    outreach_coordinator = "Outreach coordinator"
-    other = "Other"
+    PRINCIPAL_AUTHOR_LEAD_ENGINEER = "Principal author / lead engineer"
+    CORE_CONTRIBUTOR_MAINTAINER = "Core contributor / maintainer"
+    RELEASE_MANAGER = "Release manager"
+    SECURITY = "Security"
+    INFRASTRUCTURE_DEVOPS = "Infrastructure/DevOps"
+    COMMUNITY_MANAGER = "Community manager"
+    OUTREACH_COORDINATOR = "Outreach coordinator"
+    OTHER = "Other"
 
 
 class UpdateFrequency(str, Enum):
-    cant_say = "Can't say"
-    more_once_per_day = "More than once per day"
-    more_once_per_week = "More than once per week"
-    more_once_per_month = "More than once per month"
-    more_once_per_year = "More than once per year"
-    less_once_per_year = "Less than once per year"
+    CANT_SAY = "Can't say"
+    MORE_ONCE_PER_DAY = "More than once per day"
+    MORE_ONCE_PER_WEEK = "More than once per week"
+    MORE_ONCE_PER_MONTH = "More than once per month"
+    MORE_ONCE_PER_YEAR = "More than once per year"
+    LESS_ONCE_PER_YEAR = "Less than once per year"
 
 
 # NOTE:
