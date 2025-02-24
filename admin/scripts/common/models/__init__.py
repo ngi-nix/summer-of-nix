@@ -74,6 +74,7 @@ alias_mapping = {
     "q7": "devenv_setup_time",
     "q8": "nix_familiarity",
     "q9": "nix_dev_env",
+    "q10": "nix_ci_cd",
     "q24": "structured_data_provided",
     "q25": "reminder",
     "q36": "has_extensions",
@@ -116,6 +117,7 @@ class Form(BaseModel):
         # Nix
         nix_familiarity: NixFamiliarity
         nix_dev_env: Choice
+        nix_ci_cd: Choice
 
         structured_data_provided: bool = Field(default=False)
         has_extensions: bool = Field(default=False)
@@ -133,7 +135,7 @@ class Project(BaseModel):
         class CI_CD(BaseModel):
             build_failure_duration: str
             dependency_update: str
-            # with_nix: bool
+            with_nix: Choice
 
         class DevEnv(BaseModel):
             setup_time: str
@@ -169,6 +171,7 @@ def project_from_response(
             "ci_cd": {
                 "build_failure_duration": resp.build_failure_duration,
                 "dependency_update": resp.automatic_dependency_update,
+                "with_nix": resp.nix_ci_cd,
             },
             "devenv": {
                 "setup_time": resp.devenv_setup_time,
