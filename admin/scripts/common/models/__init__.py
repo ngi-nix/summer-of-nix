@@ -126,7 +126,7 @@ class Form(BaseModel):
 
 class Project(BaseModel):
     class Author(BaseModel):
-        author_name: str
+        name: str
         role: list[AuthorRole]
 
     class Infrastructure(BaseModel):
@@ -155,18 +155,26 @@ def project_from_response(
     if resp.contributors is None:
         return (None, "contributors")
 
-    project = Project(
-        name=resp.project_name,
-        author=Project.Author(author_name=resp.author_name, role=resp.author_role),
-        contributors=resp.contributors,
-        infra=Project.Infrastructure(
-            ci_cd=Project.Infrastructure.CI_CD(
-                build_failure_duration=resp.build_failure_duration,
-                dependency_update=resp.automatic_dependency_update,
-            ),
-            devenv_setup_time=resp.devenv_setup_time,
-        ),
-        nix=Project.Nix(familiarity=resp.nix_familiarity, has_dev_env=resp.nix_dev_env),
-    )
+    project_dict = {
+        "name": resp.project_name,
+        "author": {
+            "name": resp.author_name,
+            "role": resp.author_role,
+        },
+        "contributors": resp.contributors,
+        "infra": {
+            "ci_cd": {
+                "build_failure_duration": resp.build_failure_duration,
+                "dependency_update": resp.automatic_dependency_update,
+            },
+            "devenv_setup_time": resp.devenv_setup_time,
+        },
+        "nix": {
+            "familiarity": resp.nix_familiarity,
+            "has_dev_env": resp.nix_dev_env,
+        },
+    }
+
+    project = Project.model_validate(project_dict)
 
     return (project, "")
