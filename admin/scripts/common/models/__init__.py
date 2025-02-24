@@ -135,12 +135,15 @@ class Project(BaseModel):
             dependency_update: str
             # with_nix: bool
 
+        class DevEnv(BaseModel):
+            setup_time: str
+            with_nix: Choice
+
         ci_cd: CI_CD
-        devenv_setup_time: str
+        devenv: DevEnv
 
     class Nix(BaseModel):
         familiarity: NixFamiliarity
-        has_dev_env: Choice
 
     name: str
     author: Author
@@ -167,11 +170,13 @@ def project_from_response(
                 "build_failure_duration": resp.build_failure_duration,
                 "dependency_update": resp.automatic_dependency_update,
             },
-            "devenv_setup_time": resp.devenv_setup_time,
+            "devenv": {
+                "setup_time": resp.devenv_setup_time,
+                "with_nix": resp.nix_dev_env,
+            },
         },
         "nix": {
             "familiarity": resp.nix_familiarity,
-            "has_dev_env": resp.nix_dev_env,
         },
     }
 
