@@ -84,14 +84,16 @@ class Form(BaseModel):
         time: str = Field(alias="_time")
         author_name: str = Field(alias="_name")
         author_role: list[AuthorRole]
+
         project_name: str
         build_failure_duration: str
         automatic_dependency_update: Choice
         dependency_update_frequency: UpdateFrequency
         contributors: int | None
+        reminder: Optional[ChoiceReminder] = Field(default=None)
+
         structured_data_provided: bool = Field(default=False)
         has_extensions: bool = Field(default=False)
-        reminder: Optional[ChoiceReminder] = Field(default=None)
 
     questions: dict[str, str]
     responses: list[Response]
@@ -102,11 +104,14 @@ class Project(BaseModel):
         author_name: str
         role: list[AuthorRole]
 
-    class CI_CD(BaseModel):
-        build_failure_duration: str
-        dependency_update: Choice
+    class Infrastructure(BaseModel):
+        class CI_CD(BaseModel):
+            build_failure_duration: str
+            dependency_update: Choice
+
+        ci_cd: CI_CD
 
     name: str
     author: Author
     contributors: int
-    build_system: CI_CD
+    infra: Infrastructure
