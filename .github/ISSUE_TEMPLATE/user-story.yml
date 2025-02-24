@@ -1,0 +1,16 @@
+name: "User Story"
+description: "Create a User Story."
+title: "US: <USER STORY TITLE>"
+projects: ["Nix@NGI"]
+labels: ["User Story"]
+body:
+  - type: "textarea"
+    id: description
+    attributes:
+      label: "Description"
+      value: "As a < type of user >, I want < some goal > so that < some reason >."
+  - type: "textarea"
+    id: acceptance-criteria
+    attributes:
+      label: "Acceptance criteria"
+      value: "- Given < some context >, when < some action is carried out >, then < set of observable outcomes should occur >."
