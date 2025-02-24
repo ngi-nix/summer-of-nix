@@ -23,6 +23,14 @@ class ChoiceReminder(str, Enum):
     YES_ONE_MONTH = "Yes, in one month"
 
 
+class ChoiceAgreement(str, Enum):
+    STRONGLY_DISAGREE = "Strongly disagree"
+    DISAGREE = "Disagree"
+    DONT_KNOW = "Don't know/neutral"
+    AGREE = "Agree"
+    STRONGLY_AGREE = "Strongly agree"
+
+
 class AuthorRole(str, Enum):
     PRINCIPAL_AUTHOR_LEAD_ENGINEER = "Principal author / lead engineer"
     CORE_CONTRIBUTOR_MAINTAINER = "Core contributor / maintainer"
@@ -75,6 +83,14 @@ alias_mapping = {
     "q8": "nix_familiarity",
     "q9": "nix_dev_env",
     "q10": "nix_ci_cd",
+    "q13": "nix_onboard",
+    "q14": "nix_maintain",
+    "q15": "nix_discover",
+    "q16": "nix_self_host",
+    "q17": "nix_installation",
+    "q18": "nix_adoption",
+    "q19": "nix_retention",
+    "q20": "nix_other_uses",
     "q24": "structured_data_provided",
     "q25": "reminder",
     "q36": "has_extensions",
@@ -103,10 +119,10 @@ class Form(BaseModel):
             return None
 
         time: str = Field(alias="_time")
+        project_name: str
         author_name: str = Field(alias="_name")
         author_role: list[AuthorRole]
 
-        project_name: str
         build_failure_duration: str
         automatic_dependency_update: Choice
         dependency_update_frequency: UpdateFrequency
@@ -118,6 +134,9 @@ class Form(BaseModel):
         nix_familiarity: NixFamiliarity
         nix_dev_env: Choice
         nix_ci_cd: Choice
+        nix_onboard: ChoiceAgreement
+        nix_maintain: ChoiceAgreement
+        nix_discover: ChoiceAgreement
 
         structured_data_provided: bool = Field(default=False)
         has_extensions: bool = Field(default=False)
@@ -146,6 +165,9 @@ class Project(BaseModel):
 
     class Nix(BaseModel):
         familiarity: NixFamiliarity
+        can_ease_onboarding: ChoiceAgreement
+        can_help_maintainability: ChoiceAgreement
+        can_help_discoverability: ChoiceAgreement
 
     name: str
     author: Author
@@ -180,6 +202,9 @@ def project_from_response(
         },
         "nix": {
             "familiarity": resp.nix_familiarity,
+            "can_ease_onboarding": resp.nix_onboard,
+            "can_help_maintainability": resp.nix_maintain,
+            "can_help_discoverability": resp.nix_discover,
         },
     }
 
