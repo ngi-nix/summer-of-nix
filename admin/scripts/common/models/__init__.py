@@ -43,6 +43,23 @@ class UpdateFrequency(str, Enum):
     LESS_ONCE_PER_YEAR = "Less than once per year"
 
 
+class DevenvSetupTimes(str, Enum):
+    UNDER_10_MIN = "<10 min"
+    UNDER_30_MIN = "<30 min"
+    UNDER_1_HOUR = "<1h"
+    UNDER_4_HOUR = "<4h"
+    OVER_4_HOUR = ">4h"
+
+
+class NixFamiliarity(str, Enum):
+    DONT_KNOW = "I don’t know anything about it"
+    DONT_USE = "Have learned a few things about it but don’t use it"
+    TRIED = "I have tried using Nix or NixOS"
+    REGULAR_USER = "I use Nix or NixOS regularly"
+    NIXPKGS_CONTRIBUTOR = "I already contributed to Nixpkgs"
+    NIXPKGS_MAINTAINER = "I maintain software in Nixpkgs"
+
+
 # NOTE:
 # This is a bidirectional mapping between the questions and the data fields,
 # which not only makes it possible to access one from another, but also makes
@@ -54,6 +71,9 @@ alias_mapping = {
     "q4": "automatic_dependency_update",
     "q5": "dependency_update_frequency",
     "q6": "contributors",
+    "q7": "devenv_setup_time",
+    "q8": "nix_familiarity",
+    "q9": "nix_dev_env",
     "q24": "structured_data_provided",
     "q25": "reminder",
     "q36": "has_extensions",
@@ -89,8 +109,13 @@ class Form(BaseModel):
         build_failure_duration: str
         automatic_dependency_update: Choice
         dependency_update_frequency: UpdateFrequency
+        devenv_setup_time: DevenvSetupTimes
         contributors: int | None
         reminder: Optional[ChoiceReminder] = Field(default=None)
+
+        # Nix
+        nix_familiarity: NixFamiliarity
+        nix_dev_env: Choice
 
         structured_data_provided: bool = Field(default=False)
         has_extensions: bool = Field(default=False)
@@ -107,14 +132,21 @@ class Project(BaseModel):
     class Infrastructure(BaseModel):
         class CI_CD(BaseModel):
             build_failure_duration: str
-            dependency_update: Choice
+            dependency_update: str
+            # with_nix: bool
 
         ci_cd: CI_CD
+        devenv_setup_time: str
+
+    class Nix(BaseModel):
+        familiarity: NixFamiliarity
+        has_dev_env: Choice
 
     name: str
     author: Author
     contributors: int
     infra: Infrastructure
+    nix: Nix
 
 
 def project_from_response(
@@ -131,8 +163,10 @@ def project_from_response(
             ci_cd=Project.Infrastructure.CI_CD(
                 build_failure_duration=resp.build_failure_duration,
                 dependency_update=resp.automatic_dependency_update,
-            )
+            ),
+            devenv_setup_time=resp.devenv_setup_time,
         ),
+        nix=Project.Nix(familiarity=resp.nix_familiarity, has_dev_env=resp.nix_dev_env),
     )
 
     return (project, "")
