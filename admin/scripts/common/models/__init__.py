@@ -115,3 +115,24 @@ class Project(BaseModel):
     author: Author
     contributors: int
     infra: Infrastructure
+
+
+def project_from_response(
+    resp: Form.Response,
+) -> tuple[Project | None, str]:
+    if resp.contributors is None:
+        return (None, "contributors")
+
+    project = Project(
+        name=resp.project_name,
+        author=Project.Author(author_name=resp.author_name, role=resp.author_role),
+        contributors=resp.contributors,
+        infra=Project.Infrastructure(
+            ci_cd=Project.Infrastructure.CI_CD(
+                build_failure_duration=resp.build_failure_duration,
+                dependency_update=resp.automatic_dependency_update,
+            )
+        ),
+    )
+
+    return (project, "")

@@ -6,7 +6,7 @@ import logging
 import sys
 
 import ijson
-from common.models import Form, Project
+from common.models import Form, Project, project_from_response
 
 
 class Cli:
@@ -44,26 +44,18 @@ def main():
         data = ijson.items(f, "")
         form = Form(**next(data))
 
-    projects = []
+    projects: list[Project] = []
 
     for r in form.responses:
-        if r.contributors is None:
+        project, msg = project_from_response(r)
+
+        if project is None:
             logger.error(
-                f'The `contributors` field for "{r.project_name}" is invalid. Skipping project entry.'
+                f'"{r.project_name}" has an invalid field: "{msg}". Skipping project entry.'
             )
             continue
 
-        projects.append(
-            Project(
-                name=r.project_name,
-                author=Project.Author(author_name=r.author_name, role=r.author_role),
-                contributors=r.contributors,
-                build_system=Project.CI_CD(
-                    build_failure_duration=r.build_failure_duration,
-                    dependency_update=r.automatic_dependency_update,
-                ),
-            )
-        )
+        projects.append(project)
 
     json.dump([p.model_dump() for p in projects], sys.stdout, indent=2)
 
