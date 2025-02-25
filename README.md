@@ -33,7 +33,7 @@ The program is designed for participants to **work, learn, and meet**:
   As a participant, you will join a community of [more than 700 active contributors](https://github.com/NixOS/nixpkgs/pulse/monthly).
   You will engage in an open source software development workflow and take part in public technical discussion.
 
-  After successful participation, you will be invited to NixCon 2024, a conference for Nix users and developers from all over the world.
+  After successful participation, you will be invited to NixCon 2025, a conference for Nix users and developers from all over the world.
   And you will be afforded an opportunity for exposure with potential employers for whom Nix is a core strength.
 
 ## Timeline
