@@ -83,6 +83,10 @@ alias_mapping = {
     "q8": "nix_familiarity",
     "q9": "nix_dev_env",
     "q10": "nix_ci_cd",
+    # longevity
+    "q11": "duration_stable_release",
+    "q12": "duration_future_maintenance",
+    # nix
     "q13": "nix_onboard",
     "q14": "nix_maintain",
     "q15": "nix_discover",
@@ -91,9 +95,36 @@ alias_mapping = {
     "q18": "nix_adoption",
     "q19": "nix_retention",
     "q20": "nix_other_uses",
+    "q21": "nix_pairing",
+    # author
+    "q22": "author_preferred_channels",
+    "q23": "author_contact",
+    #
     "q24": "structured_data_provided",
     "q25": "reminder",
-    "q36": "has_extensions",
+    # artefacts
+    "q26": "libraries_exist",
+    "q27": "documentation_libraries",
+    "q28": "programs_cli",
+    "q29": "programs_gui",
+    "q30": "documentation_programs",
+    "q31": "mobile_apps",
+    "q32": "services",
+    "q33": "documentation_services",
+    "q34": "specification_document",
+    "q35": "personal_deployment",
+    "q36": "extensions_exist",
+    # nixos
+    "q37": "nixos_artefacts",
+    "q38": "nixos_package_name",  # or service
+    "q39": "nixos_maintainer",
+    "q40": "documentation_nixos",
+    #
+    "q41": "documentation_source",
+    "q42": "respository",
+    "q43": "dependency_management",
+    "q44": "framework",
+    "q45": "survey_feedback",
 }
 
 
@@ -139,7 +170,7 @@ class Form(BaseModel):
         nix_discover: ChoiceAgreement
 
         structured_data_provided: bool = Field(default=False)
-        has_extensions: bool = Field(default=False)
+        extensions_exist: bool = Field(default=False)
 
     questions: dict[str, str]
     responses: list[Response]
