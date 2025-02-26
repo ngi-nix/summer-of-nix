@@ -75,8 +75,8 @@ class NixFamiliarity(str, Enum):
 alias_mapping = {
     "q1": "project_name",
     "q2": "author_role",
-    "q3": "build_failure_duration",
-    "q4": "automatic_dependency_update",
+    "q3": "duration_build_failure",
+    "q4": "dependency_update_automatic",
     "q5": "dependency_update_frequency",
     "q6": "contributors",
     "q7": "devenv_setup_time",
@@ -100,8 +100,8 @@ alias_mapping = {
     "q22": "author_preferred_channels",
     "q23": "author_contact",
     #
-    "q24": "structured_data_provided",
-    "q25": "reminder",
+    "q24": "survey_with_structured_data",
+    "q25": "survey_reminder",
     # artefacts
     "q26": "libraries_exist",
     "q27": "documentation_libraries",
@@ -154,12 +154,12 @@ class Form(BaseModel):
         author_name: str = Field(alias="_name")
         author_role: list[AuthorRole]
 
-        build_failure_duration: str
-        automatic_dependency_update: Choice
+        duration_build_failure: str
+        dependency_update_automatic: Choice
         dependency_update_frequency: UpdateFrequency
         devenv_setup_time: DevenvSetupTimes
         contributors: int | None
-        reminder: Optional[ChoiceReminder] = Field(default=None)
+        survey_reminder: Optional[ChoiceReminder] = Field(default=None)
 
         # Nix
         nix_familiarity: NixFamiliarity
@@ -169,7 +169,7 @@ class Form(BaseModel):
         nix_maintain: ChoiceAgreement
         nix_discover: ChoiceAgreement
 
-        structured_data_provided: bool = Field(default=False)
+        survey_with_structured_data: bool = Field(default=False)
         extensions_exist: bool = Field(default=False)
 
     questions: dict[str, str]
@@ -222,8 +222,8 @@ def project_from_response(
         "contributors": resp.contributors,
         "infra": {
             "ci_cd": {
-                "build_failure_duration": resp.build_failure_duration,
-                "dependency_update": resp.automatic_dependency_update,
+                "build_failure_duration": resp.duration_build_failure,
+                "dependency_update": resp.dependency_update_automatic,
                 "with_nix": resp.nix_ci_cd,
             },
             "devenv": {
