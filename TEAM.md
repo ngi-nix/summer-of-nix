@@ -26,6 +26,8 @@
 ## Resources
 
 * [Task management](https://github.com/orgs/ngi-nix/projects/8/views/5)
+  * [Objectives and user stories](https://github.com/ngi-nix/summer-of-nix/issues)
+  * [Packaging tasks](https://github.com/ngi-nix/ngipkgs/issues)
 
 * [Source code](https://github.com/ngi-nix/)
   * [ngipkgs repository](https://github.com/ngi-nix/ngipkgs)
