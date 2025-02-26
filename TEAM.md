@@ -7,6 +7,7 @@
 ## Goals
 * Package all eligible NGI-funded software for NixOS
 * Make NGI-funded software easy to discover and run
+* Organise Summer of Nix 2024, 2025, 2026
 
 
 ## Procedures
