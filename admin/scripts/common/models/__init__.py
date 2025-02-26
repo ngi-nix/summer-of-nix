@@ -1,8 +1,7 @@
 from enum import Enum
-from operator import itemgetter
-from typing import Any, Optional
+from typing import Optional
 
-from pydantic import BaseModel, Field, field_validator, model_validator
+from pydantic import BaseModel, Field, field_validator
 
 
 class Choice(str, Enum):
@@ -68,109 +67,92 @@ class NixFamiliarity(str, Enum):
     NIXPKGS_MAINTAINER = "I maintain software in Nixpkgs"
 
 
-# NOTE:
-# This is a bidirectional mapping between the questions and the data fields,
-# which not only makes it possible to access one from another, but also makes
-# setting field aliases much cleaner.
-alias_mapping = {
-    "q1": "project_name",
-    "q2": "author_role",
-    "q3": "duration_build_failure",
-    "q4": "dependency_update_automatic",
-    "q5": "dependency_update_frequency",
-    "q6": "contributors",
-    "q7": "devenv_setup_time",
-    "q8": "nix_familiarity",
-    "q9": "nix_dev_env",
-    "q10": "nix_ci_cd",
-    # longevity
-    "q11": "duration_stable_release",
-    "q12": "duration_future_maintenance",
-    # nix
-    "q13": "nix_onboard",
-    "q14": "nix_maintain",
-    "q15": "nix_discover",
-    "q16": "nix_self_host",
-    "q17": "nix_installation",
-    "q18": "nix_adoption",
-    "q19": "nix_retention",
-    "q20": "nix_other_uses",
-    "q21": "nix_pairing",
-    # author
-    "q22": "author_preferred_channels",
-    "q23": "author_contact",
-    #
-    "q24": "survey_with_structured_data",
-    "q25": "survey_reminder",
-    # artefacts
-    "q26": "libraries_exist",
-    "q27": "documentation_libraries",
-    "q28": "programs_cli",
-    "q29": "programs_gui",
-    "q30": "documentation_programs",
-    "q31": "mobile_apps",
-    "q32": "services",
-    "q33": "documentation_services",
-    "q34": "specification_document",
-    "q35": "personal_deployment",
-    "q36": "extensions_exist",
-    # nixos
-    "q37": "nixos_artefacts",
-    "q38": "nixos_package_name",  # or service
-    "q39": "nixos_maintainer",
-    "q40": "documentation_nixos",
-    #
-    "q41": "documentation_source",
-    "q42": "respository",
-    "q43": "dependency_management",
-    "q44": "framework",
-    "q45": "survey_feedback",
-}
+class ProjectArtefact(str, Enum):
+    EXECUTABLES = "Executables"
+    LIBRARIES = "Librares"  # NOTE: question entry has a typo
+    SERVICES = "Services"
 
 
 class Form(BaseModel):
     class Response(BaseModel):
-        @model_validator(mode="before")
-        def map_aliases(cls, values: dict[str, Any]) -> dict[str, Any]:
-            for alias, field_name in alias_mapping.items():
-                if alias in values:
-                    values[field_name] = values.pop(alias)
-            return values
-
-        @field_validator(*itemgetter("q24", "q36")(alias_mapping), mode="before")
+        @field_validator(
+            "survey_with_structured_data", "extensions_exist", mode="before"
+        )
         def map_yes_no_to_bool(cls, value: str) -> bool:
             if value.lower() == "yes":
                 return True
             return False
 
-        @field_validator(alias_mapping["q6"], mode="before")
+        @field_validator("contributors", mode="before")
         def map_contributors(cls, value: str) -> float | None:
             if value.replace(".", "", 1).isdigit():
                 return float(value)
             return None
 
+        # survey
         time: str = Field(alias="_time")
-        project_name: str
-        author_name: str = Field(alias="_name")
-        author_role: list[AuthorRole]
+        survey_reminder: Optional[ChoiceReminder] = Field(default=None, alias="q25")
+        survey_feedback: str = Field(alias="q45")
+        survey_with_structured_data: bool = Field(default=False, alias="q24")
 
-        duration_build_failure: str
-        dependency_update_automatic: Choice
-        dependency_update_frequency: UpdateFrequency
-        devenv_setup_time: DevenvSetupTimes
-        contributors: int | None
-        survey_reminder: Optional[ChoiceReminder] = Field(default=None)
+        # metadata
+        project_name: str = Field(alias="q1")
+        repository: str = Field(alias="q42")
+        contributors: int | None = Field(alias="q6")
+
+        # author
+        author_name: str = Field(alias="_name")
+        author_role: list[AuthorRole] = Field(alias="q2")
+        author_preferred_channels: list[str] = Field(alias="q22")
+        author_contact: str = Field(alias="q23")
+
+        # longevity
+        duration_stable_release: str = Field(alias="q11")
+        duration_future_maintenance: str = Field(alias="q12")
+
+        # infra
+        duration_build_failure: str = Field(alias="q3")
+        dependency_update_automatic: Choice = Field(alias="q4")
+        dependency_update_frequency: UpdateFrequency = Field(alias="q5")
+        devenv_setup_time: DevenvSetupTimes = Field(alias="q7")
+        personal_deployment: Optional[str] = Field(default=None, alias="q35")
+        dependency_management: str = Field(alias="q43")
+        project_framework: str = Field(alias="q44")
 
         # Nix
-        nix_familiarity: NixFamiliarity
-        nix_dev_env: Choice
-        nix_ci_cd: Choice
-        nix_onboard: ChoiceAgreement
-        nix_maintain: ChoiceAgreement
-        nix_discover: ChoiceAgreement
+        nix_familiarity: NixFamiliarity = Field(alias="q8")
+        nix_dev_env: Choice = Field(alias="q9")
+        nix_ci_cd: Choice = Field(alias="q10")
+        nix_onboard: ChoiceAgreement = Field(alias="q13")
+        nix_maintain: ChoiceAgreement = Field(alias="q14")
+        nix_discover: ChoiceAgreement = Field(alias="q15")
+        nix_self_host: str = Field(alias="q16")
+        nix_installation: str = Field(alias="q17")
+        nix_adoption: str = Field(alias="q18")
+        nix_retention: str = Field(alias="q19")
+        nix_other_uses: str = Field(alias="q20")
+        nix_pairing: Choice2 = Field(alias="q21")
 
-        survey_with_structured_data: bool = Field(default=False)
-        extensions_exist: bool = Field(default=False)
+        # nixos
+        nixos_artefacts: list[ProjectArtefact] = Field(alias="q37")
+        nixos_package_name: str = Field(alias="q38")  # or service
+        nixos_maintainer: Optional[str] = Field(default=None, alias="q39")
+
+        # artefacts
+        libraries_exist: Optional[str] = Field(default=None, alias="q26")
+        programs_cli: Optional[str] = Field(default=None, alias="q28")
+        programs_gui: Optional[str] = Field(default=None, alias="q29")
+        mobile_apps: Optional[str] = Field(default=None, alias="q31")
+        services: Optional[str] = Field(default=None, alias="q32")
+        extensions_exist: bool = Field(default=False, alias="q36")
+
+        # documentation
+        documentation_libraries: str = Field(alias="q27")
+        documentation_programs: str = Field(alias="q30")
+        documentation_services: str = Field(alias="q33")
+        specification_document: Optional[str] = Field(default=None, alias="q34")
+        documentation_nixos: Optional[str] = Field(default=None, alias="q40")
+        documentation_source: str = Field(alias="q41")
 
     questions: dict[str, str]
     responses: list[Response]
