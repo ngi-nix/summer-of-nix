@@ -25,9 +25,12 @@
 
 ## Resources
 
-* [Task management](https://github.com/orgs/ngi-nix/projects/8/views/5)
-  * [Objectives and user stories](https://github.com/ngi-nix/summer-of-nix/issues)
-  * [Packaging tasks](https://github.com/ngi-nix/ngipkgs/issues)
+* Task management:
+  * [Objectives and key results](https://github.com/orgs/ngi-nix/projects/8/views/14)
+  * [Kanban board](https://github.com/orgs/ngi-nix/projects/8/views/5)
+  * Issue trackers:
+      * [User stories](https://github.com/ngi-nix/summer-of-nix/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22User%20story%22)
+      * [Packaging tasks](https://github.com/ngi-nix/ngipkgs/issues?q=is%3Aissue%20state%3Aopen%20label%3Aproject)
 
 * [Source code](https://github.com/ngi-nix/)
   * [ngipkgs repository](https://github.com/ngi-nix/ngipkgs)
