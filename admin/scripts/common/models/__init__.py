@@ -160,8 +160,13 @@ class Form(BaseModel):
 
 class Project(BaseModel):
     class Author(BaseModel):
+        class ContactInfo(BaseModel):
+            preferred_channels: list[str]
+            info: str
+
         name: str
         role: list[AuthorRole]
+        contact: ContactInfo
 
     class Infrastructure(BaseModel):
         class CI_CD(BaseModel):
@@ -181,6 +186,7 @@ class Project(BaseModel):
         can_ease_onboarding: ChoiceAgreement
         can_help_maintainability: ChoiceAgreement
         can_help_discoverability: ChoiceAgreement
+        available_for_pairing: Choice2
 
     name: str
     author: Author
@@ -200,6 +206,10 @@ def project_from_response(
         "author": {
             "name": resp.author_name,
             "role": resp.author_role,
+            "contact": {
+                "preferred_channels": resp.author_preferred_channels,
+                "info": resp.author_contact,
+            },
         },
         "contributors": resp.contributors,
         "infra": {
@@ -218,6 +228,7 @@ def project_from_response(
             "can_ease_onboarding": resp.nix_onboard,
             "can_help_maintainability": resp.nix_maintain,
             "can_help_discoverability": resp.nix_discover,
+            "available_for_pairing": resp.nix_pairing,
         },
     }
 
