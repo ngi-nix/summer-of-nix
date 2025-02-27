@@ -201,37 +201,35 @@ def project_from_response(
     if resp.contributors is None:
         return (None, "contributors")
 
-    project_dict = {
-        "name": resp.project_name,
-        "author": {
-            "name": resp.author_name,
-            "role": resp.author_role,
-            "contact": {
-                "preferred_channels": resp.author_preferred_channels,
-                "info": resp.author_contact,
-            },
-        },
-        "contributors": resp.contributors,
-        "infra": {
-            "ci_cd": {
-                "build_failure_duration": resp.duration_build_failure,
-                "dependency_update": resp.dependency_update_automatic,
-                "with_nix": resp.nix_ci_cd,
-            },
-            "devenv": {
-                "setup_time": resp.devenv_setup_time,
-                "with_nix": resp.nix_dev_env,
-            },
-        },
-        "nix": {
-            "familiarity": resp.nix_familiarity,
-            "can_ease_onboarding": resp.nix_onboard,
-            "can_help_maintainability": resp.nix_maintain,
-            "can_help_discoverability": resp.nix_discover,
-            "available_for_pairing": resp.nix_pairing,
-        },
-    }
-
-    project = Project.model_validate(project_dict)
+    project = Project(
+        name=resp.project_name,
+        author=Project.Author(
+            name=resp.author_name,
+            role=resp.author_role,
+            contact=Project.Author.ContactInfo(
+                preferred_channels=resp.author_preferred_channels,
+                info=resp.author_contact,
+            ),
+        ),
+        contributors=resp.contributors,
+        infra=Project.Infrastructure(
+            ci_cd=Project.Infrastructure.CI_CD(
+                build_failure_duration=resp.duration_build_failure,
+                dependency_update=resp.dependency_update_automatic,
+                with_nix=resp.nix_ci_cd,
+            ),
+            devenv=Project.Infrastructure.DevEnv(
+                setup_time=resp.devenv_setup_time,
+                with_nix=resp.nix_dev_env,
+            ),
+        ),
+        nix=Project.Nix(
+            familiarity=resp.nix_familiarity,
+            can_ease_onboarding=resp.nix_onboard,
+            can_help_maintainability=resp.nix_maintain,
+            can_help_discoverability=resp.nix_discover,
+            available_for_pairing=resp.nix_pairing,
+        ),
+    )
 
     return (project, "")
