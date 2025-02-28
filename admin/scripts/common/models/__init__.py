@@ -80,6 +80,15 @@ class ContactChannel(str, Enum):
     OTHER = "Other"
 
 
+class ReleasePeriod(str, Enum):
+    NO_YEAR = "There are no stable releases yet"
+    UNDER_1_YEAR = "<1 year"
+    OVER_1_YEAR = ">1 year"
+    OVER_5_YEAR = ">5 years"
+    OVER_10_YEAR = ">10 years"
+    OVER_20_YEAR = ">20 years"
+
+
 class Form(BaseModel):
     class Response(BaseModel):
         @field_validator(
@@ -114,8 +123,8 @@ class Form(BaseModel):
         author_contact: str = Field(alias="q23")
 
         # longevity
-        duration_stable_release: str = Field(alias="q11")
-        duration_future_maintenance: str = Field(alias="q12")
+        duration_stable_release: ReleasePeriod = Field(alias="q11")
+        duration_future_maintenance: ReleasePeriod = Field(alias="q12")
 
         # infra
         duration_build_failure: str = Field(alias="q3")
@@ -183,6 +192,8 @@ class Project(BaseModel):
         repository: str
         contributors: int
         author: Author
+        stable_release_start: str
+        expected_longevity: str
 
     class Infrastructure(BaseModel):
         class CI_CD(BaseModel):
@@ -231,6 +242,8 @@ def project_from_response(
                     reminder=resp.survey_reminder,
                 ),
             ),
+            stable_release_start=resp.duration_stable_release,
+            expected_longevity=resp.duration_future_maintenance,
         ),
         infra=Project.Infrastructure(
             ci_cd=Project.Infrastructure.CI_CD(
