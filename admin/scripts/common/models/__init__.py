@@ -197,21 +197,32 @@ class Project(BaseModel):
 
     class Infrastructure(BaseModel):
         class CI_CD(BaseModel):
-            build_failure_duration: str
+            build_failure_hours_per_week: str
             dependency_update: str
+            dependency_update_frequency: str
             with_nix: str
 
         class DevEnv(BaseModel):
             setup_time: str
             with_nix: str
 
+        dependency_management: str
+        framework: str
         ci_cd: CI_CD
         devenv: DevEnv
 
     class Nix(BaseModel):
-        can_ease_onboarding: str
-        can_help_maintainability: str
-        can_help_discoverability: str
+        class AuthorResponses(BaseModel):
+            can_ease_onboarding: str
+            can_help_maintainability: str
+            can_help_discoverability: str
+            can_help_self_hosting: str
+            can_ease_installation: str
+            can_increase_adoption: str
+            can_increase_user_retention: str
+            other_uses: str
+
+        author_responses: AuthorResponses
 
     name: str
     meta: Metadata
@@ -246,9 +257,12 @@ def project_from_response(
             expected_longevity=resp.duration_future_maintenance,
         ),
         infra=Project.Infrastructure(
+            dependency_management=resp.dependency_management,
+            framework=resp.project_framework,
             ci_cd=Project.Infrastructure.CI_CD(
-                build_failure_duration=resp.duration_build_failure,
+                build_failure_hours_per_week=resp.duration_build_failure,
                 dependency_update=resp.dependency_update_automatic,
+                dependency_update_frequency=resp.dependency_update_frequency,
                 with_nix=resp.nix_ci_cd,
             ),
             devenv=Project.Infrastructure.DevEnv(
@@ -257,9 +271,16 @@ def project_from_response(
             ),
         ),
         nix=Project.Nix(
-            can_ease_onboarding=resp.nix_onboard,
-            can_help_maintainability=resp.nix_maintain,
-            can_help_discoverability=resp.nix_discover,
+            author_responses=Project.Nix.AuthorResponses(
+                can_ease_onboarding=resp.nix_onboard,
+                can_help_maintainability=resp.nix_maintain,
+                can_help_discoverability=resp.nix_discover,
+                can_help_self_hosting=resp.nix_self_host,
+                can_ease_installation=resp.nix_installation,
+                can_increase_adoption=resp.nix_adoption,
+                can_increase_user_retention=resp.nix_retention,
+                other_uses=resp.nix_other_uses,
+            )
         ),
     )
 
