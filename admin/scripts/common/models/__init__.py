@@ -187,6 +187,7 @@ class Project(BaseModel):
             contact: str
             available_for_pairing: str
             nix_familiarity: str
+            nixos_maintainer: Optional[str]
             survey: Survey
 
         repository: str
@@ -212,6 +213,10 @@ class Project(BaseModel):
         devenv: DevEnv
 
     class Nix(BaseModel):
+        class Artefacts(BaseModel):
+            name: str
+            type: Sequence[str]
+
         class AuthorResponses(BaseModel):
             can_ease_onboarding: str
             can_help_maintainability: str
@@ -223,11 +228,44 @@ class Project(BaseModel):
             other_uses: str
 
         author_responses: AuthorResponses
+        nixos_artefacts: Artefacts
+
+    class Artefacts(BaseModel):
+        class Programs(BaseModel):
+            cli: Optional[str]
+            gui: Optional[str]
+            documentation: str
+
+        class Services(BaseModel):
+            services: Optional[str]
+            documentation: str
+
+        class Libraries(BaseModel):
+            exist: Optional[str]
+            documentation: str
+
+        class MobileApps(BaseModel):
+            apps: Optional[str]
+
+        programs: Programs
+        services: Services
+        libraries: Libraries
+        mobile_apps: MobileApps
+
+    class Documentation(BaseModel):
+        source_build: str
+        programs: str
+        services: str
+        libraries: str
+        nix_instructions: Optional[str]
+        specification_documents: Optional[str]
 
     name: str
     meta: Metadata
+    docs: Documentation
     infra: Infrastructure
     nix: Nix
+    artefacts: Artefacts
 
 
 def project_from_response(
@@ -248,6 +286,7 @@ def project_from_response(
                 contact=resp.author_contact,
                 available_for_pairing=resp.nix_pairing,
                 nix_familiarity=resp.nix_familiarity,
+                nixos_maintainer=resp.nixos_maintainer,
                 survey=Project.Metadata.Author.Survey(
                     feedback=resp.survey_feedback,
                     reminder=resp.survey_reminder,
@@ -271,6 +310,10 @@ def project_from_response(
             ),
         ),
         nix=Project.Nix(
+            nixos_artefacts=Project.Nix.Artefacts(
+                name=resp.nixos_package_name,
+                type=resp.nixos_artefacts,
+            ),
             author_responses=Project.Nix.AuthorResponses(
                 can_ease_onboarding=resp.nix_onboard,
                 can_help_maintainability=resp.nix_maintain,
@@ -280,7 +323,33 @@ def project_from_response(
                 can_increase_adoption=resp.nix_adoption,
                 can_increase_user_retention=resp.nix_retention,
                 other_uses=resp.nix_other_uses,
-            )
+            ),
+        ),
+        artefacts=Project.Artefacts(
+            libraries=Project.Artefacts.Libraries(
+                exist=resp.libraries_exist,
+                documentation=resp.documentation_libraries,
+            ),
+            programs=Project.Artefacts.Programs(
+                cli=resp.programs_cli,
+                gui=resp.programs_gui,
+                documentation=resp.documentation_programs,
+            ),
+            services=Project.Artefacts.Services(
+                services=resp.services,
+                documentation=resp.documentation_services,
+            ),
+            mobile_apps=Project.Artefacts.MobileApps(
+                apps=resp.mobile_apps,
+            ),
+        ),
+        docs=Project.Documentation(
+            source_build=resp.documentation_source,
+            programs=resp.documentation_programs,
+            services=resp.documentation_services,
+            libraries=resp.documentation_libraries,
+            nix_instructions=resp.documentation_nixos,
+            specification_documents=resp.specification_document,
         ),
     )
 
