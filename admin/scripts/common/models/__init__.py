@@ -73,6 +73,13 @@ class ProjectArtefact(str, Enum):
     SERVICES = "Services"
 
 
+class ContactChannel(str, Enum):
+    EMAIL = "Email"
+    MATRIX = "Matrix"
+    GITHUB = "Github"
+    OTHER = "Other"
+
+
 class Form(BaseModel):
     class Response(BaseModel):
         @field_validator(
@@ -103,7 +110,7 @@ class Form(BaseModel):
         # author
         author_name: str = Field(alias="_name")
         author_role: list[AuthorRole] = Field(alias="q2")
-        author_preferred_channels: list[str] = Field(alias="q22")
+        author_contact_channels: list[ContactChannel] = Field(alias="q22")
         author_contact: str = Field(alias="q23")
 
         # longevity
@@ -161,10 +168,17 @@ class Form(BaseModel):
 class Project(BaseModel):
     class Metadata(BaseModel):
         class Author(BaseModel):
+            class Survey(BaseModel):
+                reminder: Optional[ChoiceReminder]
+                feedback: str
+
             name: str
             role: list[AuthorRole]
-            contact_channels: list[str]
+            contact_channels: list[ContactChannel]
             contact: str
+            available_for_pairing: Choice2
+            nix_familiarity: NixFamiliarity
+            survey: Survey
 
         repository: str
         contributors: int
@@ -184,11 +198,9 @@ class Project(BaseModel):
         devenv: DevEnv
 
     class Nix(BaseModel):
-        familiarity: NixFamiliarity
         can_ease_onboarding: ChoiceAgreement
         can_help_maintainability: ChoiceAgreement
         can_help_discoverability: ChoiceAgreement
-        available_for_pairing: Choice2
 
     name: str
     meta: Metadata
@@ -210,8 +222,14 @@ def project_from_response(
             author=Project.Metadata.Author(
                 name=resp.author_name,
                 role=resp.author_role,
-                contact_channels=resp.author_preferred_channels,
+                contact_channels=resp.author_contact_channels,
                 contact=resp.author_contact,
+                available_for_pairing=resp.nix_pairing,
+                nix_familiarity=resp.nix_familiarity,
+                survey=Project.Metadata.Author.Survey(
+                    feedback=resp.survey_feedback,
+                    reminder=resp.survey_reminder,
+                ),
             ),
         ),
         infra=Project.Infrastructure(
@@ -226,11 +244,9 @@ def project_from_response(
             ),
         ),
         nix=Project.Nix(
-            familiarity=resp.nix_familiarity,
             can_ease_onboarding=resp.nix_onboard,
             can_help_maintainability=resp.nix_maintain,
             can_help_discoverability=resp.nix_discover,
-            available_for_pairing=resp.nix_pairing,
         ),
     )
 
