@@ -178,15 +178,15 @@ class Project(BaseModel):
     class Metadata(BaseModel):
         class Author(BaseModel):
             class Survey(BaseModel):
-                reminder: Optional[ChoiceReminder]
+                reminder: Optional[str]
                 feedback: str
 
             name: str
-            role: list[AuthorRole]
-            contact_channels: list[ContactChannel]
+            role: list[str]
+            contact_channels: list[str]
             contact: str
-            available_for_pairing: Choice2
-            nix_familiarity: NixFamiliarity
+            available_for_pairing: str
+            nix_familiarity: str
             survey: Survey
 
         repository: str
@@ -199,19 +199,19 @@ class Project(BaseModel):
         class CI_CD(BaseModel):
             build_failure_duration: str
             dependency_update: str
-            with_nix: Choice
+            with_nix: str
 
         class DevEnv(BaseModel):
             setup_time: str
-            with_nix: Choice
+            with_nix: str
 
         ci_cd: CI_CD
         devenv: DevEnv
 
     class Nix(BaseModel):
-        can_ease_onboarding: ChoiceAgreement
-        can_help_maintainability: ChoiceAgreement
-        can_help_discoverability: ChoiceAgreement
+        can_ease_onboarding: str
+        can_help_maintainability: str
+        can_help_discoverability: str
 
     name: str
     meta: Metadata
