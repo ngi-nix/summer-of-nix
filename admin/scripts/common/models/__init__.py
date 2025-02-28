@@ -159,14 +159,16 @@ class Form(BaseModel):
 
 
 class Project(BaseModel):
-    class Author(BaseModel):
-        class ContactInfo(BaseModel):
-            preferred_channels: list[str]
-            info: str
+    class Metadata(BaseModel):
+        class Author(BaseModel):
+            name: str
+            role: list[AuthorRole]
+            contact_channels: list[str]
+            contact: str
 
-        name: str
-        role: list[AuthorRole]
-        contact: ContactInfo
+        repository: str
+        contributors: int
+        author: Author
 
     class Infrastructure(BaseModel):
         class CI_CD(BaseModel):
@@ -189,8 +191,7 @@ class Project(BaseModel):
         available_for_pairing: Choice2
 
     name: str
-    author: Author
-    contributors: int
+    meta: Metadata
     infra: Infrastructure
     nix: Nix
 
@@ -203,15 +204,16 @@ def project_from_response(
 
     project = Project(
         name=resp.project_name,
-        author=Project.Author(
-            name=resp.author_name,
-            role=resp.author_role,
-            contact=Project.Author.ContactInfo(
-                preferred_channels=resp.author_preferred_channels,
-                info=resp.author_contact,
+        meta=Project.Metadata(
+            repository=resp.repository,
+            contributors=resp.contributors,
+            author=Project.Metadata.Author(
+                name=resp.author_name,
+                role=resp.author_role,
+                contact_channels=resp.author_preferred_channels,
+                contact=resp.author_contact,
             ),
         ),
-        contributors=resp.contributors,
         infra=Project.Infrastructure(
             ci_cd=Project.Infrastructure.CI_CD(
                 build_failure_duration=resp.duration_build_failure,
