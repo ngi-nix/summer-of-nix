@@ -1,5 +1,5 @@
 from enum import Enum
-from typing import Optional
+from typing import Optional, Sequence
 
 from pydantic import BaseModel, Field, field_validator
 
@@ -182,8 +182,8 @@ class Project(BaseModel):
                 feedback: str
 
             name: str
-            role: list[str]
-            contact_channels: list[str]
+            role: Sequence[str]
+            contact_channels: Sequence[str]
             contact: str
             available_for_pairing: str
             nix_familiarity: str
