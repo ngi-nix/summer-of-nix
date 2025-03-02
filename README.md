@@ -119,6 +119,25 @@ Please ask a friend to make a test call on [Jitsi Meet](https://meet.jit.si/) to
 
 From the organisers' experience, mobile data is unlikely to suffice.
 
+## Testimonials
+
+> I had been a Nixpkgs contributor for about an year when I took part in Summer of Nix, so this was a great opportunity to go a step deeper into the Nix ecosystem.
+> For me more importantly than the technical outcomes of this program, I met some talented and passionate folks from the community, whom I'm still in contact with today.
+> I came to get more involved with Nix, Nixpkgs, NixOS and everything around it, and I didn't expect this to be a foundational stepping stone in my career journey.
+> This does come from the on-paper value of the program, but more so from the latent knowledge gained thanks to my mentors and peers with their experience in a diverse set of fields.
+> I'm lucky to have had a chance to contribute to things that I love, and very grateful for everyone involved in this program being as supportive and caring as they were.
+>
+> — [@GetPsyched](https://github.com/getpsyched/), Summer of Nix 2024 participant, [release editor for NixOS 24.11](https://discourse.nixos.org/t/lets-have-a-great-24-11-release-cycle/51549)
+
+<!-- -->
+
+> I participated as a mentor in the first two Summers of Nix.
+> This gave me an opportunity to help introduce others to the ecosystem and gain experience leading a globally distributed team.
+> The greatest outcome was the joy of [seeing some of the participants stick around](https://www.youtube.com/watch?v=FY66f8epAE8) and grow to become major contributors.
+> The program is an effective way to create value in open source as well as make the Nix ecosystem stronger, with a focus on the people that make up the community.
+>
+> — [@tomberek](https://github.com/tomberek/), Summer of Nix participant (2021 and 2022), [Nix maintainer](https://github.com/orgs/NixOS/teams/nix-team) (since 2022) and [Nix Community Steering Committee](https://github.com/NixOS/org/blob/bef9342c85519784532cd647f91c341cae5e3bed/doc/governance.md) member (2025)
+
 ## Questions and answers
 
 ### How to get notifications and updates?
