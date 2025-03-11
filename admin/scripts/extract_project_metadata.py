@@ -7,6 +7,7 @@ import os
 import sys
 
 import ijson
+import pandas as pd
 from common.models.dashboard import Fund
 from common.models.notion import Overview, Subgrant
 from common.utils import dir_path
@@ -14,7 +15,7 @@ from pydantic import ValidationError
 from tqdm import tqdm
 
 # fmt: off
-choices = {
+presetChoices = {
     "default": lambda subgrants: {
         s.name: s.model_dump()
         for s in subgrants
@@ -32,6 +33,19 @@ choices = {
     },
 }
 # fmt: on
+
+formatChoices = {
+    "json": lambda preset, subgrants: json.dump(
+        presetChoices[preset](subgrants), sys.stdout, indent=2
+    ),
+    "csv": lambda _preset, subgrants: (
+        pd.DataFrame([s.model_dump() for s in subgrants])
+        # Format name to match CSV columns
+        .rename(columns=lambda x: x.capitalize())
+        .rename(columns={"Id": "Subgrant ID"})
+        .to_csv(sys.stdout, encoding="utf-8", index=False)
+    ),
+}
 
 
 class Cli:
@@ -55,9 +69,16 @@ class Cli:
         self.parser.add_argument(
             "-p",
             "--preset",
-            choices=choices.keys(),
+            choices=presetChoices.keys(),
             default="default",
             help="Output the metadata in a specific format",
+        )
+        self.parser.add_argument(
+            "-f",
+            "--format",
+            default="json",
+            choices=formatChoices.keys(),
+            help="Output file format (default: %(default)s)",
         )
 
         if len(sys.argv) == 1:
@@ -95,7 +116,9 @@ def main():
 
                     subgrants.append(
                         Subgrant(
+                            id=subgrant.id,
                             name=subgrant.properties.webpage.name,
+                            fund=subgrant.proposal.fund,
                             websites=subgrant.proposal.websites.website,
                             summary=subgrant.properties.webpage.summary,
                             contact=Subgrant.Contact(
@@ -106,9 +129,7 @@ def main():
         except ValidationError as e:
             logger.error(e)
 
-    content = choices[args.preset](subgrants)
-
-    json.dump(content, sys.stdout, indent=2)
+    formatChoices[args.format](args.preset, subgrants)
 
 
 if __name__ == "__main__":
