@@ -39,18 +39,30 @@ choices = {
 class Cli:
     def __init__(self) -> None:
         self.parser = argparse.ArgumentParser(
-            description=textwrap.dedent(f"""\
-            Extract medatata from the exported NLnet grant database
+            description="Extract medatata from the exported NLnet grant database",
+            epilog=textwrap.dedent(f"""
+            USAGE:
 
-            Examples:
+            1. Download projects metadata from NLnet dashboard:
+
+            - Go the the [NLnet dashboard](https://dashboard.nlnet.nl) and enter your credentials
+            - Go to each grant page, append `?json=true` to the URL, and download the file
+            - Put all downloaded files in a single directory (<NLNET-METADATA-DIRECTORY>)
+
+            2. If you want to contact project authors, get the messages file from Notion:
+
+            - Navigate to [Messages](https://www.notion.so/nixos-foundation/19e59d49e1be8056ad71e5fc4a31b83e?v=19e59d49e1be809ea5dc000c05bcefa5&pvs=4)
+            - If you can't access the page, you should request permissions
+            - Click on the top-right menu and export as a csv, choosing the default options
+            - Save the ZIP file to your filesystem (<MESSAGES-ZIP>)
+
+            EXAMPLES:
+
             # Extract metadata
-            {sys.argv[0]} <NLNET-METADATA-DIRECTORY> > metadata.json
+            {os.path.basename(sys.argv[0])} <NLNET-METADATA-DIRECTORY> > metadata.json
 
             # Get the list of project author emails for a certain message
-            {sys.argv[0]} <NLNET-METADATA-DIRECTORY> <MESSAGES-ZIP> -p emails > emails.csv
-
-            ---
-
+            {os.path.basename(sys.argv[0])} <NLNET-METADATA-DIRECTORY> <MESSAGES-ZIP> -p emails > emails.csv
             """),
             formatter_class=argparse.RawTextHelpFormatter,
         )
