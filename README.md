@@ -63,7 +63,7 @@ Additionally, applicants have to:
 ### Mentors
 
 To be considered for the mentor role, in addition to the [requirements for participants](#participants), applicants must have:
-- [Merge access to Nixpkgs](https://github.com/orgs/nixos/teams/nixpkgs-committers).
+- [Merge access to Nixpkgs](https://github.com/NixOS/org/blob/main/doc/nixpkgs-committers.md).
 - Command of at least two widely-used programming languages
 - Firm grasp of software development best practices
 - Excellent control of Git
