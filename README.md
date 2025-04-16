@@ -58,6 +58,7 @@ To be considered for participation, applicants must demonstrate:
   - Git version control
   - Programming in Bash
 - Competence with the Nix language, the module system, NixOS tests, and related tools
+
 Additionally, applicants have to:
 - Meet the [technical requirements](#technical-requirements)
 - Be available for a total of 160 hours of regular sessions over 13 weeks
