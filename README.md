@@ -113,7 +113,7 @@ Be creative! Feel free to add what you deem important for us to know.
 
 Don't worry if your profile doesn't perfectly align with the listed criteria:
 Showcase your passions and adjacent skills.
-We appreciate both potential and transferable experience.
+We appreciate both transferable experience and potential.
 
 <details><summary>Example application</summary>
 
