@@ -246,7 +246,7 @@ As a participant, you will need an account on each of these services.
 [Open an issue](https://github.com/ngi-nix/summer-of-nix/issues) to ask a question in public.
 Send direct messages for questions that require privacy.
 
-Members of our team will also be available to answer any of your questions directly in the [Nix@NGI office hours](https://jitsi.lassul.us/ngi-nix-office-hours) Jitsi room, every [Tuesdays and Thursdays, 15:00 to 16:00 CEST](https://calendar.google.com/calendar/u/0/embed?src=b9o52fobqjak8oq8lfkhg3t0qg@group.calendar.google.com).
+Members of our team will also be available to answer any of your questions directly in the [Nix@NGI office hours](https://jitsi.lassul.us/ngi-nix-office-hours) Jitsi room, every [Tuesdays and Thursdays, 15:00 to 16:00 Europe/Berlin](https://calendar.google.com/calendar/u/0/embed?src=b9o52fobqjak8oq8lfkhg3t0qg@group.calendar.google.com).
 
 Responsible: Valentin Gagarin (program direction)
 
