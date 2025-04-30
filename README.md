@@ -88,7 +88,7 @@ You must be able to receive payments via one of:
 
 ### Stipends
 
-Stipends depend on your country of residence are adjusted by purchasing power parity: [list of stipends by country](./stipends.md).
+Stipends are adjusted to purchasing power parity for your country of residence: [list of stipends by country](./stipends.md).
 
 ### How to apply
 
