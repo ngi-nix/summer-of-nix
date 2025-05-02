@@ -149,6 +149,9 @@ How did you learn about Summer of Nix?
 Send a plain text email, without any attachments, images, or other embedded elements until 2025-05-12 0:00UTC to
 [ngi@nixos.org](mailto:ngi@nixos.org?subject=Summer%20of%20Nix%202025%3A%20%3CYOUR_NAME%3E%20application&body=GitHub%20handle%3A%20%40jane-random%0A%0AProgramming%20languages%20and%20tooling%20experience%3A%0A(beginner%2C%20intermediate%2C%20proficient%2C%20advanced%2C%20expert)%0A-%20Nix%3A%20intermediate%0A-%20Bash%3A%20proficient%0A-%20Git%3A%20advanced%0A%0ANotable%20contributions%20to%20the%20Nix%20ecosystem%3A%0A-%20Added%20Keyoxide%20metadata%3A%20https%3A%2F%2Fgithub.com%2Fngi-nix%2Fngipkgs%2Fpull%2F558%0A%0AProjects%20I%20would%20like%20to%20work%20on%3A%0A-%20Pixelfed%3A%20https%3A%2F%2Fgithub.com%2Fngi-nix%2Fngipkgs%2Fissues%2F819%0A%20%20to%20be%20able%20to%20host%20my%20own%20instance%0A%0AWhat%20I%20expect%20to%20gain%20from%20participating%3A%0A-%20Connect%20with%20the%20community%20and%20learn%20from%20Nix%20experts%0A%0ATime%20zone%20and%20availability%3A%0A-%20Monday%20to%20Friday%3A%2009%3A00--14%3A00%20Europe%2FBerlin%0A-%20Wednesday%3A%2015%3A00--18%3A00%20Europe%2FBerlin%0A%0AHow%20did%20you%20learn%20about%20Summer%20of%20Nix%3F%0A-%20%40joe-random%20brought%20it%20up%20during%20one%20of%20our%20discussions%0A).
 
+We're currently experiencing intermittent issues with our email infrastructure.
+If and only if you don't get a reply within 3 business days, please send your application on Matrix to `@idabzo:matrix.org`.
+
 ### Schedule
 
 - Application phase: 2025-04-17 to 2025-05-12
