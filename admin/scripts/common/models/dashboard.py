@@ -28,7 +28,9 @@ class Fund(BaseModel):
 
             websites: Websites
             contact: Contact
+            fund: str
 
+        id: str
         properties: Properties
         proposal: Proposal
 
