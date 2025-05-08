@@ -70,7 +70,7 @@ def unzip_notion_export(zip_file_path) -> Optional[str | None]:
     try:
         with zipfile.ZipFile(zip_file_path, "r") as zip_ref:
             zip_ref.extractall(tmp_dir)
-        return tmp_dir
+        return f"{tmp_dir}/Private & Shared/"
     except Exception:
         return None
 
