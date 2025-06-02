@@ -27,3 +27,8 @@ class Overview(BaseModel):
 class Project(BaseModel):
     name: str = ""
     subgrants: List[str] = []
+
+
+class AuthorMessages(BaseModel):
+    message: str
+    contacted: str

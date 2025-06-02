@@ -70,7 +70,7 @@ def unzip_notion_export(zip_file_path) -> Optional[str | None]:
     try:
         with zipfile.ZipFile(zip_file_path, "r") as zip_ref:
             zip_ref.extractall(tmp_dir)
-        return tmp_dir
+        return f"{tmp_dir}/Private & Shared/"
     except Exception:
         return None
 
@@ -85,6 +85,6 @@ def get_notion_projects(zip_file_path) -> Optional[str | None]:
     for file in os.listdir(unzipped_dir):
         if file.endswith("_all.csv") or not file.endswith(".csv"):
             continue
-        if file.startswith("Projects"):
-            return os.path.join(unzipped_dir, file)
+
+        return os.path.join(unzipped_dir, file)
     return None
