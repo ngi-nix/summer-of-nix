@@ -32,6 +32,10 @@
   * Issue trackers:
       * [User stories](https://github.com/ngi-nix/summer-of-nix/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22User%20story%22)
       * [Packaging tasks](https://github.com/ngi-nix/ngipkgs/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22NGI%20Project%22)
+  * Milestones
+      * [Admin (Quarterly)](https://github.com/ngi-nix/summer-of-nix/milestones)
+      * [NGIpkgs (Monthly)](https://github.com/ngi-nix/ngipkgs/milestones)
+ 
 
 * [Source code](https://github.com/ngi-nix/)
   * [ngipkgs repository](https://github.com/ngi-nix/ngipkgs)
