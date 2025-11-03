@@ -1,0 +1,45 @@
+{
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+  };
+
+  outputs =
+    {
+      self,
+      nixpkgs,
+    }:
+    let
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+      fonts = pkgs.makeFontsConf {
+        fontDirectories = [
+          pkgs.dejavu_fonts
+        ];
+      };
+    in
+    {
+      packages.${system}.report = (
+        pkgs.stdenv.mkDerivation {
+          name = "report";
+          src = ./.;
+          buildInputs = with pkgs; [
+            pandoc
+            texlive.combined.scheme-small
+          ];
+          phases = [
+            "unpackPhase"
+            "buildPhase"
+          ];
+          buildPhase = ''
+            export FONTCONFIG_FILE=${fonts}
+            mkdir -p $out
+            pandoc $src/report.md \
+                -f gfm \
+                --pdf-engine=xelatex \
+                -M date="`date "+%B %e, %Y"`" \
+                -o $out/report.pdf
+          '';
+        }
+      );
+    };
+}
