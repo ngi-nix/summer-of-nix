@@ -227,6 +227,15 @@ As a participant, you will need an account on each of these services.
 
 ## Testimonials
 
+> I was just a few months into the Nix ecosystem when I began participating in Summer of Nix 2025.
+> This was a great chance for me to learn more about what solutions exist for different programming languages and frameworks, as well as how they work together to make software deployment a better story.
+> Through out the program and NixCon 2025 I've met many capable people with whom I built close relationships, and I consider this is to be equally valuable as the work I did.
+> I'm happy to have a chance to contribute and I'd like to thank everyone for the program and the help they provide along the way.
+>
+> — [@Prince213](https://github.com/Prince213/), Summer of Nix 2025 participant, Nix@NGI member (since November 2025)
+
+<!-- -->
+
 > I had been a Nixpkgs contributor for about an year when I took part in Summer of Nix, so this was a great opportunity to go a step deeper into the Nix ecosystem.
 > For me more importantly than the technical outcomes of this program, I met some talented and passionate folks from the community, whom I'm still in contact with today.
 > I came to get more involved with Nix, Nixpkgs, NixOS and everything around it, and I didn't expect this to be a foundational stepping stone in my career journey.
