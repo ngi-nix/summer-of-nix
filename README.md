@@ -286,6 +286,7 @@ Consulted and informed: [Nix Community Steering Committee](https://github.com/Ni
 
 ## Annual reports
 
+- [Report: 2025 Summer of Nix](./2025/report.pdf)
 - [Report: 2024 Summer of Nix](https://ngi-nix.github.io/summer-of-nix/SoN-2024-report.pdf)
 - [Report: 2023 Summer of Nix](https://ngi-nix.github.io/summer-of-nix/SoN-2023-report.pdf)
 - [Report: 2022 Summer of Nix](https://ngi-nix.github.io/summer-of-nix/SoN-2022-report.pdf)
