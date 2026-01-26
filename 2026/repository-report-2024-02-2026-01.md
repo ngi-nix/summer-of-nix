@@ -1,4 +1,14 @@
-# NGIpkgs repository report 2026-01
+---
+title: NGIpkgs repository report
+subtitle: "Reporting period: February 1, 2024 to January 31, 2026"
+author:
+- Fedi Jamoussi
+- Ivan Minčík
+geometry: a4paper, margin=1.5in
+linestretch: 1.05
+numbersections: true
+colorlinks: true
+...
 
 The main role of the NixOS Foundation within the NGI Zero consortium is to
 make software available as Nix packages. This is in order to make the projects
@@ -6,17 +16,21 @@ developed under NGI0 easier to obtain and run. Packaging support service is not
 only available to NGI0 projects but to all open source projects within the Next
 Generation Internet initiative.
 
-NGI projects that have been packaged are all made available in in a monorepo
+NGI projects that have been packaged are all made available in a monorepo
 called NGIpkgs. Some of the packaged software was already upstreamed to Nixpkgs,
-currently the the largest, most up-to-date software repository in the world.
+currently the largest, most up-to-date software repository in the world.
 
-The NGIpkgs respository is publicly available at:
+This report covers packaging work done in the second reporting period from February
+1, 2024 to January 31, 2026.
+
+The NGIpkgs repository is publicly available at:
 **https://github.com/ngi-nix/ngipkgs/**.
 
 
 ## NGIpkgs repository
 
-As of Jan 31, 2026, 98 projects are present in NGIpkgs repository.
+During the second reporting period, 98 projects were packaged in NGIpkgs
+repository.
 
 ### List of projects
 

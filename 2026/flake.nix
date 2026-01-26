@@ -36,14 +36,13 @@
             pandoc $src/${report}.md \
                 -f gfm \
                 --pdf-engine=xelatex \
-                -M date="`date "+%B %e, %Y"`" \
                 -o $out/${report}.pdf
           '';
         };
     in
     {
       packages.${system} = {
-        repository-report-2026 = mkReport "repository-report-2026-01";
+        repository-report-2024-02-2026-01 = mkReport "repository-report-2024-02-2026-01";
       };
     };
 }
