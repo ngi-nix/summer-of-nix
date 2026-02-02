@@ -1,16 +1,17 @@
 #!/bin/python
 
 import argparse
+import json
 import logging
 import sys
+import textwrap
 from dataclasses import dataclass, field
 from time import sleep
 from typing import List
 
-import ijson
 import pandas as pd
 from common.ghkit import GitClient
-from common.models.notion import Project, Subgrant
+from common.models.notion import Subgrant
 from common.utils import (
     cleanup_empty,
     cleanup_urls,
@@ -85,9 +86,29 @@ class Cli:
 
 @dataclass
 class GitProject:
+    @dataclass
+    class Description(str):
+        websites: str = ""
+        nlnet_pages: str = ""
+        source_code: str = ""
+
+        def __str__(self):
+            return textwrap.dedent(f"""
+            ### NLnet Projects
+            {self.nlnet_pages}
+
+            ### Websites
+            {self.websites}
+            """)
+
+        def __repr__(self):
+            return self.__str__()
+
     name: str
+    subgrants: list[str] = field(default_factory=list)
+
     branch_name: str = field(init=False)
-    description: str = "\n### Websites"  # TODO: turn into a class
+    description: Description = field(default_factory=Description)
     websites: Series = field(default_factory=Series)
 
     def __post_init__(self):
@@ -98,9 +119,15 @@ class GitProject:
             [self.websites, pd.Series(websites)], ignore_index=True
         )
 
+    def update_nlnet_links(self, subgrants: list[str]):
+        self.description.nlnet_pages = "\n".join(
+            f"- https://nlnet.nl/project/{s}" for s in subgrants
+        )
+
     def update_description(self):
+        self.clean_websites()
         for site in self.websites:
-            self.description += f"\n- {site}"
+            self.description.websites += f"\n- {site}"
 
     def clean_websites(self):
         """Remove empty values, clean up URLs and remove duplicates"""
@@ -110,12 +137,11 @@ class GitProject:
 
 
 class Subgrants(BaseModel):
-    subgrants: List[Subgrant] = []
+    subgrants: dict[str, Subgrant]
 
-    def get_websites(self, name: str) -> List[str]:
-        for s in self.subgrants:
-            if name == s.name:
-                return s.websites
+    def get_websites(self, name: str) -> list[str]:
+        if name in self.subgrants:
+            return self.subgrants[name].websites
         return []
 
 
@@ -146,13 +172,13 @@ def main():
 
     projects_dict = projects.to_dict(orient="records")
     projects = [
-        Project(name=item["Name"], subgrants=item["Subgrants"])
+        GitProject(name=item["Name"], subgrants=item["Subgrants"])
         for item in projects_dict
     ]
 
     try:
-        with args.dashboard_file as f:
-            funds = Subgrants(subgrants=ijson.items(f, "."))
+        with args.metadata_file as f:
+            funds = Subgrants(subgrants=json.load(f))
     except ValidationError as e:
         logger.error(f"Failed to parse {args.metadata_file}: {e}")
         exit()
@@ -175,7 +201,7 @@ def main():
         for subgrant in project.subgrants:
             p.append_websites(funds.get_websites(subgrant))
 
-        p.clean_websites()
+        p.update_nlnet_links(project.subgrants)
         p.update_description()
 
         logger.debug(f"{p.branch_name}\n{p.description}\n")
