@@ -1,0 +1,338 @@
+---
+title: Package repository report 2025
+author:
+- Ivan Minčík
+geometry: a4paper, margin=1.5in
+linestretch: 1.05
+numbersections: true
+colorlinks: true
+...
+
+The main role of the NixOS Foundation within the NGI Zero consortium is to
+make software available as Nix packages. This is in order to make the projects
+developed under NGI0 easier to obtain and run. Packaging support service is not
+only available to NGI0 projects but to all open source projects within the Next
+Generation Internet initiative.
+
+NGI projects that have been packaged are all made available in a monorepo
+called NGIpkgs. Some of the packaged software was already upstreamed to Nixpkgs,
+currently the largest, most up-to-date software repository in the world.
+
+The NGIpkgs repository is publicly available at:
+**https://github.com/ngi-nix/ngipkgs/**.
+
+
+## NGIpkgs repository
+
+As of December 31, 2025, 98 projects were packaged in NGIpkgs
+repository.
+
+### List of projects
+
+- 0WM
+  - URL: https://ngi.nixos.org/project/0WM
+  - Subgrants: Core
+- Aerogramme
+  - URL: https://ngi.nixos.org/project/Aerogramme
+  - Subgrants: Review
+- Agorakit
+  - URL: https://ngi.nixos.org/project/Agorakit
+  - Subgrants: Entrust
+- Alive2
+  - URL: https://ngi.nixos.org/project/Alive2
+  - Subgrants: Core
+- Arcan
+  - URL: https://ngi.nixos.org/project/Arcan
+  - Subgrants: Core, Entrust
+- AtomicData
+  - URL: https://ngi.nixos.org/project/AtomicData
+  - Subgrants: Commons, Entrust, Review
+- Blink
+  - URL: https://ngi.nixos.org/project/Blink
+  - Subgrants: Entrust, Review
+- Briar
+  - URL: https://ngi.nixos.org/project/Briar
+  - Subgrants: Review
+- CNSPRCY
+  - URL: https://ngi.nixos.org/project/CNSPRCY
+  - Subgrants: Review
+- Canaille
+  - URL: https://ngi.nixos.org/project/Canaille
+  - Subgrants: Entrust
+- Corteza
+  - URL: https://ngi.nixos.org/project/Corteza
+  - Subgrants: Review
+- CryptoLyzer
+  - URL: https://ngi.nixos.org/project/CryptoLyzer
+  - Subgrants: Core, Review
+- Cryptpad
+  - URL: https://ngi.nixos.org/project/Cryptpad
+  - Subgrants: Entrust, Review
+- DMT-Core
+  - URL: https://ngi.nixos.org/project/DMT-Core
+  - Subgrants: Entrust
+- Dokieli
+  - URL: https://ngi.nixos.org/project/Dokieli
+  - Subgrants: Entrust
+- Draupnir
+  - URL: https://ngi.nixos.org/project/Draupnir
+  - Subgrants: Core
+- ERIS
+  - URL: https://ngi.nixos.org/project/ERIS
+  - Subgrants: Review
+- Flarum
+  - URL: https://ngi.nixos.org/project/Flarum
+  - Subgrants: Entrust
+- Forgejo
+  - URL: https://ngi.nixos.org/project/Forgejo
+  - Subgrants: Entrust
+- Funkwhale
+  - URL: https://ngi.nixos.org/project/Funkwhale
+  - Subgrants: Commons, Entrust, Review
+- GNUTaler
+  - URL: https://ngi.nixos.org/project/GNUTaler
+  - Subgrants: Entrust, Review
+- Galene
+  - URL: https://ngi.nixos.org/project/Galene
+  - Subgrants: Core
+- Gancio
+  - URL: https://ngi.nixos.org/project/Gancio
+  - Subgrants: Core
+- Gnucap
+  - URL: https://ngi.nixos.org/project/Gnucap
+  - Subgrants: Commons, Entrust
+- Heads
+  - URL: https://ngi.nixos.org/project/Heads
+  - Subgrants: Review
+- Hypermachines
+  - URL: https://ngi.nixos.org/project/Hypermachines
+  - Subgrants: Review
+- Icestudio
+  - URL: https://ngi.nixos.org/project/Icestudio
+  - Subgrants: Entrust
+- Inko
+  - URL: https://ngi.nixos.org/project/Inko
+  - Subgrants: Entrust
+- Inventaire
+  - URL: https://ngi.nixos.org/project/Inventaire
+  - Subgrants: Entrust, Review
+- Irdest
+  - URL: https://ngi.nixos.org/project/Irdest
+  - Subgrants: Core, Entrust, Review
+- Kaidan
+  - URL: https://ngi.nixos.org/project/Kaidan
+  - Subgrants: Commons, Entrust, Review
+- Kazarma
+  - URL: https://ngi.nixos.org/project/Kazarma
+  - Subgrants: Entrust, Review
+- Keyoxide
+  - URL: https://ngi.nixos.org/project/Keyoxide
+  - Subgrants: Review
+- KiKit
+  - URL: https://ngi.nixos.org/project/KiKit
+  - Subgrants: Entrust
+- Liberaforms
+  - URL: https://ngi.nixos.org/project/Liberaforms
+  - Subgrants: Commons, Review
+- Libervia
+  - URL: https://ngi.nixos.org/project/Libervia
+  - Subgrants: Review
+- LibreSOC
+  - URL: https://ngi.nixos.org/project/LibreSOC
+  - Subgrants: Entrust, Review
+- Librecast
+  - URL: https://ngi.nixos.org/project/Librecast
+  - Subgrants: Commons, Core, Review
+- Manyfold
+  - URL: https://ngi.nixos.org/project/Manyfold
+  - Subgrants: Commons, Entrust
+- MarginaliaSearch
+  - URL: https://ngi.nixos.org/project/MarginaliaSearch
+  - Subgrants: Core, Entrust
+- Mastodon
+  - URL: https://ngi.nixos.org/project/Mastodon
+  - Subgrants: Commons, Entrust, Review
+- Meta-Presses
+  - URL: https://ngi.nixos.org/project/Meta-Presses
+  - Subgrants: Entrust, Review
+- MirageOS
+  - URL: https://ngi.nixos.org/project/MirageOS
+  - Subgrants: Core, Entrust, Review
+- Misskey
+  - URL: https://ngi.nixos.org/project/Misskey
+  - Subgrants: Review
+- Mox
+  - URL: https://ngi.nixos.org/project/Mox
+  - Subgrants: Core, Entrust, Review
+- Naja
+  - URL: https://ngi.nixos.org/project/Naja
+  - Subgrants: Entrust
+- Namecoin
+  - URL: https://ngi.nixos.org/project/Namecoin
+  - Subgrants: Review
+- Nitrokey
+  - URL: https://ngi.nixos.org/project/Nitrokey
+  - Subgrants: Commons, Entrust, Review
+- NodeBB
+  - URL: https://ngi.nixos.org/project/NodeBB
+  - Subgrants: Commons, Core
+- Nominatim
+  - URL: https://ngi.nixos.org/project/Nominatim
+  - Subgrants: Entrust, Review
+- Omnom
+  - URL: https://ngi.nixos.org/project/Omnom
+  - Subgrants: Core, Review
+- OpenWebCalendar
+  - URL: https://ngi.nixos.org/project/OpenWebCalendar
+  - Subgrants: Core
+- Openfire
+  - URL: https://ngi.nixos.org/project/Openfire
+  - Subgrants: Core
+- PagedJS
+  - URL: https://ngi.nixos.org/project/PagedJS
+  - Subgrants: Commons
+- PdfDing
+  - URL: https://ngi.nixos.org/project/PdfDing
+  - Subgrants: Commons
+- PeerTube
+  - URL: https://ngi.nixos.org/project/PeerTube
+  - Subgrants: Entrust, Review
+- Pixelfed
+  - URL: https://ngi.nixos.org/project/Pixelfed
+  - Subgrants: Entrust, Review
+- Pretalx
+  - URL: https://ngi.nixos.org/project/Pretalx
+  - Subgrants: Entrust
+- Re-Isearch
+  - URL: https://ngi.nixos.org/project/Re-Isearch
+  - Subgrants: Commons, Review
+- ReOxide
+  - URL: https://ngi.nixos.org/project/ReOxide
+  - Subgrants: Entrust
+- Reaction
+  - URL: https://ngi.nixos.org/project/Reaction
+  - Subgrants: Core
+- Repath-Studio
+  - URL: https://ngi.nixos.org/project/Repath-Studio
+  - Subgrants: Commons
+- Rosenpass
+  - URL: https://ngi.nixos.org/project/Rosenpass
+  - Subgrants: Core, Review
+- SCION
+  - URL: https://ngi.nixos.org/project/SCION
+  - Subgrants: Core, Entrust, Review
+- SSTorytime
+  - URL: https://ngi.nixos.org/project/SSTorytime
+  - Subgrants: Commons
+- Seppo
+  - URL: https://ngi.nixos.org/project/Seppo
+  - Subgrants: Entrust
+- Servo
+  - URL: https://ngi.nixos.org/project/Servo
+  - Subgrants: Core, Entrust, Review
+- Stract
+  - URL: https://ngi.nixos.org/project/Stract
+  - Subgrants: Entrust
+- Sylk
+  - URL: https://ngi.nixos.org/project/Sylk
+  - Subgrants: Commons, Review
+- Tau
+  - URL: https://ngi.nixos.org/project/Tau
+  - Subgrants: Core
+- Teamtype
+  - URL: https://ngi.nixos.org/project/Teamtype
+  - Subgrants: Core
+- ThresholdOPRF
+  - URL: https://ngi.nixos.org/project/ThresholdOPRF
+  - Subgrants: Entrust, Review
+- Vula
+  - URL: https://ngi.nixos.org/project/Vula
+  - Subgrants: Entrust, Review
+- Wax
+  - URL: https://ngi.nixos.org/project/Wax
+  - Subgrants: Core
+- Wireguard
+  - URL: https://ngi.nixos.org/project/Wireguard
+  - Subgrants: Commons, Entrust, Review
+- arpa2
+  - URL: https://ngi.nixos.org/project/arpa2
+  - Subgrants: Entrust, Review
+- gnunet
+  - URL: https://ngi.nixos.org/project/gnunet
+  - Subgrants: Core, Entrust, Review
+- holo
+  - URL: https://ngi.nixos.org/project/holo
+  - Subgrants: Core
+- jaq
+  - URL: https://ngi.nixos.org/project/jaq
+  - Subgrants: Commons, Entrust
+- kbin
+  - URL: https://ngi.nixos.org/project/kbin
+  - Subgrants: Entrust
+- lemmy
+  - URL: https://ngi.nixos.org/project/lemmy
+  - Subgrants: Core, Entrust, Review
+- lib25519
+  - URL: https://ngi.nixos.org/project/lib25519
+  - Subgrants: Core, Entrust, Review
+- mCaptcha
+  - URL: https://ngi.nixos.org/project/mCaptcha
+  - Subgrants: Entrust
+- mitmproxy
+  - URL: https://ngi.nixos.org/project/mitmproxy
+  - Subgrants: Entrust
+- ntpd-rs
+  - URL: https://ngi.nixos.org/project/ntpd-rs
+  - Subgrants: Entrust
+- nyxt
+  - URL: https://ngi.nixos.org/project/nyxt
+  - Subgrants: Entrust, Review
+- oku
+  - URL: https://ngi.nixos.org/project/oku
+  - Subgrants: Entrust
+- openXC7
+  - URL: https://ngi.nixos.org/project/openXC7
+  - Subgrants: Entrust
+- owasp
+  - URL: https://ngi.nixos.org/project/owasp
+  - Subgrants: Core, Review
+- owi
+  - URL: https://ngi.nixos.org/project/owi
+  - Subgrants: Commons, Core
+- owncast
+  - URL: https://ngi.nixos.org/project/owncast
+  - Subgrants: Review
+- proximity-matcher
+  - URL: https://ngi.nixos.org/project/proximity-matcher
+- slipshow
+  - URL: https://ngi.nixos.org/project/slipshow
+  - Subgrants: Commons
+- stalwart
+  - URL: https://ngi.nixos.org/project/stalwart
+  - Subgrants: Core, Entrust
+- tslib
+  - URL: https://ngi.nixos.org/project/tslib
+  - Subgrants: Core
+- verso
+  - URL: https://ngi.nixos.org/project/verso
+  - Subgrants: Core, Review
+- xrsh
+  - URL: https://ngi.nixos.org/project/xrsh
+  - Subgrants: Entrust
+- y-crdt
+  - URL: https://ngi.nixos.org/project/y-crdt
+  - Subgrants: Commons, Entrust
+
+### Additional metrics
+
+NGIpkgs repository contains:
+- 79 package derivations with 57 update scripts
+- 55 services and 57 programs
+- 122 NixOS tests with 112 examples
+- 36 projects with demo
+
+
+## Nixpkgs repository
+
+As of December 31, 2025, NGI team maintains 167 package derivations with 138 update
+scripts in Nixpkgs repository.
