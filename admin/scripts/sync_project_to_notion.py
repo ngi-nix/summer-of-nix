@@ -61,12 +61,12 @@ if __name__ == "__main__":
         exit()
 
     reference: DataFrame = pd.read_csv(notion_file, usecols=notion_fields)
-    reference["Subgrant ID"] = cleanup_empty(reference["Subgrant ID"])
+    reference["Name"] = cleanup_empty(reference["Name"])
 
     subgrants = pd.read_csv(args.dashboard_file, usecols=notion_fields)
     subgrants["Name"] = subgrants["Name"].sort_values().drop_duplicates()
 
     # Remove entries already in Notion
-    subgrants = subgrants[~subgrants["Subgrant ID"].isin(reference["Subgrant ID"])]
+    subgrants = subgrants[~subgrants["Name"].isin(reference["Name"])]
 
     subgrants.to_csv(sys.stdout, encoding="utf-8", index=False)
