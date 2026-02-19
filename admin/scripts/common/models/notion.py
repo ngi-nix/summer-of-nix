@@ -1,5 +1,3 @@
-from typing import List, Optional
-
 from pydantic import BaseModel, Field, field_validator
 
 
@@ -10,17 +8,17 @@ class Subgrant(BaseModel):
         organisationName: str
 
     @field_validator("fund", mode="before")
-    def rename_funds(cls, value):
+    def rename_funds(cls, value: str):
         value = value.replace("_Fund", "")
         value = value.replace("PET", "Review")
         value = value.replace("Discovery", "Review")
         return value
 
-    name: Optional[str] = Field(default=None)
+    name: str | None = Field(default=None)
     id: str
     fund: str
     summary: str
-    websites: List[str]
+    websites: list[str] = []
     contact: Contact
 
     def test(self):
@@ -28,14 +26,14 @@ class Subgrant(BaseModel):
 
 
 class Overview(BaseModel):
-    name: Optional[str] = Field(default=None)
+    name: str | None = None
     summary: str
-    websites: List[str]
+    websites: list[str] = []
 
 
 class Project(BaseModel):
     name: str = ""
-    subgrants: List[str] = []
+    subgrants: list[str] = []
 
 
 class AuthorMessages(BaseModel):
