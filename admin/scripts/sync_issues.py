@@ -2,6 +2,7 @@
 
 import argparse
 import logging
+import shutil
 import sys
 from dataclasses import dataclass, field
 from time import sleep
@@ -130,14 +131,18 @@ def main():
 
     synced_projects = 0
 
-    notion_file = get_notion_projects(args.projects_list_file)
+    notion_projects = get_notion_projects(args.projects_list_file)
 
-    if notion_file is None:
+    if notion_projects is None:
         logger.error(f"Failed to extract {args.projects_list_file}")
         exit()
 
+    notion_file, tmp_dir = notion_projects
+
     projects = pd.read_csv(notion_file, usecols=["Name", "Subgrants"])
     projects["Name"] = cleanup_empty(projects["Name"])
+
+    shutil.rmtree(tmp_dir, ignore_errors=True)
 
     # Remove notion URLs references from the Subgrants column
     projects["Subgrants"] = projects["Subgrants"].apply(
