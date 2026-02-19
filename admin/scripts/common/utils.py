@@ -54,19 +54,9 @@ def load_credentials(directory):
                 os.environ[filename] = content
 
 
-def mktmpdir(zip_file_path: str) -> Path:
-    """Generates a temporary directory based on the ZIP file name"""
-    base_name: str = os.path.splitext(os.path.basename(zip_file_path))[0]
-    tmp_dir = os.path.join(tempfile.gettempdir(), f"{base_name}_unzipped")
-
-    # Create the directory if it doesn't exist
-    os.makedirs(tmp_dir, exist_ok=True)
-    return Path(tmp_dir)
-
-
 def unzip_notion_export(zip_file_path: str) -> Path:
     """Unzips exported Notion zip file to a temporary directory"""
-    tmp_dir = mktmpdir(zip_file_path)
+    tmp_dir = Path(tempfile.mkdtemp(prefix="son_notion_"))
 
     def extract_zip(target_zip: Path, destination: Path):
         with zipfile.ZipFile(target_zip, "r") as z:
@@ -80,14 +70,14 @@ def unzip_notion_export(zip_file_path: str) -> Path:
     return tmp_dir
 
 
-def get_notion_projects(zip_file_path: str) -> Path | None:
+def get_notion_projects(zip_file_path: str) -> tuple[Path, Path] | None:
     """Recursively finds subgrants file within an extracted Notion zip"""
 
     unzipped_dir = unzip_notion_export(zip_file_path)
 
     try:
         csv_path = next(unzipped_dir.rglob("*_all.csv"))
-        return csv_path
+        return csv_path, unzipped_dir
     except StopIteration:
         print("No '_all.csv' file found in the export.")
         return None

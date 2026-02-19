@@ -5,6 +5,7 @@ import json
 import logging
 import os
 import random
+import shutil
 import sys
 import textwrap
 from contextlib import contextmanager
@@ -145,11 +146,13 @@ def get_new_contacts_for_message(
     Prompts users to choose a message, then determines which NGI project authors
     have not been contacted for that message, yet
     """
-    messages = get_notion_projects(args.messages_zip)
+    notion_projects = get_notion_projects(args.messages_zip)
 
-    if messages is None:
+    if notion_projects is None:
         logger.error(f"Failed to extract {args.messages_zip}")
         exit()
+
+    messages, tmp_dir = notion_projects
 
     messages = pd.read_csv(messages, usecols=["Name", "Already contacted"])
     messages["Already contacted"] = messages["Already contacted"].apply(
@@ -159,6 +162,8 @@ def get_new_contacts_for_message(
         m["Name"]: AuthorMessages(message=m["Name"], contacted=m["Already contacted"])
         for m in messages.to_dict(orient="records")
     }
+
+    shutil.rmtree(tmp_dir, ignore_errors=True)
 
     # Prompt users through stderr since stdout is already used for the result
     with redirect_stdout(sys.stderr):

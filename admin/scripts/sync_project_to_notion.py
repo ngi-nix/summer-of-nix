@@ -1,4 +1,5 @@
 import argparse
+import shutil
 import sys
 
 import pandas as pd
@@ -54,11 +55,13 @@ if __name__ == "__main__":
     args = Cli().args
 
     notion_fields = ["Name", "Subgrant ID", "Fund"]
-    notion_file = get_notion_projects(args.notion_zip)
+    notion_projects = get_notion_projects(args.notion_zip)
 
-    if notion_file is None:
+    if notion_projects is None:
         print(f"Failed to extract {args.notion_zip}")
         exit()
+
+    notion_file, tmp_dir = notion_projects
 
     reference: DataFrame = pd.read_csv(notion_file, usecols=notion_fields)
     reference["Name"] = cleanup_empty(reference["Name"])
@@ -78,3 +81,5 @@ if __name__ == "__main__":
         for name in missing_notion_ids["Name"]:
             print(f"- {name}", file=sys.stderr)
         print("\n------------------------------------\n", file=sys.stderr)
+
+    shutil.rmtree(tmp_dir, ignore_errors=True)
