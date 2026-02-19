@@ -3,7 +3,7 @@ import os
 import re
 import tempfile
 import zipfile
-from typing import Optional
+from pathlib import Path
 
 from pandas import Series
 
@@ -54,37 +54,40 @@ def load_credentials(directory):
                 os.environ[filename] = content
 
 
-def mktmpdir(zip_file_path):
+def mktmpdir(zip_file_path: str) -> Path:
     """Generates a temporary directory based on the ZIP file name"""
-    base_name = os.path.splitext(os.path.basename(zip_file_path))[0]
+    base_name: str = os.path.splitext(os.path.basename(zip_file_path))[0]
     tmp_dir = os.path.join(tempfile.gettempdir(), f"{base_name}_unzipped")
 
     # Create the directory if it doesn't exist
     os.makedirs(tmp_dir, exist_ok=True)
+    return Path(tmp_dir)
+
+
+def unzip_notion_export(zip_file_path: str) -> Path:
+    """Unzips exported Notion zip file to a temporary directory"""
+    tmp_dir = mktmpdir(zip_file_path)
+
+    def extract_zip(target_zip: Path, destination: Path):
+        with zipfile.ZipFile(target_zip, "r") as z:
+            z.extractall(destination)
+
+        for nested_zip in destination.rglob("*.zip"):
+            nested_dest = nested_zip.parent / nested_zip.stem
+            extract_zip(nested_zip, nested_dest)
+
+    extract_zip(Path(zip_file_path), tmp_dir)
     return tmp_dir
 
 
-def unzip_notion_export(zip_file_path) -> Optional[str | None]:
-    """Unzips exported Notion zip file to a temporary directory"""
-    tmp_dir = mktmpdir(zip_file_path)
-    try:
-        with zipfile.ZipFile(zip_file_path, "r") as zip_ref:
-            zip_ref.extractall(tmp_dir)
-        return tmp_dir
-    except Exception:
-        return None
+def get_notion_projects(zip_file_path: str) -> Path | None:
+    """Recursively finds subgrants file within an extracted Notion zip"""
 
-
-def get_notion_projects(zip_file_path) -> Optional[str | None]:
-    """Gets the CSV Projects file from a Notion zip"""
     unzipped_dir = unzip_notion_export(zip_file_path)
 
-    if unzipped_dir is None:
+    try:
+        csv_path = next(unzipped_dir.rglob("*_all.csv"))
+        return csv_path
+    except StopIteration:
+        print("No '_all.csv' file found in the export.")
         return None
-
-    for file in os.listdir(unzipped_dir):
-        if file.endswith("_all.csv") or not file.endswith(".csv"):
-            continue
-
-        return os.path.join(unzipped_dir, file)
-    return None
