@@ -1,5 +1,3 @@
-from typing import List, Optional
-
 from pydantic import BaseModel, Field
 
 
@@ -7,7 +5,7 @@ class Fund(BaseModel):
     class Subgrant(BaseModel):
         class Properties(BaseModel):
             class Webpage(BaseModel):
-                name: Optional[str] = Field(
+                name: str | None = Field(
                     default=None,
                     alias="sitename",
                     description="Symbolic name for the subgrant, as shown under https://nlnet.nl/project",
@@ -19,14 +17,14 @@ class Fund(BaseModel):
 
         class Proposal(BaseModel):
             class Websites(BaseModel):
-                website: List[str]
+                website: list[str] = []
 
             class Contact(BaseModel):
                 name: str
                 email: str
                 organisationName: str
 
-            websites: Websites
+            websites: Websites = Field(default_factory=Websites)
             contact: Contact
             fund: str
 
@@ -34,4 +32,4 @@ class Fund(BaseModel):
         properties: Properties
         proposal: Proposal
 
-    subgrants: List[Subgrant] = Field(alias="proposals")
+    subgrants: list[Subgrant] = Field(alias="proposals")
