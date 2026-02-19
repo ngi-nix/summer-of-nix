@@ -70,3 +70,11 @@ if __name__ == "__main__":
     subgrants = subgrants[~subgrants["Name"].isin(reference["Name"])]
 
     subgrants.to_csv(sys.stdout, encoding="utf-8", index=False)
+
+    missing_notion_ids = reference[reference["Subgrant ID"].isna()]
+
+    if not missing_notion_ids.empty:
+        print("\n--- Notion Subgrants with missing IDs ---\n", file=sys.stderr)
+        for name in missing_notion_ids["Name"]:
+            print(f"- {name}", file=sys.stderr)
+        print("\n------------------------------------\n", file=sys.stderr)
