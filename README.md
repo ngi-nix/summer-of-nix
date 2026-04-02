@@ -82,7 +82,14 @@ You must be able to receive payments via one of:
 
 ### Stipends
 
-Stipends are adjusted to purchasing power parity for your country of residence: [list of stipends by country](./stipends.md).
+| Role               | Base stipend [EUR] |
+|--------------------|--------------------|
+| Participant        |               1875 |
+| Mentor             |               3125 |
+
+Residents of EU member states receive the base stipend.
+For residents of other countries, stipends are adjusted according to [purchasing power parity](https://en.wikipedia.org/wiki/Purchasing_power_parity) relative to the Netherlands.
+See the [list of stipends by country](./stipends.md) for exact amounts.
 
 ### Schedule
 
@@ -113,26 +120,26 @@ We appreciate both transferable experience and potential.
 <details><summary>Example application</summary>
 
 ```text
-GitHub handle: @jane-random
+- GitHub handle: @jane-random
 
-Programming languages and tooling experience:
-(beginner, intermediate, proficient, advanced, expert)
-- Nix: intermediate
-- Bash: proficient
-- Git: advanced
+- Programming languages and tooling experience
+  (beginner, intermediate, proficient, advanced, expert)
+  - Nix: intermediate
+  - Bash: proficient
+  - Git: advanced
 
-Notable contributions to the Nix ecosystem:
-- Added Keyoxide metadata: https://github.com/ngi-nix/ngipkgs/pull/558
+- Notable contributions to the Nix ecosystem
+  - Added Keyoxide metadata: https://github.com/ngi-nix/ngipkgs/pull/558
 
-What I expect to gain from participating:
-- Connect with the community and learn from Nix experts
+- What do I expect to gain from participating?
+  - Connect with the community and learn from Nix experts
 
-Time zone and availability:
-- Monday to Friday: 09:00—-14:00 Europe/Berlin
-- Wednesday: 15:00--18:00 Europe/Berlin
+- Time zone and availability
+  - Monday to Friday: 09:00—-14:00 CEST
+  - Wednesday: 15:00--18:00 CEST
 
-How did you learn about Summer of Nix?
-- @joe-random brought it up during one of our discussions
+- How did I learn about Summer of Nix?
+  - @joe-random brought it up during one of our discussions
 ```
 
 </details>
