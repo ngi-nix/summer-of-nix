@@ -46,13 +46,23 @@ The program is intended for participants to **work, learn, and meet**:
 
 ### Requirements
 
-To be considered for participation, applicants must demonstrate:
+To be considered for participation, all applicants must demonstrate:
 - Fluency in English
-- Essential programming skills, including proficiency with
+- Advanced programming skills, including
   - Plain text editing
-  - Git version control
+  - The Nix language, the module system, NixOS tests, and related tools
   - Programming in Bash
-- Competence with the Nix language, the module system, NixOS tests, and related tools
+
+Participant-specific requirements:
+- Availability for video calls at least three times per week
+  - Two sessions with the assigned mentor
+  - One weekly review with the Nix@NGI team
+
+Mentor-specific requirements:
+- Experience in
+  - Project coordination
+  - Team leadership
+- Capacity to accommodate meetings with all assigned participants
 
 Additionally, applicants have to:
 - Meet the [system requirements](#system-requirements)
@@ -102,6 +112,7 @@ Please send the following information over a plain text email, with no attachmen
 <!-- TODO: add deadline -->
 
 - GitHub handle
+- Application type (participant or mentor)
 - Programming languages and tooling experience
 - Notable contributions to the Nix ecosystem
 - What do you expect to gain from participating?
@@ -122,11 +133,13 @@ We appreciate both transferable experience and potential.
 ```text
 - GitHub handle: @jane-random
 
+- Application type: participant
+
 - Programming languages and tooling experience
   (beginner, intermediate, proficient, advanced, expert)
-  - Nix: intermediate
-  - Bash: proficient
-  - Git: advanced
+  - Nix: advanced
+  - Bash: advanced
+  - Rust: intermediate
 
 - Notable contributions to the Nix ecosystem
   - Added Keyoxide metadata: https://github.com/ngi-nix/ngipkgs/pull/558
