@@ -1,4 +1,4 @@
-# Summer of Nix 2026
+# Summer of Nix
 
 Summer of Nix is a coordinated effort to support selected free and open source software (FOSS) projects, by making them available on NixOS.
 It is funded by the European Commission's [Next Generation Internet (NGI)](https://www.ngi.eu/) initiative through the [NLNet Foundation](https://nlnet.nl/) and the [NixOS Foundation](https://github.com/NixOS/foundation).
@@ -37,10 +37,6 @@ The program is intended for participants to **work, learn, and meet**:
 
   As a participant, you will be at the heart of a community with [more than 900 active contributors](https://github.com/NixOS/nixpkgs/pulse?period=monthly).
   You will engage in an open source software development workflow and take part in public technical discussion.
-
-## Timeline
-
-- To be announced.
 
 ## Applications
 
@@ -101,15 +97,10 @@ Residents of EU member states receive the base stipend.
 For residents of other countries, stipends are adjusted according to [purchasing power parity](https://en.wikipedia.org/wiki/Purchasing_power_parity) relative to the Netherlands.
 See the [list of stipends by country](./stipends.md) for exact amounts.
 
-### Schedule
-
-- To be announced.
-
 ### How to apply
 
 Please send the following information over a plain text email, with no attachments, images, nor other embedded elements, to
-[ngi@nixos.org](mailto:ngi@nixos.org?subject=Summer%20of%20Nix%202026).
-<!-- TODO: add deadline -->
+[ngi@nixos.org](mailto:ngi@nixos.org?subject=Summer%20of%20Nix%20Application).
 
 - GitHub handle
 - Application type (participant or mentor)
