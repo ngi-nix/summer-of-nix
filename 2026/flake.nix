@@ -44,6 +44,8 @@
       packages.${system} = {
         repository-report-2024-02-2026-01 = mkReport "repository-report-2024-02-2026-01";
         repository-report-2025 = mkReport "repository-report-2025";
+        ngi-partner-report-entrust-rp2 = mkReport "ngi-partner-report-entrust-rp2";
+        ngi-partner-report-commons-rp2 = mkReport "ngi-partner-report-commons-rp2";
       };
     };
 }
