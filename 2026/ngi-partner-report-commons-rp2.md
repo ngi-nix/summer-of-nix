@@ -17,6 +17,11 @@ easier to obtain and run.
 During this reporting period, a new packaging and software distribution
 platform - [NGI Forge](https://ngi.nixos.org/) - was developed.
 
+NGI Forge lowers the barrier to software packaging, making it more accessible
+to a wider developer and user audience while preserving all the power of Nix.
+It is also significantly increasing sustainability of packaging and package
+maintenance.
+
 Packaging work was performed in the [NGIpkgs](https://github.com/ngi-nix/ngipkgs/)
 and [NGI Forge](https://github.com/ngi-nix/forge/) repositories. Some of the
 packaged software was upstreamed to Nixpkgs, currently the largest, most
