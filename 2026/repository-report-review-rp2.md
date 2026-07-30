@@ -1,5 +1,5 @@
 ---
-title: NGI0 Review report, reporting period 2 (February 1, 2024 – July 31, 2026)
+title: NGI0 Review repository report (February 1, 2024 – July 31, 2026)
 author:
 - Ivan Minčík
 geometry: a4paper, margin=1.5in
