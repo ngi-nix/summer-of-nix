@@ -46,7 +46,7 @@
         repository-report-2025 = mkReport "repository-report-2025";
         ngi-partner-report-entrust-rp2 = mkReport "ngi-partner-report-entrust-rp2";
         ngi-partner-report-commons-rp2 = mkReport "ngi-partner-report-commons-rp2";
-        ngi-partner-report-review-rp2 = mkReport "ngi-partner-report-review-rp2";
+        repository-report-review-rp2 = mkReport "repository-report-review-rp2";
       };
     };
 }
